@@ -1,0 +1,22 @@
+.menu {
+  @media (max-width: 992px) {
+    display: none;
+}
+    ul {
+      display: flex;
+      align-items: center;
+      li {
+        margin-right: 4.969em;
+        &:last-child {
+          margin-right: 0em;
+        }
+        a {
+          font-family: "Roboto";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 1em;
+          color: #fafafa;
+        }
+      }
+    }
+  }

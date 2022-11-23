@@ -1,0 +1,1 @@
+export { ButtonPink } from "./ButtonPink";
