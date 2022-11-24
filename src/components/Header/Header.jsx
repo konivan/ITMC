@@ -18,7 +18,7 @@ export const Header = (props) => {
           <List />
           <div className={style.column}>
             <div className={style.item}>
-              <Button>Заказать</Button>
+              <Button setShowOrders={props.setShowOrders}>Заказать</Button>
             </div>
             <div className={style.item}>
               <MyButton setShowAuth={props.setShowAuth}>Войти</MyButton>

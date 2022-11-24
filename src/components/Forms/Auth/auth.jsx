@@ -30,11 +30,11 @@ const Auth = (props) => {
                     <div className={style.modalInputs}>
                         <div className={style.modalEmailWrapper}>
                             <span>E-mail</span>
-                            <input placeholder="Введите вашу почту"></input>
+                            <input type="email" placeholder="Введите вашу почту"></input>
                         </div>
                         <div className={style.modalPasswordWrapper}>
                             <span>Пароль</span>
-                            <input placeholder="Введите пароль"></input>
+                            <input type="password" placeholder="Введите пароль"></input>
                         </div>
                     </div>
                     <div className={style.checkboxContainer}>

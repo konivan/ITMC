@@ -10,12 +10,17 @@ const Authorization = (props) => {
         return null
     }
 
+    const openAuth = () => {
+        props.setShowAuth(true);
+        return props.setShowAuthorization(false)
+    }
+
     return (
         <main className={style.modal} onClick={props.onClose}>
             <div className={style.modalContent} onClick={e => e.stopPropagation()}>
                 <Icon className={style.closeBtn} icon="mingcute:close-fill" color="white" width="20" height="20" inline={true} onClick={props.onClose}/>
                 <header className={style.modalHeader}>
-                    <h2 className={style.modalTitle} style={{color: '#454545'}}>Войти</h2>
+                    <h2 onClick={() => openAuth()} className={style.modalTitle} style={{color: '#454545'}}>Войти</h2>
                     <h2 className={style.modalTitle}>Зарегистрироваться</h2>
                 </header>
                 <section className={style.modalInputsWrapper}>
@@ -26,7 +31,7 @@ const Authorization = (props) => {
                         </div>
                         <div className={style.modalPasswordWrapper}>
                             <span>E-mail</span>
-                            <input placeholder="Введите E-mail"></input>
+                            <input type="email" placeholder="Введите E-mail"></input>
                         </div>
                         <div className={style.modalPasswordWrapper}>
                             <span>Пароль</span>
