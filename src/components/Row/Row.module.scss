@@ -1,0 +1,92 @@
+.row {
+    .container {
+      @media (max-width: 568px) {
+        padding-top: 150px;
+      }
+      padding: 17.625em 0em 0em 0em;
+      .column {
+        display: flex;
+        align-items: center;
+        h1 {
+          @media (max-width: 568px) {
+            font-size: 4.5em;
+            width: 174px;
+            margin-right: 23px;
+          }
+          font-family: "Roboto";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 8em;
+          color: #fafafa;
+          text-transform: uppercase;
+          margin-right: 0.53125em;
+        }
+        .item {
+          .box {
+            @media (max-width: 660px) {
+              flex-direction: column;
+              align-items: flex-start;
+              margin-bottom: 0;
+            }
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5em;
+            span {
+              @media (max-width: 568px) {
+                font-size: 1em;
+              }
+              font-family: "Roboto";
+              font-style: normal;
+              font-weight: 700;
+              font-size: 1.5em;
+            }
+            span:nth-of-type(1) {
+              @media (max-width: 660px) {
+                margin-right: 0;
+              }
+              color: #f614f9;
+              text-transform: uppercase;
+              margin-right: 0.66666em;
+            }
+            span:nth-of-type(2) {
+              @media (max-width: 660px) {
+                margin-right: 0;
+              }
+              color: #9e0ce9;
+              margin-right: 0.66666em;
+            }
+
+            span:nth-of-type(3) {
+              color: #4705da;
+            }
+          }
+          p {
+            @media (max-width: 660px) {
+              display: none;
+            }
+            font-family: "Roboto";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1.5em;
+            color: #fafafa;
+          }
+        }
+      }
+
+      .text {
+        @media (max-width: 660px) {
+          display: block;
+          width: max-content;
+        }
+        @media (max-width: 568px) {
+          font-size: 14px;
+        }
+        display: none;
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.5em;
+        color: #fafafa;
+      }
+    }
+  }

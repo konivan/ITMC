@@ -1,5 +1,5 @@
 .menu {
-  @media (max-width: 992px) {
+  @media (max-width: 1200px) {
     display: none;
 }
     ul {
@@ -16,6 +16,9 @@
           font-weight: 500;
           font-size: 1em;
           color: #fafafa;
+        }
+        a:hover {
+          text-decoration: underline;
         }
       }
     }
