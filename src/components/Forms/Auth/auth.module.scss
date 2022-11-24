@@ -1,0 +1,398 @@
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalContent {
+    position: absolute;
+    width: 47.875em;
+    height: 32.875em;
+    box-sizing: border-box;
+    background: #0B0E11;
+    border: 1px solid #FAFAFA;
+    border-radius: 12px;
+}
+
+.modalHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0em;
+    gap: 11.5625em;
+    position: relative;
+    left: 10.75em;
+    top: 2em;
+}
+
+.modalTitle {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5em;
+    line-height: 30px;
+    text-align: center;
+    color: #FAFAFA;
+}
+
+.auth {
+    color: #606060;
+}
+
+.closeBtn {
+    position: absolute;
+    left: 45.125em;
+    top: 1.5em;
+    cursor: pointer;
+}
+
+.modalInputsWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    padding: 0em;
+    gap: 1em;
+    position: absolute;
+    left: 2.8125em;
+    top: 6.0625em;
+}
+
+.modalInputs {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 0em;
+    gap: 1.25em;
+}
+
+.modalEmailWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0em;
+    gap: 0.5em;
+}
+
+.modalPasswordWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0em;
+    gap: 0.5em;
+}
+
+.modalInputs span{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1em;
+    line-height: 100%;
+    text-align: center;
+    color: #FAFAFA;
+    margin-top: 0.75em;
+}
+
+.modalInputs input {
+    box-sizing: border-box;
+    max-width: 20.3125em;
+    height: 3.5em;
+    border: 1px solid #FAFAFA;
+    border-radius: 8px;
+    background: none;
+    padding: 1.1875em 9.875em 1.125em 1em;
+    margin-top: 0.125em;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 120%;
+    color: #FAFAFA;
+}
+
+.checkboxContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 0.25em;
+    position: relative;
+    right: 33.5em;
+}
+
+.checkboxInput:checked {
+    background: #F614F9;
+    border: none !important;
+}
+
+.checkboxSvg {
+    position: absolute;
+    top: 0.3em;
+    left: 0.26em;
+}
+
+.checkboxSvg:hover {
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    background: #0B0E11;
+    cursor: pointer;
+    appearance: none;
+    box-sizing: border-box;
+    margin: 0.1875em 0.1875em 0.1875em 0.25em;
+    padding: initial;
+    width: 1em;
+    height: 1em;
+    border: 1px solid #FAFAFA !important;
+    border-radius: 3px;
+}
+
+.checkmark {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.75em;
+    line-height: 1.5em;
+    color: #FAFAFA;
+}
+
+.enterBtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1em 0.25em;
+    gap: 0.25em;
+    width: 670px;
+    height: 64px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(96.91deg, #4705DA 0%, #B10EEC 51.04%, #F614F9 100%);
+    border-radius: 8px;
+    cursor: pointer;
+    border: 0;
+    margin-top: 216px;
+    margin-left: 45px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.25em;
+    line-height: 110%;
+    text-align: center;
+    color: #FAFAFA;
+}
+
+.spanSection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0em;
+    gap: 1.8125em;
+    height: 1.875em;
+    margin-top: 1em;
+    margin-left: 2.8125em;
+}
+
+.lineSpan {
+    width: 18.125em;
+    height: 0em;
+    opacity: 0.5;
+    border-top: 1px solid #FAFAFA;
+    transform: rotate(180deg);
+}
+
+.secondarySpan {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.875em;
+    text-align: center;
+    color: #FAFAFA;
+}
+
+.socialsWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0em;
+    gap: 0.5em;
+    height: 5.625em;
+    margin-top: 1.5625em;
+    margin-left: 2.8125em;
+}
+
+.socialsWrapper span{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1em;
+    line-height: 100%;
+    text-align: center;
+    color: #FAFAFA;
+}
+
+.socialsBtnWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0em;
+    gap: 1.25em;
+    height: 3.625em;
+}
+
+.googleBtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1.1875em 0em;
+    gap: 0.5em;
+    width: 13.125em;
+    height: 3.625em;
+    background: #2B3139;
+    border-radius: 0.5em;
+    cursor: pointer;
+    border: 0;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1em;
+    line-height: 100%;
+    text-align: center;
+    color: #FAFAFA;
+}
+
+.telegramBtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1.1875em 0em;
+    gap: 0.5em;
+    width: 13.125em;
+    height: 3.625em;
+    background: #27A6E5;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 0;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1em;
+    line-height: 100%;
+    text-align: center;
+    color: #FAFAFA;
+}
+
+.vkBtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1.1875em 0em;
+    gap: 0.5em;
+    width: 13.125em;
+    height: 3.625em;
+    background: #0077FF;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 0;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1em;
+    line-height: 100%;
+    text-align: center;
+    color: #FAFAFA;
+}
+
+@media (max-width: 775px) {
+    .modalContent {
+        width: 25.875em;
+        height: 47.375em;
+    }
+
+    .modalHeader {
+        justify-content: space-between;
+        padding: 0em;
+        gap: 1em;
+        position: relative;
+        left: 2.8125em;
+        top: 2em;
+        width: 20.3125em;
+    }
+
+    .modalInputsWrapper {
+        gap: 1em;
+        height: 39em;
+    } 
+    .modalInputs {
+        flex-direction: column;
+        padding: 0em;
+        gap: 1em;
+    }
+    .checkboxContainer {
+        position: absolute;
+        width: 23.375em;
+        left: 0.625em;
+        bottom: 23.75em;
+    }
+    .enterBtn {
+        position: relative;
+        top: 111px;
+        width: 327px;
+    }
+    .spanSection {
+        position: absolute;
+        justify-content: center;
+        height: 1.875em;
+        width: 23.375em;
+        bottom: 18.125em;
+        right: 1.125em;
+    }
+    .socialsWrapper {
+        position: absolute;
+        bottom: 0.75em;
+        right: 3.6875em;
+        height: 15.375em;
+    }
+    .socialsBtnWrapper {
+        flex-direction: column;
+        height: 13.375em;
+    }
+    .googleBtn {
+        width: 20.5em;
+        position: relative;
+        left: 1.1875em;
+    }
+    
+    .telegramBtn {
+        width: 20.5em;
+        position: relative;
+        left: 1.1875em;
+    }
+    
+    .vkBtn {
+        width: 20.5em;
+        position: relative;
+        left: 1.1875em;
+    }
+    .socialsWrapper span{
+        position: relative;
+        left: 1.4375em;
+    }
+    .lineSpan {
+        width: 7.375em;
+    }
+}

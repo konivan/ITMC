@@ -6,7 +6,7 @@ import {Button} from "../UI/Button/Button"
 import { MyButton } from "../UI/MyButton/MyButton";
 import { List } from "./List";
 
-export const Header = () => {
+export const Header = (props) => {
   return (
     <div className={style.header}>
       <div className={style.wrapper}>
@@ -21,7 +21,7 @@ export const Header = () => {
               <Button>Заказать</Button>
             </div>
             <div className={style.item}>
-              <MyButton>Войти</MyButton>
+              <MyButton setShowAuth={props.setShowAuth}>Войти</MyButton>
             </div>
           </div>
         </div>
