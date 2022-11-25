@@ -11,7 +11,7 @@ export const Main = (props) => {
     <main className={style.main}>
       <div className={style.wrapper}>
         <Row />
-        <Services setShowAuthOrders={props.setShowAuthOrders}/>
+        <Services setShowAuthOrders={props.setShowAuthOrders} setOrderTitle={props.setOrderTitle}/>
         <Works />
       </div>
     </main>

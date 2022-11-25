@@ -7,10 +7,13 @@ import Authorization from "./components/Forms/Authorization/authorization";
 import Order from "./components/Forms/Order/order";
 import AuthOrder from "./components/Forms/AuthOrder/authOrder";
 function App() {
+  
   const [showAuth, setShowAuth] = useState(false);
   const [showAuthorization, setShowAuthorization] = useState(false);
   const [showOrders, setShowOrders] = useState(false);
   const [showAuthOrders, setShowAuthOrders] = useState(false);
+  const [orderTitle, setOrderTitle] = useState('')
+
   return (
     <div className="App">
       <Header
@@ -20,6 +23,7 @@ function App() {
       />
       <Main
       setShowAuthOrders={setShowAuthOrders}
+      setOrderTitle={setOrderTitle}
       />
       <Auth
         onClose={() => setShowAuth(false)}
@@ -40,6 +44,7 @@ function App() {
       <AuthOrder
       onClose={() => setShowAuthOrders(false)}
       showAuthOrders={showAuthOrders}
+      orderTitle={orderTitle}
       />
     </div>
   );

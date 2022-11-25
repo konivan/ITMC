@@ -18,7 +18,7 @@ const AuthOrder = (props) => {
                     <h2 className={style.modalTitle}>Заказать услугу</h2>
                 </header>
                 <section className={style.orderLogoWrapper}>
-                    <h2>IT разработка</h2>
+                    <h2>{props.orderTitle}</h2>
                     <img alt="checkbox" src="img/forms/IT.svg"/>
                 </section>
                 <section className={style.modalInputsWrapper}>
