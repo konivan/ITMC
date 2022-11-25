@@ -191,6 +191,15 @@ input[type="checkbox"] {
     color: #FAFAFA;
 }
 
+.enterBtn:hover {
+    background: linear-gradient(
+      96.91deg,
+      #4705da 0%,
+      #b10eec 51.04%,
+      #f614f9 100%
+    );
+}
+
 .spanSection {
     display: flex;
     flex-direction: row;

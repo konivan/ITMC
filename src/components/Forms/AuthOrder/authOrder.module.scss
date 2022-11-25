@@ -95,9 +95,9 @@
     align-items: flex-start;
     padding: 0em;
     gap: 1.25em;
-    width: 670px;
-    height: 91px;
-    margin-top: 30px;
+    width: 41.875em;
+    height: 5.6875em;
+    margin-top: 1.875em;
     div {
         display: flex;
         flex-direction: column;
@@ -119,7 +119,7 @@
         font-family: 'Roboto';
         font-style: normal;
         font-weight: 400;
-        font-size: 16px;
+        font-size: 1em;
         line-height: 120%;
         color: #5d5d5d;
     }
@@ -198,10 +198,20 @@
     color: #FAFAFA;
 }
 
+.enterBtn:hover {
+    background: linear-gradient(
+      96.91deg,
+      #4705da 0%,
+      #b10eec 51.04%,
+      #f614f9 100%
+    );
+}
+  
+
 @media (max-width: 775px) {
     .modalContent {
-        width: 414px;
-        height: 585px;
+        width: 25.875em;
+        height: 36.5625em;
     }
 
     .modalHeader {
@@ -209,13 +219,13 @@
         gap: 1em;
         position: relative;
         top: 1.6em;
-        right: 11.5em;
+        right: 11.0em;
         width: 20.3125em;
     }
 
     .orderLogoWrapper {
-        left: 2.7em;
-        bottom: 504px;
+        left: 2.4em;
+        bottom: 31.5em;
         width: 21.25em;
     }
 
@@ -228,7 +238,7 @@
         width: 23.4375em;
         margin-right: 18.75em;
         position: relative;
-        right: 25px;
+        right: 1.5625em;
         div {
             width: 11.0625em;
             height: 5.5em;
@@ -236,13 +246,13 @@
     }
 
     .modalDescWrapper {
-        width: 395px;
-        height: 108px;
+        width: 24.6875em;
+        height: 6.75em;
         position: relative;
-        right: 30px;
-        bottom: 30px;
+        right: 1.875em;
+        bottom: 1.875em;
         textarea {
-            max-width: 375px;
+            max-width: 23.4375em;
         }
     }
 

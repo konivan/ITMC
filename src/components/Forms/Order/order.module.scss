@@ -216,6 +216,15 @@
     color: #FAFAFA;
 }
 
+.enterBtn:hover {
+    background: linear-gradient(
+      96.91deg,
+      #4705da 0%,
+      #b10eec 51.04%,
+      #f614f9 100%
+    );
+}
+
 @media (max-width: 775px) {
     .modalContent {
         width: 25.875em;
@@ -232,8 +241,8 @@
     }
 
     .orderLogoWrapper {
-        left: 3.7em;
-        width: 19.375em;
+        left: 2.8em;
+        width: 21.1em;
     }
 
     .modalInputsWrapper {
