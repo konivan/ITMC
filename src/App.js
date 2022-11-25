@@ -12,7 +12,7 @@ function App() {
   const [showAuthorization, setShowAuthorization] = useState(false);
   const [showOrders, setShowOrders] = useState(false);
   const [showAuthOrders, setShowAuthOrders] = useState(false);
-  const [orderTitle, setOrderTitle] = useState('')
+  const [orderTitle, setOrderTitle] = useState('');
 
   return (
     <div className="App">
