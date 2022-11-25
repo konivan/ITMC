@@ -4,7 +4,7 @@ import style from "./Services.module.scss"
 import { ButtonPink } from "../UI/ButtonPink/ButtonPink";
 
 
-export const Services = () => {
+export const Services = (props) => {
     return (
         <section className={style.services} id='services'>
           <div className={style.container}>
@@ -14,7 +14,7 @@ export const Services = () => {
                 <div className={style.item}>
                   <p>IT</p>
                   <p>Описание услуги</p>
-                  <ButtonPink>Заказать</ButtonPink>
+                  <ButtonPink setShowAuthOrders={props.setShowAuthOrders}>Заказать</ButtonPink>
                 </div>
               </div>
               <div className={style.column}>

@@ -6,12 +6,12 @@ import { Row } from "../Row/Row";
 import { Services } from "../Services/Services";
 import { Works } from "../Works/Works";
 
-export const Main = () => {
+export const Main = (props) => {
   return (
     <main className={style.main}>
       <div className={style.wrapper}>
         <Row />
-        <Services />
+        <Services setShowAuthOrders={props.setShowAuthOrders}/>
         <Works />
       </div>
     </main>

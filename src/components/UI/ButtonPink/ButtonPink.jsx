@@ -4,7 +4,7 @@ import style from './ButtonPink.module.scss'
 export  const ButtonPink = (props) => {
     return (
         <div>
-            <button className={style.btnPnk}>{props.children}</button>
+            <button onClick={() => props.setShowAuthOrders(true)} className={style.btnPnk}>{props.children}</button>
         </div>
     );
 };
