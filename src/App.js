@@ -5,11 +5,8 @@ import {Main} from './components/Main'
 import Auth from './components/Forms/Auth/auth'
 import Authorization from "./components/Forms/Authorization/authorization";
 import Order from "./components/Forms/Order/order";
-<<<<<<< HEAD
 import {Footer} from "./components/Footer/Footer"
-=======
 import AuthOrder from "./components/Forms/AuthOrder/authOrder";
->>>>>>> 299ccd85e32683823e783673ea0e436e6907d836
 function App() {
   
   const [showAuth, setShowAuth] = useState(false);
@@ -45,15 +42,15 @@ function App() {
       onClose={() => setShowOrders(false)}
       showOrders={showOrders}
       />
-<<<<<<< HEAD
-      <Footer/>
-=======
+      <Footer
+      setShowOrders={setShowOrders}
+      setShowAuth={setShowAuth}
+      />
       <AuthOrder
       onClose={() => setShowAuthOrders(false)}
       showAuthOrders={showAuthOrders}
       orderTitle={orderTitle}
       />
->>>>>>> 299ccd85e32683823e783673ea0e436e6907d836
     </div>
   );
 }

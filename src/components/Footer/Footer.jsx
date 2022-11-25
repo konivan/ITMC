@@ -6,7 +6,7 @@ import { IMG, TEXT } from "./constant";
 
 import { Button } from "../UI/Button/Button";
 
-export const Footer = () => {
+export const Footer = (props) => {
   return (
     <footer className={style.footer}>
       <div className={style.wrapper}>
@@ -17,8 +17,8 @@ export const Footer = () => {
           </div>
           <div className={style.column}>
             <div className={style.item}>
-              <img src="img/footer/lk.svg" alt="lk" />
-              <span>Личный кабинет</span>
+              <img src="img/footer/lk.svg" alt="lk" onClick={() => props.setShowAuth(true)}/>
+              <span onClick={() => props.setShowAuth(true)}>Личный кабинет</span>
             </div>
             <div className={style.item}>
               {IMG.map((item, index) => (
@@ -42,7 +42,7 @@ export const Footer = () => {
               <span>Закажите у нас проект</span>
               <span>уже сегодня!</span>
             </div>
-            <Button>Заказать</Button>
+            <Button setShowOrders={props.setShowOrders}>Заказать</Button>
           </div>
           <div className={style.column}>
             <a href="/">
