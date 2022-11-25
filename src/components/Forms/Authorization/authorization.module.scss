@@ -52,6 +52,7 @@
     left: 45.125em;
     top: 1.5em;
     cursor: pointer;
+    z-index: 9;
 }
 
 .modalInputsWrapper {
@@ -188,6 +189,15 @@ input[type="checkbox"] {
     line-height: 110%;
     text-align: center;
     color: #FAFAFA;
+}
+
+.enterBtn:hover {
+    background: linear-gradient(
+      96.91deg,
+      #4705da 0%,
+      #b10eec 51.04%,
+      #f614f9 100%
+    );
 }
 
 .spanSection {

@@ -7,12 +7,12 @@ import { Services } from "../Services/Services";
 import { Works } from "../Works/Works";
 import { Partnery } from "../Partnery/Partnery";
 
-export const Main = () => {
+export const Main = (props) => {
   return (
     <main className={style.main}>
       <div className={style.wrapper}>
         <Row />
-        <Services />
+        <Services setShowAuthOrders={props.setShowAuthOrders} setOrderTitle={props.setOrderTitle}/>
         <Works />
         <Partnery/>
       </div>
