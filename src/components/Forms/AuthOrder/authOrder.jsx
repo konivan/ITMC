@@ -6,9 +6,31 @@ import { Icon } from '@iconify/react';
 
 const AuthOrder = (props) => {
 
+    const orderData = {
+            "orders": {
+                    "name_created": "example_name",
+                    "telephone_number": "+79999999999",
+                    "telegram": "example_telegram_name",
+                    "description": "example_description"
+                }
+    }
+
     if (!props.showAuthOrders) {
         return null
     }
+
+const url = 'http://localhost:8000/account/api/orders/'
+const reqOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', 'Origin': '*' }
+} 
+
+const sendOrder = () => {
+    fetch(url, reqOptions, orderData)
+    .then((res) => res.json())
+    .catch(err => console.log("Error: " + err ))
+    
+}
 
     return (
         <main className={style.modal} onClick={props.onClose}>
@@ -35,11 +57,12 @@ const AuthOrder = (props) => {
                     <section className={style.modalDescSection}>
                         <div className={style.modalDescWrapper}>
                             <span>Описание</span>
-                            <textarea placeholder="Кратко опишите ваш проект"></textarea>
+                            <textarea onChange={(e) => {orderData.orders.description = e.target.value
+                            console.log(orderData)}} placeholder="Кратко опишите ваш проект"></textarea>
                         </div>
                     </section>
                 </section>
-                <button className={style.enterBtn}>Оставить заявку</button>
+                <button onClick={sendOrder} className={style.enterBtn}>Оставить заявку</button>
             </div>
         </main>
     )   
