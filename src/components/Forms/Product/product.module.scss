@@ -1,0 +1,136 @@
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalContent {
+    position: absolute;
+    width: 59.375em;
+    height: 48.8125em;
+    box-sizing: border-box;
+    background: #0B0E11;
+    border: 1px solid #FAFAFA;
+    border-radius: 24px;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 1.5em;
+    right: 1.5em;
+    cursor: pointer;
+}
+
+.mainWrapper {
+    margin-top: 3.75em;
+    margin-left: 7.5em;
+    margin-bottom: 2.25em;
+}
+
+.productImageWrapper {
+    padding: 0em;
+    gap: 1.25em;
+    width: 44.375em;
+    img {
+    width: 44.375em;
+    height: 25em;
+    border-radius: 24px;
+    }
+}
+
+.ProductDesc {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 1.25em;
+    padding: 0em;
+    gap: 0.5em;
+    width: 26.1875em;
+    height: 5.6875em;
+    span {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        color: #FAFAFA;
+    }
+    div {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 12px;
+    }
+}
+
+.fullDescription {
+    width: 44.375em;
+    height: 7.125em;
+    margin: 0em 7.5em 3.75em 7.5em;
+    p {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.171875em;
+        color: #FAFAFA;
+    }
+}
+
+@media (max-width: 775px) {
+    .modalContent {
+        width: 25.875em;
+        height: 35.6875em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0em;
+        gap: 0.75em;
+    }
+    .closeBtn {
+        display: none;
+    }
+    .mainWrapper {
+        margin-top: 3.75em;
+        margin-left: 1.25em;
+        margin-right: 1.25em;
+        margin-bottom: 0.75em;
+    }
+    .productImageWrapper {
+        width: 23.4375em;
+        img {
+        width: 23.4375em;
+        height: 13.1875em;
+        border-radius: 12px;
+        }
+    }
+    .ProductDesc {
+        margin-top: 0.75em;
+        width: 22.9375em;
+        height: 3.375em;
+        span {
+            font-size: 14px;
+            line-height: 16px;
+        }
+        div {
+            gap: 0.25em;
+            img {
+                width: 2em;
+                height: 2em;
+            }
+        }
+    }
+    .fullDescription {
+        width: 23.375em;
+        height: 11.875em;
+        margin-left: 7.5em;
+    }
+}

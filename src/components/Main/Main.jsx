@@ -13,7 +13,7 @@ export const Main = (props) => {
       <div className={style.wrapper}>
         <Row />
         <Services setShowAuthOrders={props.setShowAuthOrders} setOrderTitle={props.setOrderTitle}/>
-        <Works />
+        <Works setShowProduct={props.setShowProduct} setProductImg={props.setProductImg}/>
         <Partnery/>
       </div>
     </main>

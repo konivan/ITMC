@@ -7,13 +7,18 @@ import Authorization from "./components/Forms/Authorization/authorization";
 import Order from "./components/Forms/Order/order";
 import {Footer} from "./components/Footer/Footer"
 import AuthOrder from "./components/Forms/AuthOrder/authOrder";
+import Product from "./components/Forms/Product/product";
+
 function App() {
   
   const [showAuth, setShowAuth] = useState(false);
   const [showAuthorization, setShowAuthorization] = useState(false);
   const [showOrders, setShowOrders] = useState(false);
   const [showAuthOrders, setShowAuthOrders] = useState(false);
-  const [orderTitle, setOrderTitle] = useState('');
+  const [showProduct, setShowProduct] = useState(false);
+
+  const [orderTitle, setOrderTitle] = useState("");
+  const [productImg, setProductImg] = useState();
 
   return (
     <div className="App">
@@ -23,8 +28,16 @@ function App() {
         setShowOrders={setShowOrders}
       />
       <Main
-      setShowAuthOrders={setShowAuthOrders}
-      setOrderTitle={setOrderTitle}
+        setShowAuthOrders={setShowAuthOrders}
+        setShowProduct={setShowProduct}
+        setOrderTitle={setOrderTitle}
+        setProductImg={setProductImg}
+      />
+      <Footer setShowOrders={setShowOrders} setShowAuth={setShowAuth} />
+      <Product
+        onClose={() => setShowProduct(false)}
+        showProduct={showProduct}
+        productImg={productImg}
       />
       <Auth
         onClose={() => setShowAuth(false)}
@@ -38,18 +51,11 @@ function App() {
         setShowAuth={setShowAuth}
         setShowAuthorization={setShowAuthorization}
       />
-      <Order
-      onClose={() => setShowOrders(false)}
-      showOrders={showOrders}
-      />
-      <Footer
-      setShowOrders={setShowOrders}
-      setShowAuth={setShowAuth}
-      />
+      <Order onClose={() => setShowOrders(false)} showOrders={showOrders} />
       <AuthOrder
-      onClose={() => setShowAuthOrders(false)}
-      showAuthOrders={showAuthOrders}
-      orderTitle={orderTitle}
+        onClose={() => setShowAuthOrders(false)}
+        showAuthOrders={showAuthOrders}
+        orderTitle={orderTitle}
       />
     </div>
   );
