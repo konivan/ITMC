@@ -1,40 +1,93 @@
 .partnery {
   .container {
-    padding: 10.25em 0em 13.043em 0em;
+    @media (max-width: 568px) {
+      padding: 96px 0px;
+    }
+    padding: 10.25em 0em 1.25em 0em;
     h2 {
+      @media (max-width: 568px) {
+       margin-bottom: 28px;
+       font-size: 20px;
+      }
       margin-bottom: 3.649375em;
     }
     .column {
-      img:nth-of-type(2) {
+      @media (max-width: 850px) {
+        flex-direction: column;
+        align-items: flex-start;
       }
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .column:nth-of-type(1) {
-      margin-bottom: 3.375em;
+    .column:nth-of-type(2) {
       img:nth-of-type(1) {
-        width: 700px;
-        height: 84.21px;
+        @media (max-width: 1250px) {
+          width: 500px;
+        }
+        @media (max-width: 568px) {
+          width: 345px;
+          height: 41.5px;
+        }
+        width: 43.75em;
+        height: 5.263em;
       }
       img:nth-of-type(2) {
+        @media (max-width: 1250px) {
+          width: 300px;
+        }
+        @media (max-width: 568px) {
+          width: 345px;
+          height: 155.32px;
+        }
         width: 494px;
         height: 133px;
       }
     }
-    .column:nth-of-type(2) {
+    .column:nth-of-type(1) {
+      @media (max-width: 850px) {
+        margin-bottom: 44px;
+      }
+      margin-bottom: 3.375em;
       img:nth-of-type(1) {
-        width: 269px;
-        height: 75px;
-      }
-      img:nth-of-type(2) {
-        width: 345px;
-        height: 155.32px;
-      }
-      img:nth-of-type(3) {
+        @media (max-width: 850px) {
+          // margin-bottom: 44px;
+        }
+        @media (max-width: 568px) {
+          width: 109px;
+          height: 102px;
+        }
         width: 109px;
         height: 102px;
       }
+      img:nth-of-type(2) {
+        @media (max-width: 850px) {
+          // margin-bottom: 44px;
+        }
+        @media (max-width: 568px) {
+          width: 269px;
+          height: 75px;
+        }
+        width: 269px;
+        height: 75px;
+      }
+      img:nth-of-type(3) {
+        @media (max-width: 568px) {
+          width: 345px;
+          height: 155.32px;
+        }
+        width: 345px;
+        height: 155.32px;
+      }
     }
+  }
+}
+
+@media (max-width: 775px) {
+  .column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 44px;
   }
 }
