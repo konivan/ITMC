@@ -1,10 +1,12 @@
-import React from "react";
+import {React, useState} from "react";
 import style from './authorization.module.scss';
 
 import { Icon } from '@iconify/react';
 
 
 const Authorization = (props) => {
+
+    const [authData, setAuthData] = useState({name: '', email: '', password: '', repeatPassword: ''})
 
     if (!props.showAuthorization) {
         return null
@@ -27,7 +29,8 @@ const Authorization = (props) => {
                     <div className={style.modalInputs}>
                         <div className={style.modalEmailWrapper}>
                             <span>Ваше имя</span>
-                            <input placeholder="Введите имя"></input>
+                            <input placeholder="Введите имя"
+                             />
                         </div>
                         <div className={style.modalPasswordWrapper}>
                             <span>E-mail</span>

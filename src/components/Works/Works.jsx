@@ -3,6 +3,7 @@ import React from "react";
 import style from "./Works.module.scss";
 
 export const Works = () => {
+
   return (
     <section className={style.works} id="works">
       <div className={style.container}>
