@@ -5,7 +5,7 @@ import { Main } from "./components/Main";
 import Auth from "./components/Forms/Auth/auth";
 import Authorization from "./components/Forms/Authorization/authorization";
 import Order from "./components/Forms/Order/order";
-// import { Footer } from "./components/Footer/Footer";
+import { Footer } from "./components/Footer/Footer";
 import AuthOrder from "./components/Forms/AuthOrder/authOrder";
 function App() {
   const [showAuth, setShowAuth] = useState(false);
@@ -44,7 +44,7 @@ function App() {
         showAuthOrders={showAuthOrders}
         orderTitle={orderTitle}
       />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
