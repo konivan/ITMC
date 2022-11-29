@@ -15,8 +15,11 @@ export const Header = (props) => {
             <a href="/">
               <img src="img/header/logoITMC.svg" alt="logo" />
             </a>
+            <div className={style.item}>
+            <img className={style.lk} src="img/header/lk.svg" alt="lk" />
             <div className={style.burger}></div>
-          </div>
+            </div>
+            </div>
           <List />
           <div className={style.column}>
             <div className={style.item}>

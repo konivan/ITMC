@@ -32,7 +32,7 @@ function App() {
         setOrderTitle={setOrderTitle}
         setProductImg={setProductImg}
       />
-      <Footer setShowOrders={setShowOrders} setShowAuth={setShowAuth} />
+     
       <Product
         onClose={() => setShowProduct(false)}
         showProduct={showProduct}
@@ -56,7 +56,7 @@ function App() {
         showAuthOrders={showAuthOrders}
         orderTitle={orderTitle}
       />
-      <Footer />
+       <Footer setShowOrders={setShowOrders} setShowAuth={setShowAuth} />
     </div>
   );
 }

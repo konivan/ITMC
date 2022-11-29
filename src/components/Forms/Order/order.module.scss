@@ -1,273 +1,269 @@
 .modal {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 999;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modalContent {
-    position: absolute;
-    width: 47.875em;
-    height: 38.625em;
-    box-sizing: border-box;
-    background: #0B0E11;
-    border: 1px solid #FAFAFA;
-    border-radius: 12px;
+  position: absolute;
+  width: 47.875em;
+  height: 38.625em;
+  box-sizing: border-box;
+  background: #0b0e11;
+  border: 1px solid #fafafa;
+  border-radius: 12px;
 }
 
 .modalHeader {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0em;
-    gap: 11.5625em;
-    margin: 32px 279px 556px 290px;
-    width: 11.875em;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0em;
+  gap: 11.5625em;
+  margin: 32px 279px 556px 290px;
+  width: 11.875em;
 }
 
 .modalTitle {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1.5em;
-    line-height: 30px;
-    text-align: center;
-    color: #FAFAFA;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5em;
+  line-height: 30px;
+  text-align: center;
+  color: #fafafa;
 }
 
 .closeBtn {
-    position: absolute;
-    left: 45.125em;
-    top: 1.5em;
-    cursor: pointer;
+  position: absolute;
+  left: 45.125em;
+  top: 1.5em;
+  cursor: pointer;
 }
 
 .orderLogoWrapper {
-    position: relative;
-    bottom: 32.1875em;
-    left: 13.25em;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 1em 3em;
-    gap: 1em;
-    width: 21.25em;
-    height: 6em;
-    border-radius: 12px;
-    background: #0B0E11;
-    border-left: 1px solid #4705DA;
-    border-top: 1px solid #4705DA;
-    border-right: 1px solid #F614F9;
-    border-bottom: 1px solid #F614F9;
-    h2 {
-    font-family: 'Roboto';
+  position: relative;
+  bottom: 32.1875em;
+  left: 13.25em;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 3em;
+  gap: 1em;
+  width: 21.25em;
+  height: 6em;
+  border-radius: 12px;
+  background: #0b0e11;
+  border-left: 1px solid #4705da;
+  border-top: 1px solid #4705da;
+  border-right: 1px solid #f614f9;
+  border-bottom: 1px solid #f614f9;
+  h2 {
+    font-family: "Roboto";
     font-style: normal;
     font-weight: 900;
     font-size: 1.5em;
     line-height: 1.8125em;
-    color: #F614F9;
-    }
+    color: #f614f9;
+  }
 }
 
 .modalInputsWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    padding: 0em;
-    gap: 1em;
-    position: absolute;
-    left: 2.8125em;
-    top: 13.875em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  padding: 0em;
+  gap: 1em;
+  position: absolute;
+  left: 2.8125em;
+  top: 13.875em;
 }
 
 .modalInputs {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    padding: 0em;
-    gap: 1.25em;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 0em;
+  gap: 1.25em;
 }
 
 .modalEmailWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0em;
-    gap: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0em;
+  gap: 0.5em;
 }
 
 .modalPasswordWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0em;
+  gap: 0.5em;
+}
+
+.modalDescSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 0.5em;
+  width: 41.875em;
+  height: 8.25em;
+  div {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 0em;
-    gap: 0.5em;
-}
-
-.modalDescSection {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 0.5em;
+    gap: 1em;
     width: 41.875em;
-    height: 8.25em;
-    div {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0em;
-        gap: 1em;
-        width: 41.875em;
-        height: 6.75em;
-        border-radius: 8px;
-        span {
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 1em;
-            line-height: 100%;
-            text-align: center;
-            color: #FAFAFA;
-            margin-top: 0.75em;
-        }
-        textarea {
-            width: 41.875em;
-            min-height: 6.75em;
-            border: 1px solid #FAFAFA;
-            border-radius: 8px;
-            background: none;
-            padding: 1.1875em 1.875em 1.125em 1em;
-            margin-top: 0.125em;
-            resize: none;
-        
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 1em;
-            line-height: 120%;
-            color: #FAFAFA;
-        }
+    height: 6.75em;
+    border-radius: 8px;
+    span {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 1em;
+      text-align: center;
+      color: #fafafa;
+      margin-top: 0.75em;
     }
+    textarea {
+      width: 41.875em;
+      min-height: 6.75em;
+      border: 1px solid #fafafa;
+      border-radius: 8px;
+      background: none;
+      padding: 1.1875em 1.875em 1.125em 1em;
+      margin-top: 0.125em;
+      resize: none;
+
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1em;
+      color: #fafafa;
+    }
+  }
 }
 
-.modalInputs span{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1em;
-    line-height: 100%;
-    text-align: center;
-    color: #FAFAFA;
-    margin-top: 0.75em;
+.modalInputs span {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center;
+  color: #fafafa;
+  margin-top: 0.75em;
 }
 
 .modalInputs input {
-    box-sizing: border-box;
-    max-width: 20.3125em;
-    height: 3.5em;
-    border: 1px solid #FAFAFA;
-    border-radius: 8px;
-    background: none;
-    padding: 1.1875em 9.875em 1.125em 1em;
-    margin-top: 0.125em;
+  box-sizing: border-box;
+  max-width: 20.3125em;
+  height: 3.5em;
+  border: 1px solid #fafafa;
+  border-radius: 8px;
+  background: none;
+  padding: 1.1875em 9.875em 1.125em 1em;
+  margin-top: 0.125em;
 
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1em;
-    line-height: 120%;
-    color: #FAFAFA;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1em;
+  color: #fafafa;
 }
 
 .enterBtn {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 1em 0.25em;
-    gap: 0.25em;
-    width: 670px;
-    height: 64px;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(96.91deg, #4705DA 0%, #B10EEC 51.04%, #F614F9 100%);
-    border-radius: 8px;
-    cursor: pointer;
-    border: 0;
-    position: relative;
-    bottom: 197px;
-    margin-left: 45px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 0.25em;
+  gap: 0.25em;
+  width: 670px;
+  height: 64px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    linear-gradient(96.91deg, #4705da 0%, #b10eec 51.04%, #f614f9 100%);
+  border-radius: 8px;
+  cursor: pointer;
+  border: 0;
+  position: relative;
+  bottom: 197px;
+  margin-left: 45px;
 
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1.25em;
-    line-height: 110%;
-    text-align: center;
-    color: #FAFAFA;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25em;
+  text-align: center;
+  color: #fafafa;
 }
 
 .enterBtn:hover {
-    background: linear-gradient(
-      96.91deg,
-      #4705da 0%,
-      #b10eec 51.04%,
-      #f614f9 100%
-    );
+  background: linear-gradient(
+    96.91deg,
+    #4705da 0%,
+    #b10eec 51.04%,
+    #f614f9 100%
+  );
 }
 
 @media (max-width: 775px) {
-    .modalContent {
-        width: 25.875em;
-        height: 43.125em;
-    }
+  .modalContent {
+    width: 25.875em;
+    height: 43.125em;
+  }
 
-    .modalHeader {
-        padding: 0em;
-        gap: 1em;
-        position: relative;
-        top: 1.3em;
-        right: 11.5em;
-        width: 20.3125em;
-    }
+  .modalHeader {
+    padding: 0em;
+    gap: 1em;
+    position: relative;
+    top: 1.3em;
+    right: 11.5em;
+    width: 20.3125em;
+  }
 
-    .orderLogoWrapper {
-        left: 2.8em;
-        width: 21.1em;
-    }
+  .orderLogoWrapper {
+    left: 2.8em;
+    width: 21.1em;
+  }
 
-    .modalInputsWrapper {
-        top: 13.75em;
-        gap: 1em;
-        height: 39em;
-    } 
-    .modalInputs {
-        flex-direction: column;
-        padding: 0em;
-        gap: 1em;
-        position: relative;
-        right: 20.75em;
-        input {
-            min-width: 21.1875em;
-        }
+  .modalInputsWrapper {
+    top: 13.75em;
+    gap: 1em;
+    height: 39em;
+  }
+  .modalInputs {
+    flex-direction: column;
+    padding: 0em;
+    gap: 1em;
+    position: relative;
+    right: 20.75em;
+    input {
+      min-width: 21.1875em;
     }
+  }
 
-    .modalDescWrapper textarea {
-        max-width: 21.125em;
-    }
+  .modalDescWrapper textarea {
+    max-width: 21.125em;
+  }
 
-    .enterBtn {
-        position: relative;
-        bottom: 105px;
-        width: 338px;
-    }
+  .enterBtn {
+    position: relative;
+    bottom: 105px;
+    width: 338px;
+  }
 }
