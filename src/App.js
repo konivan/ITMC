@@ -50,9 +50,10 @@ function App() {
         setShowAuth={setShowAuth}
         setShowAuthorization={setShowAuthorization}
       />
-      <Order onClose={() => setShowOrders(false)} showOrders={showOrders} />
+      <Order onClose={() => setShowOrders(false)} setShowOrders={setShowOrders} showOrders={showOrders} />
       <AuthOrder
         onClose={() => setShowAuthOrders(false)}
+        setShowAuthOrders={setShowAuthOrders}
         showAuthOrders={showAuthOrders}
         orderTitle={orderTitle}
       />
