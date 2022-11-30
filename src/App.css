@@ -1,13 +1,21 @@
 * {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;
-    color: #FAFAFA;
-    font-family: 'Roboto';
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  color: #fafafa;
+  font-family: "Roboto";
 }
 
 html {
-    scroll-behavior: smooth;
-    }
+  scroll-behavior: smooth;
+}
+
+a {
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
