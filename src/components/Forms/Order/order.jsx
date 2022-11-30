@@ -43,7 +43,6 @@ const Order = (props) => {
             setDescription('')
             props.setShowOrders(false)
         })
-        .then(() => props.onClose)
         .catch((err) => console.log("Error: " + err));
     };
 
