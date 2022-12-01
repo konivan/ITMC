@@ -31,13 +31,14 @@ const AuthOrder = (props) => {
   };
 
   const sendOrder = () => {
-    fetch(url, reqOptions, orderData)
-      .then((res) => res.json())
+    if (description !== '') {
+      fetch(url, reqOptions, orderData)
       .then(() => {
         setDescription('')
         props.setShowAuthOrders(false)
       })
       .catch((err) => console.log("Error: " + err));
+    } else return alert('Заполните описание')
   };
 
   return (
