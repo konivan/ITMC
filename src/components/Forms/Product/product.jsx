@@ -23,14 +23,14 @@ const Product = (props) => {
         />
         <main className={style.mainWrapper}>
           <section className={style.productImageWrapper}>
-            <img alt="product" src={props.productImg}/>
+            <img alt="product" src={props.productImg} />
           </section>
           <section className={style.ProductDesc}>
             <span>Создание и продвижение криптопроекта MASD GAMES</span>
             <div>
-              <img src="img/forms/IT.svg" alt="it-logo" />
-              <img src="img/forms/M.svg" alt="Marketing-logo" />
-              <img src="img/forms/C.svg" alt="Crypto-logo" />
+              {props.productIcon.map((item) => (
+                <img src={item} alt="Icon" />
+              ))}
             </div>
           </section>
         </main>

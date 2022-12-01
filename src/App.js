@@ -18,6 +18,7 @@ function App() {
 
   const [orderTitle, setOrderTitle] = useState("");
   const [productImg, setProductImg] = useState();
+  const [productIcon, setProductIcon] = useState([]);
 
   return (
     <div className="App">
@@ -31,12 +32,14 @@ function App() {
         setShowProduct={setShowProduct}
         setOrderTitle={setOrderTitle}
         setProductImg={setProductImg}
+        setProductIcon={setProductIcon}
       />
      
       <Product
         onClose={() => setShowProduct(false)}
         showProduct={showProduct}
         productImg={productImg}
+        productIcon={productIcon}
       />
       <Auth
         onClose={() => setShowAuth(false)}
