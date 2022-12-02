@@ -38,7 +38,7 @@ export const Services = (props) => {
             </div>
             <div className={style.column}>
               <div className={style.item}>
-                <p>Marketing</p>
+                <p>Crypto</p>
                 <p>Описание услуги</p>
                 <ButtonPink
                   setShowAuthOrders={props.setShowAuthOrders}

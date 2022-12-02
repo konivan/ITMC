@@ -10,6 +10,9 @@ import AuthOrder from "./components/Forms/AuthOrder/authOrder";
 import Product from "./components/Forms/Product/product";
 
 function App() {
+
+  let window = document.getElementById('html-1');
+
   const [showAuth, setShowAuth] = useState(false);
   const [showAuthorization, setShowAuthorization] = useState(false);
   const [showOrders, setShowOrders] = useState(false);
@@ -19,6 +22,10 @@ function App() {
   const [orderTitle, setOrderTitle] = useState("");
   const [productImg, setProductImg] = useState();
   const [productIcon, setProductIcon] = useState([]);
+
+  if (showAuth || showAuthorization || showOrders || showAuthOrders || showProduct) {
+    window.style = 'overflow-y: hidden';
+  } else window.style = 'scroll-behavior: smooth;';
 
   return (
     <div className="App">
