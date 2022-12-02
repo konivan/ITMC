@@ -105,6 +105,7 @@ const Authorization = (props) => {
                   setPassword(e.target.value);
                 }}
                 value={password}
+                type='password'
                 placeholder="Придумайте пароль"
               />
             </div>
@@ -114,6 +115,7 @@ const Authorization = (props) => {
                 onChange={(e) => {
                   setRepeatPassword(e.target.value);
                 }}
+                type='password'
                 value={repeatPassword}
                 placeholder="Повторите пароль"
               />
