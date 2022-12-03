@@ -31,6 +31,7 @@ const Auth = (props) => {
     };
 
     const auth = () => {
+      if (password !== '' && username !== '') {
         fetch(url, reqOptions, authData)
         .then((res) => {
             if (res.status !== 200) {
@@ -43,6 +44,7 @@ const Auth = (props) => {
             };
         })
         .catch((err) => console.log("Error: " + err));
+      } else return alert('Заполните все поля')
     };
 
     const openAuthorization = () => {
@@ -161,7 +163,7 @@ const Auth = (props) => {
           </section>
         </div>
       </main>
-    );   
+    );
 }
 
 export default Auth;

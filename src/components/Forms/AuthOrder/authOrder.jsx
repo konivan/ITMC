@@ -56,23 +56,23 @@ const AuthOrder = (props) => {
           <h2 className={style.modalTitle}>Заказать услугу</h2>
         </header>
         <section className={style.orderLogoWrapper}>
-          <div className={props.orderType === 'IT' ? style.active : null}>
-            <h2 style={{display: props.orderType === 'IT' ? 'contents' : 'none'}}>IT разработка</h2>
-            <img onClick={() => {
+          <div onClick={() => {
               props.setOrderType('IT')
-            }} alt="IT logo" src="img/forms/IT.svg" />
+            }} className={props.orderType === 'IT' ? style.active : null}>
+            <h2 style={{display: props.orderType === 'IT' ? 'contents' : 'none'}}>IT разработка</h2>
+            <img alt="IT logo" src="img/forms/IT.svg" />
           </div>
-          <div className={props.orderType === 'M' ? style.active : null}>
-            <h2 style={{display: props.orderType === 'M' ? 'contents' : 'none'}}>Маркетинг</h2>
-            <img onClick={() => {
+          <div onClick={() => {
               props.setOrderType('M')
-            }} alt="M logo" src="img/forms/M.svg" />
+            }} className={props.orderType === 'M' ? style.active : null}>
+            <h2 style={{display: props.orderType === 'M' ? 'contents' : 'none'}}>Маркетинг</h2>
+            <img alt="M logo" src="img/forms/M.svg" />
           </div>
-          <div className={props.orderType === 'C' ? style.active : null}>
-            <h2 style={{display: props.orderType === 'C' ? 'contents' : 'none'}}>Крипто</h2>
-            <img onClick={() => {
+          <div onClick={() => {
               props.setOrderType('C')
-            }} alt="C logo" src="img/forms/C.svg" />
+            }} className={props.orderType === 'C' ? style.active : null}>
+            <h2 style={{display: props.orderType === 'C' ? 'contents' : 'none'}}>Крипто</h2>
+            <img alt="C logo" src="img/forms/C.svg" />
           </div>
         </section>
         <section className={style.modalInputsWrapper}>

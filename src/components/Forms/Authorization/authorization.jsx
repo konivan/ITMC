@@ -30,6 +30,7 @@ const Authorization = (props) => {
   };
 
   const authorization = () => {
+    if (email !== '' && username !== '' && password !== '' && repeatPassword !== '') {
     if (password === repeatPassword) {
       fetch(url, reqOptions, authorizationData)
         .then((res) => {
@@ -46,6 +47,7 @@ const Authorization = (props) => {
         })
         .catch((err) => console.log("Error: " + err));
     } else alert('Пароли не совпадают');
+   } else return alert('Заполните все поля')
   };
 
   const openAuth = () => {
