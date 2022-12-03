@@ -225,7 +225,7 @@
 @media (max-width: 775px) {
     .modalContent {
         width: 25.875em;
-        height: 36.5625em;
+        height: 841px;
     }
 
     .closeBtn {
@@ -243,13 +243,59 @@
     }
 
     .orderLogoWrapper {
-        left: 2.4em;
+        flex-direction: column;
+        gap: 43px;
+        width: 670px;
+        height: 96px;
+        position: relative;
         bottom: 31.5em;
-        width: 21.25em;
+        left: -8em;
+        img:nth-of-type(1) {
+            content: url('../../../../public/img/forms/IT_grey.svg');
+            opacity: 0.5;
+        }
+        img:nth-of-type(2) {
+            content: url('../../../../public/img/forms/M_grey.svg');
+            opacity: 0.5;
+        }
+        img:nth-of-type(3) {
+            content: url('../../../../public/img/forms/C_grey.svg');
+            opacity: 0.5;
+        }
+        div {
+            border: 1px solid #828485;
+            padding-top: 33px;
+            padding-bottom: 34px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding-right: 16px;
+            padding-left: 46px;
+            width: 21.25em;
+            height: 6em;
+            border-radius: 12px;
+            background: #0B0E11;
+        }
+        h2 {
+            color: #828485;
+            display: contents !important;
+        }
+}
+
+.active {
+    border-left: 1px solid #4705DA !important;
+    border-top: 1px solid #4705DA !important;
+    border-right: 1px solid #F614F9 !important;
+    border-bottom: 1px solid #F614F9 !important;
+    h2 {
+        color: #F614F9;
     }
+}
 
     .modalInputsWrapper {
-        top: 13.0em;
+        top: 30.2em;
         gap: 1em;
         height: 39em;
     }
@@ -277,7 +323,7 @@
 
     .enterBtn {
         position: relative;
-        bottom: 220px;
+        top: 52px;
         right: 24px;
         width: 374px;
     }
