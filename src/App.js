@@ -19,9 +19,9 @@ function App() {
   const [showAuthOrders, setShowAuthOrders] = useState(false);
   const [showProduct, setShowProduct] = useState(false);
 
-  const [orderTitle, setOrderTitle] = useState("");
   const [productImg, setProductImg] = useState();
   const [productIcon, setProductIcon] = useState([]);
+  const [orderType, setOrderType] = useState('');
 
   if (showAuth || showAuthorization || showOrders || showAuthOrders || showProduct) {
     window.style = 'overflow-y: hidden';
@@ -37,11 +37,11 @@ function App() {
       <Main
         setShowAuthOrders={setShowAuthOrders}
         setShowProduct={setShowProduct}
-        setOrderTitle={setOrderTitle}
+        setOrderType={setOrderType}
         setProductImg={setProductImg}
         setProductIcon={setProductIcon}
       />
-     
+
       <Product
         onClose={() => setShowProduct(false)}
         showProduct={showProduct}
@@ -64,8 +64,9 @@ function App() {
       <AuthOrder
         onClose={() => setShowAuthOrders(false)}
         setShowAuthOrders={setShowAuthOrders}
+        setOrderType={setOrderType}
         showAuthOrders={showAuthOrders}
-        orderTitle={orderTitle}
+        orderType={orderType}
       />
        <Footer setShowOrders={setShowOrders} setShowAuth={setShowAuth} />
     </div>

@@ -49,16 +49,38 @@
 }
 
 .orderLogoWrapper {
-    position: relative;
-    bottom: 32.1875em;
-    left: 13.25em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px;
+        gap: 43px;
+        width: 670px;
+        height: 96px;
+        position: relative;
+        bottom: 32.1875em;
+        left: 2.8em;
+        h2 {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 900;
+            font-size: 1.5em;
+            line-height: 1.8125em;
+            color: #F614F9;
+        }
+        img {
+            cursor: pointer;
+        }
+}
+
+.active {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
-    padding: 1em 3em;
-    gap: 1em;
+    justify-content: space-between;
+    padding-right: 16px;
+    padding-left: 46px;
     width: 21.25em;
     height: 6em;
     border-radius: 12px;
@@ -67,14 +89,6 @@
     border-top: 1px solid #4705DA;
     border-right: 1px solid #F614F9;
     border-bottom: 1px solid #F614F9;
-    h2 {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 1.5em;
-    line-height: 1.8125em;
-    color: #F614F9;
-    }
 }
 
 .modalInputsWrapper {
@@ -161,7 +175,7 @@
             padding: 1.1875em 1.875em 1.125em 1em;
             margin-top: 0.125em;
             resize: none;
-        
+
             font-family: 'Roboto';
             font-style: normal;
             font-weight: 400;
@@ -206,7 +220,7 @@
       #f614f9 100%
     );
 }
-  
+
 
 @media (max-width: 775px) {
     .modalContent {
@@ -238,7 +252,7 @@
         top: 13.0em;
         gap: 1em;
         height: 39em;
-    } 
+    }
     .modalInputs {
         width: 23.4375em;
         margin-right: 18.75em;
