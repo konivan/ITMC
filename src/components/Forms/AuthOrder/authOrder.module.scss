@@ -53,10 +53,10 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 0px;
-        gap: 43px;
-        width: 670px;
-        height: 96px;
+        padding: 0em;
+        gap: 2.6875em;
+        width: 41.875em;
+        height: 6em;
         position: relative;
         bottom: 32.1875em;
         left: 2.8em;
@@ -79,8 +79,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding-right: 16px;
-    padding-left: 46px;
+    padding-right: 1em;
+    padding-left: 2.875em;
     width: 21.25em;
     height: 6em;
     border-radius: 12px;
@@ -225,7 +225,7 @@
 @media (max-width: 775px) {
     .modalContent {
         width: 25.875em;
-        height: 841px;
+        height: 52.5625em;
     }
 
     .closeBtn {
@@ -244,21 +244,21 @@
 
     .orderLogoWrapper {
         flex-direction: column;
-        width: 670px;
+        width: 41.875em;
         position: relative;
         bottom: 31.5em;
         left: -8em;
         div {
             border: 1px solid #828485;
-            padding-top: 33px;
-            padding-bottom: 34px;
+            padding-top: 2.0625em;
+            padding-bottom: 2.125em;
             box-sizing: border-box;
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
-            padding-right: 16px;
-            padding-left: 46px;
+            padding-right: 1em;
+            padding-left: 2.875em;
             width: 21.25em;
             height: 6em;
             border-radius: 12px;
