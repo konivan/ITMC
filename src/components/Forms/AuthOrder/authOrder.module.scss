@@ -336,12 +336,12 @@
 
     @media (max-width: 413px) {
         .modalContent {
-            width: 21.875em;
+            width: 20em;
             height: 52.5625em;
         }
 
         .closeBtn {
-            left: 19.9em;
+            left: 17.9em;
             top: 0.8em;
         }
 
@@ -350,7 +350,7 @@
             gap: 1em;
             position: relative;
             top: 1.6em;
-            right: 12.8em;
+            right: 13.6em;
             width: 20.3125em;
         }
 
@@ -359,7 +359,7 @@
             width: 41.875em;
             position: relative;
             bottom: 31.5em;
-            left: -9.9em;
+            left: -10.9em;
 
             div {
                 border: 1px solid #828485;
@@ -372,7 +372,7 @@
                 justify-content: space-between;
                 padding-right: 1em;
                 padding-left: 2.875em;
-                width: 18.25em;
+                width: 17.25em;
                 height: 6em;
                 border-radius: 12px;
                 background: #0B0E11;
@@ -411,34 +411,34 @@
         }
 
         .modalInputs {
-            width: 23.4375em;
-            margin-right: 18.75em;
+            width: 17em;
+            margin-right: 0em;
             position: relative;
-            right: 1.3em;
+            right: 26.4em;
 
             div {
-                width: 9.0625em;
+                width: 8em;
                 height: 5.5em;
             }
         }
 
         .modalDescWrapper {
-            width: 24.6875em;
+            width: 18em;
             height: 6.75em;
             position: relative;
             right: 1.875em;
-            bottom: 1.875em;
+            bottom: 1.7em;
 
             textarea {
-                max-width: 19.4375em;
+                max-width: 18em;
             }
         }
 
         .enterBtn {
             position: relative;
-            top: 52px;
-            right: 24px;
-            width: 310px;
+            top: 54px;
+            right: 31px;
+            width: 290px;
         }
     }
 }
