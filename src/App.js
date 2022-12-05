@@ -12,7 +12,7 @@ import Product from "./components/Forms/Product/product";
 function App() {
 
   let window = document.getElementById('html-1');
-  const URL = "http://localhost:8000/account/";
+  const URL = "http://185.26.96.45/account/";
 
   const [showAuth, setShowAuth] = useState(false);
   const [showAuthorization, setShowAuthorization] = useState(false);

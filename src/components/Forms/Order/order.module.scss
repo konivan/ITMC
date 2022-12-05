@@ -272,4 +272,59 @@
     bottom: 101px;
     width: 338px;
   }
+  @media (max-width: 413px) {
+    .modalContent {
+      width: 21.875em;
+      height: 43.125em;
+    }
+  
+  
+    .closeBtn {
+      left: 19.9em;
+      top: 0.8em;
+    }
+  
+    .modalHeader {
+      padding: 0em;
+      gap: 1em;
+      position: relative;
+      top: 0.3em;
+      right: 12.5em;
+      width: 20.3125em;
+    }
+  
+    .orderLogoWrapper {
+      left: 2.8em;
+      width: 16.8em;
+    }
+  
+    .modalInputsWrapper {
+      top: 13.75em;
+      gap: 1em;
+      height: 39em;
+    }
+    .modalInputs {
+      flex-direction: column;
+      padding: 0em;
+      gap: 1em;
+      position: relative;
+      right: 25.1em;
+      bottom: 1em;
+      margin-bottom: -15px;
+      input {
+        min-width: 0em;
+        width: 16.8em;
+      }
+    }
+  
+    .modalDescWrapper textarea {
+      max-width: 16.8em;
+    }
+  
+    .enterBtn {
+      position: relative;
+      bottom: 107px;
+      width: 270px;
+    }
+  }
 }

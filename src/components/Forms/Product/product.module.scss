@@ -134,4 +134,54 @@
         height: 11.875em;
         margin-left: 7.5em;
     }
+    @media (max-width: 413px) {
+        .modalContent {
+            width: 21.875em;
+            height: 37.6875em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0em;
+            gap: 0.75em;
+        }
+        .closeBtn {
+            left: 19.9em;
+            top: 0.8em;
+        }
+        .mainWrapper {
+            margin-top: 3.75em;
+            margin-left: 1.25em;
+            margin-right: 1.25em;
+            margin-bottom: 0.75em;
+        }
+        .productImageWrapper {
+            width: 20.5em;
+            img {
+            width: 20.5em;
+            height: 13.1875em;
+            border-radius: 12px;
+            }
+        }
+        .ProductDesc {
+            margin-top: 0.75em;
+            width: 20.5em;
+            height: 3.375em;
+            span {
+                font-size: 14px;
+                line-height: 16px;
+            }
+            div {
+                gap: 0.25em;
+                img {
+                    width: 2em;
+                    height: 2em;
+                }
+            }
+        }
+        .fullDescription {
+            width: 20.5em;
+            height: 10.875em;
+            margin-left: 7.5em;
+        }
+    }
 }
