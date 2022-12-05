@@ -1,167 +1,190 @@
 .services {
-    .container {
+  .container {
+    @media (max-width: 568px) {
+      padding-top: 72px;
+    }
+    padding-top: 10.25em;
+    h2 {
       @media (max-width: 568px) {
-        padding-top: 72px;
+        font-size: 20px;
+        margin-bottom: 28px;
       }
-      padding-top: 10.25em;
-      h2 {
-        @media (max-width: 568px) {
-          font-size: 20px;
-          margin-bottom: 28px;
-        }
-        font-family: "Roboto";
-        font-style: normal;
-        font-weight: 700;
-        font-size: 1.75em;
-        color: #fafafa;
-        margin-bottom: 1.7143em;
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.75em;
+      color: #fafafa;
+      margin-bottom: 1.7143em;
+    }
+    .row {
+      @media (max-width: 1467px) {
+        grid-template-columns: 1fr 1fr;
       }
-      .row {
-        @media (max-width: 1467px) {
-          grid-template-columns: 1fr 1fr;
-        }
-        @media (max-width: 992px) {
-          grid-template-columns: 1fr;
-        }
-        @media (max-width: 768px) {
-          gap: 4.313em;
-        }
-        @media (max-width: 568px) {
-          gap: 24px;
-       
-        }
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 6.313em;
-        .column:nth-of-type(1) {
-          position: relative;
-          .item {
+      @media (max-width: 992px) {
+        grid-template-columns: 1fr;
+      }
+      @media (max-width: 768px) {
+        gap: 4.313em;
+      }
+      @media (max-width: 568px) {
+        gap: 24px;
+      }
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 6.313em;
+      .column:nth-of-type(1) {
+        position: relative;
+        .item {
+          @media (max-width: 568px) {
+            background-image: url("../../../public/img/services/mobileCode.png");
+            padding: 8px 139px 16px 150px;
+            border-radius: 15px;
+            width: 384px;
+          }
+          @media (max-width: 413px) {
+            width: 280px;
+            padding: 8px 139px 16px 140px;
+          }
+          background-image: url("../../../public/img/services/FrameCode.png");
+          background-repeat: no-repeat;
+          padding: 1.25em 9.0625em 1em 9.375em;
+          border-radius: 1.5em;
+          p:nth-of-type(1) {
             @media (max-width: 568px) {
-              background-image: url("../../../public/img/services/mobileCode.png");
-              padding: 8px 139px 16px 150px;
-              border-radius: 15px;
-              width: 384px;
+              font-size: 18px;
+              margin-bottom: 4px;
             }
-            background-image: url("../../../public/img/services/FrameCode.png");
-            background-repeat: no-repeat;
-            padding: 20px 139px 16px 150px;
-            border-radius: 1.5em;
-            p:nth-of-type(1) {
-              @media (max-width: 568px) {
-                font-size: 18px;
-                margin-bottom: 4px;
-              }
-              font-style: normal;
-              font-weight: 600;
-              font-size: 1.5em;
-              color: #fafafa;
-              margin-bottom: 0.375em;
+
+            font-style: normal;
+            font-weight: 400;
+            font-size: 1.5em;
+            color: #fafafa;
+            margin-bottom: 0.375em;
+          }
+          p:nth-of-type(2) {
+            @media (max-width: 568px) {
+              margin-bottom: 63px;
+              font-size: 12px;
             }
-            p:nth-of-type(2) {
-              @media (max-width: 568px) {
-                margin-bottom: 63px;
-                font-size: 12px;
-              }
-              font-style: normal;
-              font-weight: 400;
-              font-size: 0.875em;
-              color: rgba(255, 255, 255, 0.55);
-              margin-bottom: 7.7143em;
+            @media (max-width: 413px) {
+              margin-bottom: 40px;
             }
-            button {
-              @media (max-width: 568px) {
-                font-size: 14px;
-                padding: 4px 24px;
-              }
+            font-style: normal;
+            font-weight: 400;
+            font-size: 0.875em;
+            color: rgba(255, 255, 255, 0.55);
+            margin-bottom: 7.7143em;
+          }
+          button {
+            @media (max-width: 568px) {
+              font-size: 14px;
+              padding: 4px 24px;
             }
           }
         }
-        .column:nth-of-type(2) {
-          position: relative;
-          .item {
+      }
+      .column:nth-of-type(2) {
+        position: relative;
+        .item {
+          @media (max-width: 568px) {
+            background-image: url("../../../public/img/services/mobileUnsplash.png");
+            padding: 8px 139px 16px 150px;
+            border-radius: 15px;
+            width: 384px;
+          }
+          @media (max-width: 413px) {
+            width: 280px;
+            padding: 8px 139px 16px 140px;
+          }
+          background-image: url("../../../public/img/services/Frame.png");
+          background-repeat: no-repeat;
+          padding: 1.25em 9.0625em 1em 9.375em;
+          border-radius: 1.5em;
+          p:nth-of-type(1) {
             @media (max-width: 568px) {
-              background-image: url("../../../public/img/services/mobileUnsplash.png");
-              padding: 8px 139px 16px 150px;
-              border-radius: 15px;
-              width: 384px;
+              font-size: 18px;
+              margin-bottom: 4px;
             }
-            background-image: url("../../../public/img/services/Frame.png");
-            background-repeat: no-repeat;
-            padding: 20px 145px 16px 150px;
-            border-radius: 1.5em;
-            p:nth-of-type(1) {
-              @media (max-width: 568px) {
-                font-size: 18px;
-                margin-bottom: 4px;
-              }
-              font-style: normal;
-              font-weight: 600;
-              font-size: 1.5em;
-              color: #fafafa;
-              margin-bottom: 0.375em;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1.5em;
+            color: #fafafa;
+            margin-bottom: 0.375em;
+          }
+          p:nth-of-type(2) {
+            @media (max-width: 568px) {
+              margin-bottom: 63px;
+              font-size: 12px;
             }
-            p:nth-of-type(2) {
-              @media (max-width: 568px) {
-                margin-bottom: 63px;
-                font-size: 12px;
-              }
-              font-style: normal;
-              font-weight: 400;
-              font-size: 0.875em;
-              color: rgba(255, 255, 255, 0.55);
-              margin-bottom: 7.7143em;
+            @media (max-width: 413px) {
+              margin-bottom: 40px;
             }
-            button {
-              @media (max-width: 568px) {
-                font-size: 14px;
-                padding: 4px 24px;
-              }
+            font-style: normal;
+            font-weight: 400;
+            font-size: 0.875em;
+            color: rgba(255, 255, 255, 0.55);
+            margin-bottom: 7.7143em;
+          }
+          button {
+            @media (max-width: 568px) {
+              font-size: 14px;
+              padding: 4px 24px;
             }
           }
         }
-        .column:nth-of-type(3) {
-          position: relative;
-          .item {
+      }
+      .column:nth-of-type(3) {
+        position: relative;
+        .item {
+          @media (max-width: 568px) {
+            background-image: url("../../../public/img/services/mobileHead.png");
+            padding: 8px 139px 16px 150px;
+            border-radius: 15px;
+            width: 384px;
+          }
+          @media (max-width: 413px) {
+            width: 280px;
+            padding: 8px 139px 16px 140px;
+          }
+          background-image: url("../../../public/img/services/FrameHead.png");
+          background-repeat: no-repeat;
+          padding: 1.25em 9.0625em 1em 9.375em;
+          border-radius: 1.5em;
+          p:nth-of-type(1) {
             @media (max-width: 568px) {
-              background-image: url("../../../public/img/services/mobileHead.png");
-              padding: 8px 139px 16px 150px;
-              border-radius: 15px;
-              width: 384px;
+              font-size: 18px;
+              margin-bottom: 4px;
+              
             }
-            background-image: url("../../../public/img/services/FrameHead.png");
-            background-repeat: no-repeat;
-            padding: 20px 145px 16px 150px;
-            border-radius: 1.5em;
-            p:nth-of-type(1) {
-              @media (max-width: 568px) {
-                font-size: 18px;
-                margin-bottom: 4px;
-              }
-              font-style: normal;
-              font-weight: 600;
-              font-size: 1.5em;
-              color: #fafafa;
-              margin-bottom: 0.375em;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1.5em;
+            color: #fafafa;
+            margin-bottom: 0.375em;
+          }
+          p:nth-of-type(2) {
+            @media (max-width: 568px) {
+              margin-bottom: 63px;
+              font-size: 12px;
             }
-            p:nth-of-type(2) {
-              @media (max-width: 568px) {
-                margin-bottom: 63px;
-                font-size: 12px;
-              }
-              font-style: normal;
-              font-weight: 400;
-              font-size: 0.875em;
-              color: rgba(255, 255, 255, 0.55);
-              margin-bottom: 7.7143em;
+            @media (max-width: 413px) {
+              margin-bottom: 40px;
+              
             }
-            button {
-              @media (max-width: 568px) {
-                font-size: 14px;
-                padding: 4px 24px;
-              }
+            font-style: normal;
+            font-weight: 400;
+            font-size: 0.875em;
+            color: rgba(255, 255, 255, 0.55);
+            margin-bottom: 7.7143em;
+          }
+          button {
+            @media (max-width: 568px) {
+              font-size: 14px;
+              padding: 4px 24px;
             }
           }
         }
       }
     }
   }
+}
