@@ -104,7 +104,8 @@
   border: 0.0625em solid #fafafa;
   border-radius: 0.5em;
   background: none;
-  padding: 1.1875em 9.875em 1.125em 1em;
+  width: 325px;
+  padding: 1.1875em 1em 1.125em 1em;
   margin-top: 0.125em;
 
   font-family: "Roboto";
@@ -166,7 +167,7 @@ input[type="checkbox"] {
   justify-content: center;
   align-items: center;
   gap: 0.25em;
-  padding: 1.05em 15.25em;
+  padding: 1.05em 15.32em;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     linear-gradient(96.91deg, #4705da 0%, #b10eec 51.04%, #f614f9 100%);
   border-radius: 0.5em;
@@ -323,6 +324,11 @@ input[type="checkbox"] {
   .modalContent {
     width: 25.875em;
     height: 60.875em;
+  }
+
+  .closeBtn {
+    left: 23.9em;
+    top: 0.7em;
   }
 
   .modalHeader {

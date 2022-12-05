@@ -10,14 +10,24 @@ import AuthOrder from "./components/Forms/AuthOrder/authOrder";
 import Product from "./components/Forms/Product/product";
 
 function App() {
+
+  let window = document.getElementById('html-1');
+
   const [showAuth, setShowAuth] = useState(false);
   const [showAuthorization, setShowAuthorization] = useState(false);
   const [showOrders, setShowOrders] = useState(false);
   const [showAuthOrders, setShowAuthOrders] = useState(false);
   const [showProduct, setShowProduct] = useState(false);
 
-  const [orderTitle, setOrderTitle] = useState("");
   const [productImg, setProductImg] = useState();
+  const [productTitle, setProductTitle] = useState();
+  const [productIcon, setProductIcon] = useState([]);
+
+  const [orderType, setOrderType] = useState('');
+
+  if (showAuth || showAuthorization || showOrders || showAuthOrders || showProduct) {
+    window.style = 'overflow-y: hidden';
+  } else window.style = 'scroll-behavior: smooth;';
 
   return (
     <div className="App">
@@ -29,14 +39,18 @@ function App() {
       <Main
         setShowAuthOrders={setShowAuthOrders}
         setShowProduct={setShowProduct}
-        setOrderTitle={setOrderTitle}
+        setOrderType={setOrderType}
         setProductImg={setProductImg}
+        setProductTitle={setProductTitle}
+        setProductIcon={setProductIcon}
       />
-     
+
       <Product
         onClose={() => setShowProduct(false)}
         showProduct={showProduct}
         productImg={productImg}
+        productTitle={productTitle}
+        productIcon={productIcon}
       />
       <Auth
         onClose={() => setShowAuth(false)}
@@ -54,8 +68,9 @@ function App() {
       <AuthOrder
         onClose={() => setShowAuthOrders(false)}
         setShowAuthOrders={setShowAuthOrders}
+        setOrderType={setOrderType}
         showAuthOrders={showAuthOrders}
-        orderTitle={orderTitle}
+        orderType={orderType}
       />
        <Footer setShowOrders={setShowOrders} setShowAuth={setShowAuth} />
     </div>

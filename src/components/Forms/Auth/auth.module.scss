@@ -109,7 +109,8 @@
   border: 0.0625em solid #fafafa;
   border-radius: 0.5em;
   background: none;
-  padding: 1.1875em 9.875em 1.125em 1em;
+  width: 325px;
+  padding: 1.1875em 1em 1.125em 1em;
   margin-top: 0.125em;
 
   font-family: "Roboto";
@@ -326,6 +327,11 @@ input[type="checkbox"] {
   .modalContent {
     width: 25.875em;
     height: 47.375em;
+  }
+
+  .closeBtn {
+    left: 23.9em;
+    top: 0.7em;
   }
 
   .modalHeader {

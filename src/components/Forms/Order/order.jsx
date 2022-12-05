@@ -18,7 +18,7 @@ const Order = (props) => {
           description: description,
         },
       };
-    
+
 
     if (!props.showOrders) {
         return null
@@ -35,6 +35,7 @@ const Order = (props) => {
     };
 
     const sendOrder = () => {
+      if (description !== '' && telegram !== '' && name !== '') {
       fetch(url, reqOptions, orderData)
         .then((res) => res.json())
         .then(() => {
@@ -43,8 +44,8 @@ const Order = (props) => {
             setDescription('')
             props.setShowOrders(false)
         })
-        .then(() => props.onClose)
         .catch((err) => console.log("Error: " + err));
+      } else return alert('Заполните все поля')
     };
 
     return (
@@ -109,7 +110,7 @@ const Order = (props) => {
           <button onClick={sendOrder} className={style.enterBtn}>Оставить заявку</button>
         </div>
       </main>
-    );   
+    );
 }
 
 export default Order;

@@ -16,8 +16,8 @@ export const Services = (props) => {
                 <p>Описание услуги</p>
                 <ButtonPink
                   setShowAuthOrders={props.setShowAuthOrders}
-                  setOrderTitle={props.setOrderTitle}
-                  orderTitle={"IT разработка"}
+                  setOrderType={props.setOrderType}
+                  orderType={'IT'}
                 >
                   Заказать
                 </ButtonPink>
@@ -29,8 +29,8 @@ export const Services = (props) => {
                 <p>Описание услуги</p>
                 <ButtonPink
                   setShowAuthOrders={props.setShowAuthOrders}
-                  setOrderTitle={props.setOrderTitle}
-                  orderTitle={"Маркетинг"}
+                  setOrderType={props.setOrderType}
+                  orderType={'M'}
                 >
                   Заказать
                 </ButtonPink>
@@ -38,12 +38,12 @@ export const Services = (props) => {
             </div>
             <div className={style.column}>
               <div className={style.item}>
-                <p>Marketing</p>
+                <p>Crypto</p>
                 <p>Описание услуги</p>
                 <ButtonPink
                   setShowAuthOrders={props.setShowAuthOrders}
-                  setOrderTitle={props.setOrderTitle}
-                  orderTitle={"Крипто"}
+                  setOrderType={props.setOrderType}
+                  orderType={'C'}
                 >
                   Заказать
                 </ButtonPink>

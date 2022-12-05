@@ -4,8 +4,7 @@ import style from "./authOrder.module.scss";
 import { Icon } from "@iconify/react";
 
 const AuthOrder = (props) => {
-
-  const [description, setDescription] = useState('')
+  const [description, setDescription] = useState('');
 
   const orderData = {
     orders: {
@@ -31,13 +30,14 @@ const AuthOrder = (props) => {
   };
 
   const sendOrder = () => {
-    fetch(url, reqOptions, orderData)
-      .then((res) => res.json())
+    if (description !== '') {
+      fetch(url, reqOptions, orderData)
       .then(() => {
         setDescription('')
         props.setShowAuthOrders(false)
       })
       .catch((err) => console.log("Error: " + err));
+    } else return alert('Заполните описание')
   };
 
   return (
@@ -56,8 +56,24 @@ const AuthOrder = (props) => {
           <h2 className={style.modalTitle}>Заказать услугу</h2>
         </header>
         <section className={style.orderLogoWrapper}>
-          <h2>{props.orderTitle}</h2>
-          <img alt="checkbox" src="img/forms/IT.svg" />
+          <div onClick={() => {
+              props.setOrderType('IT')
+            }} className={props.orderType === 'IT' ? style.active : null}>
+            <h2 style={{display: props.orderType === 'IT' ? 'contents' : 'none'}}>IT разработка</h2>
+            <img alt="IT logo" src="img/forms/IT.svg" />
+          </div>
+          <div onClick={() => {
+              props.setOrderType('M')
+            }} className={props.orderType === 'M' ? style.active : null}>
+            <h2 style={{display: props.orderType === 'M' ? 'contents' : 'none'}}>Маркетинг</h2>
+            <img alt="M logo" src="img/forms/M.svg" />
+          </div>
+          <div onClick={() => {
+              props.setOrderType('C')
+            }} className={props.orderType === 'C' ? style.active : null}>
+            <h2 style={{display: props.orderType === 'C' ? 'contents' : 'none'}}>Крипто</h2>
+            <img alt="C logo" src="img/forms/C.svg" />
+          </div>
         </section>
         <section className={style.modalInputsWrapper}>
           <div className={style.modalInputs}>
@@ -75,7 +91,7 @@ const AuthOrder = (props) => {
               <span>Описание</span>
               <textarea
                 onChange={(e) => {
-                setDescription(e.target.value);
+                  setDescription(e.target.value);
                 }}
                 value={description}
                 placeholder="Кратко опишите ваш проект"

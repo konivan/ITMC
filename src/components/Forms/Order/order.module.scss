@@ -61,12 +61,11 @@
   gap: 1em;
   width: 21.25em;
   height: 6em;
-  border-radius: 12px;
   background: #0b0e11;
-  border-left: 1px solid #4705da;
-  border-top: 1px solid #4705da;
-  border-right: 1px solid #f614f9;
-  border-bottom: 1px solid #f614f9;
+  background-image: radial-gradient(circle at 100% 100%, transparent 11px, #4705da 11px, #4705da 12px, transparent 12px), linear-gradient(to right, #4705da, #f614f9), radial-gradient(circle at 0% 100%, transparent 11px, #f614f9 11px, #f614f9 12px, transparent 12px), linear-gradient(to bottom, #f614f9, #f614f9), radial-gradient(circle at 0% 0%, transparent 11px, #f614f9 11px, #f614f9 12px, transparent 12px), linear-gradient(to left, #f614f9, #4705da), radial-gradient(circle at 100% 0%, transparent 11px, #4705da 11px, #4705da 12px, transparent 12px), linear-gradient(to top, #4705da, #4705da);
+  background-size: 12px 12px, calc(100% - 24px) 1px, 12px 12px, 1px calc(100% - 24px);
+  background-position: top left,top center,top right,center right, bottom right,bottom center,bottom left,center left;
+  background-repeat: no-repeat;
   h2 {
     font-family: "Roboto";
     font-style: normal;
@@ -176,7 +175,8 @@
   border: 1px solid #fafafa;
   border-radius: 8px;
   background: none;
-  padding: 1.1875em 9.875em 1.125em 1em;
+  width: 325px;
+  padding: 1.1875em 1em 1.125em 1em;
   margin-top: 0.125em;
 
   font-family: "Roboto";
@@ -227,6 +227,12 @@
     height: 43.125em;
   }
 
+
+  .closeBtn {
+    left: 23.7em;
+    top: 0.8em;
+  }
+
   .modalHeader {
     padding: 0em;
     gap: 1em;
@@ -263,7 +269,7 @@
 
   .enterBtn {
     position: relative;
-    bottom: 105px;
+    bottom: 101px;
     width: 338px;
   }
 }
