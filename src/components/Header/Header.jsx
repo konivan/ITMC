@@ -5,8 +5,11 @@ import style from "./Header.module.scss";
 import { Button } from "../UI/Button/Button";
 import { MyButton } from "../UI/MyButton/MyButton";
 import { List } from "./List";
+import { Menu } from "./Menu/Menu";
+import { useState } from "react";
 
 export const Header = (props) => {
+  const [activeBurger, setActiveBurger] = useState(false);
   return (
     <div className={style.header}>
       <div className={style.wrapper}>
@@ -17,7 +20,12 @@ export const Header = (props) => {
             </a>
             <div className={style.item}>
             <img onClick={() => props.setShowAuth(true)} className={style.lk} src="img/header/lk.svg" alt="lk" />
-            <div className={style.burger}></div>
+            <div className={activeBurger === true ? style.burgerActive : style.burger} onClick={() => setActiveBurger(!activeBurger)}>
+              <span></span>
+              <div onClick={(e) => e.stopPropagation()}>
+                <Menu setShowOrders={props.setShowOrders} activeBurger={activeBurger}/>
+              </div>
+            </div>
             </div>
             </div>
           <List />
