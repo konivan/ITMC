@@ -49,28 +49,30 @@
 }
 
 .orderLogoWrapper {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0em;
-        gap: 2.6875em;
-        width: 41.875em;
-        height: 6em;
-        position: relative;
-        bottom: 32.1875em;
-        left: 2.8em;
-        h2 {
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 900;
-            font-size: 1.5em;
-            line-height: 1.8125em;
-            color: #F614F9;
-        }
-        div {
-            cursor: pointer;
-        }
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0em;
+    gap: 2.6875em;
+    width: 41.875em;
+    height: 6em;
+    position: relative;
+    bottom: 32.1875em;
+    left: 2.8em;
+
+    h2 {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 1.5em;
+        line-height: 1.8125em;
+        color: #F614F9;
+    }
+
+    div {
+        cursor: pointer;
+    }
 }
 
 .active {
@@ -83,12 +85,11 @@
     padding-left: 2.875em;
     width: 21.25em;
     height: 6em;
-    border-radius: 12px;
     background: #0B0E11;
-    border-left: 1px solid #4705DA;
-    border-top: 1px solid #4705DA;
-    border-right: 1px solid #F614F9;
-    border-bottom: 1px solid #F614F9;
+    background-image: radial-gradient(circle at 100% 100%, transparent 11px, #4705da 11px, #4705da 12px, transparent 12px), linear-gradient(to right, #4705da, #f614f9), radial-gradient(circle at 0% 100%, transparent 11px, #f614f9 11px, #f614f9 12px, transparent 12px), linear-gradient(to bottom, #f614f9, #f614f9), radial-gradient(circle at 0% 0%, transparent 11px, #f614f9 11px, #f614f9 12px, transparent 12px), linear-gradient(to left, #f614f9, #4705da), radial-gradient(circle at 100% 0%, transparent 11px, #4705da 11px, #4705da 12px, transparent 12px), linear-gradient(to top, #4705da, #4705da);
+    background-size: 12px 12px, calc(100% - 24px) 1px, 12px 12px, 1px calc(100% - 24px);
+    background-position: top left, top center, top right, center right, bottom right, bottom center, bottom left, center left;
+    background-repeat: no-repeat;
 }
 
 .modalInputsWrapper {
@@ -112,6 +113,7 @@
     width: 41.875em;
     height: 5.6875em;
     margin-top: 1.875em;
+
     div {
         display: flex;
         flex-direction: column;
@@ -119,6 +121,7 @@
         width: 325px;
         height: 91px;
     }
+
     span {
         font-family: 'Roboto';
         font-style: normal;
@@ -129,6 +132,7 @@
         color: #FAFAFA;
         margin-bottom: 28px;
     }
+
     p {
         font-family: 'Roboto';
         font-style: normal;
@@ -147,6 +151,7 @@
     gap: 0.5em;
     width: 41.875em;
     height: 8.25em;
+
     div {
         display: flex;
         flex-direction: column;
@@ -156,6 +161,7 @@
         width: 41.875em;
         height: 6.75em;
         border-radius: 8px;
+
         span {
             font-family: 'Roboto';
             font-style: normal;
@@ -166,6 +172,7 @@
             color: #FAFAFA;
             margin-top: 0.75em;
         }
+
         textarea {
             width: 41.875em;
             min-height: 6.75em;
@@ -213,12 +220,10 @@
 }
 
 .enterBtn:hover {
-    background: linear-gradient(
-      96.91deg,
-      #4705da 0%,
-      #b10eec 51.04%,
-      #f614f9 100%
-    );
+    background: linear-gradient(96.91deg,
+            #4705da 0%,
+            #b10eec 51.04%,
+            #f614f9 100%);
 }
 
 
@@ -248,6 +253,7 @@
         position: relative;
         bottom: 31.5em;
         left: -8em;
+
         div {
             border: 1px solid #828485;
             padding-top: 2.0625em;
@@ -264,38 +270,45 @@
             border-radius: 12px;
             background: #0B0E11;
         }
+
         h2 {
             color: #828485;
             display: contents !important;
         }
-        img {
-           filter: grayscale(1);
-        }
-}
 
-.active {
-    border-left: 1px solid #4705DA !important;
-    border-top: 1px solid #4705DA !important;
-    border-right: 1px solid #F614F9 !important;
-    border-bottom: 1px solid #F614F9 !important;
-    h2 {
-        color: #F614F9;
+        img {
+            filter: grayscale(1);
+        }
     }
-    img {
-        filter: grayscale(0);
+
+    .active {
+        border: none !important;
+        background-image: radial-gradient(circle at 100% 100%, transparent 11px, #4705da 11px, #4705da 12px, transparent 12px), linear-gradient(to right, #4705da, #f614f9), radial-gradient(circle at 0% 100%, transparent 11px, #f614f9 11px, #f614f9 12px, transparent 12px), linear-gradient(to bottom, #f614f9, #f614f9), radial-gradient(circle at 0% 0%, transparent 11px, #f614f9 11px, #f614f9 12px, transparent 12px), linear-gradient(to left, #f614f9, #4705da), radial-gradient(circle at 100% 0%, transparent 11px, #4705da 11px, #4705da 12px, transparent 12px), linear-gradient(to top, #4705da, #4705da) !important;
+        background-size: 12px 12px, calc(100% - 24px) 1px, 12px 12px, 1px calc(100% - 24px) !important;
+        background-position: top left, top center, top right, center right, bottom right, bottom center, bottom left, center left !important;
+        background-repeat: no-repeat !important;
+
+        h2 {
+            color: #F614F9;
+        }
+
+        img {
+            filter: grayscale(0);
+        }
     }
-}
 
     .modalInputsWrapper {
         top: 30.2em;
         gap: 1em;
         height: 39em;
     }
+
     .modalInputs {
         width: 23.4375em;
         margin-right: 18.75em;
         position: relative;
         right: 1.5625em;
+
         div {
             width: 11.0625em;
             height: 5.5em;
@@ -308,6 +321,7 @@
         position: relative;
         right: 1.875em;
         bottom: 1.875em;
+
         textarea {
             max-width: 23.4375em;
         }
