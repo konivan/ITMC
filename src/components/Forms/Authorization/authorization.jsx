@@ -19,7 +19,7 @@ const Authorization = (props) => {
     return null;
   }
 
-  const url = "http://localhost:8000/account/auth/users/";
+  const url = `${props.URL}auth/users/`;
   const reqOptions = {
     method: "POST",
     headers: {

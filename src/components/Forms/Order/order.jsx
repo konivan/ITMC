@@ -24,7 +24,7 @@ const Order = (props) => {
         return null
     }
 
-    const url = "http://localhost:8000/account/api/orders/";
+    const url = `${props.URL}api/orders/`;
     const reqOptions = {
       method: "POST",
       headers: {
