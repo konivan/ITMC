@@ -406,7 +406,7 @@
 
         .modalInputsWrapper {
             top: 30.2em;
-            gap: 1em;
+            gap: 0em;
             height: 39em;
         }
 
@@ -414,11 +414,11 @@
             width: 17em;
             margin-right: 0em;
             position: relative;
-            right: 26.4em;
-
+            right: 26.65em;
+            bottom: 1em;
             div {
                 width: 8em;
-                height: 5.5em;
+                height: 5em;
             }
         }
 
