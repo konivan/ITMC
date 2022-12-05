@@ -1,7 +1,7 @@
 .btn {
   font-family: "Roboto";
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 1em;
   color: #fafafa;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
@@ -14,8 +14,8 @@
 .btn:hover {
   background: linear-gradient(
     96.91deg,
-    #4705da 0%,
+    #f614f9 0%,
     #b10eec 51.04%,
-    #f614f9 100%
+    #4705da 100%
   );
 }

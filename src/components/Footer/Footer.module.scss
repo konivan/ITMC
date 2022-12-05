@@ -57,6 +57,9 @@
               }
             }
             button {
+              @media (max-width: 413px) {
+                padding: 0.75em 6.6em;
+              }
               padding: 0.75em 9.5em;
               margin-bottom: 2em;
             }
@@ -86,7 +89,7 @@
           }
           p {
             font-style: normal;
-            font-weight: 700;
+            font-weight: 500;
             font-size: 1em;
           }
         }
@@ -124,7 +127,7 @@
             li {
               a {
                 font-style: normal;
-                font-weight: 700;
+                font-weight: 500;
                 font-size: 1em;
               }
               a:hover {
@@ -147,6 +150,9 @@
               font-size: 1em;
             }
             span:nth-of-type(2) {
+              font-style: normal;
+              font-weight: 500;
+              font-size: 1em;
               color: #b10eec;
             }
           }

@@ -1,7 +1,7 @@
 .partnery {
   .container {
     @media (max-width: 568px) {
-      // padding: 96px 0px;
+      padding: 96px 0px;
     }
     padding: 10.25em 0em 10.25em 0em;
     h2 {
@@ -9,6 +9,9 @@
         margin-bottom: 28px;
         font-size: 20px;
       }
+      font-style: normal;
+      font-weight: 600;
+      font-size: 1.75em;
       margin-bottom: 3.649375em;
     }
     .column {
@@ -32,6 +35,9 @@
           width: 345px;
           height: 41.5px;
         }
+        @media (max-width: 413px) {
+          width: 100%;
+        }
         width: 43.75em;
         height: 5.263em;
       }
@@ -42,6 +48,9 @@
         @media (max-width: 568px) {
           width: 345px;
           height: 155.32px;
+        }
+        @media (max-width: 413px) {
+          width: 100%;
         }
         width: 30.875em;
         height: 8.3125em;
@@ -56,6 +65,9 @@
         @media (max-width: 850px) {
           margin-bottom: 44px;
         }
+        @media (max-width: 413px) {
+          width: 100%;
+        }
         width: 6.8125em;
         height: 6.375em;
       }
@@ -63,14 +75,19 @@
         @media (max-width: 850px) {
           margin-bottom: 44px;
         }
+        @media (max-width: 413px) {
+          width: 100%;
+        }
         width: 16.8125em;
         height: 4.6875em;
       }
       img:nth-of-type(3) {
+        @media (max-width: 413px) {
+          width: 100%;
+        }
         width: 21.5625em;
         height: 9.7075em;
       }
     }
   }
 }
-
