@@ -12,6 +12,7 @@ import Product from "./components/Forms/Product/product";
 function App() {
 
   let window = document.getElementById('html-1');
+  const URL = "http://localhost:8000/account/";
 
   const [showAuth, setShowAuth] = useState(false);
   const [showAuthorization, setShowAuthorization] = useState(false);
@@ -54,19 +55,22 @@ function App() {
       />
       <Auth
         onClose={() => setShowAuth(false)}
+        URL={URL}
         setShowAuth={setShowAuth}
         setShowAuthorization={setShowAuthorization}
         showAuth={showAuth}
       />
       <Authorization
         onClose={() => setShowAuthorization(false)}
+        URL={URL}
         showAuthorization={showAuthorization}
         setShowAuth={setShowAuth}
         setShowAuthorization={setShowAuthorization}
       />
-      <Order onClose={() => setShowOrders(false)} setShowOrders={setShowOrders} showOrders={showOrders} />
+      <Order onClose={() => setShowOrders(false)} URL={URL} setShowOrders={setShowOrders} showOrders={showOrders} />
       <AuthOrder
         onClose={() => setShowAuthOrders(false)}
+        URL={URL}
         setShowAuthOrders={setShowAuthOrders}
         setOrderType={setOrderType}
         showAuthOrders={showAuthOrders}

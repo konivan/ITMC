@@ -20,7 +20,7 @@ const Auth = (props) => {
         return null
     }
 
-    const url = "http://localhost:8000/account/token/login/";
+    const url = `${props.URL}token/login/`;
     const reqOptions = {
       method: "POST",
       headers: {
