@@ -20,7 +20,9 @@ function App() {
   const [showProduct, setShowProduct] = useState(false);
 
   const [productImg, setProductImg] = useState();
+  const [productTitle, setProductTitle] = useState();
   const [productIcon, setProductIcon] = useState([]);
+
   const [orderType, setOrderType] = useState('');
 
   if (showAuth || showAuthorization || showOrders || showAuthOrders || showProduct) {
@@ -39,6 +41,7 @@ function App() {
         setShowProduct={setShowProduct}
         setOrderType={setOrderType}
         setProductImg={setProductImg}
+        setProductTitle={setProductTitle}
         setProductIcon={setProductIcon}
       />
 
@@ -46,6 +49,7 @@ function App() {
         onClose={() => setShowProduct(false)}
         showProduct={showProduct}
         productImg={productImg}
+        productTitle={productTitle}
         productIcon={productIcon}
       />
       <Auth

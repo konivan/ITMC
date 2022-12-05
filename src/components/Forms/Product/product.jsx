@@ -26,7 +26,7 @@ const Product = (props) => {
             <img alt="product" src={props.productImg} />
           </section>
           <section className={style.ProductDesc}>
-            <span>Создание и продвижение криптопроекта MASD GAMES</span>
+            <span>{props.productTitle}</span>
             <div>
               {props.productIcon.map((item) => (
                 <img src={item} alt="Icon" />

@@ -67,7 +67,7 @@ export const Footer = (props) => {
               <Button setShowOrders={props.setShowOrders}>Заказать</Button>
             </div>
             <div className={style.column}>
-              <a href="/">
+              <a href="#header">
                 <img src="img/footer/icon.svg" alt="icon" />
               </a>
             </div>

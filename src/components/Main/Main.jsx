@@ -10,10 +10,10 @@ import { Partnery } from "../Partnery/Partnery";
 export const Main = (props) => {
   return (
     <main className={style.main}>
-      <div className={style.wrapper}>
+      <div className={style.wrapper} id="header">
         <Row />
         <Services setShowAuthOrders={props.setShowAuthOrders} setOrderType={props.setOrderType}/>
-        <Works setProductIcon={props.setProductIcon} setShowProduct={props.setShowProduct} setProductImg={props.setProductImg}/>
+        <Works setProductTitle={props.setProductTitle} setProductIcon={props.setProductIcon} setShowProduct={props.setShowProduct} setProductImg={props.setProductImg}/>
         <Partnery/>
       </div>
     </main>

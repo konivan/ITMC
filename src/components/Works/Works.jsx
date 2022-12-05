@@ -3,9 +3,10 @@ import React from "react";
 import style from "./Works.module.scss";
 
 export const Works = (props) => {
-  const openProduct = (img, icon) => {
+  const openProduct = (img, title, icon) => {
     props.setProductImg(img);
-    props.setProductIcon(icon)
+    props.setProductTitle(title);
+    props.setProductIcon(icon);
     props.setShowProduct(true);
   }
   return (
@@ -18,7 +19,7 @@ export const Works = (props) => {
               src="./img/work/Home.png"
               alt="Home"
               onClick={() =>
-                openProduct("./img/work/Home.png", ["./img/work/IT.svg"])
+                openProduct("./img/work/Home.png", "UI Design" ,["./img/work/IT.svg"])
               }
             />
             <h4>UI Design</h4>
@@ -29,7 +30,7 @@ export const Works = (props) => {
               src="./img/work/masdGames.png"
               alt=""
               onClick={() =>
-                openProduct("./img/work/masdGames.png", ["./img/work/IT.svg", "./img/work/M.svg", "./img/work/C.svg"])
+                openProduct("./img/work/masdGames.png", "Создание и продвижение криптопроекта MASD GAMES" ,["./img/work/IT.svg", "./img/work/M.svg", "./img/work/C.svg"])
               }
             />
             <h4>Создание и продвижение криптопроекта MASD GAMES</h4>
@@ -41,7 +42,7 @@ export const Works = (props) => {
             <img
               src="./img/work/solana.png"
               alt="solana"
-              onClick={() => openProduct("./img/work/solana.png", ["./img/work/C.svg"])}
+              onClick={() => openProduct("./img/work/solana.png", "Создание криптовалюты на основа SOLANA" ,["./img/work/C.svg"])}
             />
             <h4>Создание криптовалюты на основа SOLANA</h4>
             <img src="./img/work/C.svg" alt="" />
@@ -50,7 +51,7 @@ export const Works = (props) => {
             <img
               src="./img/work/thrOne.png"
               alt="thrOne"
-              onClick={() => openProduct("./img/work/thrOne.png", ["./img/work/IT.svg", "./img/work/C.svg"])}
+              onClick={() => openProduct("./img/work/thrOne.png", "WEB-разработка проекта: THR ONE" , ["./img/work/IT.svg", "./img/work/C.svg"])}
             />
             <h4>WEB-разработка проекта: THR ONE</h4>
             <img src="./img/work/IT.svg" alt="IT" />
