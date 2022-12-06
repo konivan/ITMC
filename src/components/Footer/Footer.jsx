@@ -22,14 +22,18 @@ export const Footer = (props) => {
               </div>
               <div className={style.column}>
                 <img src="img/footer/logo.svg" alt="logo" />
-                <p>Юридический адрес</p>
+                <p>Ул. Покрышкина 8к2</p>
+                <p>+7 925 104 5382</p>
+                <p>+7 925 540 3956</p>
               </div>
             </div>
           </div>
           <div className={style.row}>
             <div className={style.column}>
               <img src="img/footer/logo.svg" alt="logo" />
-              <p>Юридический адрес</p>
+              <p>Ул. Покрышкина 8к2</p>
+                <p>+7 925 104 5382</p>
+                <p>+7 925 540 3956</p>
             </div>
             <div className={style.column}>
               <div className={style.item}>
