@@ -33,7 +33,7 @@ export const Header = (props) => {
             <div className={style.item}>
               <Button setShowOrders={props.setShowOrders}>Заказать</Button>
             </div>
-            <div className={style.item}>
+            <div style={{display: 'none'}} className={style.item}>
               <MyButton setShowAuth={props.setShowAuth}>Войти</MyButton>
             </div>
           </div>

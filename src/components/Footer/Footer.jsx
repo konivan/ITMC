@@ -40,9 +40,10 @@ export const Footer = (props) => {
                 <img
                   src="img/footer/lk.svg"
                   alt="lk"
-                  onClick={() => props.setShowAuth(true)}
+                  // onClick={() => props.setShowAuth(true)}
+                  // onClick={() => props.setShowAuth(true)}
                 />
-                <span onClick={() => props.setShowAuth(true)}>
+                <span>
                   Личный кабинет
                 </span>
               </div>
