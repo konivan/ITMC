@@ -72,7 +72,6 @@
             margin-bottom: 5.92px;
             cursor: pointer;
           }
-
           &::before {
             content: "";
             display: block;
@@ -106,14 +105,14 @@
             cursor: pointer;
             margin-top: -3px;
             transform: rotate(-45deg);
-            transition: all .2s ease-in-out;
+            transition: all .3s ease-in-out;
           }
 
           &::before {
             content: "";
             display: block;
             background: #FAFAFA;
-            transition: all .2s ease-in-out;
+            transition: all .3s ease-in-out;
             width: 24px;
             height: 3.38px;
             margin-top: 4px;
