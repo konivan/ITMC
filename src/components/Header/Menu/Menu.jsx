@@ -20,7 +20,7 @@ export const Menu = (props) => {
             </li>
           ))}
       </ul>
-      <Button setShowOrders={props.setShowOrders}>Заказать</Button>
+      <Button setShowAuthOrders={props.setShowAuthOrders}>Заказать</Button>
     </div>
   );
 };
