@@ -3,8 +3,8 @@ import style from './ButtonPink.module.scss'
 
 export  const ButtonPink = (props) => {
     const callForm = () => {
-        props.setOrderType(props.orderType)
-        props.setShowAuthOrders(true)
+        props.setOrder(props.order)
+        props.setShowOrders(true)
     }
     return (
         <div>

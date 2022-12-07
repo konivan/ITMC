@@ -18,7 +18,7 @@ export const Footer = (props) => {
                   <span>Закажите у нас проект</span>
                   <span>уже сегодня!</span>
                 </div>
-                <Button setShowOrders={props.setShowOrders}>Заказать</Button>
+                <Button setShowAuthOrders={props.setShowAuthOrders}>Заказать</Button>
               </div>
               <div className={style.column}>
                 <img src="img/footer/logo.svg" alt="logo" />
@@ -69,7 +69,7 @@ export const Footer = (props) => {
                 <span>Закажите у нас проект</span>
                 <span>уже сегодня!</span>
               </div>
-              <Button setShowOrders={props.setShowOrders}>Заказать</Button>
+              <Button setShowAuthOrders={props.setShowAuthOrders}>Заказать</Button>
             </div>
             <div className={style.column}>
               <a href="#header">
