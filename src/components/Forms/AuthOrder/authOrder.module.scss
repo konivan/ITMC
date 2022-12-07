@@ -334,22 +334,22 @@
         width: 374px;
     }
 
-    @media (max-width: 413px) {
+    @media (max-width: 568px) {
         .modalContent {
             width: 20em;
-            height: 52.5625em;
+            height: 43em;
         }
 
         .closeBtn {
             left: 17.9em;
-            top: 0.8em;
+            top: 0.9em;
         }
 
         .modalHeader {
             padding: 0em;
             gap: 1em;
             position: relative;
-            top: 1.6em;
+            top: 0em;
             right: 13.6em;
             width: 20.3125em;
         }
@@ -358,8 +358,9 @@
             flex-direction: column;
             width: 41.875em;
             position: relative;
-            bottom: 31.5em;
+            bottom: 33.5em;
             left: -10.9em;
+            gap: 11.5px;
 
             div {
                 border: 1px solid #828485;
@@ -373,7 +374,7 @@
                 padding-right: 1em;
                 padding-left: 2.875em;
                 width: 17.25em;
-                height: 6em;
+                height: 5em;
                 border-radius: 12px;
                 background: #0B0E11;
             }
@@ -381,6 +382,7 @@
             h2 {
                 color: #828485;
                 display: contents !important;
+                font-size: 20px;
             }
 
             img {
@@ -405,7 +407,7 @@
         }
 
         .modalInputsWrapper {
-            top: 30.2em;
+            top: 26.2em;
             gap: 0em;
             height: 39em;
         }
@@ -415,7 +417,7 @@
             margin-right: 0em;
             position: relative;
             right: 26.65em;
-            bottom: 1em;
+            bottom: 5.5em;
             div {
                 width: 8em;
                 height: 5em;
@@ -427,7 +429,7 @@
             height: 6.75em;
             position: relative;
             right: 1.875em;
-            bottom: 1.7em;
+            bottom: 5.5em;
 
             textarea {
                 max-width: 18em;
@@ -436,9 +438,12 @@
 
         .enterBtn {
             position: relative;
-            top: 54px;
+            top: -84px;
+            font-size: 1em;
             right: 31px;
+            padding: 1.5em 0.25em;
             width: 290px;
+            height: 0px;
         }
     }
 }

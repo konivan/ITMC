@@ -238,6 +238,9 @@
         }
 
         .column:nth-of-type(5) {
+          a:hover {
+            content: url("../../../public/img/footer/arrow.svg");
+          }
           @media (max-width: 568px) {
             display: none;
           }
