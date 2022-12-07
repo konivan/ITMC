@@ -6,7 +6,7 @@ export const IMG = [
 ];
 
 export const TEXT = [
-  { text: "О нас", href: "/" },
-  { text: "Прайс", href: "/" },
-  { text: "Отзывы", href: "/" },
+  // { text: "О нас", href: "/" },
+  { text: "Услуги", href: "#services" },
+  { text: "Портфолио", href: "#works" },
 ];
