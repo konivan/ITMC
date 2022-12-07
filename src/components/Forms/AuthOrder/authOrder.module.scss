@@ -1,449 +1,562 @@
+@keyframes anim {
+  0% {
+    transform: scale(0.6);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .modal {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 999;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modalContent {
-    position: absolute;
-    width: 47.875em;
-    height: 38.625em;
-    box-sizing: border-box;
-    background: #0B0E11;
-    border: 1px solid #FAFAFA;
-    border-radius: 12px;
+  animation-name: anim;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  position: absolute;
+  width: 47.875em;
+  height: 38.625em;
+  box-sizing: border-box;
+  background: #0b0e11;
+  border: 1px solid #fafafa;
+  border-radius: 12px;
 }
 
 .modalHeader {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0em;
-    gap: 11.5625em;
-    margin: 26px 279px 554px 290px;
-    width: 11.875em;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0em;
+  gap: 11.5625em;
+  margin: 26px 279px 554px 290px;
+  width: 11.875em;
 }
 
 .modalTitle {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1.5em;
-    line-height: 30px;
-    text-align: center;
-    color: #FAFAFA;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5em;
+  line-height: 30px;
+  text-align: center;
+  color: #fafafa;
 }
 
 .closeBtn {
-    position: absolute;
-    left: 45.125em;
-    top: 1.5em;
-    cursor: pointer;
+  position: absolute;
+  left: 45.125em;
+  top: 1.5em;
+  cursor: pointer;
 }
 
 .orderLogoWrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0em;
-    gap: 2.6875em;
-    width: 41.875em;
-    height: 6em;
-    position: relative;
-    bottom: 32.1875em;
-    left: 2.8em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0em;
+  gap: 2.6875em;
+  width: 41.875em;
+  height: 6em;
+  position: relative;
+  bottom: 32.1875em;
+  left: 2.8em;
 
-    h2 {
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 900;
-        font-size: 1.5em;
-        line-height: 1.8125em;
-        color: #F614F9;
-    }
+  h2 {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1.5em;
+    line-height: 1.8125em;
+    color: #f614f9;
+  }
 
-    div {
-        cursor: pointer;
-    }
+  div {
+    cursor: pointer;
+  }
 }
 
 .active {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding-right: 1em;
-    padding-left: 2.875em;
-    width: 21.25em;
-    height: 6em;
-    background: #0B0E11;
-    background-image: radial-gradient(circle at 100% 100%, transparent 11px, #4705da 11px, #4705da 12px, transparent 12px), linear-gradient(to right, #4705da, #f614f9), radial-gradient(circle at 0% 100%, transparent 11px, #f614f9 11px, #f614f9 12px, transparent 12px), linear-gradient(to bottom, #f614f9, #f614f9), radial-gradient(circle at 0% 0%, transparent 11px, #f614f9 11px, #f614f9 12px, transparent 12px), linear-gradient(to left, #f614f9, #4705da), radial-gradient(circle at 100% 0%, transparent 11px, #4705da 11px, #4705da 12px, transparent 12px), linear-gradient(to top, #4705da, #4705da);
-    background-size: 12px 12px, calc(100% - 24px) 1px, 12px 12px, 1px calc(100% - 24px);
-    background-position: top left, top center, top right, center right, bottom right, bottom center, bottom left, center left;
-    background-repeat: no-repeat;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 1em;
+  padding-left: 2.875em;
+  width: 21.25em;
+  height: 6em;
+  background: #0b0e11;
+  background-image: radial-gradient(
+      circle at 100% 100%,
+      transparent 11px,
+      #4705da 11px,
+      #4705da 12px,
+      transparent 12px
+    ),
+    linear-gradient(to right, #4705da, #f614f9),
+    radial-gradient(
+      circle at 0% 100%,
+      transparent 11px,
+      #f614f9 11px,
+      #f614f9 12px,
+      transparent 12px
+    ),
+    linear-gradient(to bottom, #f614f9, #f614f9),
+    radial-gradient(
+      circle at 0% 0%,
+      transparent 11px,
+      #f614f9 11px,
+      #f614f9 12px,
+      transparent 12px
+    ),
+    linear-gradient(to left, #f614f9, #4705da),
+    radial-gradient(
+      circle at 100% 0%,
+      transparent 11px,
+      #4705da 11px,
+      #4705da 12px,
+      transparent 12px
+    ),
+    linear-gradient(to top, #4705da, #4705da);
+  background-size: 12px 12px, calc(100% - 24px) 1px, 12px 12px,
+    1px calc(100% - 24px);
+  background-position: top left, top center, top right, center right,
+    bottom right, bottom center, bottom left, center left;
+  background-repeat: no-repeat;
 }
 
 .modalInputsWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    padding: 0em;
-    gap: 1em;
-    position: absolute;
-    left: 2.8125em;
-    top: 12.2em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  padding: 0em;
+  gap: 1em;
+  position: absolute;
+  left: 2.8125em;
+  top: 12.2em;
 }
 
 .modalInputs {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0em;
-    gap: 1.25em;
-    width: 41.875em;
-    height: 5.6875em;
-    margin-top: 1.875em;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0em;
+  gap: 1.25em;
+  width: 41.875em;
+  height: 5.6875em;
+  margin-top: 1.875em;
 
-    div {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 325px;
-        height: 91px;
-    }
-
-    span {
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 1em;
-        line-height: 100%;
-        text-align: center;
-        color: #FAFAFA;
-        margin-bottom: 28px;
-    }
-
-    p {
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 1em;
-        line-height: 120%;
-        color: #5d5d5d;
-    }
-}
-
-.modalDescSection {
+  div {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0px;
-    gap: 0.5em;
+    width: 325px;
+    height: 91px;
+  }
+
+  span {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1em;
+    line-height: 100%;
+    text-align: center;
+    color: #fafafa;
+    margin-bottom: 28px;
+  }
+
+  p {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 120%;
+    color: #5d5d5d;
+  }
+}
+
+.modalDescSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 0.5em;
+  width: 41.875em;
+  height: 8.25em;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0em;
+    gap: 1em;
     width: 41.875em;
-    height: 8.25em;
+    height: 6.75em;
+    border-radius: 8px;
 
-    div {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0em;
-        gap: 1em;
-        width: 41.875em;
-        height: 6.75em;
-        border-radius: 8px;
-
-        span {
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 1em;
-            line-height: 100%;
-            text-align: center;
-            color: #FAFAFA;
-            margin-top: 0.75em;
-        }
-
-        textarea {
-            width: 41.875em;
-            min-height: 6.75em;
-            border: 1px solid #FAFAFA;
-            border-radius: 8px;
-            background: none;
-            padding: 1.1875em 1.875em 1.125em 1em;
-            margin-top: 0.125em;
-            resize: none;
-
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 1em;
-            line-height: 120%;
-            color: #FAFAFA;
-        }
+    span {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 1em;
+      line-height: 100%;
+      text-align: center;
+      color: #fafafa;
+      margin-top: 0.75em;
     }
+
+    textarea {
+      width: 41.875em;
+      min-height: 6.75em;
+      border: 1px solid #fafafa;
+      border-radius: 8px;
+      background: none;
+      padding: 1.1875em 1.875em 1.125em 1em;
+      margin-top: 0.125em;
+      resize: none;
+
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1em;
+      line-height: 120%;
+      color: #fafafa;
+    }
+  }
 }
 
 .enterBtn {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 1em 0.25em;
-    gap: 0.25em;
-    width: 670px;
-    height: 64px;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(96.91deg, #4705DA 0%, #B10EEC 51.04%, #F614F9 100%);
-    border-radius: 8px;
-    cursor: pointer;
-    border: 0;
-    position: relative;
-    bottom: 197px;
-    margin-left: 45px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 0.25em;
+  gap: 0.25em;
+  width: 670px;
+  height: 64px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    linear-gradient(96.91deg, #4705da 0%, #b10eec 51.04%, #f614f9 100%);
+  border-radius: 8px;
+  cursor: pointer;
+  border: 0;
+  position: relative;
+  bottom: 197px;
+  margin-left: 45px;
 
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1.25em;
-    line-height: 110%;
-    text-align: center;
-    color: #FAFAFA;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25em;
+  line-height: 110%;
+  text-align: center;
+  color: #fafafa;
 }
 
 .enterBtn:hover {
-    background: linear-gradient(96.91deg,
-            #4705da 0%,
-            #b10eec 51.04%,
-            #f614f9 100%);
+  background: linear-gradient(
+    96.91deg,
+    #4705da 0%,
+    #b10eec 51.04%,
+    #f614f9 100%
+  );
 }
 
-
 @media (max-width: 775px) {
+  .modalContent {
+    width: 25.875em;
+    height: 52.5625em;
+  }
+
+  .closeBtn {
+    left: 23.7em;
+    top: 0.8em;
+  }
+
+  .modalHeader {
+    padding: 0em;
+    gap: 1em;
+    position: relative;
+    top: 1.6em;
+    right: 11em;
+    width: 20.3125em;
+  }
+
+  .orderLogoWrapper {
+    flex-direction: column;
+    width: 41.875em;
+    position: relative;
+    bottom: 31.5em;
+    left: -8em;
+
+    div {
+      border: 1px solid #828485;
+      padding-top: 2.0625em;
+      padding-bottom: 2.125em;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding-right: 1em;
+      padding-left: 2.875em;
+      width: 21.25em;
+      height: 6em;
+      border-radius: 12px;
+      background: #0b0e11;
+    }
+
+    h2 {
+      color: #828485;
+      display: contents !important;
+    }
+
+    img {
+      filter: grayscale(1);
+    }
+  }
+
+  .active {
+    border: none !important;
+    background-image: radial-gradient(
+        circle at 100% 100%,
+        transparent 11px,
+        #4705da 11px,
+        #4705da 12px,
+        transparent 12px
+      ),
+      linear-gradient(to right, #4705da, #f614f9),
+      radial-gradient(
+        circle at 0% 100%,
+        transparent 11px,
+        #f614f9 11px,
+        #f614f9 12px,
+        transparent 12px
+      ),
+      linear-gradient(to bottom, #f614f9, #f614f9),
+      radial-gradient(
+        circle at 0% 0%,
+        transparent 11px,
+        #f614f9 11px,
+        #f614f9 12px,
+        transparent 12px
+      ),
+      linear-gradient(to left, #f614f9, #4705da),
+      radial-gradient(
+        circle at 100% 0%,
+        transparent 11px,
+        #4705da 11px,
+        #4705da 12px,
+        transparent 12px
+      ),
+      linear-gradient(to top, #4705da, #4705da) !important;
+    background-size: 12px 12px, calc(100% - 24px) 1px, 12px 12px,
+      1px calc(100% - 24px) !important;
+    background-position: top left, top center, top right, center right,
+      bottom right, bottom center, bottom left, center left !important;
+    background-repeat: no-repeat !important;
+
+    h2 {
+      color: #f614f9;
+    }
+
+    img {
+      filter: grayscale(0);
+    }
+  }
+
+  .modalInputsWrapper {
+    top: 30.2em;
+    gap: 1em;
+    height: 39em;
+  }
+
+  .modalInputs {
+    width: 23.4375em;
+    margin-right: 18.75em;
+    position: relative;
+    right: 1.5625em;
+
+    div {
+      width: 11.0625em;
+      height: 5.5em;
+    }
+  }
+
+  .modalDescWrapper {
+    width: 24.6875em;
+    height: 6.75em;
+    position: relative;
+    right: 1.875em;
+    bottom: 1.875em;
+
+    textarea {
+      max-width: 23.4375em;
+    }
+  }
+
+  .enterBtn {
+    position: relative;
+    top: 52px;
+    right: 24px;
+    width: 374px;
+  }
+
+  @media (max-width: 568px) {
     .modalContent {
-        width: 25.875em;
-        height: 52.5625em;
+      width: 20em;
+      height: 43em;
     }
 
     .closeBtn {
-        left: 23.7em;
-        top: 0.8em;
+      left: 17.9em;
+      top: 0.9em;
     }
 
     .modalHeader {
-        padding: 0em;
-        gap: 1em;
-        position: relative;
-        top: 1.6em;
-        right: 11.0em;
-        width: 20.3125em;
+      padding: 0em;
+      gap: 1em;
+      position: relative;
+      top: 0em;
+      right: 13.6em;
+      width: 20.3125em;
     }
 
     .orderLogoWrapper {
-        flex-direction: column;
-        width: 41.875em;
-        position: relative;
-        bottom: 31.5em;
-        left: -8em;
+      flex-direction: column;
+      width: 41.875em;
+      position: relative;
+      bottom: 33.5em;
+      left: -10.9em;
+      gap: 11.5px;
 
-        div {
-            border: 1px solid #828485;
-            padding-top: 2.0625em;
-            padding-bottom: 2.125em;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            padding-right: 1em;
-            padding-left: 2.875em;
-            width: 21.25em;
-            height: 6em;
-            border-radius: 12px;
-            background: #0B0E11;
-        }
+      div {
+        border: 1px solid #828485;
+        padding-top: 2.0625em;
+        padding-bottom: 2.125em;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: 1em;
+        padding-left: 2.875em;
+        width: 17.25em;
+        height: 5em;
+        border-radius: 12px;
+        background: #0b0e11;
+      }
 
-        h2 {
-            color: #828485;
-            display: contents !important;
-        }
+      h2 {
+        color: #828485;
+        display: contents !important;
+        font-size: 20px;
+      }
 
-        img {
-            filter: grayscale(1);
-        }
+      img {
+        filter: grayscale(1);
+      }
     }
 
     .active {
-        border: none !important;
-        background-image: radial-gradient(circle at 100% 100%, transparent 11px, #4705da 11px, #4705da 12px, transparent 12px), linear-gradient(to right, #4705da, #f614f9), radial-gradient(circle at 0% 100%, transparent 11px, #f614f9 11px, #f614f9 12px, transparent 12px), linear-gradient(to bottom, #f614f9, #f614f9), radial-gradient(circle at 0% 0%, transparent 11px, #f614f9 11px, #f614f9 12px, transparent 12px), linear-gradient(to left, #f614f9, #4705da), radial-gradient(circle at 100% 0%, transparent 11px, #4705da 11px, #4705da 12px, transparent 12px), linear-gradient(to top, #4705da, #4705da) !important;
-        background-size: 12px 12px, calc(100% - 24px) 1px, 12px 12px, 1px calc(100% - 24px) !important;
-        background-position: top left, top center, top right, center right, bottom right, bottom center, bottom left, center left !important;
-        background-repeat: no-repeat !important;
+      border: none !important;
+      background-image: radial-gradient(
+          circle at 100% 100%,
+          transparent 11px,
+          #4705da 11px,
+          #4705da 12px,
+          transparent 12px
+        ),
+        linear-gradient(to right, #4705da, #f614f9),
+        radial-gradient(
+          circle at 0% 100%,
+          transparent 11px,
+          #f614f9 11px,
+          #f614f9 12px,
+          transparent 12px
+        ),
+        linear-gradient(to bottom, #f614f9, #f614f9),
+        radial-gradient(
+          circle at 0% 0%,
+          transparent 11px,
+          #f614f9 11px,
+          #f614f9 12px,
+          transparent 12px
+        ),
+        linear-gradient(to left, #f614f9, #4705da),
+        radial-gradient(
+          circle at 100% 0%,
+          transparent 11px,
+          #4705da 11px,
+          #4705da 12px,
+          transparent 12px
+        ),
+        linear-gradient(to top, #4705da, #4705da) !important;
+      background-size: 12px 12px, calc(100% - 24px) 1px, 12px 12px,
+        1px calc(100% - 24px) !important;
+      background-position: top left, top center, top right, center right,
+        bottom right, bottom center, bottom left, center left !important;
+      background-repeat: no-repeat !important;
 
-        h2 {
-            color: #F614F9;
-        }
+      h2 {
+        color: #f614f9;
+      }
 
-        img {
-            filter: grayscale(0);
-        }
+      img {
+        filter: grayscale(0);
+      }
     }
 
     .modalInputsWrapper {
-        top: 30.2em;
-        gap: 1em;
-        height: 39em;
+      top: 26.2em;
+      gap: 0em;
+      height: 39em;
     }
 
     .modalInputs {
-        width: 23.4375em;
-        margin-right: 18.75em;
-        position: relative;
-        right: 1.5625em;
-
-        div {
-            width: 11.0625em;
-            height: 5.5em;
-        }
+      width: 17em;
+      margin-right: 0em;
+      position: relative;
+      right: 26.65em;
+      bottom: 5.5em;
+      div {
+        width: 8em;
+        height: 5em;
+      }
     }
 
     .modalDescWrapper {
-        width: 24.6875em;
-        height: 6.75em;
-        position: relative;
-        right: 1.875em;
-        bottom: 1.875em;
+      width: 18em;
+      height: 6.75em;
+      position: relative;
+      right: 1.875em;
+      bottom: 5.5em;
 
-        textarea {
-            max-width: 23.4375em;
-        }
+      textarea {
+        max-width: 18em;
+      }
     }
 
     .enterBtn {
-        position: relative;
-        top: 52px;
-        right: 24px;
-        width: 374px;
+      position: relative;
+      top: -84px;
+      font-size: 1em;
+      right: 31px;
+      padding: 1.5em 0.25em;
+      width: 290px;
+      height: 0px;
     }
-
-    @media (max-width: 568px) {
-        .modalContent {
-            width: 20em;
-            height: 43em;
-        }
-
-        .closeBtn {
-            left: 17.9em;
-            top: 0.9em;
-        }
-
-        .modalHeader {
-            padding: 0em;
-            gap: 1em;
-            position: relative;
-            top: 0em;
-            right: 13.6em;
-            width: 20.3125em;
-        }
-
-        .orderLogoWrapper {
-            flex-direction: column;
-            width: 41.875em;
-            position: relative;
-            bottom: 33.5em;
-            left: -10.9em;
-            gap: 11.5px;
-
-            div {
-                border: 1px solid #828485;
-                padding-top: 2.0625em;
-                padding-bottom: 2.125em;
-                box-sizing: border-box;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-                padding-right: 1em;
-                padding-left: 2.875em;
-                width: 17.25em;
-                height: 5em;
-                border-radius: 12px;
-                background: #0B0E11;
-            }
-
-            h2 {
-                color: #828485;
-                display: contents !important;
-                font-size: 20px;
-            }
-
-            img {
-                filter: grayscale(1);
-            }
-        }
-
-        .active {
-            border: none !important;
-            background-image: radial-gradient(circle at 100% 100%, transparent 11px, #4705da 11px, #4705da 12px, transparent 12px), linear-gradient(to right, #4705da, #f614f9), radial-gradient(circle at 0% 100%, transparent 11px, #f614f9 11px, #f614f9 12px, transparent 12px), linear-gradient(to bottom, #f614f9, #f614f9), radial-gradient(circle at 0% 0%, transparent 11px, #f614f9 11px, #f614f9 12px, transparent 12px), linear-gradient(to left, #f614f9, #4705da), radial-gradient(circle at 100% 0%, transparent 11px, #4705da 11px, #4705da 12px, transparent 12px), linear-gradient(to top, #4705da, #4705da) !important;
-            background-size: 12px 12px, calc(100% - 24px) 1px, 12px 12px, 1px calc(100% - 24px) !important;
-            background-position: top left, top center, top right, center right, bottom right, bottom center, bottom left, center left !important;
-            background-repeat: no-repeat !important;
-
-            h2 {
-                color: #F614F9;
-            }
-
-            img {
-                filter: grayscale(0);
-            }
-        }
-
-        .modalInputsWrapper {
-            top: 26.2em;
-            gap: 0em;
-            height: 39em;
-        }
-
-        .modalInputs {
-            width: 17em;
-            margin-right: 0em;
-            position: relative;
-            right: 26.65em;
-            bottom: 5.5em;
-            div {
-                width: 8em;
-                height: 5em;
-            }
-        }
-
-        .modalDescWrapper {
-            width: 18em;
-            height: 6.75em;
-            position: relative;
-            right: 1.875em;
-            bottom: 5.5em;
-
-            textarea {
-                max-width: 18em;
-            }
-        }
-
-        .enterBtn {
-            position: relative;
-            top: -84px;
-            font-size: 1em;
-            right: 31px;
-            padding: 1.5em 0.25em;
-            width: 290px;
-            height: 0px;
-        }
-    }
+  }
 }

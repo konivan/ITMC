@@ -45,7 +45,7 @@ export const Works = (props) => {
               onClick={() => openProduct("./img/work/solana.png", "Создание криптовалюты на основа SOLANA" ,["./img/work/C.svg"])}
             />
             <h4>Создание криптовалюты на основа SOLANA</h4>
-            <img src="./img/work/C.svg" alt="" />
+            <img src="./img/work/C.svg" alt="C" />
           </div>
           <div className={style.column}>
             <img
