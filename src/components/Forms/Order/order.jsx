@@ -66,8 +66,17 @@ const Order = (props) => {
             <h2 className={style.modalTitle}>Заказать услугу</h2>
           </header>
           <section className={style.orderLogoWrapper}>
-            <h2>IT разработка</h2>
-            <img alt="checkbox" src="img/forms/IT.svg" />
+            <h2>{props.order}</h2>
+            <img
+              alt="checkbox"
+              src={
+                props.order === "IT разработка"
+                  ? "img/forms/IT.svg"
+                  : props.order === "Маркетинг"
+                  ? "img/forms/M.svg"
+                  : "img/forms/C.svg"
+              }
+            />
           </section>
           <section className={style.modalInputsWrapper}>
             <div className={style.modalInputs}>
@@ -85,7 +94,7 @@ const Order = (props) => {
                 <span>Номер телефона или Telegram</span>
                 <input
                   onChange={(e) => {
-                    setTelegram(e.target.value)
+                    setTelegram(e.target.value);
                   }}
                   value={telegram}
                   type="email"
@@ -98,7 +107,7 @@ const Order = (props) => {
                 <span>Описание</span>
                 <textarea
                   onChange={(e) => {
-                    setDescription(e.target.value)
+                    setDescription(e.target.value);
                   }}
                   value={description}
                   placeholder="Кратко опишите ваш проект"
@@ -106,7 +115,9 @@ const Order = (props) => {
               </div>
             </section>
           </section>
-          <button onClick={sendOrder} className={style.enterBtn}>Оставить заявку</button>
+          <button onClick={sendOrder} className={style.enterBtn}>
+            Оставить заявку
+          </button>
         </div>
       </main>
     );

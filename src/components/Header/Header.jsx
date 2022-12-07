@@ -23,7 +23,7 @@ export const Header = (props) => {
             <div className={activeBurger === true ? style.burgerActive : style.burger} onClick={() => setActiveBurger(!activeBurger)}>
               <span></span>
               <div onClick={(e) => e.stopPropagation()}>
-                <Menu setShowOrders={props.setShowOrders} activeBurger={activeBurger}/>
+                <Menu setShowAuthOrders={props.setShowAuthOrders} activeBurger={activeBurger}/>
               </div>
             </div>
             </div>
@@ -31,7 +31,7 @@ export const Header = (props) => {
           <List />
           <div className={style.column}>
             <div className={style.item}>
-              <Button setShowOrders={props.setShowOrders}>Заказать</Button>
+              <Button setShowAuthOrders={props.setShowAuthOrders}>Заказать</Button>
             </div>
             <div style={{display: 'none'}} className={style.item}>
               <MyButton setShowAuth={props.setShowAuth}>Войти</MyButton>
