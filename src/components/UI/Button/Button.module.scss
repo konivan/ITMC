@@ -2,18 +2,20 @@
   font-style: normal;
   font-weight: 500;
   font-size: 1em;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    linear-gradient(96.91deg, #4705da 0%, #b10eec 51.04%, #f614f9 100%);
-  border-radius: 0.75em;
-  border: 0;
-  padding: 0.75em 4.781em;
-}
-
-.btn:hover {
   background: linear-gradient(
     96.91deg,
     #f614f9 0%,
     #b10eec 51.04%,
     #4705da 100%
   );
+  border-radius: 0.75em;
+  border: 0;
+  padding: 0.75em 4.781em;
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position .5s ease;
+}
+
+.btn:hover {
+  background-position: 0 0;
 }

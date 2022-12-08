@@ -71,6 +71,7 @@
             height: 3.38px;
             margin-bottom: 5.92px;
             cursor: pointer;
+            transition: all .3s ease-in-out;
           }
           &::before {
             content: "";
@@ -80,6 +81,7 @@
             height: 3.38px;
             margin-bottom: 5.92px;
             cursor: pointer;
+            transition: all .3s ease-in-out;
           }
 
           &::after {
@@ -89,6 +91,7 @@
             width: 24px;
             height: 3.38px;
             cursor: pointer;
+            transition: all .3s ease-in-out;
           }
         }
 

@@ -74,9 +74,42 @@
   width: 21.25em;
   height: 6em;
   background: #0b0e11;
-  background-image: radial-gradient(circle at 100% 100%, transparent 11px, #4705da 11px, #4705da 12px, transparent 12px), linear-gradient(to right, #4705da, #f614f9), radial-gradient(circle at 0% 100%, transparent 11px, #f614f9 11px, #f614f9 12px, transparent 12px), linear-gradient(to bottom, #f614f9, #f614f9), radial-gradient(circle at 0% 0%, transparent 11px, #f614f9 11px, #f614f9 12px, transparent 12px), linear-gradient(to left, #f614f9, #4705da), radial-gradient(circle at 100% 0%, transparent 11px, #4705da 11px, #4705da 12px, transparent 12px), linear-gradient(to top, #4705da, #4705da);
-  background-size: 12px 12px, calc(100% - 24px) 1px, 12px 12px, 1px calc(100% - 24px);
-  background-position: top left,top center,top right,center right, bottom right,bottom center,bottom left,center left;
+  background-image: radial-gradient(
+      circle at 100% 100%,
+      transparent 11px,
+      #4705da 11px,
+      #4705da 12px,
+      transparent 12px
+    ),
+    linear-gradient(to right, #4705da, #f614f9),
+    radial-gradient(
+      circle at 0% 100%,
+      transparent 11px,
+      #f614f9 11px,
+      #f614f9 12px,
+      transparent 12px
+    ),
+    linear-gradient(to bottom, #f614f9, #f614f9),
+    radial-gradient(
+      circle at 0% 0%,
+      transparent 11px,
+      #f614f9 11px,
+      #f614f9 12px,
+      transparent 12px
+    ),
+    linear-gradient(to left, #f614f9, #4705da),
+    radial-gradient(
+      circle at 100% 0%,
+      transparent 11px,
+      #4705da 11px,
+      #4705da 12px,
+      transparent 12px
+    ),
+    linear-gradient(to top, #4705da, #4705da);
+  background-size: 12px 12px, calc(100% - 24px) 1px, 12px 12px,
+    1px calc(100% - 24px);
+  background-position: top left, top center, top right, center right,
+    bottom right, bottom center, bottom left, center left;
   background-repeat: no-repeat;
   h2 {
     font-family: "Roboto";
@@ -207,30 +240,28 @@
   gap: 0.25em;
   width: 670px;
   height: 64px;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    linear-gradient(96.91deg, #4705da 0%, #b10eec 51.04%, #f614f9 100%);
-  border-radius: 8px;
-  cursor: pointer;
+  background: linear-gradient(
+    96.91deg,
+    #f614f9 0%,
+    #b10eec 51.04%,
+    #4705da 100%
+  );
+  border-radius: 0.5em;
   border: 0;
   position: relative;
   bottom: 197px;
   margin-left: 45px;
-
-  font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
   font-size: 1.25em;
   text-align: center;
-  color: #fafafa;
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.5s ease;
 }
 
 .enterBtn:hover {
-  background: linear-gradient(
-    96.91deg,
-    #4705da 0%,
-    #b10eec 51.04%,
-    #f614f9 100%
-  );
+  background-position: 0 0;
 }
 
 @media (max-width: 775px) {
@@ -238,7 +269,6 @@
     width: 25.875em;
     height: 43.125em;
   }
-
 
   .closeBtn {
     left: 23.7em;
@@ -289,13 +319,12 @@
       width: 20em;
       height: 43.125em;
     }
-  
-  
+
     .closeBtn {
       left: 17.9em;
       top: 0.8em;
     }
-  
+
     .modalHeader {
       padding: 0em;
       gap: 1em;
@@ -304,12 +333,12 @@
       right: 13.7em;
       width: 20.3125em;
     }
-  
+
     .orderLogoWrapper {
       left: 1.7em;
       width: 16.8em;
     }
-  
+
     .modalInputsWrapper {
       top: 13.75em;
       gap: 1em;
@@ -333,11 +362,11 @@
       position: relative;
       right: 1.1em;
     }
-  
+
     .modalDescWrapper textarea {
       max-width: 16.8em;
     }
-  
+
     .enterBtn {
       position: relative;
       bottom: 107px;

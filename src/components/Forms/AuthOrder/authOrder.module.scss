@@ -44,13 +44,11 @@
 }
 
 .modalTitle {
-  font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
   font-size: 1.5em;
   line-height: 30px;
   text-align: center;
-  color: #fafafa;
 }
 
 .closeBtn {
@@ -62,7 +60,6 @@
 
 .orderLogoWrapper {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 0em;
@@ -74,7 +71,6 @@
   left: 2.8em;
 
   h2 {
-    font-family: "Roboto";
     font-style: normal;
     font-weight: 900;
     font-size: 1.5em;
@@ -90,7 +86,6 @@
 .active {
   box-sizing: border-box;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding-right: 1em;
@@ -151,7 +146,6 @@
 
 .modalInputs {
   display: flex;
-  flex-direction: row;
   align-items: flex-start;
   padding: 0em;
   gap: 1.25em;
@@ -168,22 +162,18 @@
   }
 
   span {
-    font-family: "Roboto";
     font-style: normal;
     font-weight: 700;
     font-size: 1em;
     line-height: 100%;
     text-align: center;
-    color: #fafafa;
     margin-bottom: 28px;
   }
 
   p {
-    font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
     font-size: 1em;
-    line-height: 120%;
     color: #5d5d5d;
   }
 }
@@ -212,9 +202,7 @@
       font-style: normal;
       font-weight: 700;
       font-size: 1em;
-      line-height: 100%;
       text-align: center;
-      color: #fafafa;
       margin-top: 0.75em;
     }
 
@@ -227,51 +215,43 @@
       padding: 1.1875em 1.875em 1.125em 1em;
       margin-top: 0.125em;
       resize: none;
-
-      font-family: "Roboto";
       font-style: normal;
       font-weight: 400;
       font-size: 1em;
-      line-height: 120%;
-      color: #fafafa;
     }
   }
 }
 
 .enterBtn {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 1em 0.25em;
   gap: 0.25em;
   width: 670px;
   height: 64px;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    linear-gradient(96.91deg, #4705da 0%, #b10eec 51.04%, #f614f9 100%);
+  background: linear-gradient(
+    96.91deg,
+    #f614f9 0%,
+    #b10eec 51.04%,
+    #4705da 100%
+  );
   border-radius: 8px;
-  cursor: pointer;
   border: 0;
   position: relative;
   bottom: 197px;
   margin-left: 45px;
-
-  font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
   font-size: 1.25em;
-  line-height: 110%;
   text-align: center;
-  color: #fafafa;
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.5s ease;
 }
 
 .enterBtn:hover {
-  background: linear-gradient(
-    96.91deg,
-    #4705da 0%,
-    #b10eec 51.04%,
-    #f614f9 100%
-  );
+  background-position: 0 0;
 }
 
 @media (max-width: 775px) {
@@ -307,7 +287,6 @@
       padding-bottom: 2.125em;
       box-sizing: border-box;
       display: flex;
-      flex-direction: row;
       align-items: center;
       justify-content: space-between;
       padding-right: 1em;
