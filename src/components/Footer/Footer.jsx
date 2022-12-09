@@ -18,7 +18,9 @@ export const Footer = (props) => {
                   <span>Закажите у нас проект</span>
                   <span>уже сегодня!</span>
                 </div>
-                <Button setShowAuthOrders={props.setShowAuthOrders}>Заказать</Button>
+                <Button setShowAuthOrders={props.setShowAuthOrders}>
+                  Заказать
+                </Button>
               </div>
               <div className={style.column}>
                 <img src="img/footer/logo.svg" alt="logo" />
@@ -32,8 +34,8 @@ export const Footer = (props) => {
             <div className={style.column}>
               <img src="img/footer/logo.svg" alt="logo" />
               <p>Ул. Покрышкина 8к2</p>
-                <p>+7 925 104 5382</p>
-                <p>+7 925 540 3956</p>
+              <p>+7 925 104 5382</p>
+              <p>+7 925 540 3956</p>
             </div>
             <div className={style.column}>
               <div className={style.item}>
@@ -43,13 +45,16 @@ export const Footer = (props) => {
                   // onClick={() => props.setShowAuth(true)}
                   // onClick={() => props.setShowAuth(true)}
                 />
-                <span>
-                  Личный кабинет
-                </span>
+                <span>Личный кабинет</span>
               </div>
               <div className={style.item}>
                 {IMG.map((item, index) => (
-                  <a href={item.href} key={`${item} ${index}`}>
+                  <a
+                    target={item.target}
+                    rel={item.rel   }
+                    href={item.href}
+                    key={`${item} ${index}`}
+                  >
                     <img src={item.img} alt={item.alt} />
                   </a>
                 ))}
@@ -69,7 +74,9 @@ export const Footer = (props) => {
                 <span>Закажите у нас проект</span>
                 <span>уже сегодня!</span>
               </div>
-              <Button setShowAuthOrders={props.setShowAuthOrders}>Заказать</Button>
+              <Button setShowAuthOrders={props.setShowAuthOrders}>
+                Заказать
+              </Button>
             </div>
             <div className={style.column}>
               <a href="#header">
