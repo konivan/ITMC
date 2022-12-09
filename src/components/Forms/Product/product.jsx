@@ -11,6 +11,7 @@ const Product = (props) => {
     'Мы разработали крипто проект на основе solana. Выпустив свой токен на основе solana.  Для этого мы использовали языки программирования java script в основу базы данных легла Postgress SQL.',
     'Мы сделали полностью децентрализованный маркетплейс с возможностью минтинга NFT. На основе tron. В основу стека для разработки лег язык программирования java script, а в основу базы данных легла Postgress SQL.'
   ]
+
   if (!props.showProduct) {
     return null;
   }
@@ -34,15 +35,20 @@ const Product = (props) => {
           <section className={style.ProductDesc}>
             <span>{props.productTitle}</span>
             <div>
-              {props.productIcon.map((item) => (
-                <img src={item} alt="Icon" />
+              {props.productIcon.map((item, index) => (
+                <img src={item} key={`${item} ${index}`} alt="Icon" />
               ))}
             </div>
           </section>
         </main>
         <section className={style.fullDescription}>
           <p>
-            {}
+            {props.productTitle === "UI Design"
+              ? productDescription[0]
+              : props.productTitle === "WEB-разработка проекта: THR ONE"
+              ? productDescription[3]
+              : props.productTitle === "Создание криптовалюты на основа SOLANA"
+              ? productDescription[2] : productDescription[1]}
           </p>
         </section>
       </div>
