@@ -31,7 +31,7 @@
       }
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 6.313em;
+      gap: 4.313em;
       .column:nth-of-type(1) {
         position: relative;
         .item {
@@ -47,7 +47,7 @@
           }
           background-image: url("../../../public/img/services/FrameCode.png");
           background-repeat: no-repeat;
-          padding: 1.25em 9.0625em 1em 9.375em;
+          padding: 1.25em 2.0625em 1em 9.375em;
           border-radius: 1.5em;
           p:nth-of-type(1) {
             @media (max-width: 568px) {
@@ -63,17 +63,20 @@
           }
           p:nth-of-type(2) {
             @media (max-width: 568px) {
-              margin-bottom: 63px;
+              margin-bottom: 45px;
               font-size: 12px;
             }
             @media (max-width: 413px) {
-              margin-bottom: 40px;
+              font-size: 10px;
+              margin-bottom: 28px;
+              width: 116px;
             }
             font-style: normal;
             font-weight: 400;
             font-size: 0.875em;
             color: rgba(255, 255, 255, 0.55);
-            margin-bottom: 7.7143em;
+            margin-bottom: 5em;
+            width: 200px;
           }
           button {
             @media (max-width: 568px) {
@@ -98,7 +101,7 @@
           }
           background-image: url("../../../public/img/services/Frame.png");
           background-repeat: no-repeat;
-          padding: 1.25em 9.0625em 1em 9.375em;
+          padding: 1.25em 2.0625em 1em 9.375em;
           border-radius: 1.5em;
           p:nth-of-type(1) {
             @media (max-width: 568px) {
@@ -113,17 +116,20 @@
           }
           p:nth-of-type(2) {
             @media (max-width: 568px) {
-              margin-bottom: 63px;
+              margin-bottom: 32px;
               font-size: 12px;
             }
             @media (max-width: 413px) {
-              margin-bottom: 40px;
+              font-size: 10px;
+              margin-bottom: 15px;
+              width: 116px;
             }
             font-style: normal;
             font-weight: 400;
             font-size: 0.875em;
             color: rgba(255, 255, 255, 0.55);
-            margin-bottom: 7.7143em;
+            margin-bottom: 5em;
+            width: 200px;
           }
           button {
             @media (max-width: 568px) {
@@ -148,7 +154,7 @@
           }
           background-image: url("../../../public/img/services/FrameHead.png");
           background-repeat: no-repeat;
-          padding: 1.25em 9.0625em 1em 9.375em;
+          padding: 1.25em 2.0625em 1em 9.375em;
           border-radius: 1.5em;
           p:nth-of-type(1) {
             @media (max-width: 568px) {
@@ -164,18 +170,21 @@
           }
           p:nth-of-type(2) {
             @media (max-width: 568px) {
-              margin-bottom: 63px;
+              margin-bottom: 45px;
               font-size: 12px;
             }
             @media (max-width: 413px) {
-              margin-bottom: 40px;
+              font-size: 10px;
+              margin-bottom: 28px;
+              width: 116px;
               
             }
             font-style: normal;
             font-weight: 400;
             font-size: 0.875em;
             color: rgba(255, 255, 255, 0.55);
-            margin-bottom: 7.7143em;
+            margin-bottom: 6.2em;
+            width: 200px;
           }
           button {
             @media (max-width: 568px) {
