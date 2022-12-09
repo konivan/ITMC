@@ -5,6 +5,12 @@ import { Icon } from '@iconify/react';
 
 
 const Product = (props) => {
+  const productDescription = [
+    'Мы разработали крипто проект на основе bitcoin. Для этого мы использовали языки программирования java script, type script в основу базы данных легла Postgress SQL.',
+    'Мы разработали крипто проект на основе solana и выпустили свой токен masd. Для этого мы использовали языки программирования java script, type script, python, а также мы разработали мета вселенную на основе Unreal engine 4, в основу базы данных легла Postgress SQL.',
+    'Мы разработали крипто проект на основе solana. Выпустив свой токен на основе solana.  Для этого мы использовали языки программирования java script в основу базы данных легла Postgress SQL.',
+    'Мы сделали полностью децентрализованный маркетплейс с возможностью минтинга NFT. На основе tron. В основу стека для разработки лег язык программирования java script, а в основу базы данных легла Postgress SQL.'
+  ]
   if (!props.showProduct) {
     return null;
   }
@@ -36,13 +42,7 @@ const Product = (props) => {
         </main>
         <section className={style.fullDescription}>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            {}
           </p>
         </section>
       </div>

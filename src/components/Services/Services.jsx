@@ -12,7 +12,7 @@ export const Services = (props) => {
             <div className={style.column}>
               <div className={style.item}>
                 <p>IT</p>
-                <p>Описание услуги</p>
+                <p>Мы предоставляем самые качественные IT услуги на рынке</p>
                 <ButtonPink
                   setShowOrders={props.setShowOrders}
                   setOrderType={props.setOrderType}
@@ -27,7 +27,7 @@ export const Services = (props) => {
             <div className={style.column}>
               <div className={style.item}>
                 <p>Marketing</p>
-                <p>Описание услуги</p>
+                <p>Наши специалисты, готовы привлечь заказы или аудиторию в вашу компанию</p>
                 <ButtonPink
                   setShowOrders={props.setShowOrders}
                   setOrderType={props.setOrderType}
@@ -42,7 +42,7 @@ export const Services = (props) => {
             <div className={style.column}>
               <div className={style.item}>
                 <p>Crypto</p>
-                <p>Описание услуги</p>
+                <p>Мы поддерживаем Web 3.0, и верим, что web 3.0 будущее</p>
                 <ButtonPink
                   setShowOrders={props.setShowOrders}
                   setOrderType={props.setOrderType}
