@@ -10,6 +10,18 @@
   }
 }
 
+@keyframes mobileAnim {
+  0% {
+    background-image: url("../../../public/img/main/bgMobile2.png");
+  }
+  50% {
+    background-image: url("../../../public/img/main/bgMobile.png");
+  }
+  100% {
+    background-image: url("../../../public/img/main/bgMobile2.png");
+  }
+}
+
 .main {
   @media (max-width: 568px) {
     background-image: url("../../../public/img/main/bgMobile.png");
@@ -17,7 +29,7 @@
     background-size: 138%;
     background-position-y: 76px;
     background-position-x: 65%;
-    animation-name: none;
+    animation-name: mobileAnim;
   }
   background-image: url("../../../public/img/main/BG.png");
   background-repeat: no-repeat;
