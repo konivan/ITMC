@@ -25,8 +25,10 @@ export const Footer = (props) => {
               <div className={style.column}>
                 <img src="img/footer/logo.svg" alt="logo" />
                 <p>Ул. Покрышкина 8к2</p>
-                <p>+7 925 104 5382</p>
-                <p>+7 925 540 3956</p>
+                <div className={style.item}>
+                  <a href="tel:+7 925 104 5382">+7 925 104 5382</a>
+                  <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
+                </div>
               </div>
             </div>
           </div>
@@ -34,8 +36,10 @@ export const Footer = (props) => {
             <div className={style.column}>
               <img src="img/footer/logo.svg" alt="logo" />
               <p>Ул. Покрышкина 8к2</p>
-              <p>+7 925 104 5382</p>
-              <p>+7 925 540 3956</p>
+              <div className={style.item}>
+                <a href="tel:+7 925 104 5382">+7 925 104 5382</a>
+                <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
+              </div>
             </div>
             <div className={style.column}>
               <div className={style.item}>
@@ -51,7 +55,7 @@ export const Footer = (props) => {
                 {IMG.map((item, index) => (
                   <a
                     target={item.target}
-                    rel={item.rel   }
+                    rel={item.rel}
                     href={item.href}
                     key={`${item} ${index}`}
                   >

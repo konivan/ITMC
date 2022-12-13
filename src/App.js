@@ -6,14 +6,13 @@ import Auth from "./components/Forms/Auth/auth";
 import Authorization from "./components/Forms/Authorization/authorization";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Order from "./components/Forms/Order/order";
-import {Footer} from "./components/Footer/Footer"
+import { Footer } from "./components/Footer/Footer";
 import AuthOrder from "./components/Forms/AuthOrder/authOrder";
 import Product from "./components/Forms/Product/product";
 import { Portfolio } from "./pages/portfolio/portfolio";
 
 function App() {
-
-  let window = document.getElementById('html-1');
+  let window = document.getElementById("html-1");
   const URL = "http://185.26.96.45:8000/account/";
   const [isAuth, setIsAuth] = useState(false);
 
@@ -27,12 +26,18 @@ function App() {
   const [productTitle, setProductTitle] = useState();
   const [productIcon, setProductIcon] = useState([]);
 
-  const [orderType, setOrderType] = useState('');
-  const [order, setOrder] = useState('');
+  const [orderType, setOrderType] = useState("");
+  const [order, setOrder] = useState("");
 
-  if (showAuth || showAuthorization || showOrders || showAuthOrders || showProduct) {
-    window.style = 'overflow-y: hidden';
-  } else window.style = 'scroll-behavior: smooth;';
+  if (
+    showAuth ||
+    showAuthorization ||
+    showOrders ||
+    showAuthOrders ||
+    showProduct
+  ) {
+    window.style = "overflow-y: hidden";
+  } else window.style = "scroll-behavior: smooth;";
 
   return (
     <div className="App">
