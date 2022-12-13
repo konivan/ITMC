@@ -4,6 +4,7 @@ import { Header } from "./components/Header";
 import { Main } from "./components/Main";
 import Auth from "./components/Forms/Auth/auth";
 import Authorization from "./components/Forms/Authorization/authorization";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Order from "./components/Forms/Order/order";
 import { Footer } from "./components/Footer/Footer";
 import AuthOrder from "./components/Forms/AuthOrder/authOrder";
@@ -12,6 +13,7 @@ import Product from "./components/Forms/Product/product";
 function App() {
   let window = document.getElementById("html-1");
   const URL = "http://185.26.96.45:8000/account/";
+  const [isAuth, setIsAuth] = useState(true);
 
   const [showAuth, setShowAuth] = useState(false);
   const [showAuthorization, setShowAuthorization] = useState(false);
@@ -38,58 +40,74 @@ function App() {
 
   return (
     <div className="App">
-      <Header
-        setShowAuth={setShowAuth}
-        setShowAuthorization={setShowAuthorization}
-        setShowAuthOrders={setShowAuthOrders}
-      />
-      <Main
-        setShowOrders={setShowOrders}
-        setShowProduct={setShowProduct}
-        setOrderType={setOrderType}
-        setProductImg={setProductImg}
-        setProductTitle={setProductTitle}
-        setProductIcon={setProductIcon}
-        setOrder={setOrder}
-      />
-
-      <Product
-        onClose={() => setShowProduct(false)}
-        showProduct={showProduct}
-        productImg={productImg}
-        productTitle={productTitle}
-        productIcon={productIcon}
-      />
-      <Auth
-        onClose={() => setShowAuth(false)}
-        URL={URL}
-        setShowAuth={setShowAuth}
-        setShowAuthorization={setShowAuthorization}
-        showAuth={showAuth}
-      />
-      <Authorization
-        onClose={() => setShowAuthorization(false)}
-        URL={URL}
-        showAuthorization={showAuthorization}
-        setShowAuth={setShowAuth}
-        setShowAuthorization={setShowAuthorization}
-      />
-      <Order
-        onClose={() => setShowOrders(false)}
-        URL={URL}
-        setShowOrders={setShowOrders}
-        showOrders={showOrders}
-        order={order}
-      />
-      <AuthOrder
-        onClose={() => setShowAuthOrders(false)}
-        URL={URL}
-        setShowAuthOrders={setShowAuthOrders}
-        setOrderType={setOrderType}
-        showAuthOrders={showAuthOrders}
-        orderType={orderType}
-      />
-      <Footer setShowAuthOrders={setShowAuthOrders} setShowAuth={setShowAuth} />
+      <BrowserRouter>
+        <Header
+          setShowAuth={setShowAuth}
+          setShowAuthorization={setShowAuthorization}
+          setShowAuthOrders={setShowAuthOrders}
+          isAuth={isAuth}
+          setIsAuth={setIsAuth}
+        />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Main
+                setShowOrders={setShowOrders}
+                setShowProduct={setShowProduct}
+                setOrderType={setOrderType}
+                setProductImg={setProductImg}
+                setProductTitle={setProductTitle}
+                setProductIcon={setProductIcon}
+                setOrder={setOrder}
+              />
+            }
+          />
+          <Route path="/portfolio"/>
+          <Route path="/team"/>
+        </Routes>
+        <Product
+          onClose={() => setShowProduct(false)}
+          showProduct={showProduct}
+          productImg={productImg}
+          productTitle={productTitle}
+          productIcon={productIcon}
+        />
+        <Auth
+          onClose={() => setShowAuth(false)}
+          URL={URL}
+          setShowAuth={setShowAuth}
+          setShowAuthorization={setShowAuthorization}
+          showAuth={showAuth}
+          setIsAuth={setIsAuth}
+        />
+        <Authorization
+          onClose={() => setShowAuthorization(false)}
+          URL={URL}
+          showAuthorization={showAuthorization}
+          setShowAuth={setShowAuth}
+          setShowAuthorization={setShowAuthorization}
+        />
+        <Order
+          onClose={() => setShowOrders(false)}
+          URL={URL}
+          setShowOrders={setShowOrders}
+          showOrders={showOrders}
+          order={order}
+        />
+        <AuthOrder
+          onClose={() => setShowAuthOrders(false)}
+          URL={URL}
+          setShowAuthOrders={setShowAuthOrders}
+          setOrderType={setOrderType}
+          showAuthOrders={showAuthOrders}
+          orderType={orderType}
+        />
+        <Footer
+          setShowAuthOrders={setShowAuthOrders}
+          setShowAuth={setShowAuth}
+        />
+      </BrowserRouter>
     </div>
   );
 }

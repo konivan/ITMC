@@ -36,6 +36,7 @@ const Auth = (props) => {
           } else {
             setPassword("");
             setUsername("");
+            props.setIsAuth(true);
             props.setShowAuth(false);
             return alert("Вы вошли");
           }

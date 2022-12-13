@@ -10,6 +10,7 @@ import { useState } from "react";
 
 export const Header = (props) => {
   const [activeBurger, setActiveBurger] = useState(false);
+
   return (
     <div className={style.header}>
       <div className={style.wrapper}>
@@ -19,7 +20,7 @@ export const Header = (props) => {
               <img src="img/header/logoITMC.svg" alt="logo" />
             </a>
             <div className={style.item}>
-            <img onClick={() => props.setShowAuth(true)} className={style.lk} src="img/header/lk.svg" alt="lk" />
+            <img onClick={() => props.setShowAuth(true)} style={{display: props.isAuth ? 'none' : null}} className={style.lk} src="img/header/lk.svg" alt="lk" />
             <div className={activeBurger === true ? style.burgerActive : style.burger} onClick={() => setActiveBurger(!activeBurger)}>
               <span></span>
               <div onClick={(e) => e.stopPropagation()}>
@@ -33,8 +34,14 @@ export const Header = (props) => {
             <div className={style.item}>
               <Button setShowAuthOrders={props.setShowAuthOrders}>Заказать</Button>
             </div>
-            <div style={{display: 'none'}} className={style.item}>
-              <MyButton setShowAuth={props.setShowAuth}>Войти</MyButton>
+            <div className={style.item}>
+              {!props.isAuth ? <MyButton setShowAuth={props.setShowAuth}>Войти</MyButton> :
+              <div>
+                <img className={style.userIcon} src="img/header/user.svg" alt="user-icon"/>
+                <div className={style.dropdown}>
+                  <span onClick={() => props.setIsAuth(false)}>Выйти</span>
+                </div>
+              </div>}
             </div>
           </div>
         </div>
