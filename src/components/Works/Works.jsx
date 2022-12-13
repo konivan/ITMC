@@ -1,4 +1,5 @@
 import React from "react";
+import { ButtonPink } from "../UI/ButtonPink/ButtonPink";
 
 import style from "./Works.module.scss";
 
@@ -54,6 +55,11 @@ export const Works = (props) => {
               onClick={() => openProduct("./img/work/thrOne.png", "WEB-разработка проекта: THR ONE" , ["./img/work/IT.svg", "./img/work/C.svg"])}
             />
             <h4>WEB-разработка проекта: THR ONE</h4>
+            <span style={{float: 'right', display : props.setShowProduct ? null : 'none'}}>
+              <ButtonPink>
+                <a href="/portfolio">Показать еще</a>
+              </ButtonPink>
+            </span>
             <img src="./img/work/IT.svg" alt="IT" />
             <img src="./img/work/C.svg" alt="C" />
           </div>
