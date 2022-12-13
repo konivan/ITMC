@@ -40,12 +40,12 @@ export const Footer = (props) => {
             <div className={style.column}>
               <div className={style.item}>
                 <img
+                  style={{cursor: 'pointer'}}
                   src="img/footer/lk.svg"
                   alt="lk"
-                  // onClick={() => props.setShowAuth(true)}
-                  // onClick={() => props.setShowAuth(true)}
+                  onClick={() => props.setShowAuth(true)}
                 />
-                <span>Личный кабинет</span>
+                <span onClick={() => props.setShowAuth(true)} style={{cursor: 'pointer'}}>Личный кабинет</span>
               </div>
               <div className={style.item}>
                 {IMG.map((item, index) => (

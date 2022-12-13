@@ -1,10 +1,9 @@
-export default function WorkComponent({image, itIcon, mIcon, cIcon}) {
-    return(
-        <div>
-            <div className="picture">{image}</div>
-            <div className="icons">
-                {itIcon ? <></> : mIcon ? <></> : cIcon ? <></> : null}
-            </div>
-        </div>
-    )
+export default function WorkComponent({icons, image, title}) {
+    return (
+      <>
+        <img src={image} alt="product img" />
+        <h4>{title}</h4>
+        <img src={icons} alt="icons" />
+      </>
+    );
 }

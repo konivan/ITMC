@@ -9,6 +9,7 @@ import Order from "./components/Forms/Order/order";
 import {Footer} from "./components/Footer/Footer"
 import AuthOrder from "./components/Forms/AuthOrder/authOrder";
 import Product from "./components/Forms/Product/product";
+import { Portfolio } from "./pages/portfolio/portfolio";
 
 function App() {
 
@@ -58,7 +59,7 @@ function App() {
               />
             }
           />
-          <Route path="/portfolio"/>
+          <Route path="/portfolio" element={<Portfolio />}/>
           <Route path="/team"/>
         </Routes>
         <Product
