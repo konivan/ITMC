@@ -161,6 +161,37 @@
         .item:nth-of-type(1) {
           margin-right: 1.313em;
         }
+        .item:nth-of-type(2) {
+          .userIcon {
+            width: 45px;
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+          }
+          div:nth-of-type(1):hover  {
+              .dropdown {
+              display: block;
+              }
+          }
+          .dropdown {
+            display: none;
+            position: absolute;
+            background-color: rgb(46, 0, 78);
+            min-width: 80px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            span {
+              color: rgb(255, 255, 255);
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+            }
+            span:hover {
+              text-decoration: underline;
+              cursor: pointer;
+            }
+          }
+        }
       }
     }
   }

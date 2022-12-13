@@ -1,3 +1,12 @@
+@keyframes anim {
+  0% {
+    transform: scale(0.6);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .modal {
   position: fixed;
   left: 0;
@@ -19,6 +28,9 @@
   background: #0b0e11;
   border: 1px solid #fafafa;
   border-radius: 12px;
+  animation-name: anim;
+  animation-duration: 1s;
+  animation-timing-function: ease;
 }
 
 .modalHeader {
@@ -168,28 +180,29 @@ input[type="checkbox"] {
   align-items: center;
   gap: 0.25em;
   padding: 1.05em 15.32em;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    linear-gradient(96.91deg, #4705da 0%, #b10eec 51.04%, #f614f9 100%);
+  background: linear-gradient(
+    96.91deg,
+    #f614f9 0%,
+    #b10eec 51.04%,
+    #4705da 100%
+  );
   border-radius: 0.5em;
   cursor: pointer;
   border: 0;
   margin-top: 303px;
   margin-left: 45px;
 
-  font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
   font-size: 1.25em;
   text-align: center;
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.5s ease;
 }
 
 .enterBtn:hover {
-  background: linear-gradient(
-    96.91deg,
-    #4705da 0%,
-    #b10eec 51.04%,
-    #f614f9 100%
-  );
+  background-position: 0 0;
 }
 
 .spanSection {
@@ -265,13 +278,16 @@ input[type="checkbox"] {
   cursor: pointer;
   border: 0;
 
-  font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
   font-size: 1em;
   line-height: 100%;
   text-align: center;
   color: #fafafa;
+}
+
+.googleBtn:hover {
+  background: #3A424B;
 }
 
 .telegramBtn {
@@ -297,6 +313,10 @@ input[type="checkbox"] {
   color: #fafafa;
 }
 
+.telegramBtn:hover {
+  background: #34B7F8;
+}
+
 .vkBtn {
   display: flex;
   flex-direction: row;
@@ -318,6 +338,10 @@ input[type="checkbox"] {
   line-height: 100%;
   text-align: center;
   color: #fafafa;
+}
+
+.vkBtn:hover {
+  background: #2189FF;
 }
 
 @media (max-width: 775px) {
