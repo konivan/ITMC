@@ -15,7 +15,7 @@ function App() {
 
   let window = document.getElementById('html-1');
   const URL = "http://185.26.96.45:8000/account/";
-  const [isAuth, setIsAuth] = useState(true);
+  const [isAuth, setIsAuth] = useState(false);
 
   const [showAuth, setShowAuth] = useState(false);
   const [showAuthorization, setShowAuthorization] = useState(false);
