@@ -4,7 +4,7 @@ import style from "./Portfolio.module.scss";
 import { Works } from "../../components/Works/Works";
 import { useEffect } from "react";
 
-export const Portfolio = (props) => {
+export const Portfolio = () => {
   useEffect(() => {
     const url = `http://185.26.96.45:8000/account/api/portfolio`;
     const reqOptions = {
