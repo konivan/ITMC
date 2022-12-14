@@ -180,8 +180,7 @@
             min-width: 80px;
             z-index: 1;
             border-radius: 25px;
-            right: 210px;
-            top: 75px;
+            top: 70px;  
             text-align: center;
             span {
               color: rgb(255, 255, 255);
@@ -190,6 +189,16 @@
               display: block;
             }
             span:hover {
+              text-decoration: underline;
+              cursor: pointer;
+            }
+            a {
+              color: rgb(255, 255, 255);
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+            }
+            a:hover {
               text-decoration: underline;
               cursor: pointer;
             }

@@ -1,6 +1,8 @@
 import React from "react";
 import { MyButton } from "../UI/MyButton/MyButton";
 
+import WorkComponent from './WorkComponent';
+
 import style from "./Works.module.scss";
 
 export const Works = (props) => {
@@ -86,6 +88,9 @@ export const Works = (props) => {
             <img src="./img/work/IT.svg" alt="IT" />
             <img src="./img/work/C.svg" alt="C" />
           </div>
+          {props.data ? props.data.map((item) => (
+            <WorkComponent image={item.img} title={item.titles}/>
+          )) : null}
         </div>
       </div>
     </section>

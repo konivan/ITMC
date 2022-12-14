@@ -1,9 +1,12 @@
-export default function WorkComponent({image, title, icons}) {
+import style from "./WorkComponent.module.scss";
+
+export default function WorkComponent({image, title}) {
+
     return (
-      <>
-        <img src={image} alt="productImg" />
+      <div className={style.column}>
+        <img src={image} alt="product img" />
         <h4>{title}</h4>
-        <img src={icons} alt="icons" />
-      </>
+        <img src="./img/work/IT.svg" alt="icons" />
+      </div>
     );
 }
