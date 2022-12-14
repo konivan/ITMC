@@ -5,7 +5,7 @@ import { Works } from "../../components/Works/Works";
 
 export const Portfolio = (props) => {
   return (
-    <main className={style.main}>
+    <section className={style.main}>
       <div className={style.wrapper} id="header">
         <Works
           setProductTitle={props.setProductTitle}
@@ -14,6 +14,6 @@ export const Portfolio = (props) => {
           setProductImg={props.setProductImg}
         />
       </div>
-    </main>
+    </section>
   );
 };

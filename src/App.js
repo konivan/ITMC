@@ -4,12 +4,13 @@ import { Header } from "./components/Header";
 import { Main } from "./components/Main";
 import Auth from "./components/Forms/Auth/auth";
 import Authorization from "./components/Forms/Authorization/authorization";
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Order from "./components/Forms/Order/order";
 import { Footer } from "./components/Footer/Footer";
 import AuthOrder from "./components/Forms/AuthOrder/authOrder";
 import Product from "./components/Forms/Product/product";
-import { Portfolio } from "./pages/portfolio/portfolio";
+import { Portfolio } from "./pages/Portfolio/Portfolio";
+import { Team } from "./pages/Team/Team";
 
 function App() {
   let window = document.getElementById("html-1");
@@ -64,8 +65,8 @@ function App() {
               />
             }
           />
-          <Route path="/portfolio" element={<Portfolio />}/>
-          <Route path="/team"/>
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/team" element={<Team />} />
         </Routes>
         <Product
           onClose={() => setShowProduct(false)}

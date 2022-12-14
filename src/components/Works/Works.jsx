@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonPink } from "../UI/ButtonPink/ButtonPink";
+import { MyButton } from "../UI/MyButton/MyButton";
 
 import style from "./Works.module.scss";
 
@@ -9,7 +9,7 @@ export const Works = (props) => {
     props.setProductTitle(title);
     props.setProductIcon(icon);
     props.setShowProduct(true);
-  }
+  };
   return (
     <section className={style.works} id="works">
       <div className={style.container}>
@@ -20,7 +20,9 @@ export const Works = (props) => {
               src="./img/work/Home.png"
               alt="Home"
               onClick={() =>
-                openProduct("./img/work/Home.png", "UI Design" ,["./img/work/IT.svg"])
+                openProduct("./img/work/Home.png", "UI Design", [
+                  "./img/work/IT.svg",
+                ])
               }
             />
             <h4>UI Design</h4>
@@ -29,9 +31,13 @@ export const Works = (props) => {
           <div className={style.column}>
             <img
               src="./img/work/masdGames.png"
-              alt=""
+              alt="masdGames"
               onClick={() =>
-                openProduct("./img/work/masdGames.png", "Создание и продвижение криптопроекта MASD GAMES" ,["./img/work/IT.svg", "./img/work/M.svg", "./img/work/C.svg"])
+                openProduct(
+                  "./img/work/masdGames.png",
+                  "Создание и продвижение криптопроекта MASD GAMES",
+                  ["./img/work/IT.svg", "./img/work/M.svg", "./img/work/C.svg"]
+                )
               }
             />
             <h4>Создание и продвижение криптопроекта MASD GAMES</h4>
@@ -43,7 +49,13 @@ export const Works = (props) => {
             <img
               src="./img/work/solana.png"
               alt="solana"
-              onClick={() => openProduct("./img/work/solana.png", "Создание криптовалюты на основа SOLANA" ,["./img/work/C.svg"])}
+              onClick={() =>
+                openProduct(
+                  "./img/work/solana.png",
+                  "Создание криптовалюты на основа SOLANA",
+                  ["./img/work/C.svg"]
+                )
+              }
             />
             <h4>Создание криптовалюты на основа SOLANA</h4>
             <img src="./img/work/C.svg" alt="C" />
@@ -52,13 +64,24 @@ export const Works = (props) => {
             <img
               src="./img/work/thrOne.png"
               alt="thrOne"
-              onClick={() => openProduct("./img/work/thrOne.png", "WEB-разработка проекта: THR ONE" , ["./img/work/IT.svg", "./img/work/C.svg"])}
+              onClick={() =>
+                openProduct(
+                  "./img/work/thrOne.png",
+                  "WEB-разработка проекта: THR ONE",
+                  ["./img/work/IT.svg", "./img/work/C.svg"]
+                )
+              }
             />
             <h4>WEB-разработка проекта: THR ONE</h4>
-            <span style={{float: 'right', display : props.setShowProduct ? null : 'none'}}>
-              <ButtonPink>
+            <span
+              style={{
+                float: "right",
+                display: props.setShowProduct ? null : "none",
+              }}
+            >
+              <MyButton>
                 <a href="/portfolio">Показать еще</a>
-              </ButtonPink>
+              </MyButton>
             </span>
             <img src="./img/work/IT.svg" alt="IT" />
             <img src="./img/work/C.svg" alt="C" />

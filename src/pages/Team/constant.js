@@ -1,0 +1,92 @@
+export const PERSON = [
+  {
+    img: "img/team/polina.jpg",
+    alt: "polina",
+    name: "Архипова Полина Святославовна",
+    post: "Дизайнер",
+  },
+  {
+    img: "img/team/stepan.jpg",
+    alt: "stepan",
+    name: "Афанасьев Степан Савельевич",
+    post: "PM",
+  },
+  {
+    img: "img/team/egorovaPolina.jpg",
+    alt: "ePolina",
+    name: "Егорова Полина Львовна",
+    post: "Frontend developer",
+  },
+  {
+    img: "img/team/kElizaveta.jpg",
+    alt: "kElizaveta",
+    name: "Комарова Елизавета Алексеевна",
+    post: "IOS developer",
+  },
+  {
+    img: "img/team/kYuri.jpg",
+    alt: "kYuri",
+    name: "Королев Юрий Иванович",
+    post: "Backend developer",
+  },
+  {
+    img: "img/team/kAlexandr.jpg",
+    alt: "kAlexandr",
+    name: "Кузнецов Александр Даниилович",
+    post: "Android developer",
+  },
+  {
+    img: "img/team/kDaria.jpg",
+    alt: "kDaria",
+    name: "Кузнецова Дарья Васильевна",
+    post: "Frontend developer",
+  },
+  {
+    img: "img/team/nMaksim.jpg",
+    alt: "nMaksim",
+    name: "Некрасов Максим Даниилович",
+    post: "Android developer",
+  },
+  {
+    img: "img/team/oAlexey.jpg",
+    alt: "oAlexey",
+    name: "Осипов Алексей Тимофеевич",
+    post: "Big data",
+  },
+  {
+    img: "img/team/pArtem.jpg",
+    alt: "pArtem",
+    name: "Поляков Артём Максимович",
+    post: "Dev ops",
+  },
+  {
+    img: "img/team/sMatvey.jpg",
+    alt: "sMatvey",
+    name: "Сергеев Матвей Максимович",
+    post: "Backend developer",
+  },
+  {
+    img: "img/team/sMihail.jpg",
+    alt: "sMihail",
+    name: "Сидоров Михаил Алексеевич",
+    post: "android developer",
+  },
+  {
+    img: "img/team/sDemian.jpg",
+    alt: "sDemian",
+    name: "Сорокин Демьян Семёнович",
+    post: "Android developer",
+  },
+  {
+    img: "img/team/sRoman.jpg",
+    alt: "sRoman",
+    name: "Степанов Роман Константинович",
+    post: "Backend developer",
+  },
+  {
+    img: "img/team/tAlexandr.jpg",
+    alt: "tAlexandr",
+    name: "Титов Александр Маркович",
+    post: "IOS developer",
+  },
+];
