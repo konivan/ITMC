@@ -21,12 +21,7 @@ export const Portfolio = (props) => {
   return (
     <main className={style.main}>
       <div className={style.wrapper} id="header">
-        <Works
-          setProductTitle={props.setProductTitle}
-          setProductIcon={props.setProductIcon}
-          setShowProduct={props.setShowProduct}
-          setProductImg={props.setProductImg}
-        />
+        <Works />
       </div>
     </main>
   );
