@@ -24,7 +24,7 @@ export const Header = (props) => {
             <div className={activeBurger === true ? style.burgerActive : style.burger} onClick={() => setActiveBurger(!activeBurger)}>
               <span></span>
               <div onClick={(e) => e.stopPropagation()}>
-                <Menu setShowAuthOrders={props.setShowAuthOrders} activeBurger={activeBurger}/>
+                <Menu setShowAuthOrders={props.setShowAuthOrders} setIsAuth={props.setIsAuth} isAuth={props.isAuth} activeBurger={activeBurger}/>
               </div>
             </div>
             </div>
@@ -39,6 +39,7 @@ export const Header = (props) => {
               <div>
                 <img className={style.userIcon} src="img/header/user.svg" alt="user-icon"/>
                 <div className={style.dropdown}>
+                  <span>Личный кабинет</span>
                   <span onClick={() => props.setIsAuth(false)}>Выйти</span>
                 </div>
               </div>}

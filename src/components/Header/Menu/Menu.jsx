@@ -19,6 +19,9 @@ export const Menu = (props) => {
               <a href={item.href}>{item.text}</a>
             </li>
           ))}
+          <li style={{display: props.isAuth ? null : 'none'}}>
+            <p onClick={() => props.setIsAuth(false)}>Выйти</p>
+          </li>
       </ul>
       <Button setShowAuthOrders={props.setShowAuthOrders}>Заказать</Button>
     </div>

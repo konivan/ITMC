@@ -1,4 +1,4 @@
-export default function WorkComponent({icons, image, title}) {
+export default function WorkComponent({image, title, icons}) {
     return (
       <>
         <img src={image} alt="product img" />
