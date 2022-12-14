@@ -18,10 +18,21 @@ export const Portfolio = (props) => {
     .catch((err) => console.log("Error: " + err));
   }, []);
 
+  const data = [
+    {
+    img: './img/work/Home.png',
+    titles: 'Title'
+    },
+    {
+      img: './img/work/thrOne.png',
+      titles: 'ThR'
+    }
+  ]
+
   return (
     <main className={style.main}>
       <div className={style.wrapper} id="header">
-        <Works />
+        <Works data={data}/>
       </div>
     </main>
   );

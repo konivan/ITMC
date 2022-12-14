@@ -10,16 +10,7 @@ export const Works = (props) => {
     props.setProductIcon(icon);
     props.setShowProduct(true);
   }
-  const data = [
-    {
-    img: './img/work/Home.png',
-    titles: 'Title'
-    },
-    {
-      img: './img/work/thrOne.png',
-      titles: 'ThR'
-    }
-  ]
+
   return (
     <section className={style.works} id="works">
       <div className={style.container}>
@@ -73,9 +64,9 @@ export const Works = (props) => {
             <img src="./img/work/IT.svg" alt="IT" />
             <img src="./img/work/C.svg" alt="C" />
           </div>
-          {data.map((item) => (
+          {props.data ? props.data.map((item) => (
             <WorkComponent image={item.img} title={item.titles}/>
-          ))}
+          )) : null}
         </div>
       </div>
     </section>
