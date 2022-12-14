@@ -1,6 +1,6 @@
 import React from "react";
 import { ButtonPink } from "../UI/ButtonPink/ButtonPink";
-
+import WorkComponent from './WorkComponent';
 import style from "./Works.module.scss";
 
 export const Works = (props) => {
@@ -10,6 +10,16 @@ export const Works = (props) => {
     props.setProductIcon(icon);
     props.setShowProduct(true);
   }
+  const data = [
+    {
+    img: './img/work/Home.png',
+    titles: 'Title'
+    },
+    {
+      img: './img/work/thrOne.png',
+      titles: 'ThR'
+    }
+  ]
   return (
     <section className={style.works} id="works">
       <div className={style.container}>
@@ -63,6 +73,9 @@ export const Works = (props) => {
             <img src="./img/work/IT.svg" alt="IT" />
             <img src="./img/work/C.svg" alt="C" />
           </div>
+          {data.map((item) => (
+            <WorkComponent image={item.img} title={item.titles}/>
+          ))}
         </div>
       </div>
     </section>

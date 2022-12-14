@@ -10,6 +10,7 @@ import { Footer } from "./components/Footer/Footer";
 import AuthOrder from "./components/Forms/AuthOrder/authOrder";
 import Product from "./components/Forms/Product/product";
 import { Portfolio } from "./pages/portfolio/portfolio";
+import { Lk } from "./pages/Lk/Lk";
 
 function App() {
   let window = document.getElementById("html-1");
@@ -66,6 +67,7 @@ function App() {
           />
           <Route path="/portfolio" element={<Portfolio URL={URL}/>}/>
           <Route path="/team"/>
+          <Route path="/Lk" element={<Lk />}/>
         </Routes>
         <Product
           onClose={() => setShowProduct(false)}

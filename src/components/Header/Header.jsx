@@ -39,7 +39,7 @@ export const Header = (props) => {
               <div>
                 <img className={style.userIcon} src="img/header/user.svg" alt="user-icon"/>
                 <div className={style.dropdown}>
-                  <span>Личный кабинет</span>
+                  <a href="/Lk">Личный кабинет</a>
                   <span onClick={() => props.setIsAuth(false)}>Выйти</span>
                 </div>
               </div>}

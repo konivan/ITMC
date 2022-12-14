@@ -1,4 +1,7 @@
+import style from "./WorkComponent.module.scss";
+
 export default function WorkComponent({image, title}) {
+
     return (
       <div className={style.column}>
         <img src={image} alt="product img" />
