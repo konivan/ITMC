@@ -1,18 +1,49 @@
-import React from 'react';
-import style from './List.module.scss'
-import { MENU } from "./constant";
+import React from "react";
+import style from "./List.module.scss";
 
-export  const List = () => {
-    return (
-        <nav className={style.menu}>
-        <ul>
-          {MENU.map((item, index) => (
-            <li key={`${item} ${index}`}>
-              <a href={item.href}>{item.text}</a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    );
+import { NavLink } from "react-router-dom";
+
+export const List = () => {
+  return (
+    <nav className={style.menu}>
+      <ul>
+        <li
+          onClick={() => {
+            setTimeout(() => {
+              window.scroll(0, 500);
+            }, 0);
+          }}
+        >
+          <NavLink to="/#services">Услуги</NavLink>
+        </li>
+        <li
+          onClick={() => {
+            setTimeout(() => {
+              window.scroll(0, 900);
+            }, 0);
+          }}
+        >
+          <NavLink to="/">Портфолио</NavLink>
+        </li>
+        <li
+          onClick={() => {
+            setTimeout(() => {
+              window.scroll(0, 0);
+            }, 0);
+          }}
+        >
+          <NavLink to="/team">Команда</NavLink>
+        </li>
+        <li
+          onClick={() => {
+            setTimeout(() => {
+              window.scroll(0, 2000);
+            }, 0);
+          }}
+        >
+          <NavLink to="/team">О нас</NavLink>
+        </li>
+      </ul>
+    </nav>
+  );
 };
-
