@@ -1,7 +1,6 @@
 export const MENU = [
-    { text: "Портфолио", href: "#works" },
-    { text: "О нас", href: "/" },
-    { text: "Команда", href: "/team" },
-    { text: "Услуги", href: "#services" },
-  ];
-  
+  { text: "Услуги", href: "#services" },
+  { text: "Портфолио", href: "#works" },
+  { text: "Команда", href: "/team" },
+  { text: "О нас", href: "#row" },
+];

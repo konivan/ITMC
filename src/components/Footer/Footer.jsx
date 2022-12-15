@@ -25,10 +25,6 @@ export const Footer = (props) => {
               <div className={style.column}>
                 <img src="img/footer/logo.svg" alt="logo" />
                 <p>Ул. Покрышкина 8к2</p>
-                <div className={style.item}>
-                  <a href="tel:+7 925 104 5382">+7 925 104 5382</a>
-                  <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
-                </div>
               </div>
             </div>
           </div>
@@ -36,20 +32,21 @@ export const Footer = (props) => {
             <div className={style.column}>
               <img src="img/footer/logo.svg" alt="logo" />
               <p>Ул. Покрышкина 8к2</p>
-              <div className={style.item}>
-                <a href="tel:+7 925 104 5382">+7 925 104 5382</a>
-                <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
-              </div>
             </div>
             <div className={style.column}>
               <div className={style.item}>
                 <img
-                  style={{cursor: 'pointer'}}
+                  style={{ cursor: "pointer" }}
                   src="img/footer/lk.svg"
                   alt="lk"
                   onClick={() => props.setShowAuth(true)}
                 />
-                <span onClick={() => props.setShowAuth(true)} style={{cursor: 'pointer'}}>Личный кабинет</span>
+                <span
+                  onClick={() => props.setShowAuth(true)}
+                  style={{ cursor: "pointer" }}
+                >
+                  Личный кабинет
+                </span>
               </div>
               <div className={style.item}>
                 {IMG.map((item, index) => (
@@ -65,13 +62,11 @@ export const Footer = (props) => {
               </div>
             </div>
             <div className={style.column}>
-              {TEXT.map((item, index) => (
-                <ul key={`${item} ${index}`}>
-                  <li>
-                    <a href={item.href}>{item.text}</a>
-                  </li>
-                </ul>
-              ))}
+              <h4>Контакты</h4>
+              <div className={style.item}>
+                <a href="tel:+7 925 104 5382">+7 925 104 5382</a>
+                <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
+              </div>
             </div>
             <div className={style.column}>
               <div className={style.item}>

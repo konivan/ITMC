@@ -40,7 +40,6 @@
   animation-duration: 6s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  //   height: 800px;
   .wrapper {
     @media (max-width: 1440px) {
       padding: 0em 1.25em;
@@ -72,10 +71,11 @@
     max-width: 1440px;
     margin: 0 auto;
     .container {
-        @media (max-width: 568px) {
-           padding: 150px 0px;
-          }
-      padding: 282px 0px 200px 0px;
+      @media (max-width: 568px) {
+        padding: 150px 0px 60px 0px;
+      }
+      padding: 17.625em 0em 12.5em 0em;
+
       h2 {
         @media (max-width: 568px) {
           font-size: 20px;
@@ -83,10 +83,10 @@
         }
         font-style: normal;
         font-weight: 700;
-        font-size: 28px;
-        margin-bottom: 48px;
+        font-size: 1.75em;
+        margin-bottom: 1.714286em;
       }
-      .row {
+      .row:nth-of-type(1) {
         @media (max-width: 670px) {
           grid-template-columns: 1fr 1fr;
         }
@@ -95,7 +95,7 @@
         }
         display: grid;
         grid-template-columns: 2fr 2fr 1fr;
-        row-gap: 49px;
+        row-gap: 3.0625em;
         .column {
           @media (max-width: 670px) {
             align-items: center;
@@ -114,9 +114,9 @@
               height: 150px;
             }
             border-radius: 50%;
-            width: 300px;
-            height: 300px;
-            margin-bottom: 30px;
+            width: 18.75em;
+            height: 18.75em;
+            margin-bottom: 1.875em;
           }
           span {
             @media (max-width: 992px) {
@@ -131,11 +131,40 @@
             text-align: center;
             font-style: normal;
             font-weight: 500;
-            font-size: 16px;
-            width: 300px;
+            font-size: 1em;
+            width: 18.75em;
           }
           span:nth-of-type(1) {
-            margin-bottom: 5px;
+            margin-bottom: 0.3125em;
+          }
+        }
+      }
+      .row:nth-of-type(2) {
+        h2 {
+          @media (max-width: 568px) {
+            font-size: 20px;
+            margin-top: 28px 0px;
+          }
+          font-style: normal;
+          font-weight: 700;
+          font-size: 1.75em;
+          margin: 4.2857em 0em 1.714286em 0em;
+        }
+        .column {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          p {
+            border: 3px solid #f614f9;
+            border-radius: 15px;
+            box-shadow: 0em 0em 0.450em #e317aa;
+            padding: 50px;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1em;
+            width: 50em;
+            text-align: center;
           }
         }
       }

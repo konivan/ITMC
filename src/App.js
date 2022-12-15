@@ -10,7 +10,7 @@ import { Footer } from "./components/Footer/Footer";
 import AuthOrder from "./components/Forms/AuthOrder/authOrder";
 import Product from "./components/Forms/Product/product";
 import { Team } from "./pages/Team/Team";
-import { Portfolio } from "./pages/portfolio/portfolio";
+import { Portfolio } from "./pages/Portfolio/Portfolio";
 import { Lk } from "./pages/Lk/Lk";
 
 function App() {
