@@ -7,10 +7,12 @@ import style from "./Works.module.scss";
 
 export const Works = (props) => {
   const openProduct = (img, title, icon) => {
+    if (!props.data) {
     props.setProductImg(img);
     props.setProductTitle(title);
     props.setProductIcon(icon);
     props.setShowProduct(true);
+    } else return 0;
   };
   return (
     <section className={style.works} id="works">
@@ -81,15 +83,15 @@ export const Works = (props) => {
                 display: props.setShowProduct ? null : "none",
               }}
             >
-              <MyButton>
+              <MyButton works={'works'}>
                 <a href="/portfolio">Показать еще</a>
               </MyButton>
             </span>
             <img src="./img/work/IT.svg" alt="IT" />
             <img src="./img/work/C.svg" alt="C" />
           </div>
-          {props.data ? props.data.map((item) => (
-            <WorkComponent image={item.img} title={item.titles}/>
+          {props.data ? props.data.map((item, index) => (
+            <WorkComponent image={item.img} title={item.titles} key={`${item} ${index}`}/>
           )) : null}
         </div>
       </div>

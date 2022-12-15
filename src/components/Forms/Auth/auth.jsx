@@ -99,6 +99,9 @@ const Auth = (props) => {
           <div className={style.checkboxContainer}>
             <input
               onClick={() => setActiveCheckbox(!activeCheckbox)}
+              onChange={() => {
+                return 0;
+              }}
               checked={activeCheckbox}
               type="checkbox"
               className={style.checkboxInput}

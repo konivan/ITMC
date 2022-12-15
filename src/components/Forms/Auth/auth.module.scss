@@ -407,7 +407,7 @@ input[type="checkbox"] {
   @media (max-width: 413px) {
     .modalContent {
       width: 320px;
-      height: 47.375em;
+      height: 41em;
     }
 
     .closeBtn {
@@ -427,13 +427,13 @@ input[type="checkbox"] {
     }
 
     .modalInputsWrapper {
-      gap: 1em;
+      gap: 0em;
       height: 39em;
     }
     .modalInputs {
       flex-direction: column;
       padding: 0em;
-      gap: 1em;
+      gap: 0em;
       input {
         width: 235px;
       }
@@ -442,13 +442,12 @@ input[type="checkbox"] {
       position: absolute;
       width: 23.375em;
       left: 0.625em;
-      bottom: 23.75em;
+      bottom: 24.75em;
     }
     .enterBtn {
       position: relative;
-      top: 80px;
-      padding-right: 20px;
-      padding-left: 20px;
+      top: 60px;
+      padding: 10px 20px 10px 20px;
       width: 235px;
     }
     .spanSection {
@@ -456,12 +455,12 @@ input[type="checkbox"] {
       justify-content: center;
       height: 1.875em;
       width: 235px;
-      bottom: 17.125em;
+      bottom: 14.5em;
       right: 2.4em;
     }
     .socialsWrapper {
       position: absolute;
-      bottom: 0.75em;
+      bottom: -0.9em;
       right: 3.6em;
       height: 15.375em;
     }
@@ -471,14 +470,17 @@ input[type="checkbox"] {
     }
     .googleBtn {
       width: 235px;
+      height: 50px;
     }
 
     .telegramBtn {
       width: 235px;
+      height: 50px;
     }
 
     .vkBtn {
       width: 235px;
+      height: 50px;
     }
     .socialsWrapper span {
       position: relative;
