@@ -1,5 +1,6 @@
 import React from "react";
 import { MyButton } from "../UI/MyButton/MyButton";
+import { NavLink } from "react-router-dom"
 
 import WorkComponent from './WorkComponent';
 
@@ -83,9 +84,11 @@ export const Works = (props) => {
                 display: props.setShowProduct ? null : "none",
               }}
             >
-              <MyButton works={'works'}>
-                <a href="/portfolio">Показать еще</a>
-              </MyButton>
+              <NavLink to="portfolio">
+                <MyButton works={'works'}>
+                  <span>Показать еще</span>
+                </MyButton>
+              </NavLink>
             </span>
             <img src="./img/work/IT.svg" alt="IT" />
             <img src="./img/work/C.svg" alt="C" />

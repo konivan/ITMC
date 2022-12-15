@@ -19,6 +19,7 @@ export const Portfolio = () => {
   //   .then((body) => console.log(body))
   //   .catch((err) => console.log("Error: " + err));
   // }, []);
+  
   const data = [
     {
 img: './img/work/Home.png',
