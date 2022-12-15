@@ -17,7 +17,11 @@ export const Header = (props) => {
       <div className={style.wrapper}>
         <div className={style.container}>
           <div className={style.column}>
-            <NavLink to="/">
+            <NavLink to="/" onClick={() => {
+            setTimeout(() => {
+              window.scroll(0, 0);
+            }, 0);
+          }}>
               <img src="img/header/logoITMC.svg" alt="logo" />
             </NavLink>
             <div className={style.item}>

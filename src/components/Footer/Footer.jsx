@@ -2,7 +2,7 @@ import React from "react";
 
 import style from "./Footer.module.scss";
 
-import { IMG, TEXT } from "./constant";
+import { IMG } from "./constant";
 
 import { Button } from "../UI/Button/Button";
 
