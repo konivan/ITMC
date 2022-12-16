@@ -9,9 +9,10 @@
 .menu {
   animation-name: anim;
   animation-timing-function: ease;
-  animation-duration: .6s;
+  animation-duration: 0.6s;
   position: absolute;
-  background-color: rgb(46, 0, 78);
+  background: rgba(0, 0, 0, 0.903); 
+  backdrop-filter: blur(8px);
   top: 0;
   left: 0;
   height: 100vh;

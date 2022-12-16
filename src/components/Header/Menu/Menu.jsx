@@ -4,7 +4,8 @@ import style from "./Menu.module.scss";
 
 import { Button } from "../../UI/Button";
 
-import { MENU } from "../Menu/constant";
+// import { MENU } from "../Menu/constant";
+import { NavLink } from "react-router-dom";
 
 export const Menu = (props) => {
   if (!props.activeBurger) {
@@ -13,15 +14,43 @@ export const Menu = (props) => {
 
   return (
     <div className={style.menu}>
-      <ul>
-      {MENU.map((item, index) => (
-            <li key={`${item} ${index}`}>
-              <a href={item.href}>{item.text}</a>
-            </li>
-          ))}
-          <li style={{display: props.isAuth ? null : 'none'}}>
-            <p onClick={() => props.setIsAuth(false)}>Выйти</p>
-          </li>
+       <ul>
+        <li
+          onClick={() => {
+            setTimeout(() => {
+              window.scroll(0, 500);
+            }, 0);
+          }}
+        >
+          <NavLink to="/#services">Услуги</NavLink>
+        </li>
+        <li
+          onClick={() => {
+            setTimeout(() => {
+              window.scroll(0, 900);
+            }, 0);
+          }}
+        >
+          <NavLink to="/">Портфолио</NavLink>
+        </li>
+        <li
+          onClick={() => {
+            setTimeout(() => {
+              window.scroll(0, 0);
+            }, 0);
+          }}
+        >
+          <NavLink to="/team">Команда</NavLink>
+        </li>
+        <li
+          onClick={() => {
+            setTimeout(() => {
+              window.scroll(0, 2000);
+            }, 0);
+          }}
+        >
+          <NavLink to="/team">О нас</NavLink>
+        </li>
       </ul>
       <Button setShowAuthOrders={props.setShowAuthOrders}>Заказать</Button>
     </div>

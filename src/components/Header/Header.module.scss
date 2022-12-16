@@ -112,6 +112,9 @@
           }
 
           &::before {
+            @media (max-width: 768px) {
+              margin-top: 4px;
+            }
             content: "";
             display: block;
             background: #fafafa;
@@ -151,9 +154,6 @@
         display: flex;
         align-items: center;
 
-        // button {
-        //   margin-right: 1.3125em;
-        // }
         @media (max-width: 768px) {
           display: none;
         }
@@ -180,7 +180,7 @@
             min-width: 80px;
             z-index: 1;
             border-radius: 25px;
-            top: 70px;  
+            top: 70px;
             text-align: center;
             span {
               color: rgb(255, 255, 255);
