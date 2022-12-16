@@ -21,7 +21,7 @@ export const Header = (props) => {
             setTimeout(() => {
               window.scroll(0, 0);
             }, 0);
-          }}>
+            }}>
               <img src="img/header/logoITMC.svg" alt="logo" />
             </NavLink>
             <div className={style.item}>
