@@ -2,6 +2,7 @@ import React from "react";
 import style from "./Portfolio.module.scss";
 
 import { Works } from "../../components/Works/Works";
+import { PORTFOLIO } from "./constant";
 // import { useEffect } from "react";
 // import { useState } from "react";
 
@@ -20,20 +21,10 @@ export const Portfolio = () => {
   //   .catch((err) => console.log("Error: " + err));
   // }, []);
   
-  const data = [
-    {
-img: './img/work/Home.png',
-titles: 'Title'
-},
-{
-  img: './img/work/thrOne.png',
-  titles: 'ThR'
-}
-]
   return (
     <section className={style.main}>
       <div className={style.wrapper} id="header">
-        <Works data={data}/>
+        <Works data={PORTFOLIO}/>
       </div>
     </section>
   );

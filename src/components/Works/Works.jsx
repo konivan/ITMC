@@ -84,8 +84,15 @@ export const Works = (props) => {
                 display: props.setShowProduct ? null : "none",
               }}
             >
-              <NavLink to="portfolio">
-                <MyButton works={'works'}>
+              <NavLink
+                onClick={() => {
+                  setTimeout(() => {
+                    window.scroll(0, 0);
+                  }, 0);
+                }}
+                to="portfolio"
+              >
+                <MyButton works={"works"}>
                   <span>Показать еще</span>
                 </MyButton>
               </NavLink>
@@ -93,9 +100,16 @@ export const Works = (props) => {
             <img src="./img/work/IT.svg" alt="IT" />
             <img src="./img/work/C.svg" alt="C" />
           </div>
-          {props.data ? props.data.map((item, index) => (
-            <WorkComponent image={item.img} title={item.titles} key={`${item} ${index}`}/>
-          )) : null}
+          {props.data
+            ? props.data.map((item, index) => (
+                <WorkComponent
+                  image={item.img}
+                  title={item.titles}
+                  icons={item.icons}
+                  key={`${item} ${index}`}
+                />
+              ))
+            : null}
         </div>
       </div>
     </section>
