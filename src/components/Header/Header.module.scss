@@ -58,7 +58,9 @@
 
         display: flex;
         align-items: center;
-
+        .item {
+          height: 20px;
+        }
         .burger {
           margin-left: 25px;
           @media (max-width: 768px) {
