@@ -225,6 +225,14 @@
           height: 4em;
         }
       }
+      .column:nth-of-type(5) {
+        @media (max-width: 568px) {
+          button {
+            font-size: 14px;
+            padding: 6px 18px;
+          }
+        }
+      }
     }
   }
 }
