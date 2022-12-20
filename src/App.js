@@ -12,7 +12,7 @@ import Product from "./components/Forms/Product/product";
 import { Team } from "./pages/Team/Team";
 import { Portfolio } from "./pages/Portfolio/Portfolio";
 import { Lk } from "./pages/Lk/Lk";
-
+ 
 function App() {
   let window = document.getElementById("html-1");
   const URL = "http://185.26.96.45:8000/account/";
