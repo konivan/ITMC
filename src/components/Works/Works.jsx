@@ -81,7 +81,7 @@ export const Works = (props) => {
             <img src="./img/work/IT.svg" alt="IT" />
             <img src="./img/work/C.svg" alt="C" />
           </div>
-          <div className={style.column}>
+          <div className={style.column} style={{display: props.setShowProduct ? null : "none"}}>
               <NavLink
                 onClick={() => {
                   setTimeout(() => {
