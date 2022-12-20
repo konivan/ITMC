@@ -78,12 +78,10 @@ export const Works = (props) => {
               }
             />
             <h4>WEB-разработка проекта: THR ONE</h4>
-            <span
-              style={{
-                float: "right",
-                display: props.setShowProduct ? null : "none",
-              }}
-            >
+            <img src="./img/work/IT.svg" alt="IT" />
+            <img src="./img/work/C.svg" alt="C" />
+          </div>
+          <div className={style.column}>
               <NavLink
                 onClick={() => {
                   setTimeout(() => {
@@ -96,10 +94,7 @@ export const Works = (props) => {
                   <span>Показать еще</span>
                 </MyButton>
               </NavLink>
-            </span>
-            <img src="./img/work/IT.svg" alt="IT" />
-            <img src="./img/work/C.svg" alt="C" />
-          </div>
+            </div>
           {props.data
             ? props.data.map((item, index) => (
                 <WorkComponent
