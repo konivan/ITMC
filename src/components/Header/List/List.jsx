@@ -10,7 +10,7 @@ export const List = () => {
         <li
           onClick={() => {
             setTimeout(() => {
-              window.scroll(0, 500);
+              window.scroll(0, 300);
             }, 0);
           }}
         >
@@ -37,7 +37,7 @@ export const List = () => {
         <li
           onClick={() => {
             setTimeout(() => {
-              window.scroll(0, 2000);
+              window.scroll(0, 5000);
             }, 0);
           }}
         >
