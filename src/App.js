@@ -40,7 +40,7 @@ function App() {
   ) {
     window.style = "overflow-y: hidden";
   } else window.style = "scroll-behavior: smooth;";
-
+   
   return (
     <div className="App">
       <BrowserRouter>

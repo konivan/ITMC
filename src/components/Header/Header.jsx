@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import style from "./Header.module.scss";
 
@@ -6,7 +6,6 @@ import { Button } from "../UI/Button/Button";
 import { MyButton } from "../UI/MyButton/MyButton";
 import { List } from "./List";
 import { Menu } from "./Menu/Menu";
-import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 export const Header = (props) => {
