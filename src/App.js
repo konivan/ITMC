@@ -12,7 +12,8 @@ import Product from "./components/Forms/Product/product";
 import { Team } from "./pages/Team/Team";
 import { Portfolio } from "./pages/Portfolio/Portfolio";
 import { LkCreateOrder } from "./pages/Lk/LkCreateOrder/LkCreateOrder";
- 
+import {Origin} from "./pages/Lk/Origin/Origin"
+
 function App() {
   let window = document.getElementById("html-1");
   const URL = `${process.env.REACT_APP_URL}`;
@@ -68,7 +69,8 @@ function App() {
           />
           <Route path="/portfolio" element={<Portfolio URL={URL} />} />
           <Route path="/team" element={<Team />} />
-          <Route path="/Lk" element={<LkCreateOrder />} />
+          <Route path="/LkCreateOrder" element={<LkCreateOrder />} />
+          <Route path="/Origin" element={<Origin />} />
         </Routes>
         <Product
           onClose={() => setShowProduct(false)}
