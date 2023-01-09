@@ -15,7 +15,7 @@ import { Lk } from "./pages/Lk/Lk";
  
 function App() {
   let window = document.getElementById("html-1");
-  const URL = "http://185.26.96.45:8000/account/";
+  const URL = `${process.env.REACT_APP_URL}`;
   const [isAuth, setIsAuth] = useState(false);
 
   const [showAuth, setShowAuth] = useState(false);
@@ -40,7 +40,7 @@ function App() {
   ) {
     window.style = "overflow-y: hidden";
   } else window.style = "scroll-behavior: smooth;";
-
+   
   return (
     <div className="App">
       <BrowserRouter>
