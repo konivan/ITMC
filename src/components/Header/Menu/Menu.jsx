@@ -18,7 +18,7 @@ export const Menu = (props) => {
         <li
           onClick={() => {
             setTimeout(() => {
-              window.scroll(0, 500);
+              window.scroll(0, 300);
             }, 0);
           }}
         >
@@ -45,11 +45,14 @@ export const Menu = (props) => {
         <li
           onClick={() => {
             setTimeout(() => {
-              window.scroll(0, 2000);
+              window.scroll(0, 5000);
             }, 0);
           }}
         >
           <NavLink to="/team">О нас</NavLink>
+        </li>
+        <li style={{display: !props.isAuth ? 'none' : null}}>
+          <NavLink onClick={() => props.setIsAuth(false)}>Выйти</NavLink>
         </li>
       </ul>
       <Button setShowAuthOrders={props.setShowAuthOrders}>Заказать</Button>
