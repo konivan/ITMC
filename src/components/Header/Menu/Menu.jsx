@@ -4,7 +4,6 @@ import style from "./Menu.module.scss";
 
 import { Button } from "../../UI/Button";
 
-// import { MENU } from "../Menu/constant";
 import { NavLink } from "react-router-dom";
 
 export const Menu = (props) => {

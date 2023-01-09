@@ -11,7 +11,7 @@ import AuthOrder from "./components/Forms/AuthOrder/authOrder";
 import Product from "./components/Forms/Product/product";
 import { Team } from "./pages/Team/Team";
 import { Portfolio } from "./pages/Portfolio/Portfolio";
-import { Lk } from "./pages/Lk/Lk";
+import { LkCreateOrder } from "./pages/Lk/LkCreateOrder/LkCreateOrder";
  
 function App() {
   let window = document.getElementById("html-1");
@@ -68,7 +68,7 @@ function App() {
           />
           <Route path="/portfolio" element={<Portfolio URL={URL} />} />
           <Route path="/team" element={<Team />} />
-          <Route path="/Lk" element={<Lk />} />
+          <Route path="/Lk" element={<LkCreateOrder />} />
         </Routes>
         <Product
           onClose={() => setShowProduct(false)}
