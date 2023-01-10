@@ -219,6 +219,15 @@
                 align-items: center;
                 width: 261px;
                 height: 94px;
+                input[type="file"] {
+                    position: absolute;
+                    bottom: 85px;
+                    z-index: 10;
+                    width: 504px;
+                    min-height: 158px;
+                    cursor: pointer;
+                    text-indent: -999em;
+                }
                 p {
                     text-align: center;
                     margin-top: 16px;

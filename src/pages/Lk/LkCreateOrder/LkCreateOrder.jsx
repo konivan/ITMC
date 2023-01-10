@@ -9,6 +9,8 @@ export const LkCreateOrder = () => {
   const [budgetValue, setBudgetValue] = useState();
   const [service, setServiceValue] = useState();
   const [file, setFile] = useState();
+  const [planFiles, setPlanFiles] = useState();
+  console.log(planFiles)
   let services = [];
   const changeHandler = () => {
     if (service === 'Веб сайт') {
@@ -97,10 +99,15 @@ export const LkCreateOrder = () => {
           <span>Ваша схема работы</span>
           <div className={style.item}>
             <form>
+              <input type="file" onChange={(e) => {
+                setPlanFiles(e.target.files[0]);
+              }}/>
               <img src="img/Lk/photoIcon.svg" alt="Uploadphoto"/>
               <p><span>Загрузите фотографии</span>, или просто перетяните их в это поле</p>
             </form>
           </div>
+          {planFiles === undefined ? null
+          : <div style={{color: "green"}}>Вы загрузили: {planFiles.name}</div>}
           <p>
             Размером от 256px на 256px в формате .jpg или .png<br/> Максимум 5
             фотографий
