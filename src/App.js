@@ -13,6 +13,7 @@ import { Team } from "./pages/Team/Team";
 import { Portfolio } from "./pages/Portfolio/Portfolio";
 import { LkCreateOrder } from "./pages/Lk/LkCreateOrder/LkCreateOrder";
 import {Origin} from "./pages/Lk/Origin/Origin"
+import {Orders} from "./pages/Lk/Orders/Orders"
 
 function App() {
   let window = document.getElementById("html-1");
@@ -71,6 +72,7 @@ function App() {
           <Route path="/team" element={<Team />} />
           <Route path="/LkCreateOrder" element={<LkCreateOrder />} />
           <Route path="/Origin" element={<Origin />} />
+          <Route path="/Orders" element={<Orders />} />
         </Routes>
         <Product
           onClose={() => setShowProduct(false)}
