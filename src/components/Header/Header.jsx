@@ -10,7 +10,9 @@ import { NavLink } from "react-router-dom";
 
 export const Header = (props) => {
   const [activeBurger, setActiveBurger] = useState(false);
-
+  if (window.location.pathname === '/Origin' || '/LkCreateOrder') {
+    return null;
+  }
   return (
     <div className={style.header}>
       <div className={style.wrapper}>

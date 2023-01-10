@@ -7,6 +7,9 @@ import { IMG } from "./constant";
 import { Button } from "../UI/Button/Button";
 
 export const Footer = (props) => {
+ if (window.location.pathname === '/Origin' || '/LkCreateOrder') {
+   return null;
+ }
   return (
     <footer className={style.footer}>
       <div className={style.wrapper}>

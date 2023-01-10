@@ -1,14 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
+import { attendance } from "./constants";
+
 import style from "./LkCreateOrder.module.scss";
 
 export const LkCreateOrder = () => {
+  const [budgetValue, setBudgetValue] = useState();
+  const [service, setServiceValue] = useState();
+  let services = [];
+  const changeHandler = () => {
+    if (service === 'Веб сайт') {
+      services = attendance[0];
+    } else if (service === 'Разработка приложения') {
+      services = attendance[1];
+    } else if (service === 'Крипто разработка') {
+      services = attendance[2];
+    } else if (service === 'Разработка дизайна') {
+      services = attendance[3];
+    } else if (service === 'Аудит системы и кода') {
+      services = attendance[4];
+    } else if (service === 'Маркетинг') {
+      services = attendance[5];
+    } else return services = attendance[0];
+  }
+  changeHandler();
+  
   return (
     <section className={style.wrapper}>
       <div className={style.container}>
         <div className={style.row}>
-          <span>Создание нового проекта</span>
+          <span className={style.firstSpan}>Создание нового проекта</span>
           <button>Отменить</button>
           <button>Заказать</button>
+          <div>
+            <span className={style.line}/>
+            <span className={style.line}/>
+            <span className={style.line}/>
+            <span className={style.line}/>
+            <span className={style.line}/>
+            <span className={style.line}/>
+            <span className={style.line}/>
+            <span className={style.line}/>
+          </div>
         </div>
         <div className={style.row}>
           <span>Логотип вашего проекта</span>
@@ -31,23 +63,28 @@ export const LkCreateOrder = () => {
         </div>
         <div className={style.row}>
           <span>Желаемый бюджет</span>
-          <input placeholder="Ваш желаемый бюджет" />
-          <input list="marks" type="range" min="0" max="100" step="25" />
+          <label>Ваш желаемый бюджет</label>
+          <input placeholder="0" type="number" value={budgetValue} onChange={(e) => {
+                  setBudgetValue(e.target.value);
+                }}/>
+          <input list="marks" type="range" min="0" max="100000" step="25000" onChange={(e) => {
+                  setBudgetValue(e.target.value);
+                }}/>
           <datalist id="marks" className={style.datalist}>
-            <option value="0" label="0" />
-            <option value="25" label="25к" />
-            <option value="50" label="50к" />
-            <option value="75" label="75к" />
-            <option value="100" label="100к" />
+            <option label="0" />
+            <option label="25к" />
+            <option label="50к" />
+            <option label="75к" />
+            <option label="100к" />
           </datalist>
         </div>
         <div className={style.row}>
           <span>Ваша схема работы</span>
           <div className={style.item}>
-            <div>
+            <form>
               <img src="img/Lk/photoIcon.svg" alt="Uploadphoto"/>
               <p><span>Загрузите фотографии</span>, или просто перетяните их в это поле</p>
-            </div>
+            </form>
           </div>
           <p>
             Размером от 256px на 256px в формате .jpg или .png<br/> Максимум 5
@@ -58,28 +95,30 @@ export const LkCreateOrder = () => {
           <span>Что именно вам нужно</span>
           <input placeholder="Нет выбранных категорий"/>
           <label>Категория</label>
-          <select>
-            <option value="">Веб сайт</option>
-            <option value="1">Разработка приложения</option>
-            <option value="0">Крипто разработка</option>
-            <option value="2">Разработка дизайна</option>
-            <option value="3">Аудит системы и кода</option>
-            <option value="4">Маркетинг</option>
+          <select onChange={(e) => {
+                  setServiceValue(e.target.value);
+                }}>
+            <option>Веб сайт</option>
+            <option>Разработка приложения</option>
+            <option>Крипто разработка</option>
+            <option>Разработка дизайна</option>
+            <option>Аудит системы и кода</option>
+            <option>Маркетинг</option>
           </select>
           <div className={style.items}>
-            <div>Верстка</div>
-            <div>Бекенд</div>
-            <div>1С</div>
+            <div>{services[0]}</div>
+            <div>{services[1]}</div>
+            <div>{services[2]}</div>
           </div>
           <div className={style.items}>
-            <div>Битрикс</div>
-            <div>Админ панель</div>
-            <div>Написание политики</div>
+            <div>{services[3]}</div>
+            <div>{services[4]}</div>
+            <div>{services[5]}</div>
           </div>
-          <div className={style.items}>
-            <div>Подключение кассы</div>
-            <div>Интеграция с WEB 3.0</div>
-            <div>Создание UI логики</div>
+          <div className={style.items} style={{display: services.length <= 6 ? 'none' : 'flex'}}>
+            <div>{services[6]}</div>
+            <div>{services[7]}</div>
+            <div>{services[8]}</div>
           </div>
         </div>
         <div className={style.row}>
