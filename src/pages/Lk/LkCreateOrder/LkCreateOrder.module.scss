@@ -79,7 +79,22 @@
             width: 162px;
             display: flex;
             flex-direction: column;
-            button {
+            span {
+                position: relative;
+                top: 29px;
+                left: 28px;
+                font-size: 15px;
+                color: #25262D;
+                pointer-events: none;
+            }
+            input[type='file'] {
+                cursor: pointer;
+                text-indent: -999em;
+                outline: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: auto;
+                width: 141px;
                 background: #E8E8E8;
                 margin-right: 20px;
                 font-size: 15px;
@@ -150,7 +165,7 @@
         input[type=range] {
             -webkit-appearance: none;
             -moz-appearance: none;
-            appearance: auto;
+            appearance: none;
         }
         input[type=range]::-webkit-slider-runnable-track {
             height: 7px;
@@ -158,6 +173,7 @@
         input[type=range]::-webkit-slider-thumb {
             background: #ecf0f1;
             border: 2px solid #7840B0;
+            box-shadow: 0px 4px 4px rgba(120, 64, 176, 0.25);
             border-radius: 50%;
             cursor: pointer;
             width:19px;
@@ -203,6 +219,15 @@
                 align-items: center;
                 width: 261px;
                 height: 94px;
+                input[type="file"] {
+                    position: absolute;
+                    bottom: 85px;
+                    z-index: 10;
+                    width: 504px;
+                    min-height: 158px;
+                    cursor: pointer;
+                    text-indent: -999em;
+                }
                 p {
                     text-align: center;
                     margin-top: 16px;
