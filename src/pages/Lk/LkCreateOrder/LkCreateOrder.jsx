@@ -4,9 +4,11 @@ import { attendance, days } from "./constants";
 import style from "./LkCreateOrder.module.scss";
 import { SwitchComponent } from "./SwitchComponent";
 
+
 export const LkCreateOrder = () => {
   const [budgetValue, setBudgetValue] = useState();
   const [service, setServiceValue] = useState();
+  const [file, setFile] = useState();
   let services = [];
   const changeHandler = () => {
     if (service === 'Веб сайт') {
@@ -47,14 +49,26 @@ export const LkCreateOrder = () => {
           <span>Логотип вашего проекта</span>
           <div>
             <div className={style.column}>
-              <div>
-                <img src="img/Lk/photoIcon.svg" alt="Uploadphoto" />
-                <p>Нет фотографии</p>
-              </div>
+              {
+                file === undefined ? 
+                <div>
+                  <img src="img/Lk/photoIcon.svg" alt="Uploadphoto" />
+                  <p>Нет фотографии</p>
+                </div>
+                : <img src={`${file}`} alt="yourPhoto" style={{height: '100px'}}/>
+              }
             </div>
             <div className={style.column}>
-              <button>Загрузить фото</button>
+              <span>Загрузить фото</span>
+              <input onChange={(e) => {
+                let path = window.URL.createObjectURL(e.target.files[0]);
+                window.URL.revokeObjectURL(path);
+                setFile(path);
+              }} placeholder="Загрузить фото" type="file"/>
               <p>Размером от 256px на 256px в формате .jpg или .png </p>
+              {file === undefined ?
+              null : <span style={{color: 'green'}}>Файл загружен</span>
+            }
             </div>
           </div>
         </div>
@@ -68,7 +82,7 @@ export const LkCreateOrder = () => {
           <input placeholder="0" type="number" value={budgetValue} onChange={(e) => {
                   setBudgetValue(e.target.value);
                 }}/>
-          <input list="marks" type="range" min="0" max="100000" step="25000" onChange={(e) => {
+          <input list="marks" type="range" min="0" max="100000" value={budgetValue} onChange={(e) => {
                   setBudgetValue(e.target.value);
                 }}/>
           <datalist id="marks" className={style.datalist}>
