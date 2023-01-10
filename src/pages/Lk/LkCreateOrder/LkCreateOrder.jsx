@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { attendance } from "./constants";
+import { attendance, days } from "./constants";
 
 import style from "./LkCreateOrder.module.scss";
+import { SwitchComponent } from "./SwitchComponent";
 
 export const LkCreateOrder = () => {
   const [budgetValue, setBudgetValue] = useState();
@@ -130,90 +131,9 @@ export const LkCreateOrder = () => {
         </div>
         <div className={style.row}>
           <span>Восколько вы свободны для конференций</span>
-          <div className={style.item}>
-            <label className={style.switch}>
-              <input type="checkbox"/>
-              <span className={style.slider}></span>
-            </label>
-            <label>Понедельник</label>
-            <input className={style.timeInput} placeholder="00:00" />
-            —
-            <input className={style.timeInput} placeholder="00:00"/>
-            <input type="checkbox" className={style.lastCheckBox}/>
-            <label>Круглосуточно</label>
-          </div>
-          <div className={style.item}>
-            <label className={style.switch}>
-              <input type="checkbox"/>
-              <span className={style.slider}></span>
-            </label>
-            <label>Вторник</label>
-            <input className={style.timeInput} placeholder="00:00" />
-            —
-            <input className={style.timeInput} placeholder="00:00"/>
-            <input type="checkbox" className={style.lastCheckBox}/>
-            <label>Круглосуточно</label>
-          </div>
-          <div className={style.item}>
-            <label className={style.switch}>
-              <input type="checkbox"/>
-              <span className={style.slider}></span>
-            </label>
-            <label>Среда</label>
-            <input className={style.timeInput} placeholder="00:00" />
-            —
-            <input className={style.timeInput} placeholder="00:00"/>
-            <input type="checkbox" className={style.lastCheckBox}/>
-            <label>Круглосуточно</label>
-          </div>
-          <div className={style.item}>
-            <label className={style.switch}>
-              <input type="checkbox"/>
-              <span className={style.slider}></span>
-            </label>
-            <label>Четверг</label>
-            <input className={style.timeInput} placeholder="00:00" />
-            —
-            <input className={style.timeInput} placeholder="00:00"/>
-            <input type="checkbox" className={style.lastCheckBox}/>
-            <label>Круглосуточно</label>
-          </div>
-          <div className={style.item}>
-            <label className={style.switch}>
-              <input type="checkbox"/>
-              <span className={style.slider}></span>
-            </label>
-            <label>Пятница</label>
-            <input className={style.timeInput} placeholder="00:00" />
-            —
-            <input className={style.timeInput} placeholder="00:00"/>
-            <input type="checkbox" className={style.lastCheckBox}/>
-            <label>Круглосуточно</label>
-          </div>
-          <div className={style.item}>
-            <label className={style.switch}>
-              <input type="checkbox"/>
-              <span className={style.slider}></span>
-            </label>
-            <label>Суббота</label>
-            <input className={style.timeInput} placeholder="00:00" />
-            —
-            <input className={style.timeInput} placeholder="00:00"/>
-            <input type="checkbox" className={style.lastCheckBox}/>
-            <label>Круглосуточно</label>
-          </div>
-          <div className={style.item}>
-            <label className={style.switch}>
-              <input type="checkbox"/>
-              <span className={style.slider}></span>
-            </label>
-            <label>Воскресенье</label>
-            <input className={style.timeInput} placeholder="00:00" />
-            —
-            <input className={style.timeInput} placeholder="00:00"/>
-            <input type="checkbox" className={style.lastCheckBox}/>
-            <label>Круглосуточно</label>
-          </div>
+          {days.map((item) => (
+            <SwitchComponent item={item}/>
+          ))}
         </div>
         <div className={style.row}>
           <span>Описание</span>
