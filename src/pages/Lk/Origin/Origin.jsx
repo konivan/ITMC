@@ -20,7 +20,7 @@ export const Origin = (props) => {
                 <select>
                   <option value="">Все торговые точки и операции</option>
                 </select>
-                <input placeholder="Поиск по номеру счета" />
+                <input type="text" placeholder="Поиск по номеру счета" />
                 <select>
                   <option value="">Фильтры</option>
                   <option value="">По дате</option>
