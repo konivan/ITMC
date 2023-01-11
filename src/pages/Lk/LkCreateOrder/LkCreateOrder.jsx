@@ -182,7 +182,7 @@ export const LkCreateOrder = () => {
         <div className={style.row}>
           <span>Описание</span>
           <textarea placeholder="Полное описание"/>
-          <p>Максимальное количество символов: 240</p>
+          <p>Максимальное количество символов: 5000</p>
         </div>
         <div className={style.row}>
           <button>Отменить</button>

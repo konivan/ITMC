@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 export const Orders = () => {
   return (
-    <section className={style.main}>
+    <section className={style.main} id="Orders">
       <div className={style.wrapper}>
         <div className={style.container}>
           <Bar />
@@ -13,9 +13,9 @@ export const Orders = () => {
             <div className={style.column}>
               <h2>Ваши заказы</h2>
               <button>
-                <img src="img/Lk/UnionX.svg" alt="UnionX" />
                 <NavLink to="/LkCreateOrder">
-                  <span>Заказать</span>
+                  <img src="img/Lk/UnionX.svg" alt="UnionX" />
+                 <span>Заказать</span>
                 </NavLink>
               </button>
             </div>
