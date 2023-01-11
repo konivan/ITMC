@@ -45,7 +45,11 @@ export const Header = (props) => {
               <div>
                 <img className={style.userIcon} src="img/header/user.svg" alt="user-icon"/>
                 <div className={style.dropdown}>
-                  <NavLink to="Lk">
+                  <NavLink to="/Origin" onClick={() => {
+                      setTimeout(() => {
+                        window.location.reload();
+                      }, 1)
+                    }}>
                     <span>Личный кабинет</span>
                   </NavLink>
                   <span onClick={() => props.setIsAuth(false)}>Выйти</span>

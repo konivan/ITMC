@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import style from "./Bar.module.scss"
 
 export  const Bar = () => {
@@ -22,7 +23,9 @@ export  const Bar = () => {
                 src="img/lk/UnionOne.svg"
                 alt="UnionOne"
               />
+              <NavLink to="/Orders">
               <span>Ваши заказы</span>
+              </NavLink>
             </li>
             <li>
               <img

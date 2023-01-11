@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./Orders.module.scss";
 import { Bar } from "../Bar/Bar";
+import { NavLink } from "react-router-dom";
 
 export const Orders = () => {
   return (
@@ -13,7 +14,9 @@ export const Orders = () => {
               <h2>Ваши заказы</h2>
               <button>
                 <img src="img/Lk/UnionX.svg" alt="UnionX" />
-                <span>Заказать</span>
+                <NavLink to="/LkCreateOrder">
+                  <span>Заказать</span>
+                </NavLink>
               </button>
             </div>
             <div className={style.column}>

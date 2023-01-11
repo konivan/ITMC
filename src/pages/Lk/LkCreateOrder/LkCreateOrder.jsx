@@ -10,7 +10,6 @@ export const LkCreateOrder = () => {
   const [service, setServiceValue] = useState();
   const [file, setFile] = useState();
   const [planFiles, setPlanFiles] = useState();
-  console.log(planFiles)
   let services = [];
   const changeHandler = () => {
     if (service === 'Веб сайт') {
@@ -28,6 +27,30 @@ export const LkCreateOrder = () => {
     } else return services = attendance[0];
   }
   changeHandler();
+
+  // const orderData = {
+  //   orders: {
+  //     name_created: name,
+  //     telephone_number: telegram,
+  //     telegram: telegram,
+  //     description: description,
+  //   },
+  // };
+
+  // const url = `api`;
+  //   const reqOptions = {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(orderData),
+  //   };
+
+  //   const sendOrder = () => {
+  //     fetch(url, reqOptions, orderData)
+  //       .then((res) => res.json())
+  //       .catch((err) => console.log("Error: " + err));
+  //   };
   
   return (
     <section className={style.wrapper}>
