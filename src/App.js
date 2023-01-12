@@ -72,7 +72,7 @@ function App() {
           />
           <Route path="/portfolio" element={<Portfolio URL={URL} />} />
           <Route path="/team" element={<Team />} />
-          <Route path="/LkCreateOrder" element={<LkCreateOrder />} />
+          <Route path="/LkCreateOrder" element={<LkCreateOrder/>} />
           <Route path="/Origin" element={<Origin />} />
           <Route path="/Orders" element={<Orders />} />
           <Route path="/Dogovor" element={<Dogovor />} />

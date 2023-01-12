@@ -7,7 +7,7 @@ import { IMG } from "./constant";
 import { Button } from "../UI/Button/Button";
 
 export const Footer = (props) => {
- if (window.location.pathname === '/Origin' || window.location.pathname === '/LkCreateOrder') {
+ if (window.location.pathname === '/Origin' || window.location.pathname === '/LkCreateOrder' || window.location.pathname === '/Orders') {
    return null;
  }
   return (

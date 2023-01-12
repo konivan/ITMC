@@ -12,10 +12,10 @@ export const SwitchComponent = ({item}) => {
           <span className={style.slider}></span>
         </label>
         <label>{item}</label>
-        <input className={style.timeInput} placeholder="00:00" readOnly={check === true ? "" : "false"}/>
+        <input className={style.timeInput} placeholder="00:00" readOnly={check === true ? "" : "no"}/>
         —
-        <input className={style.timeInput} placeholder="00:00" readOnly={check === true ? "" : "false"}/>
-        <input type="checkbox" className={style.lastCheckBox} disabled={check === true ? "" : "false"}/>
+        <input className={style.timeInput} placeholder="00:00" readOnly={check === true ? "" : "no"}/>
+        <input type="checkbox" className={style.lastCheckBox} disabled={check === true ? "" : "no"}/>
         <label>Круглосуточно</label>
     </div>
     )
