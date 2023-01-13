@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import style from "./Header.module.scss";
 
@@ -6,12 +6,13 @@ import { Button } from "../UI/Button/Button";
 import { MyButton } from "../UI/MyButton/MyButton";
 import { List } from "./List";
 import { Menu } from "./Menu/Menu";
-import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 export const Header = (props) => {
   const [activeBurger, setActiveBurger] = useState(false);
-
+  if (window.location.pathname === '/Origin' || window.location.pathname === '/LkCreateOrder' || window.location.pathname === '/Orders') {
+    return null;
+  }
   return (
     <div className={style.header}>
       <div className={style.wrapper}>
@@ -30,11 +31,11 @@ export const Header = (props) => {
               <span></span>
               <div onClick={(e) => e.stopPropagation()}>
                 <Menu setShowAuthOrders={props.setShowAuthOrders} setIsAuth={props.setIsAuth} isAuth={props.isAuth} activeBurger={activeBurger}/>
-              </div>
+              </div>  
             </div>
             </div>
             </div>
-          <List />
+          <List/>
           <div className={style.column}>
             <div className={style.item}>
               <Button setShowAuthOrders={props.setShowAuthOrders}>Заказать</Button>
@@ -44,7 +45,11 @@ export const Header = (props) => {
               <div>
                 <img className={style.userIcon} src="img/header/user.svg" alt="user-icon"/>
                 <div className={style.dropdown}>
-                  <NavLink to="Lk">
+                  <NavLink to="/Origin" onClick={() => {
+                      setTimeout(() => {
+                        window.location.reload();
+                      }, 1)
+                    }}>
                     <span>Личный кабинет</span>
                   </NavLink>
                   <span onClick={() => props.setIsAuth(false)}>Выйти</span>

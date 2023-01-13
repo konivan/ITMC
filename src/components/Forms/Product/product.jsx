@@ -1,16 +1,15 @@
 import React from "react";
-import style from './product.module.scss';
+import style from "./product.module.scss";
 
-import { Icon } from '@iconify/react';
-
+import { Icon } from "@iconify/react";
 
 const Product = (props) => {
   const productDescription = [
-    'Мы разработали крипто проект на основе bitcoin. Для этого мы использовали языки программирования java script, type script в основу базы данных легла Postgress SQL.',
-    'Мы разработали крипто проект на основе solana и выпустили свой токен masd. Для этого мы использовали языки программирования java script, type script, python, а также мы разработали мета вселенную на основе Unreal engine 4, в основу базы данных легла Postgress SQL.',
-    'Мы разработали крипто проект на основе solana. Выпустив свой токен на основе solana.  Для этого мы использовали языки программирования java script в основу базы данных легла Postgress SQL.',
-    'Мы сделали полностью децентрализованный маркетплейс с возможностью минтинга NFT. На основе tron. В основу стека для разработки лег язык программирования java script, а в основу базы данных легла Postgress SQL.'
-  ]
+    "Мы разработали крипто проект на основе bitcoin. Для этого мы использовали языки программирования java script, type script в основу базы данных легла Postgress SQL.",
+    "Мы разработали крипто проект на основе solana и выпустили свой токен masd. Для этого мы использовали языки программирования java script, type script, python, а также мы разработали мета вселенную на основе Unreal engine 4, в основу базы данных легла Postgress SQL.",
+    "Мы разработали крипто проект на основе solana. Выпустив свой токен на основе solana.  Для этого мы использовали языки программирования java script в основу базы данных легла Postgress SQL.",
+    "Мы сделали полностью децентрализованный маркетплейс с возможностью минтинга NFT. На основе tron. В основу стека для разработки лег язык программирования java script, а в основу базы данных легла Postgress SQL.",
+  ];
 
   if (!props.showProduct) {
     return null;
@@ -48,7 +47,8 @@ const Product = (props) => {
               : props.productTitle === "WEB-разработка проекта: THR ONE"
               ? productDescription[3]
               : props.productTitle === "Создание криптовалюты на основа SOLANA"
-              ? productDescription[2] : productDescription[1]}
+              ? productDescription[2]
+              : productDescription[1]}
           </p>
         </section>
       </div>

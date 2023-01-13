@@ -10,13 +10,17 @@ import { Footer } from "./components/Footer/Footer";
 import AuthOrder from "./components/Forms/AuthOrder/authOrder";
 import Product from "./components/Forms/Product/product";
 import { Team } from "./pages/Team/Team";
-import { Portfolio } from "./pages/portfolio/portfolio";
-import { Lk } from "./pages/Lk/Lk";
+import { Portfolio } from "./pages/Portfolio/Portfolio";
+import { LkCreateOrder } from "./pages/Lk/LkCreateOrder/LkCreateOrder";
+import {Origin} from "./pages/Lk/Origin/Origin"
+import {Orders} from "./pages/Lk/Orders/Orders"
+import {Dogovor} from "./pages/Lk/Dogovor/Dogovor"
+import {Accounts} from "./pages/Lk/Accounts/Accounts"
 
 function App() {
   let window = document.getElementById("html-1");
-  const URL = "http://185.26.96.45:8000/account/";
-  const [isAuth, setIsAuth] = useState(false);
+  const URL = `${process.env.REACT_APP_URL}`;
+  const [isAuth, setIsAuth] = useState(true);
 
   const [showAuth, setShowAuth] = useState(false);
   const [showAuthorization, setShowAuthorization] = useState(false);
@@ -68,7 +72,12 @@ function App() {
           />
           <Route path="/portfolio" element={<Portfolio URL={URL} />} />
           <Route path="/team" element={<Team />} />
-          <Route path="/Lk" element={<Lk />} />
+          <Route path="/LkCreateOrder" element={<LkCreateOrder/>} />
+          <Route path="/Origin" element={<Origin />} />
+          <Route path="/Orders" element={<Orders />} />
+          <Route path="/Dogovor" element={<Dogovor />} />
+          <Route path="/Accounts" element={<Accounts />} />
+
         </Routes>
         <Product
           onClose={() => setShowProduct(false)}
