@@ -43,7 +43,9 @@ export const Bar = () => {
               src="img/lk/Group.svg"
               alt="UnionOne"
             />
-            <span>Корректировка задания</span>
+            <NavLink to="/Origin">
+              <span>Все счета</span>
+            </NavLink>
           </li>
         </ul>
       </div>

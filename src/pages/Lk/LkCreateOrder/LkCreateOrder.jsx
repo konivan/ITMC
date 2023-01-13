@@ -4,7 +4,6 @@ import { attendance, days } from "./constants";
 import style from "./LkCreateOrder.module.scss";
 import { SwitchComponent } from "./SwitchComponent";
 
-
 export const LkCreateOrder = () => {
   const [budgetValue, setBudgetValue] = useState();
   const [service, setServiceValue] = useState();
@@ -12,20 +11,20 @@ export const LkCreateOrder = () => {
   const [planFiles, setPlanFiles] = useState();
   let services = [];
   const changeHandler = () => {
-    if (service === 'Веб сайт') {
+    if (service === "Веб сайт") {
       services = attendance[0];
-    } else if (service === 'Разработка приложения') {
+    } else if (service === "Разработка приложения") {
       services = attendance[1];
-    } else if (service === 'Крипто разработка') {
+    } else if (service === "Крипто разработка") {
       services = attendance[2];
-    } else if (service === 'Разработка дизайна') {
+    } else if (service === "Разработка дизайна") {
       services = attendance[3];
-    } else if (service === 'Аудит системы и кода') {
+    } else if (service === "Аудит системы и кода") {
       services = attendance[4];
-    } else if (service === 'Маркетинг') {
+    } else if (service === "Маркетинг") {
       services = attendance[5];
-    } else return services = attendance[0];
-  }
+    } else return (services = attendance[0]);
+  };
   changeHandler();
 
   // const orderData = {
@@ -51,7 +50,7 @@ export const LkCreateOrder = () => {
   //       .then((res) => res.json())
   //       .catch((err) => console.log("Error: " + err));
   //   };
-  
+
   return (
     <section className={style.wrapper}>
       <div className={style.container}>
@@ -60,40 +59,48 @@ export const LkCreateOrder = () => {
           <button>Отменить</button>
           <button>Заказать</button>
           <div>
-            <span className={style.line}/>
-            <span className={style.line}/>
-            <span className={style.line}/>
-            <span className={style.line}/>
-            <span className={style.line}/>
-            <span className={style.line}/>
-            <span className={style.line}/>
-            <span className={style.line}/>
+            <span className={style.line} />
+            <span className={style.line} />
+            <span className={style.line} />
+            <span className={style.line} />
+            <span className={style.line} />
+            <span className={style.line} />
+            <span className={style.line} />
+            <span className={style.line} />
           </div>
         </div>
         <div className={style.row}>
           <span>Логотип вашего проекта</span>
           <div>
             <div className={style.column}>
-              {
-                file === undefined ? 
+              {file === undefined ? (
                 <div>
                   <img src="img/Lk/photoIcon.svg" alt="Uploadphoto" />
                   <p>Нет фотографии</p>
                 </div>
-                : <img src={`${file}`} alt="yourPhoto" style={{height: '100px'}}/>
-              }
+              ) : (
+                <img
+                  src={`${file}`}
+                  alt="yourPhoto"
+                  style={{ height: "100px" }}
+                />
+              )}
             </div>
             <div className={style.column}>
               <span>Загрузить фото</span>
-              <input onChange={(e) => {
-                let path = window.URL.createObjectURL(e.target.files[0]);
-                window.URL.revokeObjectURL(path);
-                setFile(path);
-              }} placeholder="Загрузить фото" type="file"/>
+              <input
+                onChange={(e) => {
+                  let path = window.URL.createObjectURL(e.target.files[0]);
+                  window.URL.revokeObjectURL(path);
+                  setFile(path);
+                }}
+                placeholder="Загрузить фото"
+                type="file"
+              />
               <p>Размером от 256px на 256px в формате .jpg или .png </p>
-              {file === undefined ?
-              null : <span style={{color: 'green'}}>Файл загружен</span>
-            }
+              {file === undefined ? null : (
+                <span style={{ color: "green" }}>Файл загружен</span>
+              )}
             </div>
           </div>
         </div>
@@ -104,12 +111,24 @@ export const LkCreateOrder = () => {
         <div className={style.row}>
           <span>Желаемый бюджет</span>
           <label>Ваш желаемый бюджет</label>
-          <input placeholder="0" type="number" value={budgetValue} onChange={(e) => {
-                  setBudgetValue(e.target.value);
-                }}/>
-          <input list="marks" type="range" min="0" max="100000" value={budgetValue} onChange={(e) => {
-                  setBudgetValue(e.target.value);
-                }}/>
+          <input
+            placeholder="0"
+            type="number"
+            value={budgetValue}
+            onChange={(e) => {
+              setBudgetValue(e.target.value);
+            }}
+          />
+          <input
+            list="marks"
+            type="range"
+            min="0"
+            max="100000"
+            value={budgetValue}
+            onChange={(e) => {
+              setBudgetValue(e.target.value);
+            }}
+          />
           <datalist id="marks" className={style.datalist}>
             <option label="0" />
             <option label="25к" />
@@ -122,27 +141,36 @@ export const LkCreateOrder = () => {
           <span>Ваша схема работы</span>
           <div className={style.item}>
             <form>
-              <input type="file" onChange={(e) => {
-                setPlanFiles(e.target.files[0]);
-              }}/>
-              <img src="img/Lk/photoIcon.svg" alt="Uploadphoto"/>
-              <p><span>Загрузите фотографии</span>, или просто перетяните их в это поле</p>
+              <input
+                type="file"
+                onChange={(e) => {
+                  setPlanFiles(e.target.files[0]);
+                }}
+              />
+              <img src="img/Lk/photoIcon.svg" alt="Uploadphoto" />
+              <p>
+                <span>Загрузите фотографии</span>, или просто перетяните их в
+                это поле
+              </p>
             </form>
           </div>
-          {planFiles === undefined ? null
-          : <div style={{color: "green"}}>Вы загрузили: {planFiles.name}</div>}
+          {planFiles === undefined ? null : (
+            <div style={{ color: "green" }}>Вы загрузили: {planFiles.name}</div>
+          )}
           <p>
-            Размером от 256px на 256px в формате .jpg или .png<br/> Максимум 5
-            фотографий
+            Размером от 256px на 256px в формате .jpg или .png
+            <br /> Максимум 5 фотографий
           </p>
         </div>
         <div className={style.row}>
           <span>Что именно вам нужно</span>
-          <input placeholder="Нет выбранных категорий"/>
+          <input placeholder="Нет выбранных категорий" />
           <label>Категория</label>
-          <select onChange={(e) => {
-                  setServiceValue(e.target.value);
-                }}>
+          <select
+            onChange={(e) => {
+              setServiceValue(e.target.value);
+            }}
+          >
             <option>Веб сайт</option>
             <option>Разработка приложения</option>
             <option>Крипто разработка</option>
@@ -160,7 +188,10 @@ export const LkCreateOrder = () => {
             <div>{services[4]}</div>
             <div>{services[5]}</div>
           </div>
-          <div className={style.items} style={{display: services.length <= 6 ? 'none' : 'flex'}}>
+          <div
+            className={style.items}
+            style={{ display: services.length <= 6 ? "none" : "flex" }}
+          >
             <div>{services[6]}</div>
             <div>{services[7]}</div>
             <div>{services[8]}</div>
@@ -168,20 +199,20 @@ export const LkCreateOrder = () => {
         </div>
         <div className={style.row}>
           <span>Контакты</span>
-          <input placeholder="Номер телефона" type="tel"/>
-          <input placeholder="Email" type="email"/>
-          <input placeholder="Домен, если есть"/>
-          <input placeholder="Telegram"/>
+          <input placeholder="Номер телефона" type="tel" />
+          <input placeholder="Email" type="email" />
+          <input placeholder="Домен, если есть" />
+          <input placeholder="Telegram" />
         </div>
         <div className={style.row}>
           <span>Восколько вы свободны для конференций</span>
           {days.map((item) => (
-            <SwitchComponent item={item}/>
+            <SwitchComponent item={item} />
           ))}
         </div>
         <div className={style.row}>
           <span>Описание</span>
-          <textarea placeholder="Полное описание"/>
+          <textarea placeholder="Полное описание" />
           <p>Максимальное количество символов: 5000</p>
         </div>
         <div className={style.row}>
