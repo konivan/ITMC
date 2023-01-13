@@ -1,15 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { attendance, days } from "./constants";
 
 import style from "./LkCreateOrder.module.scss";
 import { SwitchComponent } from "./SwitchComponent";
 
 export const LkCreateOrder = () => {
+  const [globalToken, setGlobalToken] = useState(null);
   const [budgetValue, setBudgetValue] = useState();
   const [service, setServiceValue] = useState();
   const [file, setFile] = useState();
   const [planFiles, setPlanFiles] = useState();
+  const [imgLogo, setImgLogo] = useState();
+  const [productName, setProductName] = useState();
+  const [description, setDescription] = useState();
+  const [allTime, setAllTime] = useState(false);
+
+  const [phone, setPhone] = useState();
+  const [email, setEmail] = useState();
+  const [domain, setDomain] = useState();
+  const [telegram, setTelegram] = useState();
   let services = [];
+  const [tagsId, setTagsId] = useState([]);
+  // let tagsId = [];
+
   const changeHandler = () => {
     if (service === "Веб сайт") {
       services = attendance[0];
@@ -27,29 +40,90 @@ export const LkCreateOrder = () => {
   };
   changeHandler();
 
-  // const orderData = {
-  //   orders: {
-  //     name_created: name,
-  //     telephone_number: telegram,
-  //     telegram: telegram,
-  //     description: description,
-  //   },
-  // };
+  const userData = {
+    username: "admin",
+    password: "admin"
+  }
 
-  // const url = `api`;
-  //   const reqOptions = {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(orderData),
-  //   };
+  const url1 = `http://127.0.0.1:8000/api/token/`;
+  const reqOptions1 = {
+    method: "POST",
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userData),
+  };
 
-  //   const sendOrder = () => {
-  //     fetch(url, reqOptions, orderData)
-  //       .then((res) => res.json())
-  //       .catch((err) => console.log("Error: " + err));
-  //   };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(url1, reqOptions1, userData);
+        const token = await res.json();
+        setGlobalToken(token);
+      } catch (err) {
+        console.log("Error: " + err);
+      }
+    };
+    fetchData();
+  }, []);
+
+  const results = {
+    conference: {
+        monday: allTime,
+        tuesday: allTime,
+        wednesday: allTime,
+        thursday: allTime,
+        friday: allTime,
+        saturday: allTime,
+        sunday: allTime,
+        monday_start: "00:00",
+        monday_end: "00:00",
+        tuesday_start: "00:00",
+        tuesday_end: "00:00",
+        wednesday_start: "00:00",
+        wednesday_end: "00:00",
+        thursday_start: "00:00",
+        thursday_end: "00:00",
+        friday_start: "00:00",
+        friday_end: "00:00",
+        saturday_start: "00:00",
+        saturday_end: "00:00",
+        sunday_start: "00:00",
+        sunday_end: "00:00"
+    },
+    contact: {
+      phone: phone,
+      email: email,
+      domain: domain,
+      telegram: telegram
+    },
+    category: [
+      service
+    ],
+    name: productName,
+    image: imgLogo,
+    price: budgetValue,
+    description: description,
+    tags: tagsId
+  };
+
+  const url = `http://127.0.0.1:8000/orders/order/`;
+    const reqOptions = {
+      method: "POST",
+      headers: {
+        "authorization": `Bearer ${globalToken?.access}`,
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(results),
+    };
+
+    const sendOrder = () => {
+      fetch(url, reqOptions, results)
+        .then((res) => res.json())
+        .catch((err) => console.log("Error: " + err));
+    };
 
   return (
     <section className={style.wrapper}>
@@ -90,6 +164,7 @@ export const LkCreateOrder = () => {
               <span>Загрузить фото</span>
               <input
                 onChange={(e) => {
+                  setImgLogo(e.target.files[0]);
                   let path = window.URL.createObjectURL(e.target.files[0]);
                   window.URL.revokeObjectURL(path);
                   setFile(path);
@@ -106,7 +181,13 @@ export const LkCreateOrder = () => {
         </div>
         <div className={style.row}>
           <span>Название</span>
-          <input placeholder="Название вашего проекта" />
+          <input
+            value={productName}
+            placeholder="Название вашего проекта"
+            onChange={(e) => {
+              setProductName(e.target.value);
+            }}
+          />
         </div>
         <div className={style.row}>
           <span>Желаемый бюджет</span>
@@ -164,7 +245,7 @@ export const LkCreateOrder = () => {
         </div>
         <div className={style.row}>
           <span>Что именно вам нужно</span>
-          <input placeholder="Нет выбранных категорий" />
+          <div className={style.tags}>Нет выбранных тэгов</div>
           <label>Категория</label>
           <select
             onChange={(e) => {
@@ -179,45 +260,74 @@ export const LkCreateOrder = () => {
             <option>Маркетинг</option>
           </select>
           <div className={style.items}>
-            <div>{services[0]}</div>
-            <div>{services[1]}</div>
-            <div>{services[2]}</div>
+            <div onClick={() => {
+              tagsId.push(services[0]?.id)
+              console.log(tagsId)
+            }}>{services[0]?.title}</div>
+            <div onClick={() => {
+              tagsId.push(services[1]?.id)
+            }}>{services[1]?.title}</div>
+            <div onClick={() => {
+              tagsId.push(services[2]?.id)
+            }}>{services[2]?.title}</div>
           </div>
           <div className={style.items}>
-            <div>{services[3]}</div>
-            <div>{services[4]}</div>
-            <div>{services[5]}</div>
+            <div onClick={() => {
+              tagsId.push(services[3]?.id)
+            }}>{services[3]?.title}</div>
+            <div onClick={() => {
+              tagsId.push(services[4]?.id)
+            }}>{services[4]?.title}</div>
+            <div onClick={() => {
+              tagsId.push(services[5]?.id)
+            }}>{services[5]?.title}</div>
           </div>
           <div
             className={style.items}
             style={{ display: services.length <= 6 ? "none" : "flex" }}
           >
-            <div>{services[6]}</div>
-            <div>{services[7]}</div>
-            <div>{services[8]}</div>
+            <div onClick={() => {
+              tagsId.push(services[6]?.id)
+            }}>{services[6]?.title}</div>
+            <div onClick={() => {
+              tagsId.push(services[7]?.id)
+            }}>{services[7]?.title}</div>
+            <div onClick={() => {
+              tagsId.push(services[8]?.id)
+            }}>{services[8]?.title}</div>
           </div>
         </div>
         <div className={style.row}>
           <span>Контакты</span>
-          <input placeholder="Номер телефона" type="tel" />
-          <input placeholder="Email" type="email" />
-          <input placeholder="Домен, если есть" />
-          <input placeholder="Telegram" />
+          <input placeholder="Номер телефона" type="tel" value={phone} onChange={(e) => {
+            setPhone(e.target.value)
+          }}/>
+          <input placeholder="Email" type="email" value={email} onChange={(e) => {
+            setEmail(e.target.value)
+          }}/>
+          <input placeholder="Домен, если есть" value={domain} onChange={(e) => {
+            setDomain(e.target.value)
+          }}/>
+          <input placeholder="Telegram" value={telegram} onChange={(e) => {
+            setTelegram(e.target.value)
+          }}/>
         </div>
-        <div className={style.row}>
+        <div className={style.row}>т    
           <span>Восколько вы свободны для конференций</span>
-          {days.map((item) => (
-            <SwitchComponent item={item} />
+          {days.map((item, index) => (
+            <SwitchComponent setAllTime={setAllTime} allTime={allTime} item={item} key={`${item}, ${index}`}/>
           ))}
         </div>
         <div className={style.row}>
           <span>Описание</span>
-          <textarea placeholder="Полное описание" />
+          <textarea placeholder="Полное описание" value={description} onChange={(e) => {
+            setDescription(e.target.value)
+          }}/>
           <p>Максимальное количество символов: 5000</p>
         </div>
         <div className={style.row}>
           <button>Отменить</button>
-          <button>Отправить</button>
+          <button onClick={sendOrder}>Отправить</button>
         </div>
       </div>
     </section>

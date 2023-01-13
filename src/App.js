@@ -21,7 +21,7 @@ function App() {
   let window = document.getElementById("html-1");
   const URL = `${process.env.REACT_APP_URL}`;
   const [isAuth, setIsAuth] = useState(true);
-  
+
   const [showAuth, setShowAuth] = useState(false);
   const [showAuthorization, setShowAuthorization] = useState(false);
   const [showOrders, setShowOrders] = useState(false);
@@ -44,7 +44,7 @@ function App() {
   ) {
     window.style = "overflow-y: hidden";
   } else window.style = "scroll-behavior: smooth;";
-   
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -72,7 +72,7 @@ function App() {
           />
           <Route path="/portfolio" element={<Portfolio URL={URL} />} />
           <Route path="/team" element={<Team />} />
-          <Route path="/LkCreateOrder" element={<LkCreateOrder />} />
+          <Route path="/LkCreateOrder" element={<LkCreateOrder/>} />
           <Route path="/Origin" element={<Origin />} />
           <Route path="/Orders" element={<Orders />} />
           <Route path="/Dogovor" element={<Dogovor />} />

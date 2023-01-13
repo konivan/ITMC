@@ -156,7 +156,7 @@
             width: 320px;
             height: 46px;
             margin-bottom: 16px;
-            
+
         }
         input:nth-of-type(1)::-webkit-outer-spin-button,
         input:nth-of-type(1)::-webkit-inner-spin-button {
@@ -261,13 +261,14 @@
             font-size: 10px;
             color: #ABABAB;
         }
-        input:nth-of-type(1) {
+        .tags {
             outline: none;
             margin-top: 16px;
             margin-bottom: 16px;
             padding: 18px 12px;
             background: #F6F6F6;
             border: 1px solid #E8E8E8;
+            color: #2F3A4A;
             border-radius: 2px;
         }
         select {
@@ -289,6 +290,9 @@
                 padding: 10px 12px;
                 border: 1px solid #E8E8E8;
                 border-radius: 20px;
+            }
+            .active {
+                background: #7840B0;
             }
             gap: 8px;
             display: flex;
@@ -338,13 +342,13 @@
                 margin-top: 10px;
                 margin-right: 8px;
             }
-            
+
             .switch input {
                 opacity: 0;
                 width: 0;
                 height: 0;
             }
-            
+
             /* The slider */
             .slider {
                 border-radius: 34px;
@@ -358,7 +362,7 @@
                 -webkit-transition: .4s;
                 transition: .4s;
             }
-            
+
             .slider:before {
                 border-radius: 50%;
                 position: absolute;
@@ -370,15 +374,15 @@
                 -webkit-transition: .4s;
                 transition: .4s;
             }
-            
+
             input:checked + .slider {
                 background-color: #B38ADC;
             }
-            
+
             input:focus + .slider {
                 box-shadow: 0 0 1px #B38ADC;
             }
-            
+
             input:checked + .slider:before {
                 -webkit-transform: translateX(26px);
                 -ms-transform: translateX(26px);
