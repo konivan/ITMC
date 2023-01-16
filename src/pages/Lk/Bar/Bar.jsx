@@ -72,8 +72,8 @@ export const Bar = (props) => {
         </ul>
       </div>
       <div className={style.column}>
-        <img src="img/lk/exit.svg" alt="exit" />
-        <span>Свернуть панель</span>
+        {/* <img src="img/lk/exit.svg" alt="exit" /> */}
+        {/* <span>Свернуть панель</span> */}
       </div>
     </div>
   );
