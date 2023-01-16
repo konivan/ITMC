@@ -1,18 +1,18 @@
 import React from "react";
 import { MyButton } from "../UI/MyButton/MyButton";
-import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
 
-import WorkComponent from './WorkComponent';
+import WorkComponent from "./WorkComponent";
 
 import style from "./Works.module.scss";
 
 export const Works = (props) => {
   const openProduct = (img, title, icon) => {
     if (!props.data) {
-    props.setProductImg(img);
-    props.setProductTitle(title);
-    props.setProductIcon(icon);
-    props.setShowProduct(true);
+      props.setProductImg(img);
+      props.setProductTitle(title);
+      props.setProductIcon(icon);
+      props.setShowProduct(true);
     } else return 0;
   };
   return (
@@ -62,7 +62,7 @@ export const Works = (props) => {
                 )
               }
             />
-            <h4>Создание криптовалюты на основа SOLANA</h4>
+            <h4>Создание криптовалюты на основе SOLANA</h4>
             <img src="./img/work/C.svg" alt="C" />
           </div>
           <div className={style.column}>
@@ -81,20 +81,23 @@ export const Works = (props) => {
             <img src="./img/work/IT.svg" alt="IT" />
             <img src="./img/work/C.svg" alt="C" />
           </div>
-          <div className={style.column} style={{display: props.setShowProduct ? null : "none"}}>
-              <NavLink
-                onClick={() => {
-                  setTimeout(() => {
-                    window.scroll(0, 0);
-                  }, 0);
-                }}
-                to="portfolio"
-              >
-                <MyButton works={"works"}>
-                  <span>Показать еще</span>
-                </MyButton>
-              </NavLink>
-            </div>
+          <div
+            className={style.column}
+            style={{ display: props.setShowProduct ? null : "none" }}
+          >
+            <NavLink
+              onClick={() => {
+                setTimeout(() => {
+                  window.scroll(0, 0);
+                }, 0);
+              }}
+              to="portfolio"
+            >
+              <MyButton works={"works"}>
+                <span>Показать еще</span>
+              </MyButton>
+            </NavLink>
+          </div>
           {props.data
             ? props.data.map((item, index) => (
                 <WorkComponent

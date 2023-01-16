@@ -5,15 +5,23 @@ import { MySelect } from "../../../components/UI/Select/MySelect";
 
 export const Origin = (props) => {
   const [selectedSort, setSelectedSort] = useState("");
-  const sortPosts = (sort) => {
-    setSelectedSort(sort);
-    console.lof(sort);
-  };
+  let arr = [
+    { title: "abc", date: new Date("2019-06-28") },
+    { title: "cba", date: new Date("2019-06-10") },
+    { title: "bca", date: new Date("2019-06-22") },
+  ];
+
+  if (selectedSort === 'По названию') {
+    arr.sort((a, b) => a.title.localeCompare(b)); // сортировка по алфавиту
+  } else if (selectedSort === 'По дате') {
+    arr.sort((a, b) => b.date - a.date) // сортировка по дате
+  }
+
   return (
     <section className={style.main}>
       <div className={style.wrapper} id="header">
         <div className={style.container}>
-          <Bar />
+          <Bar name={props.name}/>
           <div className={style.row}>
             <h2>Все счета</h2>
             <div className={style.itemContainer}>
@@ -29,11 +37,11 @@ export const Origin = (props) => {
                 <input type="text" placeholder="Поиск по номеру счета" />
                 <MySelect
                   value={selectedSort}
-                  onChange={sortPosts}
+                  setSelectedSort={setSelectedSort}
                   defaultValue="Фильтр"
                   option={[
-                    { value: "title", name: "По названию" },
-                    { value: "title", name: "По описанию" },
+                    { value: "По названию", name: "По названию" },
+                    { value: "По дате", name: "По дате" },
                   ]}
                 />
                 <select>

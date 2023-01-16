@@ -4,7 +4,6 @@ import { attendance, days } from "./constants";
 import style from "./LkCreateOrder.module.scss";
 import { SwitchComponent } from "./SwitchComponent";
 
-
 export const LkCreateOrder = () => {
   const [globalToken, setGlobalToken] = useState(null);
   const [budgetValue, setBudgetValue] = useState();
@@ -24,20 +23,20 @@ export const LkCreateOrder = () => {
   const [tagsId, setTagsId] = useState([]);
 
   const changeHandler = () => {
-    if (service === 'Веб сайт') {
+    if (service === "Веб сайт") {
       services = attendance[0];
-    } else if (service === 'Разработка приложения') {
+    } else if (service === "Разработка приложения") {
       services = attendance[1];
-    } else if (service === 'Крипто разработка') {
+    } else if (service === "Крипто разработка") {
       services = attendance[2];
-    } else if (service === 'Разработка дизайна') {
+    } else if (service === "Разработка дизайна") {
       services = attendance[3];
-    } else if (service === 'Аудит системы и кода') {
+    } else if (service === "Аудит системы и кода") {
       services = attendance[4];
-    } else if (service === 'Маркетинг') {
+    } else if (service === "Маркетинг") {
       services = attendance[5];
-    } else return services = attendance[0];
-  }
+    } else return (services = attendance[0]);
+  };
   changeHandler();
 
   const userData = {
@@ -312,7 +311,7 @@ export const LkCreateOrder = () => {
             setTelegram(e.target.value)
           }}/>
         </div>
-        <div className={style.row}>
+        <div className={style.row}>т    
           <span>Восколько вы свободны для конференций</span>
           {days.map((item, index) => (
             <SwitchComponent setAllTime={setAllTime} allTime={allTime} item={item} key={`${item}, ${index}`}/>

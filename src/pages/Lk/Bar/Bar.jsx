@@ -2,12 +2,12 @@ import React from "react";
 import style from "./Bar.module.scss";
 import { NavLink } from "react-router-dom";
 
-export const Bar = () => {
+export const Bar = (props) => {
   return (
     <div className={style.row}>
       <div className={style.column}>
         <img src="img/lk/icon.svg" alt="icon" />
-        <span>Никита</span>
+        <span>{props.name}</span>
       </div>
       <div className={style.column}>
         <div className={style.item}>
@@ -43,7 +43,9 @@ export const Bar = () => {
               src="img/lk/Group.svg"
               alt="UnionOne"
             />
-            <span>Корректировка задания</span>
+            <NavLink to="/Origin">
+              <span>Все счета</span>
+            </NavLink>
           </li>
         </ul>
       </div>
@@ -70,8 +72,8 @@ export const Bar = () => {
         </ul>
       </div>
       <div className={style.column}>
-        <img src="img/lk/exit.svg" alt="exit" />
-        <span>Свернуть панель</span>
+        {/* <img src="img/lk/exit.svg" alt="exit" /> */}
+        {/* <span>Свернуть панель</span> */}
       </div>
     </div>
   );
