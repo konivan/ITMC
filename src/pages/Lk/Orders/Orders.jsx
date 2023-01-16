@@ -3,7 +3,7 @@ import style from "./Orders.module.scss";
 import { Bar } from "../Bar/Bar";
 import { NavLink } from "react-router-dom";
 
-export const Orders = () => {
+export const Orders = (props) => {
   const [globalToken, setGlobalToken] = useState(null);
   const [orderData, setOrderData] = useState(null);
 
@@ -65,7 +65,7 @@ export const Orders = () => {
     <section className={style.main} id="Orders">
       <div className={style.wrapper}>
         <div className={style.container}>
-          <Bar />
+          <Bar name={props.name}/>
           <div className={style.row}>
             <div className={style.column}>
               <h2>Ваши заказы</h2>

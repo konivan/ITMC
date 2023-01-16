@@ -80,6 +80,7 @@ const Auth = (props) => {
               <input
                 onChange={(e) => {
                   setUsername(e.target.value);
+                  props.setname(e.target.value);
                 }}
                 value={username}
                 placeholder="Введите имя"
