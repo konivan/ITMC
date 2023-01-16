@@ -47,19 +47,18 @@ export const Orders = () => {
     },
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
+    const fetchOrders = async () => {
       try {
         const res = await fetch(url, reqOptions);
         const data = await res.json();
-        setOrderData(data?.result[0])
+        setOrderData(data?.results[0])
       } catch (err) {
         console.log("Error: " + err);
       }
     };
-    fetchData();
-  }, [globalToken]);
-
+    if (orderData === null) {
+      fetchOrders()
+    }
 
   return (
     <section className={style.main} id="Orders">

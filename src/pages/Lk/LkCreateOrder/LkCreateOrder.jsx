@@ -22,7 +22,6 @@ export const LkCreateOrder = () => {
   const [telegram, setTelegram] = useState();
   let services = [];
   const [tagsId, setTagsId] = useState([]);
-  // let tagsId = [];
 
   const changeHandler = () => {
     if (service === 'Веб сайт') {

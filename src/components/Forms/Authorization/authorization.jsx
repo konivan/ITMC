@@ -19,10 +19,11 @@ const Authorization = (props) => {
     return null;
   }
 
-  const url = `${props.URL}auth/users/`;
+  const url = `http://127.0.0.1:8000/account/register/`;
   const reqOptions = {
     method: "POST",
     headers: {
+      "Access-Control-Allow-Origin": "*",
       "Content-Type": "application/json",
     },
     body: JSON.stringify(authorizationData),
@@ -41,7 +42,7 @@ const Authorization = (props) => {
             setPassword("");
             setRepeatPassword("");
             props.setShowAuthorization(false);
-            return alert('Пользователь создан');
+            // return alert('Пользователь создан');
           }
         })
         .catch((err) => console.log("Error: " + err));
