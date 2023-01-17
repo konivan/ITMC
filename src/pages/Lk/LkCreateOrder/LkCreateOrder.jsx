@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { attendance, days } from "./constants";
+import { NavLink } from "react-router-dom";
 
 import style from "./LkCreateOrder.module.scss";
 import { SwitchComponent } from "./SwitchComponent";
@@ -438,7 +439,9 @@ export const LkCreateOrder = () => {
           <p>Максимальное количество символов: 5000</p>
         </div>
         <div className={style.row}>
-          <button>Отменить</button>
+          <NavLink to="/Orders">
+            <button>Отменить</button>
+          </NavLink>
           <button onClick={sendOrder}>Отправить</button>
         </div>
       </div>
