@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { attendance, days } from "./constants";
 
 import style from "./LkCreateOrder.module.scss";
@@ -10,7 +10,6 @@ export const LkCreateOrder = () => {
   const [service, setServiceValue] = useState();
   const [file, setFile] = useState();
   const [planFiles, setPlanFiles] = useState();
-  const [imgLogo, setImgLogo] = useState();
   const [productName, setProductName] = useState();
   const [description, setDescription] = useState();
   const [allTime, setAllTime] = useState(false);
@@ -21,6 +20,16 @@ export const LkCreateOrder = () => {
   const [telegram, setTelegram] = useState();
   let services = [];
   const [tagsId, setTagsId] = useState([]);
+
+  const tagRef1 = useRef();
+  const tagRef2 = useRef();
+  const tagRef3 = useRef();
+  const tagRef4 = useRef();
+  const tagRef5 = useRef();
+  const tagRef6 = useRef();
+  const tagRef7 = useRef();
+  const tagRef8 = useRef();
+  const tagRef9 = useRef();
 
   const changeHandler = () => {
     if (service === "Веб сайт") {
@@ -101,7 +110,7 @@ export const LkCreateOrder = () => {
       service
     ],
     name: productName,
-    image: imgLogo,
+    image: file,
     price: budgetValue,
     description: description,
     tags: tagsId
@@ -155,7 +164,7 @@ export const LkCreateOrder = () => {
                 <img
                   src={`${file}`}
                   alt="yourPhoto"
-                  style={{ height: "100px" }}
+                  style={{ height: "100px" , width: "100px"}}
                 />
               )}
             </div>
@@ -163,11 +172,11 @@ export const LkCreateOrder = () => {
               <span>Загрузить фото</span>
               <input
                 onChange={(e) => {
-                  setImgLogo(e.target.files[0]);
-                  let path = window.URL.createObjectURL(e.target.files[0]);
-                  window.URL.revokeObjectURL(path);
+                  let inputFile = (e.target.files[0]);
+                  let path = URL.createObjectURL(inputFile);
                   setFile(path);
                 }}
+                accept="image/*"
                 placeholder="Загрузить фото"
                 type="file"
               />
@@ -244,11 +253,20 @@ export const LkCreateOrder = () => {
         </div>
         <div className={style.row}>
           <span>Что именно вам нужно</span>
-          <div className={style.tags}>Нет выбранных тэгов</div>
+          {/* <div className={style.tags}>Нет выбранных тэгов</div> */}
           <label>Категория</label>
           <select
             onChange={(e) => {
               setServiceValue(e.target.value);
+              tagRef1.current.style.background = "";
+              tagRef2.current.style.background = "";
+              tagRef3.current.style.background = "";
+              tagRef4.current.style.background = "";
+              tagRef5.current.style.background = "";
+              tagRef6.current.style.background = "";
+              tagRef7.current.style.background = "";
+              tagRef8.current.style.background = "";
+              tagRef9.current.style.background = "";
             }}
           >
             <option>Веб сайт</option>
@@ -259,40 +277,48 @@ export const LkCreateOrder = () => {
             <option>Маркетинг</option>
           </select>
           <div className={style.items}>
-            <div onClick={() => {
+            <div ref={tagRef1} onClick={() => {
               tagsId.push(services[0]?.id)
-              console.log(tagsId)
+              tagRef1.current.style.background = "#be44f2"
             }}>{services[0]?.title}</div>
-            <div onClick={() => {
+            <div ref={tagRef2} onClick={() => {
               tagsId.push(services[1]?.id)
+              tagRef2.current.style.background = "#be44f2"
             }}>{services[1]?.title}</div>
-            <div onClick={() => {
+            <div ref={tagRef3} onClick={() => {
               tagsId.push(services[2]?.id)
+              tagRef3.current.style.background = "#be44f2"
             }}>{services[2]?.title}</div>
           </div>
           <div className={style.items}>
-            <div onClick={() => {
+            <div ref={tagRef4} onClick={() => {
               tagsId.push(services[3]?.id)
+              tagRef4.current.style.background = "#be44f2"
             }}>{services[3]?.title}</div>
-            <div onClick={() => {
+            <div ref={tagRef5} onClick={() => {
               tagsId.push(services[4]?.id)
+              tagRef5.current.style.background = "#be44f2"
             }}>{services[4]?.title}</div>
-            <div onClick={() => {
+            <div ref={tagRef6} onClick={() => {
               tagsId.push(services[5]?.id)
+              tagRef6.current.style.background = "#be44f2"
             }}>{services[5]?.title}</div>
           </div>
           <div
             className={style.items}
             style={{ display: services.length <= 6 ? "none" : "flex" }}
           >
-            <div onClick={() => {
+            <div ref={tagRef7} onClick={() => {
               tagsId.push(services[6]?.id)
+              tagRef7.current.style.background = "#be44f2"
             }}>{services[6]?.title}</div>
-            <div onClick={() => {
+            <div ref={tagRef8} onClick={() => {
               tagsId.push(services[7]?.id)
+              tagRef8.current.style.background = "#be44f2"
             }}>{services[7]?.title}</div>
-            <div onClick={() => {
+            <div ref={tagRef9} onClick={() => {
               tagsId.push(services[8]?.id)
+              tagRef9.current.style.background = "#be44f2"
             }}>{services[8]?.title}</div>
           </div>
         </div>
@@ -311,7 +337,7 @@ export const LkCreateOrder = () => {
             setTelegram(e.target.value)
           }}/>
         </div>
-        <div className={style.row}>т    
+        <div className={style.row}>т
           <span>Восколько вы свободны для конференций</span>
           {days.map((item, index) => (
             <SwitchComponent setAllTime={setAllTime} allTime={allTime} item={item} key={`${item}, ${index}`}/>
