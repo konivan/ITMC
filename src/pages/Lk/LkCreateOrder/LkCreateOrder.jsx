@@ -50,7 +50,7 @@ export const LkCreateOrder = () => {
 
   const userData = {
     username: "admin",
-    password: "admin",
+    password: "admin", 
   };
 
   const url1 = `http://127.0.0.1:8000/api/token/`;
