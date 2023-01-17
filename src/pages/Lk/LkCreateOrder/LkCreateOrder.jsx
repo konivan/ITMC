@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import style from "./LkCreateOrder.module.scss";
 import { SwitchComponent } from "./SwitchComponent";
 
-export const LkCreateOrder = () => {
+export const LkCreateOrder = (props) => {
   const [globalToken, setGlobalToken] = useState(null);
   const [budgetValue, setBudgetValue] = useState(0);
   const [service, setServiceValue] = useState();
@@ -57,7 +57,7 @@ export const LkCreateOrder = () => {
         password: "admin",
       };
 
-      const url1 = `http://127.0.0.1:8000/api/token/`;
+      const url1 = `${props.URL}api/token/`;
       const reqOptions1 = {
         method: "POST",
         headers: {
@@ -81,7 +81,7 @@ export const LkCreateOrder = () => {
     const formData = new FormData();
     formData.append('file', logoImg);
 
-    const url = `http://127.0.0.1:8000/orders/order/`;
+    const url = `${props.URL}orders/order/`;
     const results = {
       conference: {
         monday: allTime,

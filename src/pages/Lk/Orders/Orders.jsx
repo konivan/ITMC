@@ -12,7 +12,7 @@ export const Orders = (props) => {
     password: "admin"
   }
 
-  const url1 = `http://127.0.0.1:8000/api/token/`;
+  const url1 = `${props.URL}api/token/`;
   const reqOptions1 = {
     method: "POST",
     headers: {
@@ -37,7 +37,7 @@ export const Orders = (props) => {
 
 
 
-  const url = `http://127.0.0.1:8000/orders/order/`;
+  const url = `${props.URL}orders/order/`;
   const reqOptions = {
     method: "GET",
     headers: {

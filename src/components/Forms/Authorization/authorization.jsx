@@ -19,7 +19,7 @@ const Authorization = (props) => {
     return null;
   }
 
-  const url = `http://127.0.0.1:8000/account/register/`;
+  const url = `${props.URL}account/register/`;
   const reqOptions = {
     method: "POST",
     headers: {
