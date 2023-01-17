@@ -174,8 +174,15 @@ export const LkCreateOrder = () => {
                 onChange={(e) => {
                   let inputFile = (e.target.files[0]);
                   let path = URL.createObjectURL(inputFile);
-                  console.log(path)
-                  setFile(path);
+                  let image = new Image();
+                  image.src = path;
+                  image.onload = function() {
+                  if (image.width !== 256 || image.height !== 256) {
+                    return alert("Изображение должно быть 256px на 256px")
+                    } else {
+                      setFile(path);
+                    }
+                  }
                 }}
                 accept="image/*"
                 placeholder="Загрузить фото"
@@ -233,8 +240,19 @@ export const LkCreateOrder = () => {
             <form>
               <input
                 type="file"
+                accept="image/*"
                 onChange={(e) => {
-                  setPlanFiles(e.target.files[0]);
+                  let inputFile = (e.target.files[0]);
+                  let path = URL.createObjectURL(inputFile);
+                  let image = new Image();
+                  image.src = path;
+                  image.onload = function() {
+                  if (image.width !== 256 || image.height !== 256) {
+                    return alert("Изображение должно быть 256px на 256px")
+                    } else {
+                      setPlanFiles(path);
+                    }
+                  }
                 }}
               />
               <img src="img/Lk/photoIcon.svg" alt="Uploadphoto" />
@@ -245,7 +263,7 @@ export const LkCreateOrder = () => {
             </form>
           </div>
           {planFiles === undefined ? null : (
-            <div style={{ color: "green" }}>Вы загрузили: {planFiles.name}</div>
+            <div style={{ color: "green" }}>Файл загружен</div>
           )}
           <p>
             Размером от 256px на 256px в формате .jpg или .png
