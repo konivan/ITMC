@@ -18,6 +18,7 @@ export const LkCreateOrder = () => {
   const [email, setEmail] = useState();
   const [domain, setDomain] = useState();
   const [telegram, setTelegram] = useState();
+  const [logoImg, setLogoImg] = useState();
   let services = [];
   const [tagsId, setTagsId] = useState([]);
 
@@ -48,23 +49,22 @@ export const LkCreateOrder = () => {
   };
   changeHandler();
 
-  const userData = {
-    username: "admin",
-    password: "admin", 
-  };
-
-  const url1 = `http://127.0.0.1:8000/api/token/`;
-  const reqOptions1 = {
-    method: "POST",
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(userData),
-  };
-
   useEffect(() => {
     const fetchData = async () => {
+      const userData = {
+        username: "admin",
+        password: "admin",
+      };
+
+      const url1 = `http://127.0.0.1:8000/api/token/`;
+      const reqOptions1 = {
+        method: "POST",
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      };
       try {
         const res = await fetch(url1, reqOptions1, userData);
         const token = await res.json();
@@ -76,58 +76,62 @@ export const LkCreateOrder = () => {
     fetchData();
   }, []);
 
-  const results = {
-    conference: {
-      monday: allTime,
-      tuesday: allTime,
-      wednesday: allTime,
-      thursday: allTime,
-      friday: allTime,
-      saturday: allTime,
-      sunday: allTime,
-      monday_start: "00:00",
-      monday_end: "00:00",
-      tuesday_start: "00:00",
-      tuesday_end: "00:00",
-      wednesday_start: "00:00",
-      wednesday_end: "00:00",
-      thursday_start: "00:00",
-      thursday_end: "00:00",
-      friday_start: "00:00",
-      friday_end: "00:00",
-      saturday_start: "00:00",
-      saturday_end: "00:00",
-      sunday_start: "00:00",
-      sunday_end: "00:00",
-    },
-    contact: {
-      phone: phone,
-      email: email,
-      domain: domain,
-      telegram: telegram,
-    },
-    category: [service],
-    name: productName,
-    image: file,
-    price: budgetValue,
-    description: description,
-    tags: tagsId,
-  };
-
-  const url = `http://127.0.0.1:8000/orders/order/`;
-  const reqOptions = {
-    method: "POST",
-    headers: {
-      authorization: `Bearer ${globalToken?.access}`,
-      "Access-Control-Allow-Origin": "*",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(results),
-  };
-
   const sendOrder = () => {
+    const formData = new FormData();
+    formData.append('file', logoImg);
+
+    const url = `http://127.0.0.1:8000/orders/order/`;
+    const results = {
+      conference: {
+        monday: allTime,
+        tuesday: allTime,
+        wednesday: allTime,
+        thursday: allTime,
+        friday: allTime,
+        saturday: allTime,
+        sunday: allTime,
+        monday_start: "00:00",
+        monday_end: "00:00",
+        tuesday_start: "00:00",
+        tuesday_end: "00:00",
+        wednesday_start: "00:00",
+        wednesday_end: "00:00",
+        thursday_start: "00:00",
+        thursday_end: "00:00",
+        friday_start: "00:00",
+        friday_end: "00:00",
+        saturday_start: "00:00",
+        saturday_end: "00:00",
+        sunday_start: "00:00",
+        sunday_end: "00:00",
+      },
+      contact: {
+        phone: phone,
+        email: email,
+        domain: domain,
+        telegram: telegram,
+      },
+      category: [service],
+      name: productName,
+      image: logoImg,
+      price: budgetValue,
+      description: description,
+      tags: tagsId,
+    };
+    const reqOptions = {
+      method: "POST",
+      headers: {
+        authorization: `Bearer ${globalToken?.access}`,
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(results),
+    };
+
     fetch(url, reqOptions, results)
-      .then((res) => res.json())
+      .then((res) => {
+        res.json()
+      })
       .catch((err) => console.log("Error: " + err));
   };
 
@@ -171,6 +175,7 @@ export const LkCreateOrder = () => {
               <input
                 onChange={(e) => {
                   let inputFile = e.target.files[0];
+                  setLogoImg(e.target.files[0]);
                   let path = URL.createObjectURL(inputFile);
                   let image = new Image();
                   image.src = path;
@@ -182,6 +187,7 @@ export const LkCreateOrder = () => {
                     }
                   }
                 }}
+
                 accept="image/*"
                 placeholder="Загрузить фото"
                 type="file"
@@ -302,7 +308,6 @@ export const LkCreateOrder = () => {
               } else {
                 tagRef1.current.style.background = "#be44f2";
               };
-              console.log(tagsId)
             }}>{services[0]?.title}</div>
             <div ref={tagRef2} onClick={() => {
               tagsId.push(services[1]?.id)
@@ -324,15 +329,27 @@ export const LkCreateOrder = () => {
           <div className={style.items}>
             <div ref={tagRef4} onClick={() => {
               tagsId.push(services[3]?.id)
-              tagRef4.current.style.background = "#be44f2"
+              if (tagRef4.current.style.background === "rgb(190, 68, 242)") {
+                tagRef4.current.style.background = "";
+              } else {
+                tagRef4.current.style.background = "#be44f2";
+              };
             }}>{services[3]?.title}</div>
             <div ref={tagRef5} onClick={() => {
               tagsId.push(services[4]?.id)
-              tagRef5.current.style.background = "#be44f2"
+              if (tagRef5.current.style.background === "rgb(190, 68, 242)") {
+                tagRef5.current.style.background = "";
+              } else {
+                tagRef5.current.style.background = "#be44f2";
+              };
             }}>{services[4]?.title}</div>
             <div ref={tagRef6} onClick={() => {
               tagsId.push(services[5]?.id)
-              tagRef6.current.style.background = "#be44f2"
+              if (tagRef6.current.style.background === "rgb(190, 68, 242)") {
+                tagRef6.current.style.background = "";
+              } else {
+                tagRef6.current.style.background = "#be44f2";
+              };
             }}>{services[5]?.title}</div>
           </div>
           <div
@@ -341,15 +358,27 @@ export const LkCreateOrder = () => {
           >
             <div ref={tagRef7} onClick={() => {
               tagsId.push(services[6]?.id)
-              tagRef7.current.style.background = "#be44f2"
+              if (tagRef7.current.style.background === "rgb(190, 68, 242)") {
+                tagRef7.current.style.background = "";
+              } else {
+                tagRef7.current.style.background = "#be44f2";
+              };
             }}>{services[6]?.title}</div>
             <div ref={tagRef8} onClick={() => {
               tagsId.push(services[7]?.id)
-              tagRef8.current.style.background = "#be44f2"
+              if (tagRef8.current.style.background === "rgb(190, 68, 242)") {
+                tagRef8.current.style.background = "";
+              } else {
+                tagRef8.current.style.background = "#be44f2";
+              };
             }}>{services[7]?.title}</div>
             <div ref={tagRef9} onClick={() => {
               tagsId.push(services[8]?.id)
-              tagRef9.current.style.background = "#be44f2"
+              if (tagRef9.current.style.background === "rgb(190, 68, 242)") {
+                tagRef9.current.style.background = "";
+              } else {
+                tagRef9.current.style.background = "#be44f2";
+              };
             }}>{services[8]?.title}</div>
           </div>
         </div>
@@ -387,7 +416,7 @@ export const LkCreateOrder = () => {
           />
         </div>
         <div className={style.row}>
-          т<span>Восколько вы свободны для конференций</span>
+          <span>Восколько вы свободны для конференций</span>
           {days.map((item, index) => (
             <SwitchComponent
               setAllTime={setAllTime}
