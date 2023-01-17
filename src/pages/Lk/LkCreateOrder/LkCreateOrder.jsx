@@ -212,6 +212,7 @@ export const LkCreateOrder = () => {
             type="range"
             min="0"
             max="100000"
+            step='25000'
             value={budgetValue}
             onChange={(e) => {
               setBudgetValue(e.target.value);
