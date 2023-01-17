@@ -6,7 +6,7 @@ import { SwitchComponent } from "./SwitchComponent";
 
 export const LkCreateOrder = () => {
   const [globalToken, setGlobalToken] = useState(null);
-  const [budgetValue, setBudgetValue] = useState();
+  const [budgetValue, setBudgetValue] = useState(0);
   const [service, setServiceValue] = useState();
   const [file, setFile] = useState();
   const [planFiles, setPlanFiles] = useState();
@@ -281,29 +281,54 @@ export const LkCreateOrder = () => {
           <div className={style.items}>
             <div ref={tagRef1} onClick={() => {
               tagsId.push(services[0]?.id)
-              tagRef1.current.style.background = "#be44f2"
+              if (tagRef1.current.style.background === "rgb(190, 68, 242)") {
+                tagRef1.current.style.background = "";
+              } else {
+                tagRef1.current.style.background = "#be44f2";
+              };
+              console.log(tagsId)
             }}>{services[0]?.title}</div>
             <div ref={tagRef2} onClick={() => {
               tagsId.push(services[1]?.id)
-              tagRef2.current.style.background = "#be44f2"
+              if (tagRef2.current.style.background === "rgb(190, 68, 242)") {
+                tagRef2.current.style.background = "";
+              } else {
+                tagRef2.current.style.background = "#be44f2";
+              };
             }}>{services[1]?.title}</div>
             <div ref={tagRef3} onClick={() => {
               tagsId.push(services[2]?.id)
-              tagRef3.current.style.background = "#be44f2"
+              if (tagRef3.current.style.background === "rgb(190, 68, 242)") {
+                tagRef3.current.style.background = "";
+              } else {
+                tagRef3.current.style.background = "#be44f2";
+              };
             }}>{services[2]?.title}</div>
           </div>
           <div className={style.items}>
             <div ref={tagRef4} onClick={() => {
               tagsId.push(services[3]?.id)
-              tagRef4.current.style.background = "#be44f2"
+              if (tagRef4.current.style.background === "rgb(190, 68, 242)") {
+                tagRef4.current.style.background = "";
+              } else {
+                tagRef4.current.style.background = "#be44f2";
+              };
             }}>{services[3]?.title}</div>
             <div ref={tagRef5} onClick={() => {
               tagsId.push(services[4]?.id)
-              tagRef5.current.style.background = "#be44f2"
+              if (tagRef5.current.style.background === "rgb(190, 68, 242)") {
+                tagRef5.current.style.background = "";
+              } else {
+                tagRef5.current.style.background = "#be44f2";
+              };
             }}>{services[4]?.title}</div>
             <div ref={tagRef6} onClick={() => {
               tagsId.push(services[5]?.id)
-              tagRef6.current.style.background = "#be44f2"
+              if (tagRef6.current.style.background === "rgb(190, 68, 242)") {
+                tagRef6.current.style.background = "";
+              } else {
+                tagRef6.current.style.background = "#be44f2";
+              };
             }}>{services[5]?.title}</div>
           </div>
           <div
@@ -312,15 +337,27 @@ export const LkCreateOrder = () => {
           >
             <div ref={tagRef7} onClick={() => {
               tagsId.push(services[6]?.id)
-              tagRef7.current.style.background = "#be44f2"
+              if (tagRef7.current.style.background === "rgb(190, 68, 242)") {
+                tagRef7.current.style.background = "";
+              } else {
+                tagRef7.current.style.background = "#be44f2";
+              };
             }}>{services[6]?.title}</div>
             <div ref={tagRef8} onClick={() => {
               tagsId.push(services[7]?.id)
-              tagRef8.current.style.background = "#be44f2"
+              if (tagRef8.current.style.background === "rgb(190, 68, 242)") {
+                tagRef8.current.style.background = "";
+              } else {
+                tagRef8.current.style.background = "#be44f2";
+              };
             }}>{services[7]?.title}</div>
             <div ref={tagRef9} onClick={() => {
               tagsId.push(services[8]?.id)
-              tagRef9.current.style.background = "#be44f2"
+              if (tagRef9.current.style.background === "rgb(190, 68, 242)") {
+                tagRef9.current.style.background = "";
+              } else {
+                tagRef9.current.style.background = "#be44f2";
+              };
             }}>{services[8]?.title}</div>
           </div>
         </div>
