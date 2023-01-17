@@ -42,7 +42,7 @@ const Authorization = (props) => {
             setPassword("");
             setRepeatPassword("");
             props.setShowAuthorization(false);
-            // return alert('Пользователь создан');
+            return alert('Пользователь создан');
           }
         })
         .catch((err) => console.log("Error: " + err));

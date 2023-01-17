@@ -12,16 +12,16 @@ import Product from "./components/Forms/Product/product";
 import { Team } from "./pages/Team/Team";
 import { Portfolio } from "./pages/Portfolio/Portfolio";
 import { LkCreateOrder } from "./pages/Lk/LkCreateOrder/LkCreateOrder";
-import {Origin} from "./pages/Lk/Origin/Origin"
-import {Orders} from "./pages/Lk/Orders/Orders"
-import {Dogovor} from "./pages/Lk/Dogovor/Dogovor"
-import {Accounts} from "./pages/Lk/Accounts/Accounts"
+import { Origin } from "./pages/Lk/Origin/Origin"
+import { Orders } from "./pages/Lk/Orders/Orders"
+import { Dogovor } from "./pages/Lk/Dogovor/Dogovor"
+import { Accounts } from "./pages/Lk/Accounts/Accounts"
 
 function App() {
   let window = document.getElementById("html-1");
   const URL = `${process.env.REACT_APP_URL}`;
-  const [isAuth, setIsAuth] = useState(true);
-  const [name, setname] = useState('Иван')
+  const [isAuth, setIsAuth] = useState(false);
+  const [name, setName] = useState("Ivan")
 
   const [showAuth, setShowAuth] = useState(false);
   const [showAuthorization, setShowAuthorization] = useState(false);
@@ -94,7 +94,7 @@ function App() {
           setShowAuthorization={setShowAuthorization}
           showAuth={showAuth}
           setIsAuth={setIsAuth}
-          setname={setname}
+          setName={setName}
         />
         <Authorization
           onClose={() => setShowAuthorization(false)}

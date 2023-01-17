@@ -1,4 +1,4 @@
-import React from "react";
+import { React } from "react";
 import style from "./auth.module.scss";
 
 import { Icon } from "@iconify/react";
@@ -18,7 +18,7 @@ const Auth = (props) => {
     return null;
   }
 
-  const url = `${props.URL}token/login/`;
+  const url = `http://127.0.0.1:8000/api/token/`;
   const reqOptions = {
     method: "POST",
     headers: {
