@@ -5,8 +5,8 @@
       display: flex;
       .row {
         width: 100%;
-        border: 1px solid #e8e8e8;
-        border-radius: 4px;
+        border: 0.0625em solid #e8e8e8;
+        border-radius: 0.25em;
         background: #ffffff;
         padding: 16px 16px 424px 0px;
         .column:nth-of-type(1) {
@@ -22,9 +22,9 @@
           }
           button {
             img {
-              margin-right: 9px;
-              width: 12px;
-              height: 12px;
+              margin-right: 0.5625em;
+              width: 0.75em;
+              height: 0.75em;
             }
             span {
               font-style: normal;
@@ -36,14 +36,14 @@
             padding: 10px 16px;
             background: #7840b0;
             border: none;
-            border-radius: 4px;
+            border-radius: 0.25em;
           }
         }
         .column:nth-of-type(2) {
           margin-top: 16px;
           input {
-            border: 1px solid #e8e8e8;
-            border-radius: 4px;
+            border: 0.0625em solid #e8e8e8;
+            border-radius: 0.25em;
             padding: 12px 277px 12px 30px;
             font-style: normal;
             font-weight: 400;

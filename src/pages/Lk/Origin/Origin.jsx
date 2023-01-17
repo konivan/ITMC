@@ -11,17 +11,17 @@ export const Origin = (props) => {
     { title: "bca", date: new Date("2019-06-22") },
   ];
 
-  if (selectedSort === 'По названию') {
+  if (selectedSort === "По названию") {
     arr.sort((a, b) => a.title.localeCompare(b)); // сортировка по алфавиту
-  } else if (selectedSort === 'По дате') {
-    arr.sort((a, b) => b.date - a.date) // сортировка по дате
+  } else if (selectedSort === "По дате") {
+    arr.sort((a, b) => b.date - a.date); // сортировка по дате
   }
 
   return (
     <section className={style.main}>
       <div className={style.wrapper} id="header">
         <div className={style.container}>
-          <Bar name={props.name}/>
+          <Bar name={props.name} />
           <div className={style.row}>
             <h2>Все счета</h2>
             <div className={style.itemContainer}>

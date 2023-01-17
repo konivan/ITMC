@@ -50,8 +50,8 @@ export const LkCreateOrder = () => {
 
   const userData = {
     username: "admin",
-    password: "admin"
-  }
+    password: "admin",
+  };
 
   const url1 = `http://127.0.0.1:8000/api/token/`;
   const reqOptions1 = {
@@ -78,60 +78,58 @@ export const LkCreateOrder = () => {
 
   const results = {
     conference: {
-        monday: allTime,
-        tuesday: allTime,
-        wednesday: allTime,
-        thursday: allTime,
-        friday: allTime,
-        saturday: allTime,
-        sunday: allTime,
-        monday_start: "00:00",
-        monday_end: "00:00",
-        tuesday_start: "00:00",
-        tuesday_end: "00:00",
-        wednesday_start: "00:00",
-        wednesday_end: "00:00",
-        thursday_start: "00:00",
-        thursday_end: "00:00",
-        friday_start: "00:00",
-        friday_end: "00:00",
-        saturday_start: "00:00",
-        saturday_end: "00:00",
-        sunday_start: "00:00",
-        sunday_end: "00:00"
+      monday: allTime,
+      tuesday: allTime,
+      wednesday: allTime,
+      thursday: allTime,
+      friday: allTime,
+      saturday: allTime,
+      sunday: allTime,
+      monday_start: "00:00",
+      monday_end: "00:00",
+      tuesday_start: "00:00",
+      tuesday_end: "00:00",
+      wednesday_start: "00:00",
+      wednesday_end: "00:00",
+      thursday_start: "00:00",
+      thursday_end: "00:00",
+      friday_start: "00:00",
+      friday_end: "00:00",
+      saturday_start: "00:00",
+      saturday_end: "00:00",
+      sunday_start: "00:00",
+      sunday_end: "00:00",
     },
     contact: {
       phone: phone,
       email: email,
       domain: domain,
-      telegram: telegram
+      telegram: telegram,
     },
-    category: [
-      service
-    ],
+    category: [service],
     name: productName,
     image: file,
     price: budgetValue,
     description: description,
-    tags: tagsId
+    tags: tagsId,
   };
 
   const url = `http://127.0.0.1:8000/orders/order/`;
-    const reqOptions = {
-      method: "POST",
-      headers: {
-        "authorization": `Bearer ${globalToken?.access}`,
-        "Access-Control-Allow-Origin": "*",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(results),
-    };
+  const reqOptions = {
+    method: "POST",
+    headers: {
+      authorization: `Bearer ${globalToken?.access}`,
+      "Access-Control-Allow-Origin": "*",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(results),
+  };
 
-    const sendOrder = () => {
-      fetch(url, reqOptions, results)
-        .then((res) => res.json())
-        .catch((err) => console.log("Error: " + err));
-    };
+  const sendOrder = () => {
+    fetch(url, reqOptions, results)
+      .then((res) => res.json())
+      .catch((err) => console.log("Error: " + err));
+  };
 
   return (
     <section className={style.wrapper}>
@@ -164,7 +162,7 @@ export const LkCreateOrder = () => {
                 <img
                   src={`${file}`}
                   alt="yourPhoto"
-                  style={{ height: "100px" , width: "100px"}}
+                  style={{ height: "100px", width: "100px" }}
                 />
               )}
             </div>
@@ -172,9 +170,9 @@ export const LkCreateOrder = () => {
               <span>Загрузить фото</span>
               <input
                 onChange={(e) => {
-                  let inputFile = (e.target.files[0]);
+                  let inputFile = e.target.files[0];
                   let path = URL.createObjectURL(inputFile);
-                  console.log(path)
+                  console.log(path);
                   setFile(path);
                 }}
                 accept="image/*"
@@ -279,77 +277,149 @@ export const LkCreateOrder = () => {
             <option>Маркетинг</option>
           </select>
           <div className={style.items}>
-            <div ref={tagRef1} onClick={() => {
-              tagsId.push(services[0]?.id)
-              tagRef1.current.style.background = "#be44f2"
-            }}>{services[0]?.title}</div>
-            <div ref={tagRef2} onClick={() => {
-              tagsId.push(services[1]?.id)
-              tagRef2.current.style.background = "#be44f2"
-            }}>{services[1]?.title}</div>
-            <div ref={tagRef3} onClick={() => {
-              tagsId.push(services[2]?.id)
-              tagRef3.current.style.background = "#be44f2"
-            }}>{services[2]?.title}</div>
+            <div
+              ref={tagRef1}
+              onClick={() => {
+                tagsId.push(services[0]?.id);
+                tagRef1.current.style.background = "#be44f2";
+              }}
+            >
+              {services[0]?.title}
+            </div>
+            <div
+              ref={tagRef2}
+              onClick={() => {
+                tagsId.push(services[1]?.id);
+                tagRef2.current.style.background = "#be44f2";
+              }}
+            >
+              {services[1]?.title}
+            </div>
+            <div
+              ref={tagRef3}
+              onClick={() => {
+                tagsId.push(services[2]?.id);
+                tagRef3.current.style.background = "#be44f2";
+              }}
+            >
+              {services[2]?.title}
+            </div>
           </div>
           <div className={style.items}>
-            <div ref={tagRef4} onClick={() => {
-              tagsId.push(services[3]?.id)
-              tagRef4.current.style.background = "#be44f2"
-            }}>{services[3]?.title}</div>
-            <div ref={tagRef5} onClick={() => {
-              tagsId.push(services[4]?.id)
-              tagRef5.current.style.background = "#be44f2"
-            }}>{services[4]?.title}</div>
-            <div ref={tagRef6} onClick={() => {
-              tagsId.push(services[5]?.id)
-              tagRef6.current.style.background = "#be44f2"
-            }}>{services[5]?.title}</div>
+            <div
+              ref={tagRef4}
+              onClick={() => {
+                tagsId.push(services[3]?.id);
+                tagRef4.current.style.background = "#be44f2";
+              }}
+            >
+              {services[3]?.title}
+            </div>
+            <div
+              ref={tagRef5}
+              onClick={() => {
+                tagsId.push(services[4]?.id);
+                tagRef5.current.style.background = "#be44f2";
+              }}
+            >
+              {services[4]?.title}
+            </div>
+            <div
+              ref={tagRef6}
+              onClick={() => {
+                tagsId.push(services[5]?.id);
+                tagRef6.current.style.background = "#be44f2";
+              }}
+            >
+              {services[5]?.title}
+            </div>
           </div>
           <div
             className={style.items}
             style={{ display: services.length <= 6 ? "none" : "flex" }}
           >
-            <div ref={tagRef7} onClick={() => {
-              tagsId.push(services[6]?.id)
-              tagRef7.current.style.background = "#be44f2"
-            }}>{services[6]?.title}</div>
-            <div ref={tagRef8} onClick={() => {
-              tagsId.push(services[7]?.id)
-              tagRef8.current.style.background = "#be44f2"
-            }}>{services[7]?.title}</div>
-            <div ref={tagRef9} onClick={() => {
-              tagsId.push(services[8]?.id)
-              tagRef9.current.style.background = "#be44f2"
-            }}>{services[8]?.title}</div>
+            <div
+              ref={tagRef7}
+              onClick={() => {
+                tagsId.push(services[6]?.id);
+                tagRef7.current.style.background = "#be44f2";
+              }}
+            >
+              {services[6]?.title}
+            </div>
+            <div
+              ref={tagRef8}
+              onClick={() => {
+                tagsId.push(services[7]?.id);
+                tagRef8.current.style.background = "#be44f2";
+              }}
+            >
+              {services[7]?.title}
+            </div>
+            <div
+              ref={tagRef9}
+              onClick={() => {
+                tagsId.push(services[8]?.id);
+                tagRef9.current.style.background = "#be44f2";
+              }}
+            >
+              {services[8]?.title}
+            </div>
           </div>
         </div>
         <div className={style.row}>
           <span>Контакты</span>
-          <input placeholder="Номер телефона" type="tel" value={phone} onChange={(e) => {
-            setPhone(e.target.value)
-          }}/>
-          <input placeholder="Email" type="email" value={email} onChange={(e) => {
-            setEmail(e.target.value)
-          }}/>
-          <input placeholder="Домен, если есть" value={domain} onChange={(e) => {
-            setDomain(e.target.value)
-          }}/>
-          <input placeholder="Telegram" value={telegram} onChange={(e) => {
-            setTelegram(e.target.value)
-          }}/>
+          <input
+            placeholder="Номер телефона"
+            type="tel"
+            value={phone}
+            onChange={(e) => {
+              setPhone(e.target.value);
+            }}
+          />
+          <input
+            placeholder="Email"
+            type="email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+          <input
+            placeholder="Домен, если есть"
+            value={domain}
+            onChange={(e) => {
+              setDomain(e.target.value);
+            }}
+          />
+          <input
+            placeholder="Telegram"
+            value={telegram}
+            onChange={(e) => {
+              setTelegram(e.target.value);
+            }}
+          />
         </div>
-        <div className={style.row}>т
-          <span>Восколько вы свободны для конференций</span>
+        <div className={style.row}>
+          т<span>Восколько вы свободны для конференций</span>
           {days.map((item, index) => (
-            <SwitchComponent setAllTime={setAllTime} allTime={allTime} item={item} key={`${item}, ${index}`}/>
+            <SwitchComponent
+              setAllTime={setAllTime}
+              allTime={allTime}
+              item={item}
+              key={`${item}, ${index}`}
+            />
           ))}
         </div>
         <div className={style.row}>
           <span>Описание</span>
-          <textarea placeholder="Полное описание" value={description} onChange={(e) => {
-            setDescription(e.target.value)
-          }}/>
+          <textarea
+            placeholder="Полное описание"
+            value={description}
+            onChange={(e) => {
+              setDescription(e.target.value);
+            }}
+          />
           <p>Максимальное количество символов: 5000</p>
         </div>
         <div className={style.row}>
