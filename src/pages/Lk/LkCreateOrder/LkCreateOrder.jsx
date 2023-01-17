@@ -174,6 +174,7 @@ export const LkCreateOrder = () => {
                 onChange={(e) => {
                   let inputFile = (e.target.files[0]);
                   let path = URL.createObjectURL(inputFile);
+                  console.log(path)
                   setFile(path);
                 }}
                 accept="image/*"
@@ -258,6 +259,7 @@ export const LkCreateOrder = () => {
           <select
             onChange={(e) => {
               setServiceValue(e.target.value);
+              tagsId.length = 0;
               tagRef1.current.style.background = "";
               tagRef2.current.style.background = "";
               tagRef3.current.style.background = "";
