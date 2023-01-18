@@ -78,7 +78,7 @@ export const LkCreateOrder = () => {
 
   const sendOrder = () => {
     const formData = new FormData();
-    formData.append('file', logoImg);
+    formData.append("file", logoImg);
 
     const url = `http://127.0.0.1:8000/orders/order/`;
     const results = {
@@ -130,7 +130,7 @@ export const LkCreateOrder = () => {
 
     fetch(url, reqOptions, results)
       .then((res) => {
-        res.json()
+        res.json();
       })
       .catch((err) => console.log("Error: " + err));
   };
@@ -179,15 +179,14 @@ export const LkCreateOrder = () => {
                   let path = URL.createObjectURL(inputFile);
                   let image = new Image();
                   image.src = path;
-                  image.onload = function() {
-                  if (image.width !== 256 || image.height !== 256) {
-                    return alert("Изображение должно быть 256px на 256px")
+                  image.onload = function () {
+                    if (image.width !== 256 || image.height !== 256) {
+                      return alert("Изображение должно быть 256px на 256px");
                     } else {
                       setFile(path);
                     }
-                  }
+                  };
                 }}
-
                 accept="image/*"
                 placeholder="Загрузить фото"
                 type="file"
@@ -246,17 +245,17 @@ export const LkCreateOrder = () => {
                 type="file"
                 accept="image/*"
                 onChange={(e) => {
-                  let inputFile = (e.target.files[0]);
+                  let inputFile = e.target.files[0];
                   let path = URL.createObjectURL(inputFile);
                   let image = new Image();
                   image.src = path;
-                  image.onload = function() {
-                  if (image.width !== 256 || image.height !== 256) {
-                    return alert("Изображение должно быть 256px на 256px")
+                  image.onload = function () {
+                    if (image.width !== 256 || image.height !== 256) {
+                      return alert("Изображение должно быть 256px на 256px");
                     } else {
                       setPlanFiles(path);
                     }
-                  }
+                  };
                 }}
               />
               <img src="img/Lk/photoIcon.svg" alt="Uploadphoto" />
@@ -301,85 +300,130 @@ export const LkCreateOrder = () => {
             <option>Маркетинг</option>
           </select>
           <div className={style.items}>
-            <div ref={tagRef1} onClick={() => {
-              tagsId.push(services[0]?.id)
-              if (tagRef1.current.style.background === "rgb(190, 68, 242)") {
-                tagRef1.current.style.background = "";
-              } else {
-                tagRef1.current.style.background = "#be44f2";
-              };
-            }}>{services[0]?.title}</div>
-            <div ref={tagRef2} onClick={() => {
-              tagsId.push(services[1]?.id)
-              if (tagRef2.current.style.background === "rgb(190, 68, 242)") {
-                tagRef2.current.style.background = "";
-              } else {
-                tagRef2.current.style.background = "#be44f2";
-              };
-            }}>{services[1]?.title}</div>
-            <div ref={tagRef3} onClick={() => {
-              tagsId.push(services[2]?.id)
-              if (tagRef3.current.style.background === "rgb(190, 68, 242)") {
-                tagRef3.current.style.background = "";
-              } else {
-                tagRef3.current.style.background = "#be44f2";
-              };
-            }}>{services[2]?.title}</div>
+            <div
+              ref={tagRef1}
+              onClick={() => {
+                tagsId.push(services[0]?.id);
+                if (tagRef1.current.style.background === "rgb(190, 68, 242)") {
+                  tagRef1.current.style.background = "";
+                } else {
+                  tagRef1.current.style.background = "#be44f2";
+                }
+              }}
+            >
+              {services[0]?.title}
+            </div>
+            <div
+              ref={tagRef2}
+              onClick={() => {
+                tagsId.push(services[1]?.id);
+                if (tagRef2.current.style.background === "rgb(190, 68, 242)") {
+                  tagRef2.current.style.background = "";
+                } else {
+                  tagRef2.current.style.background = "#be44f2";
+                }
+              }}
+            >
+              {services[1]?.title}
+            </div>
+            <div
+              ref={tagRef3}
+              onClick={() => {
+                tagsId.push(services[2]?.id);
+                if (tagRef3.current.style.background === "rgb(190, 68, 242)") {
+                  tagRef3.current.style.background = "";
+                } else {
+                  tagRef3.current.style.background = "#be44f2";
+                }
+              }}
+            >
+              {services[2]?.title}
+            </div>
           </div>
           <div className={style.items}>
-            <div ref={tagRef4} onClick={() => {
-              tagsId.push(services[3]?.id)
-              if (tagRef4.current.style.background === "rgb(190, 68, 242)") {
-                tagRef4.current.style.background = "";
-              } else {
-                tagRef4.current.style.background = "#be44f2";
-              };
-            }}>{services[3]?.title}</div>
-            <div ref={tagRef5} onClick={() => {
-              tagsId.push(services[4]?.id)
-              if (tagRef5.current.style.background === "rgb(190, 68, 242)") {
-                tagRef5.current.style.background = "";
-              } else {
-                tagRef5.current.style.background = "#be44f2";
-              };
-            }}>{services[4]?.title}</div>
-            <div ref={tagRef6} onClick={() => {
-              tagsId.push(services[5]?.id)
-              if (tagRef6.current.style.background === "rgb(190, 68, 242)") {
-                tagRef6.current.style.background = "";
-              } else {
-                tagRef6.current.style.background = "#be44f2";
-              };
-            }}>{services[5]?.title}</div>
+            <div
+              ref={tagRef4}
+              onClick={() => {
+                tagsId.push(services[3]?.id);
+                if (tagRef4.current.style.background === "rgb(190, 68, 242)") {
+                  tagRef4.current.style.background = "";
+                } else {
+                  tagRef4.current.style.background = "#be44f2";
+                }
+              }}
+            >
+              {services[3]?.title}
+            </div>
+            <div
+              ref={tagRef5}
+              onClick={() => {
+                tagsId.push(services[4]?.id);
+                if (tagRef5.current.style.background === "rgb(190, 68, 242)") {
+                  tagRef5.current.style.background = "";
+                } else {
+                  tagRef5.current.style.background = "#be44f2";
+                }
+              }}
+            >
+              {services[4]?.title}
+            </div>
+            <div
+              ref={tagRef6}
+              onClick={() => {
+                tagsId.push(services[5]?.id);
+                if (tagRef6.current.style.background === "rgb(190, 68, 242)") {
+                  tagRef6.current.style.background = "";
+                } else {
+                  tagRef6.current.style.background = "#be44f2";
+                }
+              }}
+            >
+              {services[5]?.title}
+            </div>
           </div>
           <div
             className={style.items}
             style={{ display: services.length <= 6 ? "none" : "flex" }}
           >
-            <div ref={tagRef7} onClick={() => {
-              tagsId.push(services[6]?.id)
-              if (tagRef7.current.style.background === "rgb(190, 68, 242)") {
-                tagRef7.current.style.background = "";
-              } else {
-                tagRef7.current.style.background = "#be44f2";
-              };
-            }}>{services[6]?.title}</div>
-            <div ref={tagRef8} onClick={() => {
-              tagsId.push(services[7]?.id)
-              if (tagRef8.current.style.background === "rgb(190, 68, 242)") {
-                tagRef8.current.style.background = "";
-              } else {
-                tagRef8.current.style.background = "#be44f2";
-              };
-            }}>{services[7]?.title}</div>
-            <div ref={tagRef9} onClick={() => {
-              tagsId.push(services[8]?.id)
-              if (tagRef9.current.style.background === "rgb(190, 68, 242)") {
-                tagRef9.current.style.background = "";
-              } else {
-                tagRef9.current.style.background = "#be44f2";
-              };
-            }}>{services[8]?.title}</div>
+            <div
+              ref={tagRef7}
+              onClick={() => {
+                tagsId.push(services[6]?.id);
+                if (tagRef7.current.style.background === "rgb(190, 68, 242)") {
+                  tagRef7.current.style.background = "";
+                } else {
+                  tagRef7.current.style.background = "#be44f2";
+                }
+              }}
+            >
+              {services[6]?.title}
+            </div>
+            <div
+              ref={tagRef8}
+              onClick={() => {
+                tagsId.push(services[7]?.id);
+                if (tagRef8.current.style.background === "rgb(190, 68, 242)") {
+                  tagRef8.current.style.background = "";
+                } else {
+                  tagRef8.current.style.background = "#be44f2";
+                }
+              }}
+            >
+              {services[7]?.title}
+            </div>
+            <div
+              ref={tagRef9}
+              onClick={() => {
+                tagsId.push(services[8]?.id);
+                if (tagRef9.current.style.background === "rgb(190, 68, 242)") {
+                  tagRef9.current.style.background = "";
+                } else {
+                  tagRef9.current.style.background = "#be44f2";
+                }
+              }}
+            >
+              {services[8]?.title}
+            </div>
           </div>
         </div>
         <div className={style.row}>
