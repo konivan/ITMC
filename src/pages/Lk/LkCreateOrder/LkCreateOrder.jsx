@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { attendance, days } from "./constants";
 import { NavLink } from "react-router-dom";
+import { Alert } from "../../../components/UI/Alert/Alert";
 
 import style from "./LkCreateOrder.module.scss";
 import { SwitchComponent } from "./SwitchComponent";
@@ -14,6 +15,7 @@ export const LkCreateOrder = (props) => {
   const [productName, setProductName] = useState();
   const [description, setDescription] = useState();
   const [allTime, setAllTime] = useState(false);
+  const [alert, setAlert] = useState("");
 
   const [phone, setPhone] = useState();
   const [email, setEmail] = useState();
@@ -32,6 +34,12 @@ export const LkCreateOrder = (props) => {
   const tagRef7 = useRef();
   const tagRef8 = useRef();
   const tagRef9 = useRef();
+
+  if (alert !== "") {
+    setTimeout(() => {
+      setAlert("")
+    }, 4000)
+  }
 
   const changeHandler = () => {
     if (service === "Веб сайт") {
@@ -129,6 +137,17 @@ export const LkCreateOrder = (props) => {
       body: JSON.stringify(results),
     };
 
+    if (
+      results.name === "" ||
+      results.description === "" ||
+      results.price === 0 ||
+      results.contact.email === "" ||
+      results.contact.telegram === "" ||
+      results.contact.phone === ""
+    ) {
+      return setAlert("Заполните все поля!");
+    }
+
     fetch(url, reqOptions, results)
       .then((res) => {
         res.json()
@@ -138,6 +157,7 @@ export const LkCreateOrder = (props) => {
 
   return (
     <section className={style.wrapper}>
+      <Alert alert={alert} setAlert={setAlert} style={true}/>
       <div className={style.container}>
         <div className={style.row}>
           <span className={style.firstSpan}>Создание нового проекта</span>
@@ -182,7 +202,7 @@ export const LkCreateOrder = (props) => {
                   image.src = path;
                   image.onload = function() {
                   if (image.width !== 256 || image.height !== 256) {
-                    return alert("Изображение должно быть 256px на 256px")
+                    return setAlert("Изображение должно быть 256px на 256px")
                     } else {
                       setFile(path);
                     }
@@ -226,7 +246,6 @@ export const LkCreateOrder = (props) => {
             type="range"
             min="0"
             max="100000"
-            step='25000'
             value={budgetValue}
             onChange={(e) => {
               setBudgetValue(e.target.value);
@@ -254,7 +273,7 @@ export const LkCreateOrder = (props) => {
                   image.src = path;
                   image.onload = function() {
                   if (image.width !== 256 || image.height !== 256) {
-                    return alert("Изображение должно быть 256px на 256px")
+                    return setAlert("Изображение должно быть 256px на 256px")
                     } else {
                       setPlanFiles(path);
                     }

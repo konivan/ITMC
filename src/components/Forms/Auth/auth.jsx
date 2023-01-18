@@ -1,5 +1,6 @@
 import { React } from "react";
 import style from "./auth.module.scss";
+import { Alert } from "../../UI/Alert/Alert";
 
 import { Icon } from "@iconify/react";
 import { useState } from "react";
@@ -8,6 +9,7 @@ const Auth = (props) => {
   const [activeCheckbox, setActiveCheckbox] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [alert, setAlert] = useState("");
 
   const authData = {
     password: password,
@@ -18,22 +20,30 @@ const Auth = (props) => {
     return null;
   }
 
-  const url = `${props.URL}api/token/`;
-  const reqOptions = {
-    method: "POST",
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(authData),
-  };
+  if (alert !== "") {
+    setTimeout(() => {
+      setAlert("")
+    }, 4000)
+  }
+
+  // const url = `${props.URL}api/token/`;
 
   const auth = () => {
+    const url = `http://127.0.0.1:8000/api/token/`;
+    const reqOptions = {
+      method: "POST",
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(authData),
+    };
+
     if (password !== "" && username !== "") {
       fetch(url, reqOptions, authData)
         .then((res) => {
           if (res.status !== 200) {
-            alert("Неправильное имя пользователя или пароль");
+            setAlert("Неправильное имя пользователя или пароль!");
           } else {
             setPassword("");
             setUsername("");
@@ -43,7 +53,7 @@ const Auth = (props) => {
           }
         })
         .catch((err) => console.log("Error: " + err));
-    } else return alert("Заполните все поля");
+    } else return setAlert("Заполните все поля!");
   };
 
   const openAuthorization = () => {
@@ -53,6 +63,7 @@ const Auth = (props) => {
 
   return (
     <main className={style.modal} onClick={props.onClose}>
+      <Alert alert={alert} setAlert={setAlert}/>
       <div className={style.modalContent} onClick={(e) => e.stopPropagation()}>
         <Icon
           className={style.closeBtn}
@@ -80,7 +91,7 @@ const Auth = (props) => {
               <input
                 onChange={(e) => {
                   setUsername(e.target.value);
-                  props.setname(e.target.value);
+                  // props.setname(e.target.value);
                 }}
                 value={username}
                 placeholder="Введите имя"

@@ -44,7 +44,7 @@ const Order = (props) => {
             props.setShowOrders(false)
         })
         .catch((err) => console.log("Error: " + err));
-      } else return alert('Заполните все поля')
+      }
     };
 
     return (

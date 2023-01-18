@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import style from "./authorization.module.scss";
 
 import { Icon } from "@iconify/react";
+import { Alert } from "../../UI/Alert/Alert";
 
 const Authorization = (props) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
+  const [alert, setAlert] = useState("");
 
   const authorizationData = {
     email: email,
@@ -17,6 +19,12 @@ const Authorization = (props) => {
 
   if (!props.showAuthorization) {
     return null;
+  }
+
+  if (alert !== "") {
+    setTimeout(() => {
+      setAlert("")
+    }, 4000)
   }
 
   const url = `${props.URL}account/register/`;
@@ -35,19 +43,19 @@ const Authorization = (props) => {
       fetch(url, reqOptions, authorizationData)
         .then((res) => {
           if (res.status === 400) {
-            return alert("Error: " + res.statusText);
+            return setAlert("Error: " + res.statusText);
           } else {
             setUsername("");
             setEmail("");
             setPassword("");
             setRepeatPassword("");
             props.setShowAuthorization(false);
-            return alert('Пользователь создан');
+            return alert('Пользователь создан!');
           }
         })
         .catch((err) => console.log("Error: " + err));
-    } else alert('Пароли не совпадают');
-   } else return alert('Заполните все поля')
+    } else setAlert('Пароли не совпадают!');
+   } else return setAlert('Заполните все поля!')
   };
 
   const openAuth = () => {
@@ -57,6 +65,7 @@ const Authorization = (props) => {
 
   return (
     <main className={style.modal} onClick={props.onClose}>
+      <Alert alert={alert} setAlert={setAlert}/>
       <div className={style.modalContent} onClick={(e) => e.stopPropagation()}>
         <Icon
           className={style.closeBtn}

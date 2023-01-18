@@ -36,7 +36,7 @@ const AuthOrder = (props) => {
         props.setShowAuthOrders(false)
       })
       .catch((err) => console.log("Error: " + err));
-    } else return alert('Заполните описание')
+    }
   };
 
   return (
