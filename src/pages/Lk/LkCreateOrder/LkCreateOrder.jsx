@@ -61,8 +61,8 @@ export const LkCreateOrder = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       const userData = {
-        username: "admin",
-        password: "admin",
+        username: localStorage.getItem('name'),
+        password: localStorage.getItem('password'),
       };
 
       const url1 = `${props.URL}api/token/`;

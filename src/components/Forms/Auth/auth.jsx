@@ -42,6 +42,8 @@ const Auth = (props) => {
           if (res.status !== 200) {
             setAlert("Неправильное имя пользователя или пароль!");
           } else {
+            localStorage.setItem('name', username);
+            localStorage.setItem('password', password);
             setPassword("");
             setUsername("");
             props.setIsAuth(true);
