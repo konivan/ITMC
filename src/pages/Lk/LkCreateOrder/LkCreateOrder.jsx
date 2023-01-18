@@ -114,7 +114,7 @@ export const LkCreateOrder = (props) => {
       },
       category: [service],
       name: productName,
-      image: logoImg,
+      image: formData,
       price: budgetValue,
       description: description,
       tags: tagsId,
@@ -225,7 +225,7 @@ export const LkCreateOrder = (props) => {
             type="range"
             min="0"
             max="100000"
-            step='25000'
+            step="25000"
             value={budgetValue}
             onChange={(e) => {
               setBudgetValue(e.target.value);
