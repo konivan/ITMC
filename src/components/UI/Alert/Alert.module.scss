@@ -1,0 +1,26 @@
+.container {
+  margin-bottom: 800px;
+  z-index: 20;
+  border-radius: 11px;
+  background: #FCE8DB;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 568px;
+  padding: 18px 22px 18px 20px;
+  div {
+    display: flex;
+    align-items: center;
+    img {
+      margin-right: 14px;
+    }
+    span {
+      color: #71192F;
+      font-weight: 600;
+      font-size: 16px;
+    }
+  }
+  img {
+    cursor: pointer;
+  }
+}

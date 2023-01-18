@@ -21,7 +21,11 @@ function App() {
   let window = document.getElementById("html-1");
   const URL = `${process.env.REACT_APP_URL}`;
   const [isAuth, setIsAuth] = useState(false);
-  const [name, setName] = useState("")
+  const [name, setName] = useState("");
+  // const [user, setUser] = useState({
+  //   name: '',
+  //   password: ''
+  // });
 
   const [showAuth, setShowAuth] = useState(false);
   const [showAuthorization, setShowAuthorization] = useState(false);

@@ -10,42 +10,42 @@ const Order = (props) => {
     const [telegram, setTelegram] = useState('')
     const [description, setDescription] = useState('')
 
-    const orderData = {
-        orders: {
-          name_created: name,
-          telephone_number: telegram,
-          telegram: telegram,
-          description: description,
-        },
-      };
+    // const orderData = {
+    //     orders: {
+    //       name_created: name,
+    //       telephone_number: telegram,
+    //       telegram: telegram,
+    //       description: description,
+    //     },
+    //   };
 
 
     if (!props.showOrders) {
         return null
     }
 
-    const url = `${props.URL}api/orders/`;
-    const reqOptions = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(orderData),
-    };
+    // const url = `${props.URL}api/orders/`;
+    // const reqOptions = {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(orderData),
+    // };
 
-    const sendOrder = () => {
-      if (description !== '' && telegram !== '' && name !== '') {
-      fetch(url, reqOptions, orderData)
-        .then((res) => res.json())
-        .then(() => {
-            setName('')
-            setTelegram('')
-            setDescription('')
-            props.setShowOrders(false)
-        })
-        .catch((err) => console.log("Error: " + err));
-      } else return alert('Заполните все поля')
-    };
+    // const sendOrder = () => {
+    //   if (description !== '' && telegram !== '' && name !== '') {
+    //   fetch(url, reqOptions, orderData)
+    //     .then((res) => res.json())
+    //     .then(() => {
+    //         setName('')
+    //         setTelegram('')
+    //         setDescription('')
+    //         props.setShowOrders(false)
+    //     })
+    //     .catch((err) => console.log("Error: " + err));
+    //   }
+    // };
 
     return (
       <main className={style.modal} onClick={props.onClose}>
@@ -115,7 +115,7 @@ const Order = (props) => {
               </div>
             </section>
           </section>
-          <button onClick={sendOrder} className={style.enterBtn}>
+          <button className={style.enterBtn}>
             Оставить заявку
           </button>
         </div>

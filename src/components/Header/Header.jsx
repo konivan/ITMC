@@ -10,7 +10,7 @@ import { NavLink } from "react-router-dom";
 
 export const Header = (props) => {
   const [activeBurger, setActiveBurger] = useState(false);
-  if (window.location.pathname === '/Origin' || window.location.pathname === '/LkCreateOrder' || window.location.pathname === '/Orders') {
+  if (window.location.pathname === '/Origin' || window.location.pathname === '/LkCreateOrder' || window.location.pathname === '/Orders' || window.location.pathname === '/Accounts' || window.location.pathname === '/Dogovor') {
     return null;
   }
   return (
