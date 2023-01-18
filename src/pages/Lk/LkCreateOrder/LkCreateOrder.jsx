@@ -69,7 +69,6 @@ export const LkCreateOrder = (props) => {
       const reqOptions1 = {
         method: "POST",
         headers: {
-          "Access-Control-Allow-Origin": "*",
           "Content-Type": "application/json",
         },
         body: JSON.stringify(userData),
@@ -131,7 +130,6 @@ export const LkCreateOrder = (props) => {
       method: "POST",
       headers: {
         authorization: `Bearer ${globalToken?.access}`,
-        "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json",
       },
       body: JSON.stringify(results),

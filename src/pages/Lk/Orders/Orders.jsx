@@ -42,7 +42,6 @@ export const Orders = (props) => {
     method: "GET",
     headers: {
       "authorization": `Bearer ${globalToken?.access}`,
-      "Access-Control-Allow-Origin": "*",
       "Accept": "application/json",
     },
   };
