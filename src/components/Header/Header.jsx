@@ -31,7 +31,7 @@ export const Header = (props) => {
               <span></span>
               <div onClick={(e) => e.stopPropagation()}>
                 <Menu setShowAuthOrders={props.setShowAuthOrders} setIsAuth={props.setIsAuth} isAuth={props.isAuth} activeBurger={activeBurger}/>
-              </div>  
+              </div>
             </div>
             </div>
             </div>

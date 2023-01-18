@@ -10,7 +10,7 @@ import { Footer } from "./components/Footer/Footer";
 import AuthOrder from "./components/Forms/AuthOrder/authOrder";
 import Product from "./components/Forms/Product/product";
 import { Team } from "./pages/Team/Team";
-import { Portfolio } from "./pages/Portfolio/Portfolio";
+import { Portfolio } from "./pages/portfolio/portfolio";
 import { LkCreateOrder } from "./pages/Lk/LkCreateOrder/LkCreateOrder";
 import { Origin } from "./pages/Lk/Origin/Origin"
 import { Orders } from "./pages/Lk/Orders/Orders"
@@ -73,11 +73,11 @@ function App() {
           />
           <Route path="/portfolio" element={<Portfolio URL={URL} />} />
           <Route path="/team" element={<Team />} />
-          <Route path="/LkCreateOrder" element={<LkCreateOrder/>} />
-          <Route path="/Origin" element={<Origin name={name}/>} />
-          <Route path="/Orders" element={<Orders name={name}/>} />
-          <Route path="/Dogovor" element={<Dogovor name={name}/>} />
-          <Route path="/Accounts" element={<Accounts name={name}/>} />
+          <Route path="/LkCreateOrder" element={<LkCreateOrder URL={URL}/>} />
+          <Route path="/Origin" element={<Origin name={name} URL={URL}/>} />
+          <Route path="/Orders" element={<Orders name={name} URL={URL}/>} />
+          <Route path="/Dogovor" element={<Dogovor name={name} URL={URL}/>} />
+          <Route path="/Accounts" element={<Accounts name={name} URL={URL}/>} />
 
         </Routes>
         <Product

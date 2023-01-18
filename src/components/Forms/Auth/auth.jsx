@@ -18,7 +18,7 @@ const Auth = (props) => {
     return null;
   }
 
-  const url = `http://127.0.0.1:8000/api/token/`;
+  const url = `${props.URL}api/token/`;
   const reqOptions = {
     method: "POST",
     headers: {
