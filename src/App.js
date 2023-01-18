@@ -20,7 +20,7 @@ import { Accounts } from "./pages/Lk/Accounts/Accounts"
 function App() {
   let window = document.getElementById("html-1");
   const URL = `${process.env.REACT_APP_URL}`;
-  const [isAuth, setIsAuth] = useState(false);
+  const [isAuth, setIsAuth] = useState(true);
   const [name, setName] = useState("");
   // const [user, setUser] = useState({
   //   name: '',
