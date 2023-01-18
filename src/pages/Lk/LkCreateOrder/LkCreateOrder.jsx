@@ -159,8 +159,8 @@ export const LkCreateOrder = (props) => {
       <div className={style.container}>
         <div className={style.row}>
           <span className={style.firstSpan}>Создание нового проекта</span>
-          <button>Отменить</button>
-          <button>Заказать</button>
+          {/* <button>Отменить</button>
+          <button>Заказать</button> */}
           <div>
             <span className={style.line} />
             <span className={style.line} />
