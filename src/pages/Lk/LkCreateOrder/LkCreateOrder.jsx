@@ -202,7 +202,7 @@ export const LkCreateOrder = (props) => {
                   image.src = path;
                   image.onload = function () {
                     if (image.width !== 256 || image.height !== 256) {
-                      return alert("Изображение должно быть 256px на 256px");
+                      return setAlert("Изображение должно быть 256px на 256px");
                     } else {
                       setFile(path);
                     }
@@ -272,7 +272,7 @@ export const LkCreateOrder = (props) => {
                   image.src = path;
                   image.onload = function () {
                     if (image.width !== 256 || image.height !== 256) {
-                      return alert("Изображение должно быть 256px на 256px");
+                      return setAlert("Изображение должно быть 256px на 256px");
                     } else {
                       setPlanFiles(path);
                     }
