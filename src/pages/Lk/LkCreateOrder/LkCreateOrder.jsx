@@ -2,10 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import { attendance, days } from "./constants";
 import { NavLink } from "react-router-dom";
 import { Alert } from "../../../components/UI/Alert/Alert";
+import MySlider from "../../../components/UI/MySlider/MySlider";
+import Contacts from "./Contacts";
+import { SwitchComponent } from "./SwitchComponent";
 
 import style from "./LkCreateOrder.module.scss";
-import { SwitchComponent } from "./SwitchComponent";
-import MySlider from "../../../components/UI/MySlider/MySlider";
 
 export const LkCreateOrder = (props) => {
   const [globalToken, setGlobalToken] = useState(null);
@@ -69,8 +70,8 @@ export const LkCreateOrder = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       const userData = {
-        username: localStorage.getItem('name'),
-        password: localStorage.getItem('password'),
+        username: localStorage.getItem("name"),
+        password: localStorage.getItem("password"),
       };
 
       const url1 = `${props.URL}api/token/`;
@@ -469,39 +470,17 @@ export const LkCreateOrder = (props) => {
             </div>
           </div>
         </div>
-        <div className={style.row}>
-          <span>Контакты</span>
-          <input
-            placeholder="Номер телефона"
-            type="tel"
-            value={phone}
-            onChange={(e) => {
-              setPhone(e.target.value);
-            }}
-          />
-          <input
-            placeholder="Email"
-            type="email"
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-          />
-          <input
-            placeholder="Домен, если есть"
-            value={domain}
-            onChange={(e) => {
-              setDomain(e.target.value);
-            }}
-          />
-          <input
-            placeholder="Telegram"
-            value={telegram}
-            onChange={(e) => {
-              setTelegram(e.target.value);
-            }}
-          />
-        </div>
+        <Contacts
+          setAlert={setAlert}
+          phone={phone}
+          email={email}
+          domain={domain}
+          telegram={telegram}
+          setPhone={setPhone}
+          setEmail={setEmail}
+          setDomain={setDomain}
+          setTelegram={setTelegram}
+        />
         <div className={style.row}>
           <span>Восколько вы свободны для конференций</span>
           {days.map((item, index) => (
