@@ -5,6 +5,7 @@ import { Alert } from "../../../components/UI/Alert/Alert";
 
 import style from "./LkCreateOrder.module.scss";
 import { SwitchComponent } from "./SwitchComponent";
+import MySlider from "../../../components/UI/MySlider/MySlider";
 
 export const LkCreateOrder = (props) => {
   const [globalToken, setGlobalToken] = useState(null);
@@ -37,8 +38,8 @@ export const LkCreateOrder = (props) => {
 
   if (alert !== "") {
     setTimeout(() => {
-      setAlert("")
-    }, 4000)
+      setAlert("");
+    }, 4000);
   }
 
   const changeHandler = () => {
@@ -155,7 +156,7 @@ export const LkCreateOrder = (props) => {
 
   return (
     <section className={style.wrapper}>
-      <Alert alert={alert} setAlert={setAlert} style={true}/>
+      <Alert alert={alert} setAlert={setAlert} style={true} />
       <div className={style.container}>
         <div className={style.row}>
           <span className={style.firstSpan}>Создание нового проекта</span>
@@ -238,12 +239,7 @@ export const LkCreateOrder = (props) => {
               setBudgetValue(e.target.value);
             }}
           />
-          <input
-            list="marks"
-            type="range"
-            min="0"
-            max="100000"
-            step="25000"
+          <MySlider
             value={budgetValue}
             onChange={(e) => {
               setBudgetValue(e.target.value);
