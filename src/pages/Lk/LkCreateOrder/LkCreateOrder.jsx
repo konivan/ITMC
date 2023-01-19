@@ -10,13 +10,14 @@ import MySlider from "../../../components/UI/MySlider/MySlider";
 export const LkCreateOrder = (props) => {
   const [globalToken, setGlobalToken] = useState(null);
   const [budgetValue, setBudgetValue] = useState(0);
-  const [service, setServiceValue] = useState();
+  const [service, setServiceValue] = useState("");
   const [file, setFile] = useState();
   const [planFiles, setPlanFiles] = useState();
   const [productName, setProductName] = useState();
   const [description, setDescription] = useState();
   const [allTime, setAllTime] = useState(false);
   const [alert, setAlert] = useState("");
+  let [categoryId, setCategoryId] = useState(1);
 
   const [phone, setPhone] = useState();
   const [email, setEmail] = useState();
@@ -45,16 +46,22 @@ export const LkCreateOrder = (props) => {
   const changeHandler = () => {
     if (service === "Веб сайт") {
       services = attendance[0];
+      categoryId = 1;
     } else if (service === "Разработка приложения") {
       services = attendance[1];
+      categoryId = 2;
     } else if (service === "Крипто разработка") {
       services = attendance[2];
+      categoryId = 3;
     } else if (service === "Разработка дизайна") {
       services = attendance[3];
+      categoryId = 4;
     } else if (service === "Аудит системы и кода") {
       services = attendance[4];
+      categoryId = 5;
     } else if (service === "Маркетинг") {
       services = attendance[5];
+      categoryId = 6;
     } else return (services = attendance[0]);
   };
   changeHandler();
@@ -120,12 +127,17 @@ export const LkCreateOrder = (props) => {
         domain: domain,
         telegram: telegram,
       },
-      category: [service],
+      category: service,
       name: productName,
       image: formData,
       price: budgetValue,
       description: description,
       tags: tagsId,
+      gallery: [
+        {
+          image: formData,
+        }
+      ]
     };
     const reqOptions = {
       method: "POST",
@@ -319,7 +331,10 @@ export const LkCreateOrder = (props) => {
             <div
               ref={tagRef1}
               onClick={() => {
-                tagsId.push(services[0]?.id);
+                tagsId.push({
+                  name: services[0]?.title,
+                  category: categoryId,
+                });
                 if (tagRef1.current.style.background === "rgb(190, 68, 242)") {
                   tagRef1.current.style.background = "";
                 } else {
@@ -332,7 +347,10 @@ export const LkCreateOrder = (props) => {
             <div
               ref={tagRef2}
               onClick={() => {
-                tagsId.push(services[1]?.id);
+                tagsId.push({
+                  name: services[1]?.title,
+                  category: categoryId,
+                })
                 if (tagRef2.current.style.background === "rgb(190, 68, 242)") {
                   tagRef2.current.style.background = "";
                 } else {
@@ -345,7 +363,10 @@ export const LkCreateOrder = (props) => {
             <div
               ref={tagRef3}
               onClick={() => {
-                tagsId.push(services[2]?.id);
+                tagsId.push({
+                  name: services[2]?.title,
+                  category: categoryId,
+                })
                 if (tagRef3.current.style.background === "rgb(190, 68, 242)") {
                   tagRef3.current.style.background = "";
                 } else {
@@ -360,7 +381,10 @@ export const LkCreateOrder = (props) => {
             <div
               ref={tagRef4}
               onClick={() => {
-                tagsId.push(services[3]?.id);
+                tagsId.push({
+                  name: services[3]?.title,
+                  category: categoryId,
+                })
                 if (tagRef4.current.style.background === "rgb(190, 68, 242)") {
                   tagRef4.current.style.background = "";
                 } else {
@@ -373,7 +397,10 @@ export const LkCreateOrder = (props) => {
             <div
               ref={tagRef5}
               onClick={() => {
-                tagsId.push(services[4]?.id);
+                tagsId.push({
+                  name: services[4]?.title,
+                  category: categoryId,
+                })
                 if (tagRef5.current.style.background === "rgb(190, 68, 242)") {
                   tagRef5.current.style.background = "";
                 } else {
@@ -386,7 +413,10 @@ export const LkCreateOrder = (props) => {
             <div
               ref={tagRef6}
               onClick={() => {
-                tagsId.push(services[5]?.id);
+                tagsId.push({
+                  name: services[5]?.title,
+                  category: categoryId,
+                })
                 if (tagRef6.current.style.background === "rgb(190, 68, 242)") {
                   tagRef6.current.style.background = "";
                 } else {
@@ -404,7 +434,10 @@ export const LkCreateOrder = (props) => {
             <div
               ref={tagRef7}
               onClick={() => {
-                tagsId.push(services[6]?.id);
+                tagsId.push({
+                  name: services[6]?.title,
+                  category: categoryId,
+                })
                 if (tagRef7.current.style.background === "rgb(190, 68, 242)") {
                   tagRef7.current.style.background = "";
                 } else {
@@ -417,7 +450,10 @@ export const LkCreateOrder = (props) => {
             <div
               ref={tagRef8}
               onClick={() => {
-                tagsId.push(services[7]?.id);
+                tagsId.push({
+                  name: services[7]?.title,
+                  category: categoryId,
+                })
                 if (tagRef8.current.style.background === "rgb(190, 68, 242)") {
                   tagRef8.current.style.background = "";
                 } else {
@@ -430,7 +466,10 @@ export const LkCreateOrder = (props) => {
             <div
               ref={tagRef9}
               onClick={() => {
-                tagsId.push(services[8]?.id);
+                tagsId.push({
+                  name: services[8]?.title,
+                  category: categoryId,
+                })
                 if (tagRef9.current.style.background === "rgb(190, 68, 242)") {
                   tagRef9.current.style.background = "";
                 } else {

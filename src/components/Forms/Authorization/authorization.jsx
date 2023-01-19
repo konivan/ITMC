@@ -38,10 +38,13 @@ const Authorization = (props) => {
 
   const authorization = () => {
     if (email !== '' && username !== '' && password !== '' && repeatPassword !== '') {
+    if (username.length >= 6) {
+    if (password.length >= 8) {
     if (password === repeatPassword) {
       fetch(url, reqOptions, authorizationData)
         .then((res) => {
           if (res.status === 400) {
+            console.log(res)
             return setAlert("Error: " + res.statusText);
           } else {
             setUsername("");
@@ -53,7 +56,9 @@ const Authorization = (props) => {
           }
         })
         .catch((err) => console.log("Error: " + err));
-    } else setAlert('Пароли не совпадают!');
+      } else setAlert('Пароли не совпадают!');
+    } else setAlert('Длина пароля должна быть не меньше 8 знаков!');
+  } else setAlert('Имя пользователя должно быть не меньше 6 знаков!')
    } else return setAlert('Заполните все поля!')
   };
 

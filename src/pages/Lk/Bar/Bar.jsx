@@ -7,7 +7,7 @@ export const Bar = (props) => {
     <div className={style.row}>
       <div className={style.column}>
         <img src="img/lk/icon.svg" alt="icon" />
-        <span>{props.name}</span>
+        <span>{localStorage.getItem('name')}</span>
       </div>
       <div className={style.column}>
         <div className={style.item}>
