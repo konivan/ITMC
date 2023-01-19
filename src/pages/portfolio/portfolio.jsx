@@ -20,7 +20,7 @@ export const Portfolio = () => {
   //   .then((body) => console.log(body))
   //   .catch((err) => console.log("Error: " + err));
   // }, []);
-  
+
   return (
     <section className={style.main}>
       <div className={style.wrapper} id="header">
