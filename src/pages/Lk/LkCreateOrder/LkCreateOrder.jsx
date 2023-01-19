@@ -95,6 +95,7 @@ export const LkCreateOrder = (props) => {
   const sendOrder = () => {
     const formData = new FormData();
     formData.append("file", logoImg);
+    console.log(formData.get('file'))
 
     const url = `${props.URL}orders/order/`;
     const results = {
@@ -129,13 +130,13 @@ export const LkCreateOrder = (props) => {
       },
       category: service,
       name: productName,
-      image: formData,
+      image: formData.get('file'),
       price: budgetValue,
       description: description,
       tags: tagsId,
       gallery: [
         {
-          image: formData,
+          image: formData.get('file'),
         }
       ]
     };
@@ -222,6 +223,7 @@ export const LkCreateOrder = (props) => {
                 accept="image/*"
                 placeholder="Загрузить фото"
                 type="file"
+                name="file"
               />
               <p>Размером от 256px на 256px в формате .jpg или .png </p>
               {file === undefined ? null : (
