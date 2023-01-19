@@ -9,8 +9,8 @@ export const Orders = (props) => {
 
   const userData = {
     username: "admin",
-    password: "admin"
-  }
+    password: "admin",
+  };
 
   const url1 = `${props.URL}api/token/`;
   const reqOptions1 = {
@@ -35,43 +35,41 @@ export const Orders = (props) => {
     fetchData();
   }, []);
 
-
-
   const url = `${props.URL}orders/order/`;
   const reqOptions = {
     method: "GET",
     headers: {
-      "authorization": `Bearer ${globalToken?.access}`,
+      authorization: `Bearer ${globalToken?.access}`,
       "Access-Control-Allow-Origin": "*",
-      "Accept": "application/json",
+      Accept: "application/json",
     },
   };
 
-    const fetchOrders = async () => {
-      try {
-        const res = await fetch(url, reqOptions);
-        const data = await res.json();
-        setOrderData(data?.results[0])
-      } catch (err) {
-        console.log("Error: " + err);
-      }
-    };
-    if (orderData === null) {
-      fetchOrders()
+  const fetchOrders = async () => {
+    try {
+      const res = await fetch(url, reqOptions);
+      const data = await res.json();
+      setOrderData(data?.results[0]);
+    } catch (err) {
+      console.log("Error: " + err);
     }
+  };
+  if (orderData === null) {
+    fetchOrders();
+  }
 
   return (
     <section className={style.main} id="Orders">
       <div className={style.wrapper}>
         <div className={style.container}>
-          <Bar name={props.name}/>
+          <Bar name={props.name} />
           <div className={style.row}>
             <div className={style.column}>
               <h2>Ваши заказы</h2>
               <button>
                 <NavLink to="/LkCreateOrder">
                   <img src="img/Lk/UnionX.svg" alt="UnionX" />
-                 <span>Заказать</span>
+                  <span>Заказать</span>
                 </NavLink>
               </button>
             </div>

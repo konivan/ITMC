@@ -37,8 +37,8 @@ export const LkCreateOrder = (props) => {
 
   if (alert !== "") {
     setTimeout(() => {
-      setAlert("")
-    }, 4000)
+      setAlert("");
+    }, 4000);
   }
 
   const changeHandler = () => {
@@ -157,12 +157,12 @@ export const LkCreateOrder = (props) => {
 
   return (
     <section className={style.wrapper}>
-      <Alert alert={alert} setAlert={setAlert} style={true}/>
+      <Alert alert={alert} setAlert={setAlert} style={true} />
       <div className={style.container}>
         <div className={style.row}>
           <span className={style.firstSpan}>Создание нового проекта</span>
-          <button>Отменить</button>
-          <button>Заказать</button>
+          {/* <button>Отменить</button>
+          <button>Заказать</button> */}
           <div>
             <span className={style.line} />
             <span className={style.line} />
