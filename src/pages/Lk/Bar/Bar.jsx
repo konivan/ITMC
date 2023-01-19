@@ -7,7 +7,7 @@ export const Bar = (props) => {
     <div className={style.row}>
       <div className={style.column}>
         <img src="img/lk/icon.svg" alt="icon" />
-        <span>{localStorage.getItem('name')}</span>
+        <span>{localStorage.getItem("name")}</span>
       </div>
       <div className={style.column}>
         <div className={style.item}>
@@ -26,25 +26,15 @@ export const Bar = (props) => {
             <NavLink to="/Orders">
               <span>Ваши заказы</span>
             </NavLink>
-          </li>
-          <li>
-            <img
-              className={style.two}
-              src="img/lk/UnionTwo.svg"
-              alt="UnionTwo"
-            />
-            <NavLink to="/Accounts">
-              <span>Счета</span>
-            </NavLink>
-          </li>
+          </li>  
           <li>
             <img
               className={style.three}
-              src="img/lk/Group.svg"
+              src="img/lk/UnionTwo.svg"
               alt="UnionOne"
             />
             <NavLink to="/Origin">
-              <span>Все счета</span>
+              <span>Счета</span>
             </NavLink>
           </li>
         </ul>
