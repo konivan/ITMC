@@ -1,20 +1,132 @@
-import React from 'react';
-import style from "./Dogovor.module.scss"
+import React from "react";
+import style from "./Dogovor.module.scss";
 import { Bar } from "../Bar/Bar";
 
-export  const Dogovor = (props) => {
-    
-    return (
-        <section className={style.main}>
-            <div className={style.wrapper}>
-                <div className={style.container}>
-                    <Bar name={props.name}/>
-                    <div className={style.row}>
-                        <h2>Ваши договоры</h2>
-                    </div>
+export const Dogovor = (props) => {
+  return (
+    <section className={style.main}>
+      <div className={style.wrapper}>
+        <div className={style.container}>
+          <Bar name={props.name} />
+          <div className={style.row}>
+            <h2>Ваши договоры</h2>
+            <div className={style.cards}>
+              <div className={style.column}>
+                <img src="img/lk/Avatar.svg" alt="Avatar" />
+                <h4>Никита Можаев</h4>
+                <a href="tel:+7 777 199-20-20">+7 777 199-20-20</a>
+                <span>Менеджер вашего проекта</span>
+                <div className={style.item}>
+                  <button>Договор</button>
+                  <button>Проверить готовность</button>
                 </div>
+                <div className={style.item}>
+                  <button>Оставить жалобу</button>
+                  <button>Чаевые</button>
+                </div>
+              </div>
+              <div className={style.column}>
+                <img src="img/lk/Avatar.svg" alt="Avatar" />
+                <h4>Никита Можаев</h4>
+                <a href="tel:+7 777 199-20-20">+7 777 199-20-20</a>
+                <span>Менеджер вашего проекта</span>
+                <div className={style.item}>
+                  <button>Договор</button>
+                  <button>Проверить готовность</button>
+                </div>
+                <div className={style.item}>
+                  <button>Оставить жалобу</button>
+                  <button>Чаевые</button>
+                </div>
+              </div>
+              <div className={style.column}>
+                <img src="img/lk/Avatar.svg" alt="Avatar" />
+                <h4>Никита Можаев</h4>
+                <a href="tel:+7 777 199-20-20">+7 777 199-20-20</a>
+                <span>Менеджер вашего проекта</span>
+                <div className={style.item}>
+                  <button>Договор</button>
+                  <button>Проверить готовность</button>
+                </div>
+                <div className={style.item}>
+                  <button>Оставить жалобу</button>
+                  <button>Чаевые</button>
+                </div>
+              </div>
+              <div className={style.column}>
+                <img src="img/lk/Avatar.svg" alt="Avatar" />
+                <h4>Никита Можаев</h4>
+                <a href="tel:+7 777 199-20-20">+7 777 199-20-20</a>
+                <span>Менеджер вашего проекта</span>
+                <div className={style.item}>
+                  <button>Договор</button>
+                  <button>Проверить готовность</button>
+                </div>
+                <div className={style.item}>
+                  <button>Оставить жалобу</button>
+                  <button>Чаевые</button>
+                </div>
+              </div>
+              <div className={style.column}>
+                <img src="img/lk/Avatar.svg" alt="Avatar" />
+                <h4>Никита Можаев</h4>
+                <a href="tel:+7 777 199-20-20">+7 777 199-20-20</a>
+                <span>Менеджер вашего проекта</span>
+                <div className={style.item}>
+                  <button>Договор</button>
+                  <button>Проверить готовность</button>
+                </div>
+                <div className={style.item}>
+                  <button>Оставить жалобу</button>
+                  <button>Чаевые</button>
+                </div>
+              </div>
+              <div className={style.column}>
+                <img src="img/lk/Avatar.svg" alt="Avatar" />
+                <h4>Никита Можаев</h4>
+                <a href="tel:+7 777 199-20-20">+7 777 199-20-20</a>
+                <span>Менеджер вашего проекта</span>
+                <div className={style.item}>
+                  <button>Договор</button>
+                  <button>Проверить готовность</button>
+                </div>
+                <div className={style.item}>
+                  <button>Оставить жалобу</button>
+                  <button>Чаевые</button>
+                </div>
+              </div>
+              <div className={style.column}>
+                <img src="img/lk/Avatar.svg" alt="Avatar" />
+                <h4>Никита Можаев</h4>
+                <a href="tel:+7 777 199-20-20">+7 777 199-20-20</a>
+                <span>Менеджер вашего проекта</span>
+                <div className={style.item}>
+                  <button>Договор</button>
+                  <button>Проверить готовность</button>
+                </div>
+                <div className={style.item}>
+                  <button>Оставить жалобу</button>
+                  <button>Чаевые</button>
+                </div>
+              </div>
+              <div className={style.column}>
+                <img src="img/lk/Avatar.svg" alt="Avatar" />
+                <h4>Никита Можаев</h4>
+                <a href="tel:+7 777 199-20-20">+7 777 199-20-20</a>
+                <span>Менеджер вашего проекта</span>
+                <div className={style.item}>
+                  <button>Договор</button>
+                  <button>Проверить готовность</button>
+                </div>
+                <div className={style.item}>
+                  <button>Оставить жалобу</button>
+                  <button>Чаевые</button>
+                </div>
+              </div>
             </div>
-        </section>
-    );
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
-
