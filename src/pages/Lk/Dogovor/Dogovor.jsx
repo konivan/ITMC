@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./Dogovor.module.scss";
 import { Bar } from "../Bar/Bar";
+import { NavLink } from "react-router-dom";
 
 export const Dogovor = (props) => {
   return (
@@ -14,11 +15,13 @@ export const Dogovor = (props) => {
               <div className={style.column}>
                 <img src="img/lk/Avatar.svg" alt="Avatar" />
                 <h4>Никита Можаев</h4>
-                <a href="tel:+7 777 199-20-20">+7 777 199-20-20</a>
+                <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
                 <span>Менеджер вашего проекта</span>
                 <div className={style.item}>
                   <button>Договор</button>
-                  <button>Проверить готовность</button>
+                  <NavLink to="/Orders">
+                    <button>Проверить готовность</button>
+                  </NavLink>
                 </div>
                 <div className={style.item}>
                   <button>Оставить жалобу</button>
@@ -28,11 +31,13 @@ export const Dogovor = (props) => {
               <div className={style.column}>
                 <img src="img/lk/Avatar.svg" alt="Avatar" />
                 <h4>Никита Можаев</h4>
-                <a href="tel:+7 777 199-20-20">+7 777 199-20-20</a>
+                <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
                 <span>Менеджер вашего проекта</span>
                 <div className={style.item}>
                   <button>Договор</button>
-                  <button>Проверить готовность</button>
+                  <NavLink to="/Orders">
+                    <button>Проверить готовность</button>
+                  </NavLink>
                 </div>
                 <div className={style.item}>
                   <button>Оставить жалобу</button>
@@ -42,11 +47,13 @@ export const Dogovor = (props) => {
               <div className={style.column}>
                 <img src="img/lk/Avatar.svg" alt="Avatar" />
                 <h4>Никита Можаев</h4>
-                <a href="tel:+7 777 199-20-20">+7 777 199-20-20</a>
+                <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
                 <span>Менеджер вашего проекта</span>
                 <div className={style.item}>
                   <button>Договор</button>
-                  <button>Проверить готовность</button>
+                  <NavLink to="/Orders">
+                    <button>Проверить готовность</button>
+                  </NavLink>
                 </div>
                 <div className={style.item}>
                   <button>Оставить жалобу</button>
@@ -56,11 +63,13 @@ export const Dogovor = (props) => {
               <div className={style.column}>
                 <img src="img/lk/Avatar.svg" alt="Avatar" />
                 <h4>Никита Можаев</h4>
-                <a href="tel:+7 777 199-20-20">+7 777 199-20-20</a>
+                <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
                 <span>Менеджер вашего проекта</span>
                 <div className={style.item}>
                   <button>Договор</button>
-                  <button>Проверить готовность</button>
+                  <NavLink to="/Orders">
+                    <button>Проверить готовность</button>
+                  </NavLink>
                 </div>
                 <div className={style.item}>
                   <button>Оставить жалобу</button>
@@ -70,11 +79,13 @@ export const Dogovor = (props) => {
               <div className={style.column}>
                 <img src="img/lk/Avatar.svg" alt="Avatar" />
                 <h4>Никита Можаев</h4>
-                <a href="tel:+7 777 199-20-20">+7 777 199-20-20</a>
+                <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
                 <span>Менеджер вашего проекта</span>
                 <div className={style.item}>
                   <button>Договор</button>
-                  <button>Проверить готовность</button>
+                  <NavLink to="/Orders">
+                    <button>Проверить готовность</button>
+                  </NavLink>
                 </div>
                 <div className={style.item}>
                   <button>Оставить жалобу</button>
@@ -84,11 +95,13 @@ export const Dogovor = (props) => {
               <div className={style.column}>
                 <img src="img/lk/Avatar.svg" alt="Avatar" />
                 <h4>Никита Можаев</h4>
-                <a href="tel:+7 777 199-20-20">+7 777 199-20-20</a>
+                <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
                 <span>Менеджер вашего проекта</span>
                 <div className={style.item}>
                   <button>Договор</button>
-                  <button>Проверить готовность</button>
+                  <NavLink to="/Orders">
+                    <button>Проверить готовность</button>
+                  </NavLink>
                 </div>
                 <div className={style.item}>
                   <button>Оставить жалобу</button>
@@ -98,11 +111,13 @@ export const Dogovor = (props) => {
               <div className={style.column}>
                 <img src="img/lk/Avatar.svg" alt="Avatar" />
                 <h4>Никита Можаев</h4>
-                <a href="tel:+7 777 199-20-20">+7 777 199-20-20</a>
+                <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
                 <span>Менеджер вашего проекта</span>
                 <div className={style.item}>
                   <button>Договор</button>
-                  <button>Проверить готовность</button>
+                  <NavLink to="/Orders">
+                    <button>Проверить готовность</button>
+                  </NavLink>
                 </div>
                 <div className={style.item}>
                   <button>Оставить жалобу</button>
@@ -112,11 +127,13 @@ export const Dogovor = (props) => {
               <div className={style.column}>
                 <img src="img/lk/Avatar.svg" alt="Avatar" />
                 <h4>Никита Можаев</h4>
-                <a href="tel:+7 777 199-20-20">+7 777 199-20-20</a>
+                <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
                 <span>Менеджер вашего проекта</span>
                 <div className={style.item}>
                   <button>Договор</button>
-                  <button>Проверить готовность</button>
+                  <NavLink to="/Orders">
+                    <button>Проверить готовность</button>
+                  </NavLink>
                 </div>
                 <div className={style.item}>
                   <button>Оставить жалобу</button>
