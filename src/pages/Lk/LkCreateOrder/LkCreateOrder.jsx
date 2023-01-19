@@ -102,7 +102,7 @@ export const LkCreateOrder = (props) => {
     formData.append("contact.email", email);
     formData.append("contact.domain", domain);
     formData.append("contact.telegram", telegram);
-    formData.append("category", service);
+    formData.append("category", service || 'Веб сайт');
     formData.append("name", productName);
     formData.append("price", budgetValue);
     formData.append("description", description);

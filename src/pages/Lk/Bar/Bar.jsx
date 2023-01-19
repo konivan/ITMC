@@ -74,7 +74,11 @@ export const Bar = (props) => {
       <div className={style.column}>
         <img src="img/lk/exit.svg" alt="exit" />
         <NavLink to="/">
-          <span>Вернуться назад</span>
+          <span onClick={() => {
+            setTimeout(() => {
+              window.location.reload();
+            }, 0);
+          }}>Вернуться назад</span>
         </NavLink>
       </div>
     </div>

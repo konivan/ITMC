@@ -94,6 +94,7 @@ export const Header = (props) => {
                         props.setIsAuth(false);
                         localStorage.removeItem("name");
                         localStorage.removeItem("password");
+                        window.location.reload();
                       }}
                     >
                       Выйти

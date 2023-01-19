@@ -56,6 +56,7 @@ export const Menu = (props) => {
                     props.setIsAuth(false);
                     localStorage.removeItem('name');
                     localStorage.removeItem('password');
+                    window.location.reload();
                   }}>Выйти</NavLink>
         </li>
       </ul>
