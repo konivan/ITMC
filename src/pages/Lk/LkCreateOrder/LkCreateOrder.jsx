@@ -5,6 +5,7 @@ import { Alert } from "../../../components/UI/Alert/Alert";
 
 import style from "./LkCreateOrder.module.scss";
 import { SwitchComponent } from "./SwitchComponent";
+import MySlider from "../../../components/UI/MySlider/MySlider";
 
 export const LkCreateOrder = (props) => {
   const [globalToken, setGlobalToken] = useState(null);
@@ -61,15 +62,14 @@ export const LkCreateOrder = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       const userData = {
-        username: "admin",
-        password: "admin",
+        username: localStorage.getItem('name'),
+        password: localStorage.getItem('password'),
       };
 
       const url1 = `${props.URL}api/token/`;
       const reqOptions1 = {
         method: "POST",
         headers: {
-          "Access-Control-Allow-Origin": "*",
           "Content-Type": "application/json",
         },
         body: JSON.stringify(userData),
@@ -122,7 +122,7 @@ export const LkCreateOrder = (props) => {
       },
       category: [service],
       name: productName,
-      image: logoImg,
+      image: formData,
       price: budgetValue,
       description: description,
       tags: tagsId,
@@ -131,7 +131,6 @@ export const LkCreateOrder = (props) => {
       method: "POST",
       headers: {
         authorization: `Bearer ${globalToken?.access}`,
-        "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json",
       },
       body: JSON.stringify(results),
@@ -240,11 +239,7 @@ export const LkCreateOrder = (props) => {
               setBudgetValue(e.target.value);
             }}
           />
-          <input
-            list="marks"
-            type="range"
-            min="0"
-            max="100000"
+          <MySlider
             value={budgetValue}
             onChange={(e) => {
               setBudgetValue(e.target.value);

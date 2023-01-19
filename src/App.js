@@ -21,7 +21,7 @@ function App() {
   let window = document.getElementById("html-1");
   const URL = `${process.env.REACT_APP_URL}`;
   const [isAuth, setIsAuth] = useState(false);
-  const [name, setName] = useState("")
+  const [name, setName] = useState("");
 
   const [showAuth, setShowAuth] = useState(false);
   const [showAuthorization, setShowAuthorization] = useState(false);
@@ -71,6 +71,7 @@ function App() {
               />
             }
           />
+
           <Route path="/portfolio" element={<Portfolio URL={URL} />} />
           <Route path="/team" element={<Team />} />
           <Route path="/LkCreateOrder" element={<LkCreateOrder URL={URL}/>} />
@@ -78,7 +79,6 @@ function App() {
           <Route path="/Orders" element={<Orders name={name} URL={URL}/>} />
           <Route path="/Dogovor" element={<Dogovor name={name} URL={URL}/>} />
           <Route path="/Accounts" element={<Accounts name={name} URL={URL}/>} />
-
         </Routes>
         <Product
           onClose={() => setShowProduct(false)}

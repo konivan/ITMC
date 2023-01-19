@@ -13,7 +13,7 @@ export const Origin = (props) => {
 
   if (selectedSort === "По названию") {
     arr.sort((a, b) => a.title.localeCompare(b)); // сортировка по алфавиту
-  } else if (selectedSort === "По дате") {
+  } else if (selectedSort === "Отмененные") {
     arr.sort((a, b) => b.date - a.date); // сортировка по дате
   }
 
@@ -40,8 +40,10 @@ export const Origin = (props) => {
                   setSelectedSort={setSelectedSort}
                   defaultValue="Фильтр"
                   option={[
-                    { value: "По названию", name: "По названию" },
-                    { value: "По дате", name: "По дате" },
+                    { value: "Сначала новые", name: "Сначала новые" },
+                    { value: "Отмененные", name: "Отмененные" },
+                    { value: "Оплаченные", name: "Оплаченные" },
+                    { value: "Выставленные", name: "Выставленные" },
                   ]}
                 />
                 <select>

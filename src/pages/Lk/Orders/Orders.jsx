@@ -8,15 +8,14 @@ export const Orders = (props) => {
   const [orderData, setOrderData] = useState(null);
 
   const userData = {
-    username: "admin",
-    password: "admin",
-  };
+    username: localStorage.getItem('name'),
+    password: localStorage.getItem('password'),
+  }
 
   const url1 = `${props.URL}api/token/`;
   const reqOptions1 = {
     method: "POST",
     headers: {
-      "Access-Control-Allow-Origin": "*",
       "Content-Type": "application/json",
     },
     body: JSON.stringify(userData),
@@ -39,9 +38,8 @@ export const Orders = (props) => {
   const reqOptions = {
     method: "GET",
     headers: {
-      authorization: `Bearer ${globalToken?.access}`,
-      "Access-Control-Allow-Origin": "*",
-      Accept: "application/json",
+      "authorization": `Bearer ${globalToken?.access}`,
+      "Accept": "application/json",
     },
   };
 

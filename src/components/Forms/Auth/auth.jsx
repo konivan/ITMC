@@ -26,14 +26,11 @@ const Auth = (props) => {
     }, 4000)
   }
 
-  // const url = `${props.URL}api/token/`;
-
   const auth = () => {
-    const url = `http://127.0.0.1:8000/api/token/`;
+    const url = `${props.URL}api/token/`;
     const reqOptions = {
       method: "POST",
       headers: {
-        "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json",
       },
       body: JSON.stringify(authData),
@@ -45,6 +42,9 @@ const Auth = (props) => {
           if (res.status !== 200) {
             setAlert("Неправильное имя пользователя или пароль!");
           } else {
+            localStorage.setItem('name', username);
+            localStorage.setItem('password', password);
+            localStorage.setItem('auth', true);
             setPassword("");
             setUsername("");
             props.setIsAuth(true);

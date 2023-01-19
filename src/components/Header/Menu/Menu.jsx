@@ -51,7 +51,12 @@ export const Menu = (props) => {
           <NavLink to="/team">О нас</NavLink>
         </li>
         <li style={{display: !props.isAuth ? 'none' : null}}>
-          <NavLink onClick={() => props.setIsAuth(false)}>Выйти</NavLink>
+          <NavLink onClick={() => {
+                    localStorage.setItem('auth', 'false');
+                    props.setIsAuth(false);
+                    localStorage.removeItem('name');
+                    localStorage.removeItem('password');
+                  }}>Выйти</NavLink>
         </li>
       </ul>
       <Button setShowAuthOrders={props.setShowAuthOrders}>Заказать</Button>
