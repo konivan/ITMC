@@ -94,68 +94,55 @@ export const LkCreateOrder = (props) => {
 
   const sendOrder = () => {
     const formData = new FormData();
-    formData.append("file", logoImg);
-    console.log(formData.get('file'))
+    formData.append("image", logoImg);
+    formData.append("conference.monday", allTime);
+    formData.append("conference.tuesday", allTime);
+    formData.append("contact.phone", phone);
+    formData.append("contact.email", email);
+    formData.append("contact.domain", domain);
+    formData.append("contact.telegram", telegram);
+    formData.append("category", service);
+    formData.append("name", productName);
+    formData.append("price", budgetValue);
+    formData.append("description", description);
+    formData.append("tags[0]name", tagsId[0]?.name);
+    formData.append("tags[0]category", tagsId[0]?.category);
+    formData.append("tags[1]name", tagsId[1]?.name);
+    formData.append("tags[1]category", tagsId[0]?.category);
+    formData.append("tags[2]name", tagsId[2]?.name);
+    formData.append("tags[2]category", tagsId[0]?.category);
+    formData.append("tags[3]name", tagsId[3]?.name);
+    formData.append("tags[3]category", tagsId[0]?.category);
+    formData.append("tags[4]name", tagsId[4]?.name);
+    formData.append("tags[4]category", tagsId[0]?.category);
+    formData.append("tags[5]name", tagsId[5]?.name);
+    formData.append("tags[5]category", tagsId[0]?.category);
+    formData.append("tags[6]name", tagsId[6]?.name);
+    formData.append("tags[6]category", tagsId[0]?.category);
+    formData.append("tags[7]name", tagsId[7]?.name);
+    formData.append("tags[7]category", tagsId[0]?.category);
+    formData.append("tags[8]name", tagsId[8]?.name);
+    formData.append("tags[8]category", tagsId[0]?.category);
+    formData.append("gallery[0][image]", logoImg);
+
 
     const url = `${props.URL}orders/order/`;
-    const results = {
-      conference: {
-        monday: allTime,
-        tuesday: allTime,
-        wednesday: allTime,
-        thursday: allTime,
-        friday: allTime,
-        saturday: allTime,
-        sunday: allTime,
-        monday_start: "00:00",
-        monday_end: "00:00",
-        tuesday_start: "00:00",
-        tuesday_end: "00:00",
-        wednesday_start: "00:00",
-        wednesday_end: "00:00",
-        thursday_start: "00:00",
-        thursday_end: "00:00",
-        friday_start: "00:00",
-        friday_end: "00:00",
-        saturday_start: "00:00",
-        saturday_end: "00:00",
-        sunday_start: "00:00",
-        sunday_end: "00:00",
-      },
-      contact: {
-        phone: phone,
-        email: email,
-        domain: domain,
-        telegram: telegram,
-      },
-      category: service,
-      name: productName,
-      image: formData.get('file'),
-      price: budgetValue,
-      description: description,
-      tags: tagsId,
-      gallery: [
-        {
-          image: formData.get('file'),
-        }
-      ]
-    };
+    const results = {};
     const reqOptions = {
       method: "POST",
       headers: {
         authorization: `Bearer ${globalToken?.access}`,
-        "Content-Type": "application/json",
       },
-      body: JSON.stringify(results),
+      body: formData,
     };
 
     if (
-      results.name === "" ||
-      results.description === "" ||
-      results.price === 0 ||
-      results.contact.email === "" ||
-      results.contact.telegram === "" ||
-      results.contact.phone === ""
+      productName === "" ||
+      description === "" ||
+      budgetValue === 0 ||
+      email === "" ||
+      telegram === "" ||
+      phone === ""
     ) {
       return setAlert("Заполните все поля!");
     }
@@ -305,7 +292,6 @@ export const LkCreateOrder = (props) => {
         </div>
         <div className={style.row}>
           <span>Что именно вам нужно</span>
-          {/* <div className={style.tags}>Нет выбранных тэгов</div> */}
           <label>Категория</label>
           <select
             onChange={(e) => {
