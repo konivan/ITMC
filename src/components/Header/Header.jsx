@@ -41,7 +41,7 @@ export const Header = (props) => {
               <Button setShowAuthOrders={props.setShowAuthOrders}>Заказать</Button>
             </div>
             <div className={style.item}>
-              {!props.isAuth ? <MyButton setShowAuth={props.setShowAuth}>Войти</MyButton> :
+              {localStorage.getItem('auth') === 'false' ? <MyButton setShowAuth={props.setShowAuth}>Войти</MyButton> :
               <div>
                 <img className={style.userIcon} src="img/header/user.svg" alt="user-icon"/>
                 <div className={style.dropdown}>
@@ -52,7 +52,12 @@ export const Header = (props) => {
                     }}>
                     <span>Личный кабинет</span>
                   </NavLink>
-                  <span onClick={() => props.setIsAuth(false)}>Выйти</span>
+                  <span onClick={() => {
+                    localStorage.setItem('auth', 'false');
+                    props.setIsAuth(false);
+                    localStorage.removeItem('name');
+                    localStorage.removeItem('password');
+                  }}>Выйти</span>
                 </div>
               </div>}
             </div>

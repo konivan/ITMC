@@ -44,6 +44,7 @@ const Auth = (props) => {
           } else {
             localStorage.setItem('name', username);
             localStorage.setItem('password', password);
+            localStorage.setItem('auth', true);
             setPassword("");
             setUsername("");
             props.setIsAuth(true);
