@@ -116,11 +116,11 @@ export const LkCreateOrder = (props) => {
     formData.append("tags[6]name", tagsId[6]?.name);
     formData.append("tags[7]name", tagsId[7]?.name);
     formData.append("tags[8]name", tagsId[8]?.name);
-    formData.append("gallery[0]image", gallery[0]?.[0] || {});
-    formData.append("gallery[1]image", gallery[1]?.[0] || {});
-    formData.append("gallery[2]image", gallery[2]?.[0] || {});
-    formData.append("gallery[3]image", gallery[3]?.[0] || {});
-    formData.append("gallery[4]image", gallery[4]?.[0] || {});
+    formData.append("gallery[0]image", gallery[0]?.[0] || logoImg);
+    formData.append("gallery[1]image", gallery[1]?.[0] || logoImg);
+    formData.append("gallery[2]image", gallery[2]?.[0] || logoImg);
+    formData.append("gallery[3]image", gallery[3]?.[0] || logoImg);
+    formData.append("gallery[4]image", gallery[4]?.[0] || logoImg);
 
 
     const url = `${props.URL}orders/order/`;
