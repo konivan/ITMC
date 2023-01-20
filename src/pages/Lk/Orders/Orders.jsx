@@ -2,15 +2,17 @@ import React, { useEffect, useState } from "react";
 import style from "./Orders.module.scss";
 import { Bar } from "../Bar/Bar";
 import { NavLink } from "react-router-dom";
+import OrderList from "./OrderList/OrderList";
+import OrderInfo from "./OrderInfo/OrderInfo";
 
 export const Orders = (props) => {
   const [globalToken, setGlobalToken] = useState(null);
   const [orderData, setOrderData] = useState(null);
 
   const userData = {
-    username: localStorage.getItem('name'),
-    password: localStorage.getItem('password'),
-  }
+    username: localStorage.getItem("name"),
+    password: localStorage.getItem("password"),
+  };
 
   const url1 = `${props.URL}api/token/`;
   const reqOptions1 = {
@@ -38,8 +40,8 @@ export const Orders = (props) => {
   const reqOptions = {
     method: "GET",
     headers: {
-      "authorization": `Bearer ${globalToken?.access}`,
-      "Accept": "application/json",
+      authorization: `Bearer ${globalToken?.access}`,
+      Accept: "application/json",
     },
   };
 
@@ -71,8 +73,12 @@ export const Orders = (props) => {
                 </NavLink>
               </button>
             </div>
-            <div className={style.column}>
-              <input placeholder="Поиск..." type="text" />
+            <div className={style.orders}>
+              <div>
+                <input placeholder="Поиск..." type="text" />
+                <OrderList />
+              </div>
+              <OrderInfo />
             </div>
           </div>
         </div>

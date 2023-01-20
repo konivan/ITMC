@@ -3,12 +3,17 @@
   .wrapper {
     .container {
       display: flex;
+
+      .orders {
+        display: flex;
+        margin-top: 17px;
+      }
       .row {
         width: 100%;
         border: 0.0625em solid #e8e8e8;
         border-radius: 0.25em;
-        background: #ffffff;
-        padding: 16px 16px 424px 0px;
+        background: #E5E5E5;
+        padding: 16px 16px 0px 0px;
         .column:nth-of-type(1) {
           display: flex;
           align-items: center;
@@ -41,16 +46,16 @@
         }
         .column:nth-of-type(2) {
           margin-top: 16px;
-          input {
-            border: 0.0625em solid #e8e8e8;
-            border-radius: 0.25em;
-            padding: 12px 277px 12px 30px;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 12px;
-            color: #9ca6b4;
-            margin-left: 16px;
-          }
+        }
+        input {
+          border: 0.0625em solid #e8e8e8;
+          border-radius: 0.25em;
+          padding: 12px 277px 12px 30px;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          color: #9ca6b4;
+          margin-left: 16px;
         }
       }
     }

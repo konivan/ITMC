@@ -1,1 +1,1 @@
-export {MySlider} from './MySlider';
+export { MySlider } from "./MySlider";
