@@ -44,15 +44,16 @@ const Authorization = (props) => {
       fetch(url, reqOptions, authorizationData)
         .then((res) => {
           if (res.status === 400) {
-            console.log(res)
             return setAlert("Error: " + res.statusText);
           } else {
             setUsername("");
             setEmail("");
             setPassword("");
             setRepeatPassword("");
-            props.setShowAuthorization(false);
-            return alert('Пользователь создан!');
+            setAlert('Пользователь создан!');
+            setTimeout(() => {
+              props.setShowAuthorization(false);
+            }, 2000)
           }
         })
         .catch((err) => console.log("Error: " + err));

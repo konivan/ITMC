@@ -134,12 +134,12 @@ export const LkCreateOrder = (props) => {
     };
 
     if (
-      productName === "" ||
-      description === "" ||
+      productName === undefined ||
+      description === undefined ||
       budgetValue === 0 ||
-      email === "" ||
-      telegram === "" ||
-      phone === ""
+      email === undefined ||
+      telegram === undefined ||
+      phone === undefined
     ) {
       return setAlert("Заполните все поля!");
     }
@@ -147,6 +147,15 @@ export const LkCreateOrder = (props) => {
     fetch(url, reqOptions, results)
       .then((res) => {
         res.json();
+        if (res.status >= 400 && res.status < 500) {
+          return setAlert("Неправильно заполнены поля!");
+        } else if (res.status === 500) {
+          return setAlert("Ошибка на сервере!");
+        }
+        setAlert('Заказ успешно отправлен!');
+        setTimeout(() => {
+          window.location.reload();
+        }, 4000)
       })
       .catch((err) => console.log("Error: " + err));
   };
