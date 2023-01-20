@@ -29,13 +29,12 @@
   height: 38.625em;
   box-sizing: border-box;
   background: #0b0e11;
-  border: 1px solid #fafafa;
-  border-radius: 12px;
+  border: 0.0625em solid #fafafa;
+  border-radius: 0.75em;
 }
 
 .modalHeader {
   display: flex;
-  flex-direction: row;
   align-items: flex-start;
   padding: 0em;
   gap: 11.5625em;
@@ -44,7 +43,6 @@
 }
 
 .modalTitle {
-  font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
   font-size: 1.5em;
@@ -112,7 +110,6 @@
     bottom right, bottom center, bottom left, center left;
   background-repeat: no-repeat;
   h2 {
-    font-family: "Roboto";
     font-style: normal;
     font-weight: 900;
     font-size: 1.5em;
@@ -135,7 +132,6 @@
 
 .modalInputs {
   display: flex;
-  flex-direction: row;
   align-items: flex-start;
   flex-wrap: wrap;
   padding: 0em;
@@ -162,7 +158,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0em;
   gap: 0.5em;
   width: 41.875em;
   height: 8.25em;
@@ -174,9 +170,8 @@
     gap: 1em;
     width: 41.875em;
     height: 6.75em;
-    border-radius: 8px;
+    border-radius: 0.5em;
     span {
-      font-family: "Roboto";
       font-style: normal;
       font-weight: 700;
       font-size: 1em;
@@ -187,8 +182,8 @@
     textarea {
       width: 41.875em;
       min-height: 6.75em;
-      border: 1px solid #fafafa;
-      border-radius: 8px;
+      border: 0.0625em solid #fafafa;
+      border-radius: 0.5em;
       background: none;
       padding: 1.1875em 1.875em 1.125em 1em;
       margin-top: 0.125em;
@@ -204,7 +199,6 @@
 }
 
 .modalInputs span {
-  font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
   font-size: 1em;
@@ -217,8 +211,8 @@
   box-sizing: border-box;
   max-width: 20.3125em;
   height: 3.5em;
-  border: 1px solid #fafafa;
-  border-radius: 8px;
+  border: 0.0625em solid #fafafa;
+  border-radius: 05em;
   background: none;
   width: 325px;
   padding: 1.1875em 1em 1.125em 1em;

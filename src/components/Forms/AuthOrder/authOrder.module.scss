@@ -29,8 +29,8 @@
   height: 38.625em;
   box-sizing: border-box;
   background: #0b0e11;
-  border: 1px solid #fafafa;
-  border-radius: 12px;
+  border: 0.0625em solid #fafafa;
+  border-radius: 0.75em;
 }
 
 .modalHeader {
@@ -47,7 +47,6 @@
   font-style: normal;
   font-weight: 700;
   font-size: 1.5em;
-  line-height: 30px;
   text-align: center;
 }
 
@@ -167,7 +166,7 @@
     font-size: 1em;
     line-height: 100%;
     text-align: center;
-    margin-bottom: 28px;
+    margin-bottom: 1.75em;
   }
 
   p {
@@ -182,7 +181,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 0em;
   gap: 0.5em;
   width: 41.875em;
   height: 8.25em;
@@ -195,7 +194,7 @@
     gap: 1em;
     width: 41.875em;
     height: 6.75em;
-    border-radius: 8px;
+    border-radius: 0.5em;
 
     span {
       font-family: "Roboto";
@@ -210,7 +209,7 @@
       width: 41.875em;
       min-height: 6.75em;
       border: 1px solid #fafafa;
-      border-radius: 8px;
+      border-radius: 0.5em;
       background: none;
       padding: 1.1875em 1.875em 1.125em 1em;
       margin-top: 0.125em;
@@ -228,15 +227,15 @@
   align-items: center;
   padding: 1em 0.25em;
   gap: 0.25em;
-  width: 670px;
-  height: 64px;
+  width: 41.875em;
+  height: 4em;
   background: linear-gradient(
     96.91deg,
     #f614f9 0%,
     #b10eec 51.04%,
     #4705da 100%
   );
-  border-radius: 8px;
+  border-radius: 0.5em;
   border: 0;
   position: relative;
   bottom: 197px;
@@ -282,7 +281,7 @@
     left: -8em;
 
     div {
-      border: 1px solid #828485;
+      border: 0.625em solid #828485;
       padding-top: 2.0625em;
       padding-bottom: 2.125em;
       box-sizing: border-box;
@@ -293,7 +292,7 @@
       padding-left: 2.875em;
       width: 21.25em;
       height: 6em;
-      border-radius: 12px;
+      border-radius: 0.75em;
       background: #0b0e11;
     }
 
@@ -422,19 +421,18 @@
       gap: 11.5px;
 
       div {
-        border: 1px solid #828485;
+        border: 0.0625em solid #828485;
         padding-top: 2.0625em;
         padding-bottom: 2.125em;
         box-sizing: border-box;
         display: flex;
-        flex-direction: row;
         align-items: center;
         justify-content: space-between;
         padding-right: 1em;
         padding-left: 2.875em;
         width: 17.25em;
         height: 5em;
-        border-radius: 12px;
+        border-radius: 0.75em;
         background: #0b0e11;
       }
 
