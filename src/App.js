@@ -16,6 +16,8 @@ import { Origin } from "./pages/Lk/Origin/Origin";
 import { Orders } from "./pages/Lk/Orders/Orders";
 import { Dogovor } from "./pages/Lk/Dogovor/Dogovor";
 import { Accounts } from "./pages/Lk/Accounts/Accounts";
+import  {PagesPayment} from "./pages/Lk/Origin/PagesPayment/PagesPayment"
+import  {PagesExhibited} from "./pages/Lk/Origin/PagesExhibited/PagesExhibited"
 
 function App() {
   let window = document.getElementById("html-1");
@@ -78,6 +80,8 @@ function App() {
           <Route path="/Origin" element={<Origin name={name} URL={URL} />} />
           <Route path="/Orders" element={<Orders name={name} URL={URL} />} />
           <Route path="/Dogovor" element={<Dogovor name={name} URL={URL} />} />
+          <Route path="/PagesPayment" element={<PagesPayment name={name} URL={URL} />} />
+          <Route path="/PagesExhibited" element={<PagesExhibited name={name} URL={URL} />} />
           <Route
             path="/Accounts"
             element={<Accounts name={name} URL={URL} />}

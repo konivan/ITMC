@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import style from "./Origin.module.scss";
 import { Bar } from "../Bar/Bar";
 import { MySelect } from "../../../components/UI/Select/MySelect";
+import { NavLink } from "react-router-dom";
 
 export const Origin = (props) => {
   const [selectedSort, setSelectedSort] = useState("");
@@ -19,15 +20,19 @@ export const Origin = (props) => {
 
   return (
     <section className={style.main}>
-      <div className={style.wrapper} id="header">
+      <div className={style.wrapper}>
         <div className={style.container}>
           <Bar name={props.name} />
           <div className={style.row}>
             <h2>Все счета</h2>
             <div className={style.itemContainer}>
               <div className={style.item}>
-                <span>Выставленные</span>
-                <span>К оплате</span>
+                <NavLink to="/PagesPayment">
+                  <span>Выставленные</span>
+                </NavLink>
+                <NavLink to="/PagesPayment">
+                  <span>К оплате</span>
+                </NavLink>
                 <span>История</span>
               </div>
               <div className={style.item}>
