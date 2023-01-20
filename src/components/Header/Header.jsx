@@ -68,7 +68,7 @@ export const Header = (props) => {
               </Button>
             </div>
             <div className={style.item}>
-              {localStorage.getItem("auth") === "false" ? (
+              {localStorage.getItem("auth") !== "true" ? (
                 <MyButton setShowAuth={props.setShowAuth}>Войти</MyButton>
               ) : (
                 <div>

@@ -18,6 +18,7 @@ export const LkCreateOrder = (props) => {
   const [description, setDescription] = useState();
   const [allTime, setAllTime] = useState(false);
   const [alert, setAlert] = useState("");
+  const [gallery, setGallery] = useState([]);
   let [categoryId, setCategoryId] = useState(1);
 
   const [phone, setPhone] = useState();
@@ -37,7 +38,7 @@ export const LkCreateOrder = (props) => {
   const tagRef7 = useRef();
   const tagRef8 = useRef();
   const tagRef9 = useRef();
-
+  console.log(gallery)
   if (alert !== "") {
     setTimeout(() => {
       setAlert("");
@@ -107,24 +108,19 @@ export const LkCreateOrder = (props) => {
     formData.append("price", budgetValue);
     formData.append("description", description);
     formData.append("tags[0]name", tagsId[0]?.name);
-    formData.append("tags[0]category", tagsId[0]?.category);
     formData.append("tags[1]name", tagsId[1]?.name);
-    formData.append("tags[1]category", tagsId[0]?.category);
     formData.append("tags[2]name", tagsId[2]?.name);
-    formData.append("tags[2]category", tagsId[0]?.category);
     formData.append("tags[3]name", tagsId[3]?.name);
-    formData.append("tags[3]category", tagsId[0]?.category);
     formData.append("tags[4]name", tagsId[4]?.name);
-    formData.append("tags[4]category", tagsId[0]?.category);
     formData.append("tags[5]name", tagsId[5]?.name);
-    formData.append("tags[5]category", tagsId[0]?.category);
     formData.append("tags[6]name", tagsId[6]?.name);
-    formData.append("tags[6]category", tagsId[0]?.category);
     formData.append("tags[7]name", tagsId[7]?.name);
-    formData.append("tags[7]category", tagsId[0]?.category);
     formData.append("tags[8]name", tagsId[8]?.name);
-    formData.append("tags[8]category", tagsId[0]?.category);
-    formData.append("gallery[0][image]", logoImg);
+    formData.append("gallery[0]image", gallery[0]?.[0] || {});
+    formData.append("gallery[1]image", gallery[1]?.[0] || {});
+    formData.append("gallery[2]image", gallery[2]?.[0] || {});
+    formData.append("gallery[3]image", gallery[3]?.[0] || {});
+    formData.append("gallery[4]image", gallery[4]?.[0] || {});
 
 
     const url = `${props.URL}orders/order/`;
@@ -263,15 +259,14 @@ export const LkCreateOrder = (props) => {
                 type="file"
                 accept="image/*"
                 onChange={(e) => {
-                  let inputFile = e.target.files[0];
-                  let path = URL.createObjectURL(inputFile);
+                  let path = URL.createObjectURL(e.target.files[0]);
                   let image = new Image();
                   image.src = path;
                   image.onload = function () {
                     if (image.width !== 256 || image.height !== 256) {
                       return setAlert("Изображение должно быть 256px на 256px");
                     } else {
-                      setPlanFiles(path);
+                      return gallery.push(e.target.files);
                     }
                   };
                 }}
