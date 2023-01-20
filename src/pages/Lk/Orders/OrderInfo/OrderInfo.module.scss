@@ -34,7 +34,7 @@
         color: #ffffff;
       }
 
-      p {
+      a {
         margin-right: 8px;
       }
     }
@@ -70,6 +70,11 @@
       margin-top: 30px;
 
       p {
+        margin-left: 8px;
+      }
+    }
+    .userInfo:nth-of-type(2) {
+      a {
         margin-left: 8px;
       }
     }

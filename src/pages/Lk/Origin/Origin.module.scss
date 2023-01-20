@@ -1,8 +1,5 @@
 .main {
   .container {
-    // padding-top: 150px;
-    // padding-bottom: 60px;
-
     display: flex;
 
     .row {
@@ -70,6 +67,7 @@
           }
 
           select {
+            margin-left: 1em;
             background: #e8e8e8;
             margin-right: 0.5em;
             color: #2f3a4a;

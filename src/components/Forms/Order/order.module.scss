@@ -30,7 +30,7 @@
   box-sizing: border-box;
   background: #0b0e11;
   border: 0.0625em solid #fafafa;
-  border-radius: 0.75em;
+  border-radius: 12px;
 }
 
 .modalHeader {
@@ -46,7 +46,6 @@
   font-style: normal;
   font-weight: 700;
   font-size: 1.5em;
-  line-height: 30px;
   text-align: center;
   color: #fafafa;
 }
@@ -69,8 +68,8 @@
   align-items: center;
   padding: 1em 3em;
   gap: 1em;
-  width: 21.25em;
-  height: 6em;
+  width: 340px;
+  height: 96px;
   background: #0b0e11;
   background-image: radial-gradient(
       circle at 100% 100%,
@@ -113,7 +112,6 @@
     font-style: normal;
     font-weight: 900;
     font-size: 1.5em;
-    line-height: 1.8125em;
     color: #f614f9;
   }
 }
@@ -160,8 +158,8 @@
   align-items: flex-start;
   padding: 0em;
   gap: 0.5em;
-  width: 41.875em;
-  height: 8.25em;
+  width: 670px;
+  height: 132px;
   div {
     display: flex;
     flex-direction: column;
@@ -169,8 +167,8 @@
     padding: 0em;
     gap: 1em;
     width: 41.875em;
-    height: 6.75em;
-    border-radius: 0.5em;
+    height: 108px;
+    border-radius: 8px;
     span {
       font-style: normal;
       font-weight: 700;
@@ -180,16 +178,15 @@
       margin-top: 0.75em;
     }
     textarea {
-      width: 41.875em;
-      min-height: 6.75em;
+      width: 670px;
+      min-height: 108px;
       border: 0.0625em solid #fafafa;
-      border-radius: 0.5em;
+      border-radius: 8px;
       background: none;
       padding: 1.1875em 1.875em 1.125em 1em;
       margin-top: 0.125em;
       resize: none;
 
-      font-family: "Roboto";
       font-style: normal;
       font-weight: 400;
       font-size: 1em;
@@ -212,7 +209,7 @@
   max-width: 20.3125em;
   height: 3.5em;
   border: 0.0625em solid #fafafa;
-  border-radius: 05em;
+  border-radius: 8px;
   background: none;
   width: 325px;
   padding: 1.1875em 1em 1.125em 1em;

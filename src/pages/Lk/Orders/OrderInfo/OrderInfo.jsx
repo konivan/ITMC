@@ -31,7 +31,7 @@ const OrderInfo = () => {
           </div>
           <div className={style.userInfo}>
             <img src="img/Lk/phone.svg" alt="phoneLogo" />
-            <p>+7 777 821-88-01</p>
+            <a href="tel:+7 777 821-88-01">+7 777 821-88-01</a>
           </div>
           <div className={style.userInfo}>
             <img src="img/Lk/email.svg" alt="emailLogo" />
