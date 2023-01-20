@@ -48,7 +48,7 @@ const ProgressTracker = () => {
               component="div"
               color="text.secondary"
             >
-              <img src="img/Lk/succes.svg" alt="" />
+              <img src="img/Lk/succes.svg" alt="succes" />
             </Typography>
           </Box>
         </Box>

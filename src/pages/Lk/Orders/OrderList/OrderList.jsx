@@ -10,12 +10,12 @@ const OrderList = () => {
         <div className={style.orderImg}>
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnS4K-5wZT50QWf7QtHmMu3LlHItJrbw8xsw&usqp=CAU"
-            alt=""
+            alt="icon"
           />
         </div>
         <div className={style.orderText}>
           <div className={style.orderTitle}>
-            <h1>King bot</h1>
+            <h2>King bot</h2>
             <div className={style.orderPercent}></div>
           </div>
           <p>Игра внутри Telegram</p>
