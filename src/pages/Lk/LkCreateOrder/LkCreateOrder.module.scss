@@ -58,8 +58,8 @@
         align-items: center;
         border: 0.0625em solid #e8e8e8;
         border-radius: 0.125em;
-        width: 100px;
-        height: 100px;
+        width: 6.25em;
+        height: 6.25em;
         div {
           display: flex;
           flex-direction: column;
@@ -241,7 +241,7 @@
     .item {
       margin-top: 16px;
       background: #f6f6f6;
-      border: 1px dashed #2f3a4a;
+      border: 0.0625em dashed #2f3a4a;
       border-radius: 0.125em;
       width: 31.5em;
       height: 9.875em;
@@ -286,7 +286,7 @@
     flex-direction: column;
     span {
       color: #2f3a4a;
-      height: 24px;
+      height: 1.5em;
     }
     label {
       position: relative;
@@ -306,7 +306,7 @@
       border-radius: 0.125em;
     }
     select {
-      width: 320px;
+      width: 20em;
       color: #2f3a4a;
       outline: none;
       margin-bottom: 16px;
