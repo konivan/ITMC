@@ -81,7 +81,7 @@ const AuthOrder = (props) => {
               <p>+7 (925) 540-39-56</p>
             </div>
             <div>
-              <span>Можаев Никита</span>
+              <span>{localStorage.getItem("name")}</span>
               <p>Nikitam@gmail.com</p>
             </div>
           </div>

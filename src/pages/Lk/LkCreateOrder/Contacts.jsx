@@ -44,6 +44,7 @@ const Contacts = ({
         placeholder="Номер телефона"
         type="tel"
         value={phone}
+        maxLength="14"
         onChange={(e) => {
           phoneHandler(e);
         }}
