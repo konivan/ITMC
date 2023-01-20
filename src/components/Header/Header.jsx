@@ -15,7 +15,9 @@ export const Header = (props) => {
     window.location.pathname === "/LkCreateOrder" ||
     window.location.pathname === "/Orders" ||
     window.location.pathname === "/Accounts" ||
-    window.location.pathname === "/Dogovor"
+    window.location.pathname === "/Dogovor" ||
+    window.location.pathname === "/PagesPayment" ||
+    window.location.pathname === "/PagesExhibited"
   ) {
     return null;
   }
