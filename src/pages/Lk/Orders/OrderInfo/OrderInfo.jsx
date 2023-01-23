@@ -1,18 +1,35 @@
 import React from "react";
+
 import Carousel from "../../../../components/UI/Carousel/Carousel";
 
 import style from "./OrderInfo.module.scss";
 
-const OrderInfo = () => {
+const OrderInfo = ({ currentOrder }) => {
+  const userName = localStorage.getItem("name");
+
+  // const obj = {};
+
+  // for (const key in currentOrder.conference) {
+  //   if (key.includes("_start") || key.includes("_end")) {
+  //     obj[key] = currentOrder.conference[key];
+  //   }
+  // }
+
+  // for (const key in obj) {
+  //   obj[key]?.substring(0, 6)
+  //   console.log(obj[key]);
+  // }
+  //  console.log(obj);
+
   return (
     <div className={style.wrapper}>
       <div className={style.title}>
-        <h1>King Bot</h1>
+        <h1>{currentOrder?.name}</h1>
         <div className={style.text}>
           <div className={style.percent}>2%</div>
-          <p>Игра внутри Telegram</p>
+          <p>{currentOrder?.description}</p>
           <p className={style.dot}>.</p>
-          <p>Backend</p>
+          <p>{currentOrder?.category}</p>
         </div>
         <div className={style.buttons}>
           <button>Отменить проект</button>
@@ -27,21 +44,22 @@ const OrderInfo = () => {
         <div>
           <div className={style.userInfo}>
             <img src="img/Lk/user.svg" alt="userLogo" />
-            <p>Иван Иванов</p>
+            <p>{userName}</p>
           </div>
           <div className={style.userInfo}>
             <img src="img/Lk/phone.svg" alt="phoneLogo" />
-            <a href="tel:+7 777 821-88-01">+7 777 821-88-01</a>
+
+            <p>{currentOrder?.contact.phone}</p>
           </div>
           <div className={style.userInfo}>
             <img src="img/Lk/email.svg" alt="emailLogo" />
-            <p>info@itmc.space</p>
+            <p>{currentOrder?.contact.email}</p>
           </div>
         </div>
         <div>
           <div className={style.userInfo}>
             <img src="img/Lk/web.svg" alt="webLogo" />
-            <p>itmc.space</p>
+            <p>{currentOrder?.contact.domain}</p>
           </div>
           <div className={style.userInfo}>
             <img src="img/Lk/time.svg" alt="timeLogo" />

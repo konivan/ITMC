@@ -1,27 +1,37 @@
 import React from "react";
-import ProgressTracker from "../../../../components/UI/ProgressTracker/ProgressTracker";
+import Order from "./Order";
 
 import style from "./OrderList.module.scss";
 
-const OrderList = () => {
+const OrderList = ({ URL, globalToken, orderData, setCurrentOrder }) => {
+  const reqOptions = {
+    method: "GET",
+    headers: {
+      authorization: `Bearer ${globalToken}`,
+      Accept: "application/json",
+    },
+  };
+
+  const fetchOrderById = async (id) => {
+    try {
+      const res = await fetch(`${URL}/orders/order/${id}/`, reqOptions);
+      const data = await res.json();
+
+      setCurrentOrder(data);
+    } catch (err) {
+      console.log("Error: " + err);
+    }
+  };
+
   return (
     <div className={style.orderListWrapper}>
-      <div className={style.orderWrapper}>
-        <div className={style.orderImg}>
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnS4K-5wZT50QWf7QtHmMu3LlHItJrbw8xsw&usqp=CAU"
-            alt="icon"
-          />
-        </div>
-        <div className={style.orderText}>
-          <div className={style.orderTitle}>
-            <h2>King bot</h2>
-            <div className={style.orderPercent}></div>
+      {orderData?.map((order) => {
+        return (
+          <div key={order.id} onClick={() => fetchOrderById(order.id)}>
+            <Order order={order} URL={URL} globalToken={globalToken} />
           </div>
-          <p>Игра внутри Telegram</p>
-        </div>
-        <ProgressTracker />
-      </div>
+        );
+      })}
     </div>
   );
 };
