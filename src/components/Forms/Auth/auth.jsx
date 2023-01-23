@@ -26,7 +26,7 @@ const Auth = (props) => {
     }, 4000)
   }
 
-  const auth = () => {
+  const auth = async () => {
     const url = `${props.URL}api/token/`;
     const reqOptions = {
       method: "POST",
@@ -37,11 +37,13 @@ const Auth = (props) => {
     };
 
     if (password !== "" && username !== "") {
-      fetch(url, reqOptions, authData)
-        .then((res) => {
-          if (res.status !== 200) {
-            setAlert("Неправильное имя пользователя или пароль!");
-          } else {
+      try {
+        const res = await fetch(url, reqOptions, authData);
+        if (res.status !== 200) {
+          setAlert("Неправильное имя пользователя или пароль!");
+        } else {
+            const token = await res.json();
+            localStorage.setItem('globalToken', token?.access);
             localStorage.setItem('name', username);
             localStorage.setItem('password', password);
             localStorage.setItem('auth', true);
@@ -50,11 +52,12 @@ const Auth = (props) => {
             props.setIsAuth(true);
             props.setShowAuth(false);
             return alert("Вы вошли");
-          }
-        })
-        .catch((err) => console.log("Error: " + err));
+        };
+      } catch (err) {
+        console.log("Error: " + err);
+      }
     } else return setAlert("Заполните все поля!");
-  };
+  }
 
   const openAuthorization = () => {
     props.setShowAuthorization(true);

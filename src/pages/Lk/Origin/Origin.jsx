@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import style from "./Origin.module.scss";
 import { Bar } from "../Bar/Bar";
 import { MySelect } from "../../../components/UI/Select/MySelect";
@@ -6,17 +6,38 @@ import { NavLink } from "react-router-dom";
 
 export const Origin = (props) => {
   const [selectedSort, setSelectedSort] = useState("");
-  let arr = [
-    { title: "abc", date: new Date("2019-06-28") },
-    { title: "cba", date: new Date("2019-06-10") },
-    { title: "bca", date: new Date("2019-06-22") },
-  ];
+  const [checks, setChecks] = useState([]);
 
-  if (selectedSort === "По названию") {
-    arr.sort((a, b) => a.title.localeCompare(b)); // сортировка по алфавиту
-  } else if (selectedSort === "Отмененные") {
-    arr.sort((a, b) => b.date - a.date); // сортировка по дате
-  }
+  useEffect(() => {
+
+    const url = `${props.URL}orders/paychecks/`;
+    const reqOptions = {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem('globalToken')}`,
+        Accept: "application/json",
+      },
+    };
+
+
+    const fetchChecks = async () => {
+      try {
+        const res = await fetch(url, reqOptions);
+        const data = await res.json();
+        setChecks(data);
+      } catch (err) {
+        console.log("Error: " + err);
+      }
+    };
+    fetchChecks();
+  }, []);
+
+  console.log(checks)
+  // if (selectedSort === "По названию") {
+  //   arr.sort((a, b) => a.title.localeCompare(b)); // сортировка по алфавиту
+  // } else if (selectedSort === "Отмененные") {
+  //   arr.sort((a, b) => b.date - a.date); // сортировка по дате
+  // }
 
   return (
     <section className={style.main}>
