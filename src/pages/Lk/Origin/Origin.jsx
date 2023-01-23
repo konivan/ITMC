@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import CheckComponent from "./CheckComponent/CheckComponent";
 import style from "./Origin.module.scss";
 import { Bar } from "../Bar/Bar";
 import { MySelect } from "../../../components/UI/Select/MySelect";
@@ -9,7 +10,6 @@ export const Origin = (props) => {
   const [checks, setChecks] = useState([]);
 
   useEffect(() => {
-
     const url = `${props.URL}orders/paychecks/`;
     const reqOptions = {
       method: "GET",
@@ -19,12 +19,11 @@ export const Origin = (props) => {
       },
     };
 
-
     const fetchChecks = async () => {
       try {
         const res = await fetch(url, reqOptions);
         const data = await res.json();
-        setChecks(data);
+        setChecks(data?.results);
       } catch (err) {
         console.log("Error: " + err);
       }
@@ -32,7 +31,6 @@ export const Origin = (props) => {
     fetchChecks();
   }, []);
 
-  console.log(checks)
   // if (selectedSort === "По названию") {
   //   arr.sort((a, b) => a.title.localeCompare(b)); // сортировка по алфавиту
   // } else if (selectedSort === "Отмененные") {
@@ -48,9 +46,6 @@ export const Origin = (props) => {
             <h2>Все счета</h2>
             <div className={style.itemContainer}>
               <div className={style.item}>
-                <NavLink to="/PagesPayment">
-                  <span>Выставленные</span>
-                </NavLink>
                 <NavLink to="/PagesPayment">
                   <span>К оплате</span>
                 </NavLink>
@@ -85,6 +80,9 @@ export const Origin = (props) => {
                   <span>Статус</span>
                 </div>
               </div>
+              {checks.map((item, index) => (
+                <CheckComponent key={`${item} ${index}`} item={item}/>
+              ))}
             </div>
           </div>
         </div>
