@@ -8,7 +8,7 @@ export const PagesPayment = (props) => {
   const [checks, setChecks] = useState();
 
   useEffect(() => {
-    const url = `${props.URL}orders/paychecks/for_payment/`;
+    const url = `${props.URL}orders/paychecks/for_payment/`; 
     const reqOptions = {
       method: "GET",
       headers: {
