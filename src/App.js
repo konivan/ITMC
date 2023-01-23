@@ -10,7 +10,7 @@ import { Footer } from "./components/Footer/Footer";
 import AuthOrder from "./components/Forms/AuthOrder/authOrder";
 import Product from "./components/Forms/Product/product";
 import { Team } from "./pages/Team/Team";
-import { Portfolio } from "./pages/Portfolio/Portfolio";
+import { Portfolio } from "./pages/portfolio/portfolio";
 import { LkCreateOrder } from "./pages/Lk/LkCreateOrder/LkCreateOrder";
 import { Origin } from "./pages/Lk/Origin/Origin";
 import { Orders } from "./pages/Lk/Orders/Orders";
