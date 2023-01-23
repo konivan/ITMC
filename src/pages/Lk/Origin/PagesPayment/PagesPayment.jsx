@@ -28,7 +28,7 @@ export const PagesPayment = (props) => {
     };
     fetchChecks();
   }, []);
-  console.log(checks)
+
   return (
     <section className={style.main}>
       <div className={style.wrapper}>

@@ -8,6 +8,7 @@ import { NavLink } from "react-router-dom";
 export const Origin = (props) => {
   const [selectedSort, setSelectedSort] = useState("");
   const [checks, setChecks] = useState([]);
+  const [reserveChecks, setReserveChecks] = useState();
 
   useEffect(() => {
     const url = `${props.URL}orders/paychecks/`;
@@ -24,18 +25,13 @@ export const Origin = (props) => {
         const res = await fetch(url, reqOptions);
         const data = await res.json();
         setChecks(data?.results);
+        setReserveChecks(data?.results);
       } catch (err) {
         console.log("Error: " + err);
       }
     };
     fetchChecks();
   }, []);
-
-  // if (selectedSort === "По названию") {
-  //   arr.sort((a, b) => a.title.localeCompare(b)); // сортировка по алфавиту
-  // } else if (selectedSort === "Отмененные") {
-  //   arr.sort((a, b) => b.date - a.date); // сортировка по дате
-  // }
 
   return (
     <section className={style.main}>
@@ -58,7 +54,11 @@ export const Origin = (props) => {
                 <input type="text" placeholder="Поиск по номеру счета" />
                 <MySelect
                   value={selectedSort}
+                  checks={checks}
+                  selectedSort={selectedSort}
+                  setChecks={setChecks}
                   setSelectedSort={setSelectedSort}
+                  reserveChecks={reserveChecks}
                   defaultValue="Фильтр"
                   option={[
                     { value: "Сначала новые", name: "Сначала новые" },

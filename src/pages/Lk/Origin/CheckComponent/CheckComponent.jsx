@@ -10,7 +10,17 @@ const CheckComponent = ({item}) => {
       <span>itmc</span>
       <span>{item.price} руб</span>
       <span>{item.received_money} руб</span>
-      <span className={style.paid}>{item.status}</span>
+      <span
+        className={
+          item.status === "paid"
+            ? style.paid
+            : item.status === "processing"
+            ? style.processing
+            : style.rejected
+        }
+      >
+        {item.status}
+      </span>
     </div>
   );
 };
