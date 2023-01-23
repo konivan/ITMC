@@ -18,7 +18,7 @@ function SamplePrevArrow(props) {
         boxShadow: "0px 4px 12px rgba(119, 129, 146, 0.15)",
         borderRadius: 100,
         padding: 20,
-        zIndex: 8,
+        zIndex: 3,
         marginTop: -110,
         marginLeft: 25,
       }}
@@ -44,7 +44,7 @@ function SampleNewxtArrow(props) {
         boxShadow: "0px 4px 12px rgba(119, 129, 146, 0.15)",
         borderRadius: 100,
         padding: 20,
-        zIndex: 8,
+        zIndex: 3,
         marginTop: -110,
         marginRight: 25,
       }}

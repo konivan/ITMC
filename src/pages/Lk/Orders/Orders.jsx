@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import style from "./Orders.module.scss";
 import { Bar } from "../Bar/Bar";
 import { NavLink } from "react-router-dom";
@@ -6,57 +6,40 @@ import OrderList from "./OrderList/OrderList";
 import OrderInfo from "./OrderInfo/OrderInfo";
 
 export const Orders = (props) => {
-  const [globalToken, setGlobalToken] = useState(null);
-  const [orderData, setOrderData] = useState(null);
+  const [orderData, setOrderData] = useState([]);
+  const [currentOrder, setCurrentOrder] = useState(null);
+  const [inputValue, setInputValue] = useState("");
 
-  const userData = {
-    username: localStorage.getItem("name"),
-    password: localStorage.getItem("password"),
-  };
-
-  const url1 = `${props.URL}api/token/`;
-  const reqOptions1 = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(userData),
-  };
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch(url1, reqOptions1, userData);
-        const token = await res.json();
-        setGlobalToken(token);
-      } catch (err) {
-        console.log("Error: " + err);
-      }
-    };
-    fetchData();
-  }, []);
+  const globalToken = localStorage.getItem("globalToken");
 
   const url = `${props.URL}orders/order/`;
   const reqOptions = {
     method: "GET",
     headers: {
-      authorization: `Bearer ${globalToken?.access}`,
+      authorization: `Bearer ${globalToken}`,
       Accept: "application/json",
     },
   };
 
-  const fetchOrders = async () => {
-    try {
-      const res = await fetch(url, reqOptions);
-      const data = await res.json();
-      setOrderData(data?.results[0]);
-    } catch (err) {
-      console.log("Error: " + err);
-    }
-  };
-  if (orderData === null) {
+  useEffect(() => {
+    const fetchOrders = async () => {
+      try {
+        const res = await fetch(url, reqOptions);
+        const data = await res.json();
+        setOrderData(data.results);
+      } catch (err) {
+        console.log("Error: " + err);
+      }
+    };
+
     fetchOrders();
-  }
+  }, []);
+
+  const searchedOrders = useMemo(() => {
+    return orderData?.filter((orders) =>
+      orders.name.toLocaleLowerCase().includes(inputValue)
+    );
+  }, [inputValue, orderData]);
 
   return (
     <section className={style.main} id="Orders">
@@ -75,10 +58,20 @@ export const Orders = (props) => {
             </div>
             <div className={style.orders}>
               <div>
-                <input placeholder="Поиск..." type="text" />
-                <OrderList />
+                <input
+                  value={inputValue}
+                  placeholder="Поиск..."
+                  type="text"
+                  onChange={(e) => setInputValue(e.target.value)}
+                />
+                <OrderList
+                  orderData={searchedOrders}
+                  URL={props.URL}
+                  globalToken={globalToken}
+                  setCurrentOrder={setCurrentOrder}
+                />
               </div>
-              <OrderInfo />
+              {currentOrder && <OrderInfo currentOrder={currentOrder} />}
             </div>
           </div>
         </div>
