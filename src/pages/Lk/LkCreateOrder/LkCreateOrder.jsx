@@ -107,15 +107,9 @@ export const LkCreateOrder = (props) => {
     formData.append("name", productName);
     formData.append("price", budgetValue);
     formData.append("description", description);
-    formData.append("tags[0]name", tagsId[0]?.name);
-    formData.append("tags[1]name", tagsId[1]?.name);
-    formData.append("tags[2]name", tagsId[2]?.name);
-    formData.append("tags[3]name", tagsId[3]?.name);
-    formData.append("tags[4]name", tagsId[4]?.name);
-    formData.append("tags[5]name", tagsId[5]?.name);
-    formData.append("tags[6]name", tagsId[6]?.name);
-    formData.append("tags[7]name", tagsId[7]?.name);
-    formData.append("tags[8]name", tagsId[8]?.name);
+    for (let i = 0; i < tagsId.length; i++) {
+      formData.append(`tags[${i}]name`, tagsId[i]?.name);
+    };
     formData.append("gallery[0]image", gallery[0]?.[0] || logoImg);
     formData.append("gallery[1]image", gallery[1]?.[0] || logoImg);
     formData.append("gallery[2]image", gallery[2]?.[0] || logoImg);
