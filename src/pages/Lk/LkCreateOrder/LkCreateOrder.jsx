@@ -38,7 +38,7 @@ export const LkCreateOrder = (props) => {
   const tagRef7 = useRef();
   const tagRef8 = useRef();
   const tagRef9 = useRef();
-  console.log(gallery)
+
   if (alert !== "") {
     setTimeout(() => {
       setAlert("");
@@ -110,11 +110,9 @@ export const LkCreateOrder = (props) => {
     for (let i = 0; i < tagsId.length; i++) {
       formData.append(`tags[${i}]name`, tagsId[i]?.name);
     };
-    formData.append("gallery[0]image", gallery[0]?.[0] || logoImg);
-    formData.append("gallery[1]image", gallery[1]?.[0] || logoImg);
-    formData.append("gallery[2]image", gallery[2]?.[0] || logoImg);
-    formData.append("gallery[3]image", gallery[3]?.[0] || logoImg);
-    formData.append("gallery[4]image", gallery[4]?.[0] || logoImg);
+    for (let i = 0; i < gallery.length; i++) {
+      formData.append(`gallery[${i}]image`, gallery[i]?.[0]);
+    };
 
 
     const url = `${props.URL}orders/order/`;
