@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.scss";
-import { Header } from "./components/Header";
+import { Header } from "./components/Header";  
 import { Main } from "./components/Main";
 import Auth from "./components/Forms/Auth/auth";
 import Authorization from "./components/Forms/Authorization/authorization";
