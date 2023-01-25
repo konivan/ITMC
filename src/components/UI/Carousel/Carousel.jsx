@@ -2,10 +2,10 @@ import React from "react";
 
 import Slider from "react-slick";
 
-import style from "./Carousel.module.scss";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+import style from "./Carousel.module.scss";
 
 function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
@@ -59,56 +59,36 @@ function SampleNewxtArrow(props) {
   );
 }
 
-const settings = {
-  dots: false,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 2,
-  nextArrow: <SampleNewxtArrow />,
-  prevArrow: <SamplePrevArrow />,
-};
+const Carousel = ({ gallery }) => {
+  const settings = {
+    dots: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    nextArrow: <SampleNewxtArrow />,
+    prevArrow: <SamplePrevArrow />,
+  };
 
-const Carousel = () => {
-  return (
+  return gallery.length < 4 ? (
+    <div className={style.blockWithoutCarousel}>
+      {gallery.map((image, i) => {
+        return (
+          <div key={i} className={style.imageWrapper}>
+            <img src={image.image} alt="galeryImage" />
+          </div>
+        );
+      })}
+    </div>
+  ) : (
     <div className={style.carouselWrapper}>
       <Slider {...settings}>
-        <div className={style.imageWrapper}>
-          <img
-            src="https://avatars.mds.yandex.net/i?id=0d9be8f0ffd8fc7161fa82d51d262742-5334041-images-thumbs&n=13"
-            alt=""
-          />
-        </div>
-        <div className={style.imageWrapper}>
-          <img
-            src="https://avatars.mds.yandex.net/i?id=0d9be8f0ffd8fc7161fa82d51d262742-5334041-images-thumbs&n=13"
-            alt=""
-          />
-        </div>
-        <div className={style.imageWrapper}>
-          <img
-            src="https://avatars.mds.yandex.net/i?id=0d9be8f0ffd8fc7161fa82d51d262742-5334041-images-thumbs&n=13"
-            alt=""
-          />
-        </div>
-        <div className={style.imageWrapper}>
-          <img
-            src="https://avatars.mds.yandex.net/i?id=0d9be8f0ffd8fc7161fa82d51d262742-5334041-images-thumbs&n=13"
-            alt=""
-          />
-        </div>
-        <div className={style.imageWrapper}>
-          <img
-            src="https://avatars.mds.yandex.net/i?id=0d9be8f0ffd8fc7161fa82d51d262742-5334041-images-thumbs&n=13"
-            alt=""
-          />
-        </div>
-        <div className={style.imageWrapper}>
-          <img
-            src="https://avatars.mds.yandex.net/i?id=0d9be8f0ffd8fc7161fa82d51d262742-5334041-images-thumbs&n=13"
-            alt=""
-          />
-        </div>
+        {gallery.map((image, i) => {
+          return (
+            <div key={i} className={style.imageWrapper}>
+              <img src={image.image} alt="galeryImage" />
+            </div>
+          );
+        })}
       </Slider>
     </div>
   );

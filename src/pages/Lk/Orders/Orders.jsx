@@ -21,17 +21,17 @@ export const Orders = (props) => {
     },
   };
 
-  useEffect(() => {
-    const fetchOrders = async () => {
-      try {
-        const res = await fetch(url, reqOptions);
-        const data = await res.json();
-        setOrderData(data.results);
-      } catch (err) {
-        console.log("Error: " + err);
-      }
-    };
+  const fetchOrders = async () => {
+    try {
+      const res = await fetch(url, reqOptions);
+      const data = await res.json();
+      setOrderData(data.results);
+    } catch (err) {
+      console.log("Error: " + err);
+    }
+  };
 
+  useEffect(() => {
     fetchOrders();
   }, []);
 

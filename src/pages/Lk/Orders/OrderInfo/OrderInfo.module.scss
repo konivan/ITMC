@@ -28,17 +28,6 @@
         margin-top: -10px;
       }
 
-      .percent {
-        width: 24px;
-        height: 19px;
-        margin-right: 10px;
-        background: #7840b0;
-        border-radius: 2px;
-        padding: 2px 5px;
-        font-size: 13px;
-        color: #ffffff;
-      }
-
       a {
         margin-right: 8px;
       }
@@ -70,9 +59,11 @@
     justify-content: space-between;
 
     .userInfo {
+      max-width: 470px;
       display: flex;
       align-items: center;
       margin-top: 30px;
+      flex-wrap: wrap;
 
       p {
         margin-left: 8px;
