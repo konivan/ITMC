@@ -13,7 +13,7 @@ export const Dogovor = (props) => {
             <h2>Ваши договоры</h2>
             <div className={style.cards}>
               <div className={style.column}>
-                <img src="img/lk/Avatar.svg" alt="Avatar" />
+                <img src="img/lk/icon.svg" alt="Avatar" />
                 <h4>Никита Можаев</h4>
                 <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
                 <span>Менеджер вашего проекта</span>
@@ -29,7 +29,7 @@ export const Dogovor = (props) => {
                 </div>
               </div>
               <div className={style.column}>
-                <img src="img/lk/Avatar.svg" alt="Avatar" />
+                <img src="img/lk/icon.svg" alt="Avatar" />
                 <h4>Никита Можаев</h4>
                 <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
                 <span>Менеджер вашего проекта</span>
@@ -45,7 +45,7 @@ export const Dogovor = (props) => {
                 </div>
               </div>
               <div className={style.column}>
-                <img src="img/lk/Avatar.svg" alt="Avatar" />
+                <img src="img/lk/icon.svg" alt="Avatar" />
                 <h4>Никита Можаев</h4>
                 <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
                 <span>Менеджер вашего проекта</span>
@@ -61,7 +61,7 @@ export const Dogovor = (props) => {
                 </div>
               </div>
               <div className={style.column}>
-                <img src="img/lk/Avatar.svg" alt="Avatar" />
+                <img src="img/lk/icon.svg" alt="Avatar" />
                 <h4>Никита Можаев</h4>
                 <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
                 <span>Менеджер вашего проекта</span>
@@ -77,7 +77,7 @@ export const Dogovor = (props) => {
                 </div>
               </div>
               <div className={style.column}>
-                <img src="img/lk/Avatar.svg" alt="Avatar" />
+                <img src="img/lk/icon.svg" alt="Avatar" />
                 <h4>Никита Можаев</h4>
                 <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
                 <span>Менеджер вашего проекта</span>
@@ -93,7 +93,7 @@ export const Dogovor = (props) => {
                 </div>
               </div>
               <div className={style.column}>
-                <img src="img/lk/Avatar.svg" alt="Avatar" />
+                <img src="img/lk/icon.svg" alt="Avatar" />
                 <h4>Никита Можаев</h4>
                 <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
                 <span>Менеджер вашего проекта</span>
@@ -109,7 +109,7 @@ export const Dogovor = (props) => {
                 </div>
               </div>
               <div className={style.column}>
-                <img src="img/lk/Avatar.svg" alt="Avatar" />
+                <img src="img/lk/icon.svg" alt="Avatar" />
                 <h4>Никита Можаев</h4>
                 <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
                 <span>Менеджер вашего проекта</span>
@@ -125,7 +125,7 @@ export const Dogovor = (props) => {
                 </div>
               </div>
               <div className={style.column}>
-                <img src="img/lk/Avatar.svg" alt="Avatar" />
+                <img src="img/lk/icon.svg" alt="Avatar" />
                 <h4>Никита Можаев</h4>
                 <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
                 <span>Менеджер вашего проекта</span>
