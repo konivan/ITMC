@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.scss";
-import { Header } from "./components/Header";  
+import { Header } from "./components/Header";
 import { Main } from "./components/Main";
 import Auth from "./components/Forms/Auth/auth";
 import Authorization from "./components/Forms/Authorization/authorization";
@@ -10,7 +10,7 @@ import { Footer } from "./components/Footer/Footer";
 import AuthOrder from "./components/Forms/AuthOrder/authOrder";
 import Product from "./components/Forms/Product/product";
 import { Team } from "./pages/Team/Team";
-import { Portfolio } from "./pages/portfolio/portfolio";
+import { Portfolio } from "./pages/Portfolio/Portfolio";
 import { LkCreateOrder } from "./pages/Lk/LkCreateOrder/LkCreateOrder";
 import { Origin } from "./pages/Lk/Origin/Origin";
 import { Orders } from "./pages/Lk/Orders/Orders";
