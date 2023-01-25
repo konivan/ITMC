@@ -15,17 +15,26 @@ function SamplePrevArrow(props) {
       style={{
         ...style,
         background: "white",
-        boxShadow: "0px 4px 12px rgba(119, 129, 146, 0.15)",
+        boxShadow: "5px 4px 12px rgba(119, 129, 146, 0.15)",
         borderRadius: 100,
         padding: 20,
         zIndex: 3,
         marginTop: -110,
         marginLeft: 25,
+        width: 45,
+        height: 45,
       }}
       onClick={onClick}
     >
       <img
-        style={{ position: "absolute", bottom: 15, right: 15 }}
+        style={{
+          width: 7,
+          height: 10,
+          position: "absolute",
+          bottom: 16,
+          right: 19,
+          transform: "rotate(180deg)",
+        }}
         src="img/Lk/arrow.svg"
         alt=""
       />
@@ -47,11 +56,19 @@ function SampleNewxtArrow(props) {
         zIndex: 3,
         marginTop: -110,
         marginRight: 25,
+        width: 45,
+        height: 45,
       }}
       onClick={onClick}
     >
       <img
-        style={{ position: "absolute", bottom: 15, right: 15 }}
+        style={{
+          width: 7,
+          height: 10,
+          position: "absolute",
+          bottom: 16,
+          right: 19,
+        }}
         src="img/Lk/arrow.svg"
         alt=""
       />

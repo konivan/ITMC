@@ -41,7 +41,9 @@ const Order = ({ order, URL, globalToken }) => {
         </div>
         <p>{order.description}</p>
       </div>
-      <ProgressTracker contractStatus={contract.status} />
+      <div className={style.progressTracker}>
+        <ProgressTracker contractStatus={contract.status} />
+      </div>
     </div>
   );
 };
