@@ -37,7 +37,7 @@ const Order = ({ order, URL, globalToken }) => {
       </div>
       <div className={style.orderText}>
         <div className={style.orderTitle}>
-          <h1>{order.name}</h1>
+          <h1 style={{color: '#2F3A4A'}}>{order.name}</h1>
         </div>
         <p>{order.description}</p>
       </div>
