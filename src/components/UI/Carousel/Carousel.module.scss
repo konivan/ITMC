@@ -12,7 +12,26 @@
 
   .imageWrapper {
     height: 200px;
+    // width: 400px;
     margin-left: -50px;
+    border-radius: 10px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+  }
+}
+
+.blockWithoutCarousel {
+  display: flex;
+  margin-top: 20px;
+
+  div {
+    width: 300px;
+    height: 200px;
+    margin-right: 10px;
     border-radius: 10px;
 
     img {

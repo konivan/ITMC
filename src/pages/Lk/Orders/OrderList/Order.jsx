@@ -33,12 +33,11 @@ const Order = ({ order, URL, globalToken }) => {
   return (
     <div className={style.orderWrapper}>
       <div className={style.orderImg}>
-        <img src={order.image} alt="" />
+        <img src={order.image} alt="orderLogo" />
       </div>
       <div className={style.orderText}>
         <div className={style.orderTitle}>
           <h1>{order.name}</h1>
-          <div className={style.orderPercent}>2%</div>
         </div>
         <p>{order.description}</p>
       </div>
