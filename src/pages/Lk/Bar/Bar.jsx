@@ -26,7 +26,7 @@ export const Bar = (props) => {
             <NavLink to="/Orders">
               <span>Ваши заказы</span>
             </NavLink>
-          </li>  
+          </li>
           <li>
             <img
               className={style.three}
@@ -46,8 +46,8 @@ export const Bar = (props) => {
         </div>
         <ul>
           <li>
-            <img className={style.one} src="img/lk/vector.svg" alt="vector" />  
-            <span>Связь с менеджером</span>
+            <img className={style.one} src="img/lk/vector.svg" alt="vector" />
+            <span><a href="https://t.me/charonlimb">Связь с менеджером</a></span>
           </li>
           <li>
             <img className={style.two} src="img/lk/trusted.svg" alt="trusted" />
