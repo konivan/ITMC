@@ -7,7 +7,7 @@ import style from "./OrderList.module.scss";
 const Order = ({ order, URL, globalToken }) => {
   const [contract, setContract] = useState("");
 
-  const url = `${URL}/contracts/${order.id}/condition/`;
+  const url = `${URL}contracts/${order.id}/condition/`;
   const reqOptions = {
     method: "GET",
     headers: {
@@ -39,7 +39,6 @@ const Order = ({ order, URL, globalToken }) => {
         <div className={style.orderTitle}>
           <h1 style={{color: '#2F3A4A'}}>{order.name}</h1>
         </div>
-        <p>{order.description}</p>
       </div>
       <div className={style.progressTracker}>
         <ProgressTracker contractStatus={contract.status} />

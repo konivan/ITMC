@@ -14,7 +14,7 @@ const OrderList = ({ URL, globalToken, orderData, setCurrentOrder }) => {
 
   const fetchOrderById = async (id) => {
     try {
-      const res = await fetch(`${URL}/orders/order/${id}/`, reqOptions);
+      const res = await fetch(`${URL}orders/order/${id}/`, reqOptions);
       const data = await res.json();
 
       setCurrentOrder(data);

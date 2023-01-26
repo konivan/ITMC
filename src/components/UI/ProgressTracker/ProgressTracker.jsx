@@ -43,7 +43,7 @@ const ProgressTracker = ({ contractStatus }) => {
           }}
         >
           <Typography variant="caption" component="div" color="text.secondary">
-            {progress === 100 ? (
+            {progress > 99 ? (
               <img src="img/Lk/succes.svg" alt="succes" />
             ) : (
               `${progress}%`

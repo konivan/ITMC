@@ -19,8 +19,6 @@ const OrderInfo = ({ currentOrder }) => {
       <div className={style.title}>
         <h1>{currentOrder?.name}</h1>
         <div className={style.text}>
-          <p>{currentOrder?.description}</p>
-          <p className={style.dot}>.</p>
           <p>{currentOrder?.category}</p>
         </div>
         <div className={style.buttons}>
@@ -60,6 +58,10 @@ const OrderInfo = ({ currentOrder }) => {
             })}
           </div>
         </div>
+      </div>
+
+      <div className={style.description}>
+        <p>{currentOrder.description}</p>
       </div>
     </div>
   );

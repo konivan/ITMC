@@ -24,10 +24,6 @@
         margin-right: 5px;
       }
 
-      .dot {
-        margin-top: -10px;
-      }
-
       a {
         margin-right: 8px;
       }
@@ -81,5 +77,15 @@
         font-size: 14px;
       }
     }
+  }
+
+  .description {
+    margin-top: 45px;
+    padding: 10px 20px;
+    border: 1px solid #25262d;
+    border-radius: 4px;
+    max-height: 300px;
+    overflow: scroll;
+    overflow-x: hidden;
   }
 }
