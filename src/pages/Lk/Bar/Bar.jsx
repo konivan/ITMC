@@ -46,7 +46,7 @@ export const Bar = (props) => {
         </div>
         <ul>
           <li>
-            <img className={style.one} src="img/lk/vector.svg" alt="vector" />
+            <img className={style.one} src="img/lk/vector.svg" alt="vector" />  
             <span>Связь с менеджером</span>
           </li>
           <li>

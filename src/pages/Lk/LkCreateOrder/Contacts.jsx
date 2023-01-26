@@ -37,6 +37,7 @@ const Contacts = ({
     }
   };
 
+  
   return (
     <div className={style.row}>
       <span>Контакты</span>
