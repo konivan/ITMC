@@ -9,7 +9,7 @@ const CheckComponent = ({item}) => {
       <span>{item.created.slice(0, 10)}</span>
       <span>itmc</span>
       <span>{item.price} руб</span>
-      <span>{item.received_money} руб</span>
+      <span>{item.received_money === undefined ? item.received_money : 0} руб</span>
       <span
         className={
           item.status === "paid"
@@ -21,6 +21,9 @@ const CheckComponent = ({item}) => {
       >
         {item.status}
       </span>
+      <button>
+        <a href={item.pay_url} target="_blank">Оплатить</a>
+      </button>
     </div>
   );
 };

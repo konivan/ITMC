@@ -8,7 +8,7 @@ export const PagesPayment = (props) => {
   const [checks, setChecks] = useState();
 
   useEffect(() => {
-    const url = `${props.URL}orders/paychecks/for_payment/`; 
+    const url = `${props.URL}orders/paychecks/for_payment/`;
     const reqOptions = {
       method: "GET",
       headers: {
@@ -57,10 +57,9 @@ export const PagesPayment = (props) => {
                 </div>
               </div>
               {checks?.map((item, index) => (
-                <CheckComponent key={`${item} ${index}`} item={item}/>
+                <CheckComponent key={`${item} ${index}`} item={item} />
               ))}
             </div>
-            <button>Оплатить</button>
           </div>
         </div>
       </div>
