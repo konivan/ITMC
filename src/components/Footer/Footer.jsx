@@ -7,17 +7,13 @@ import { IMG } from "./constant";
 import { Button } from "../UI/Button/Button";
 
 export const Footer = (props) => {
- if (
-   window.location.pathname === "/Origin" ||
-   window.location.pathname === "/LkCreateOrder" ||
-   window.location.pathname === "/Orders" ||
-   window.location.pathname === "/Accounts" ||
-   window.location.pathname === "/Dogovor" ||
-   window.location.pathname === "/PagesPayment" ||
-   window.location.pathname === "/PagesExhibited"
- ) {
-   return null;
- }
+  if (
+    window.location.pathname !== "/" &&
+    window.location.pathname !== "/portfolio" &&
+    window.location.pathname !== "/team"
+  ) {
+    return null;
+  }
   return (
     <footer className={style.footer}>
       <div className={style.wrapper}>

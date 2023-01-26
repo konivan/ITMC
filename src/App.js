@@ -18,6 +18,7 @@ import { Dogovor } from "./pages/Lk/Dogovor/Dogovor";
 import { Accounts } from "./pages/Lk/Accounts/Accounts";
 import  {PagesPayment} from "./pages/Lk/Origin/PagesPayment/PagesPayment"
 import  {PagesExhibited} from "./pages/Lk/Origin/PagesExhibited/PagesExhibited"
+import Page404 from "./pages/Page404/Page404";
 
 function App() {
   let window = document.getElementById("html-1");
@@ -86,10 +87,11 @@ function App() {
             path="/Accounts"
             element={<Accounts name={name} URL={URL} />}
           />
+          <Route path="/*" element={<Page404 />}/>
         </Routes>
         <Product
           onClose={() => setShowProduct(false)}
-          showProduct={showProduct} 
+          showProduct={showProduct}
           productImg={productImg}
           productTitle={productTitle}
           productIcon={productIcon}
