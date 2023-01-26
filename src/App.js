@@ -89,7 +89,7 @@ function App() {
         </Routes>
         <Product
           onClose={() => setShowProduct(false)}
-          showProduct={showProduct}
+          showProduct={showProduct} 
           productImg={productImg}
           productTitle={productTitle}
           productIcon={productIcon}
