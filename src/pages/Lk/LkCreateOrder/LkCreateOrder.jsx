@@ -13,7 +13,7 @@ export const LkCreateOrder = (props) => {
   const [budgetValue, setBudgetValue] = useState(0);
   const [service, setServiceValue] = useState("");
   const [file, setFile] = useState();
-  const [planFiles, setPlanFiles] = useState();
+  const [planFiles, setPlanFiles] = useState(0);
   const [productName, setProductName] = useState();
   const [description, setDescription] = useState();
   const [allTime, setAllTime] = useState(false);
@@ -278,6 +278,7 @@ export const LkCreateOrder = (props) => {
                     if (image.width !== 256 || image.height !== 256) {
                       return setAlert("Изображение должно быть 256px на 256px");
                     } else {
+                      setPlanFiles(planFiles + 1);
                       return gallery.push(e.target.files);
                     }
                   };
@@ -290,8 +291,11 @@ export const LkCreateOrder = (props) => {
               </p>
             </form>
           </div>
-          {planFiles === undefined ? null : (
-            <div style={{ color: "green" }}>Файл загружен</div>
+          {gallery.length === 0 ? null : (
+            <div style={{ color: "green" }}>
+              Вы загрузили: {gallery[0]?.[0]?.name} {gallery[1]?.[0]?.name}
+              {gallery[2]?.[0]?.name} {gallery[3]?.[0]?.name} {gallery[4]?.[0]?.name}
+            </div>
           )}
           <p>
             Размером от 256px на 256px в формате .jpg или .png
@@ -346,7 +350,7 @@ export const LkCreateOrder = (props) => {
                 tagsId.push({
                   name: services[1]?.title,
                   category: categoryId,
-                })
+                });
                 if (tagRef2.current.style.background === "rgb(190, 68, 242)") {
                   tagRef2.current.style.background = "";
                 } else {
@@ -362,7 +366,7 @@ export const LkCreateOrder = (props) => {
                 tagsId.push({
                   name: services[2]?.title,
                   category: categoryId,
-                })
+                });
                 if (tagRef3.current.style.background === "rgb(190, 68, 242)") {
                   tagRef3.current.style.background = "";
                 } else {
@@ -380,7 +384,7 @@ export const LkCreateOrder = (props) => {
                 tagsId.push({
                   name: services[3]?.title,
                   category: categoryId,
-                })
+                });
                 if (tagRef4.current.style.background === "rgb(190, 68, 242)") {
                   tagRef4.current.style.background = "";
                 } else {
@@ -396,7 +400,7 @@ export const LkCreateOrder = (props) => {
                 tagsId.push({
                   name: services[4]?.title,
                   category: categoryId,
-                })
+                });
                 if (tagRef5.current.style.background === "rgb(190, 68, 242)") {
                   tagRef5.current.style.background = "";
                 } else {
@@ -412,7 +416,7 @@ export const LkCreateOrder = (props) => {
                 tagsId.push({
                   name: services[5]?.title,
                   category: categoryId,
-                })
+                });
                 if (tagRef6.current.style.background === "rgb(190, 68, 242)") {
                   tagRef6.current.style.background = "";
                 } else {
@@ -433,7 +437,7 @@ export const LkCreateOrder = (props) => {
                 tagsId.push({
                   name: services[6]?.title,
                   category: categoryId,
-                })
+                });
                 if (tagRef7.current.style.background === "rgb(190, 68, 242)") {
                   tagRef7.current.style.background = "";
                 } else {
@@ -449,7 +453,7 @@ export const LkCreateOrder = (props) => {
                 tagsId.push({
                   name: services[7]?.title,
                   category: categoryId,
-                })
+                });
                 if (tagRef8.current.style.background === "rgb(190, 68, 242)") {
                   tagRef8.current.style.background = "";
                 } else {
@@ -465,7 +469,7 @@ export const LkCreateOrder = (props) => {
                 tagsId.push({
                   name: services[8]?.title,
                   category: categoryId,
-                })
+                });
                 if (tagRef9.current.style.background === "rgb(190, 68, 242)") {
                   tagRef9.current.style.background = "";
                 } else {
