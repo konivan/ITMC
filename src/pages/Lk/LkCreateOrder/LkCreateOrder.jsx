@@ -97,8 +97,18 @@ export const LkCreateOrder = (props) => {
   const sendOrder = () => {
     const formData = new FormData();
     formData.append("image", logoImg);
-    formData.append("conference.monday", allTime);
-    formData.append("conference.tuesday", allTime);
+    formData.append("conference.monday_start", "10:00");
+    formData.append("conference.monday_end", "18:00");
+    formData.append("conference.tuesday_start", "10:00");
+    formData.append("conference.tuesday_end", "18:00");
+    formData.append("conference.wednesday_start", "10:00");
+    formData.append("conference.wednesday_end", "18:00");
+    formData.append("conference.thursday_start", "10:00");
+    formData.append("conference.thursday_end", "18:00");
+    formData.append("conference.friday_start", "10:00");
+    formData.append("conference.friday_end", "18:00");
+    formData.append("conference.saturday", false);
+    formData.append("conference.sunday", false);
     formData.append("contact.phone", phone);
     formData.append("contact.email", email);
     formData.append("contact.domain", domain);

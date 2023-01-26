@@ -80,7 +80,7 @@ export const Origin = (props) => {
                   <span>Статус</span>
                 </div>
               </div>
-              {checks.map((item, index) => (
+              {checks?.map((item, index) => (
                 <CheckComponent key={`${item} ${index}`} item={item}/>
               ))}
             </div>

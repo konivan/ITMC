@@ -33,7 +33,6 @@ export const SwitchComponent = ({ item, setAllTime, allTime }) => {
       <input
         onClick={() => {
           setAllTime(!allTime);
-          console.log(allTime);
         }}
         type="checkbox"
         className={style.lastCheckBox}
