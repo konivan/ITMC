@@ -49,12 +49,12 @@ export const Orders = (props) => {
           <div className={style.row}>
             <div className={style.column}>
               <h2>Ваши заказы</h2>
-              <button>
-                <NavLink to="/LkCreateOrder">
+              <NavLink to="/LkCreateOrder">
+                <button>
                   <img src="img/Lk/UnionX.svg" alt="UnionX" />
                   <span>Заказать</span>
-                </NavLink>
-              </button>
+                </button>
+              </NavLink>
             </div>
             <div className={style.orders}>
               <div>
