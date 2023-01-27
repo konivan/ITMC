@@ -32,7 +32,11 @@ export const Origin = (props) => {
     };
     fetchChecks();
   }, []);
-  console.log(checks)
+
+  if (localStorage.getItem('globalToken') === undefined) {
+    return null;
+  }
+
   return (
     <section className={style.main}>
       <div className={style.wrapper}>

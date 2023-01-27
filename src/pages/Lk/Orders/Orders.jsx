@@ -41,6 +41,10 @@ export const Orders = (props) => {
     );
   }, [inputValue, orderData]);
 
+  if (localStorage.getItem('globalToken') === null) {
+    return null;
+  }
+
   return (
     <section className={style.main} id="Orders">
       <div className={style.wrapper}>

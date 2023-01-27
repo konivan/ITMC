@@ -29,6 +29,10 @@ export const PagesPayment = (props) => {
     fetchChecks();
   }, []);
 
+  if (localStorage.getItem('globalToken') === undefined) {
+    return null;
+  }
+
   return (
     <section className={style.main}>
       <div className={style.wrapper}>

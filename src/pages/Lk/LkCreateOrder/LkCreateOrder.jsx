@@ -94,6 +94,10 @@ export const LkCreateOrder = (props) => {
     fetchData();
   }, []);
 
+  if (localStorage.getItem('globalToken') === null) {
+    return null;
+  }
+
   const sendOrder = () => {
     const formData = new FormData();
     formData.append("image", logoImg);

@@ -3,6 +3,9 @@ import style from "./Accounts.module.scss"
 import { Bar } from "../Bar/Bar";
 
 export const Accounts = ({name}) => {
+    if (localStorage.getItem('globalToken') === null) {
+        return null;
+      }
     return (
         <section className={style.main}>
             <div className={style.wrapper}>

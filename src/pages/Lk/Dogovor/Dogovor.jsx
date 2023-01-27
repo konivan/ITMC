@@ -4,6 +4,11 @@ import { Bar } from "../Bar/Bar";
 import { NavLink } from "react-router-dom";
 
 export const Dogovor = (props) => {
+
+  if (localStorage.getItem('globalToken') === null) {
+    return null;
+  }
+
   return (
     <section className={style.main}>
       <div className={style.wrapper}>
