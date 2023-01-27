@@ -24,15 +24,15 @@ export const Origin = (props) => {
       try {
         const res = await fetch(url, reqOptions);
         const data = await res.json();
-        setChecks(data?.results);
-        setReserveChecks(data?.results);
+        setChecks(data);
+        setReserveChecks(data);
       } catch (err) {
         console.log("Error: " + err);
       }
     };
     fetchChecks();
   }, []);
-
+  console.log(checks)
   return (
     <section className={style.main}>
       <div className={style.wrapper}>
