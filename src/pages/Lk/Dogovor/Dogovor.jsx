@@ -18,14 +18,12 @@ export const Dogovor = (props) => {
                 <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
                 <span>Менеджер вашего проекта</span>
                 <div className={style.item}>
-                  <button>Договор</button>
                   <NavLink to="/Orders">
                     <button>Проверить готовность</button>
                   </NavLink>
                 </div>
                 <div className={style.item}>
-                  <button>Оставить жалобу</button>
-                  <button>Чаевые</button>
+                  <button><a href="mailto:charomlimb@itmc.space">Оставить жалобу</a></button>
                 </div>
               </div>
               <div className={style.column}>
@@ -34,14 +32,12 @@ export const Dogovor = (props) => {
                 <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
                 <span>Менеджер вашего проекта</span>
                 <div className={style.item}>
-                  <button>Договор</button>
                   <NavLink to="/Orders">
                     <button>Проверить готовность</button>
                   </NavLink>
                 </div>
                 <div className={style.item}>
-                  <button>Оставить жалобу</button>
-                  <button>Чаевые</button>
+                  <button><a href="mailto:charomlimb@itmc.space">Оставить жалобу</a></button>
                 </div>
               </div>
               <div className={style.column}>
@@ -50,14 +46,14 @@ export const Dogovor = (props) => {
                 <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
                 <span>Менеджер вашего проекта</span>
                 <div className={style.item}>
-                  <button>Договор</button>
                   <NavLink to="/Orders">
                     <button>Проверить готовность</button>
                   </NavLink>
                 </div>
                 <div className={style.item}>
-                  <button>Оставить жалобу</button>
-                  <button>Чаевые</button>
+                  <button>
+                    <a href="mailto:charomlimb@itmc.space">Оставить жалобу</a>
+                  </button>
                 </div>
               </div>
               <div className={style.column}>
@@ -66,14 +62,12 @@ export const Dogovor = (props) => {
                 <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
                 <span>Менеджер вашего проекта</span>
                 <div className={style.item}>
-                  <button>Договор</button>
                   <NavLink to="/Orders">
                     <button>Проверить готовность</button>
                   </NavLink>
                 </div>
                 <div className={style.item}>
-                  <button>Оставить жалобу</button>
-                  <button>Чаевые</button>
+                  <button><a href="mailto:charomlimb@itmc.space">Оставить жалобу</a></button>
                 </div>
               </div>
               <div className={style.column}>
@@ -82,14 +76,12 @@ export const Dogovor = (props) => {
                 <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
                 <span>Менеджер вашего проекта</span>
                 <div className={style.item}>
-                  <button>Договор</button>
                   <NavLink to="/Orders">
                     <button>Проверить готовность</button>
                   </NavLink>
                 </div>
                 <div className={style.item}>
-                  <button>Оставить жалобу</button>
-                  <button>Чаевые</button>
+                  <button><a href="mailto:charomlimb@itmc.space">Оставить жалобу</a></button>
                 </div>
               </div>
               <div className={style.column}>
@@ -98,14 +90,12 @@ export const Dogovor = (props) => {
                 <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
                 <span>Менеджер вашего проекта</span>
                 <div className={style.item}>
-                  <button>Договор</button>
                   <NavLink to="/Orders">
                     <button>Проверить готовность</button>
                   </NavLink>
                 </div>
                 <div className={style.item}>
-                  <button>Оставить жалобу</button>
-                  <button>Чаевые</button>
+                  <button><a href="mailto:charomlimb@itmc.space">Оставить жалобу</a></button>
                 </div>
               </div>
               <div className={style.column}>
@@ -114,14 +104,12 @@ export const Dogovor = (props) => {
                 <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
                 <span>Менеджер вашего проекта</span>
                 <div className={style.item}>
-                  <button>Договор</button>
                   <NavLink to="/Orders">
                     <button>Проверить готовность</button>
                   </NavLink>
                 </div>
                 <div className={style.item}>
-                  <button>Оставить жалобу</button>
-                  <button>Чаевые</button>
+                  <button><a href="mailto:charomlimb@itmc.space">Оставить жалобу</a></button>
                 </div>
               </div>
               <div className={style.column}>
@@ -130,14 +118,12 @@ export const Dogovor = (props) => {
                 <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
                 <span>Менеджер вашего проекта</span>
                 <div className={style.item}>
-                  <button>Договор</button>
                   <NavLink to="/Orders">
                     <button>Проверить готовность</button>
                   </NavLink>
                 </div>
                 <div className={style.item}>
-                  <button>Оставить жалобу</button>
-                  <button>Чаевые</button>
+                  <button><a href="mailto:charomlimb@itmc.space">Оставить жалобу</a></button>
                 </div>
               </div>
             </div>

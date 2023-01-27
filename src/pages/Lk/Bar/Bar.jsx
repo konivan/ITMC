@@ -47,7 +47,9 @@ export const Bar = (props) => {
         <ul>
           <li>
             <img className={style.one} src="img/lk/vector.svg" alt="vector" />
-            <span><a href="https://t.me/charonlimb">Связь с менеджером</a></span>
+            <span>
+              <a href="https://t.me/Proodduct_manager7">Связь с менеджером</a>
+            </span>
           </li>
           <li>
             <img className={style.two} src="img/lk/trusted.svg" alt="trusted" />
@@ -55,20 +57,20 @@ export const Bar = (props) => {
               <span>Ваши договоры</span>
             </NavLink>
           </li>
-          <li>
-            {/* <img className={style.three} src="img/lk/UnionTwo.svg" alt="UnionTwo" /> */}
-            {/* <span>Услуги</span> */}
-          </li>
         </ul>
       </div>
       <div className={style.column}>
         <img src="img/lk/exit.svg" alt="exit" />
         <NavLink to="/">
-          <span onClick={() => {
-            setTimeout(() => {
-              window.location.reload();
-            }, 0);
-          }}>Вернуться назад</span>
+          <span
+            onClick={() => {
+              setTimeout(() => {
+                window.location.reload();
+              }, 0);
+            }}
+          >
+            Вернуться назад
+          </span>
         </NavLink>
       </div>
     </div>

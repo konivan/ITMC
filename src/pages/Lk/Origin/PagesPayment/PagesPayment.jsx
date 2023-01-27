@@ -47,7 +47,7 @@ export const PagesPayment = (props) => {
               </div>
               <div className={style.item}>
                 <div className={style.box}>
-                  <input type="checkbox" className={style.lastCheckBox} />
+                  {/* <input type="checkbox" className={style.lastCheckBox} /> */}
                   <span>Номер счета</span>
                   <span>Время и дата</span>
                   <span>Торговая точка / Оперция</span>
