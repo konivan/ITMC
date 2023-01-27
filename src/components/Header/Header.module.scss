@@ -59,13 +59,14 @@
         display: flex;
         align-items: center;
         .item {
+          @media (max-width: 768px) {
+            display: flex;
+          }
+          display: none;
           height: 20px;
         }
         .burger {
           margin-left: 25px;
-          @media (max-width: 768px) {
-            margin-top: -20px;
-          }
           span {
             display: block;
             background: #fafafa;
@@ -99,9 +100,6 @@
 
         .burgerActive {
           margin-left: 25px;
-          @media (max-width: 768px) {
-            margin-top: -15px;
-          }
           span {
             display: block;
             background: #fafafa;
@@ -114,9 +112,6 @@
           }
 
           &::before {
-            @media (max-width: 768px) {
-              margin-top: 4px;
-            }
             content: "";
             display: block;
             background: #fafafa;
