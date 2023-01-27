@@ -6,13 +6,34 @@ import { getSchedule } from "../../../../utils/schedule";
 
 import style from "./OrderInfo.module.scss";
 
-const OrderInfo = ({ currentOrder }) => {
+const OrderInfo = ({ currentOrder, URL, globalToken }) => {
+  console.log(globalToken);
   const userName = localStorage.getItem("name");
   const [schedule, setSchedule] = useState([]);
 
   useEffect(() => {
     setSchedule(getSchedule(currentOrder));
   }, [currentOrder]);
+
+  const url = `${URL}orders/order/${currentOrder.id}/`;
+  const reqOptions = {
+    method: "DELETE",
+    headers: {
+      authorization: `Bearer ${globalToken}`,
+      Accept: "application/json",
+    },
+  };
+
+  const removeOrder = async () => {
+    try {
+      const res = await fetch(url, reqOptions);
+      const data = await res.json();
+       console.log(data);
+    } catch (err) {
+      console.log("Error: " + err);
+    }
+  };
+ 
 
   return (
     <div className={style.wrapper}>
@@ -21,11 +42,11 @@ const OrderInfo = ({ currentOrder }) => {
         <div className={style.text}>
           <p>{currentOrder?.category}</p>
         </div>
-        <div className={style.buttons}>
-          <button>Отменить проект</button>
+        {/* <div className={style.buttons}>
+          <button onClick={() => removeOrder()}>Отменить проект</button>
           <img src="img/Lk/edit.svg" alt="editIcon" />
           <button>Редактировать</button>
-        </div>
+        </div> */}
       </div>
 
       <Carousel gallery={currentOrder.gallery} />
