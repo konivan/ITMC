@@ -303,7 +303,7 @@ export const LkCreateOrder = (props) => {
             </div>
           )}
           <p>
-            Размером от 256px на 256px в формате .jpg или .png
+           Добавьте хотя бы 1 фото формате .jpg или .png
             <br /> Максимум 5 фотографий
           </p>
         </div>
