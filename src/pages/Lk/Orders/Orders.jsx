@@ -57,7 +57,7 @@ export const Orders = (props) => {
               </NavLink>
             </div>
             <div className={style.orders}>
-              <div>
+              <div className={style.searchInput}>
                 <input
                   value={inputValue}
                   placeholder="Поиск..."
@@ -71,7 +71,13 @@ export const Orders = (props) => {
                   setCurrentOrder={setCurrentOrder}
                 />
               </div>
-              {currentOrder && <OrderInfo currentOrder={currentOrder} />}
+              {currentOrder && (
+                <OrderInfo
+                  currentOrder={currentOrder}
+                  URL={props.URL}
+                  globalToken={globalToken}
+                />
+              )}
             </div>
           </div>
         </div>

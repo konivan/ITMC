@@ -12,8 +12,15 @@
         width: 100%;
         border: 0.0625em solid #e8e8e8;
         border-radius: 0.25em;
-        background: #E5E5E5;
+        background: #e5e5e5;
         padding: 16px 16px 0px 0px;
+
+        .searchInput {
+          input {
+            color: black;
+          }
+        }
+
         .column:nth-of-type(1) {
           display: flex;
           align-items: center;

@@ -90,6 +90,19 @@
   .column:nth-of-type(4) {
     padding: 0em 0em 28em 1em;
 
+    @media (max-height: 925px) {
+      padding: 0em 0em 22em 1em;
+    }
+    @media (max-height: 866px) {
+      padding: 0em 0em 19em 1em;
+    }
+    @media (max-height: 817px) {
+      padding: 0em 0em 16em 1em;
+    }
+    @media (max-height: 773px) {
+      padding: 0em 0em 13em 1em;
+    }
+
     .item {
       margin-bottom: 21px;
 
