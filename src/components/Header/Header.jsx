@@ -73,7 +73,7 @@ export const Header = (props) => {
                 <div>
                   <img
                     className={style.userIcon}
-                    src="img/header/user.svg"
+                    src="img/lk/icon.svg"
                     alt="user-icon"
                   />
                   <div className={style.dropdown}>
