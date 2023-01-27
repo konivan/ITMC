@@ -37,7 +37,7 @@ export const Orders = (props) => {
 
   const searchedOrders = useMemo(() => {
     return orderData?.filter((orders) =>
-      orders.name.toLocaleLowerCase().includes(inputValue)
+      orders.name.toLocaleLowerCase().includes(inputValue.toLocaleLowerCase())
     );
   }, [inputValue, orderData]);
 
