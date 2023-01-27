@@ -17,7 +17,6 @@ import { Orders } from "./pages/Lk/Orders/Orders";
 import { Dogovor } from "./pages/Lk/Dogovor/Dogovor";
 import { Accounts } from "./pages/Lk/Accounts/Accounts";
 import  {PagesPayment} from "./pages/Lk/Origin/PagesPayment/PagesPayment"
-import  {PagesExhibited} from "./pages/Lk/Origin/PagesExhibited/PagesExhibited"
 import Page404 from "./pages/Page404/Page404";
 
 function App() {
@@ -83,7 +82,6 @@ function App() {
           <Route path="/Orders" element={<Orders name={name} URL={URL} />} />
           <Route path="/Dogovor" element={<Dogovor name={name} URL={URL} />} />
           <Route path="/PagesPayment" element={<PagesPayment name={name} URL={URL} />} />
-          <Route path="/PagesExhibited" element={<PagesExhibited name={name} URL={URL} />} />
           <Route
             path="/Accounts"
             element={<Accounts name={name} URL={URL} />}

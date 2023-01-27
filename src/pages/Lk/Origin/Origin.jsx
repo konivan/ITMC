@@ -16,7 +16,7 @@ export const Origin = (props) => {
     const reqOptions = {
       method: "GET",
       headers: {
-        authorization: `Bearer ${localStorage.getItem('globalToken')}`,
+        authorization: `Bearer ${localStorage.getItem("globalToken")}`,
         Accept: "application/json",
       },
     };
@@ -38,6 +38,7 @@ export const Origin = (props) => {
     return <Page404/>;
   }
 
+  console.log(checks);
   return (
     <section className={style.main}>
       <div className={style.wrapper}>
@@ -72,11 +73,8 @@ export const Origin = (props) => {
                     { value: "Выставленные", name: "Выставленные" },
                   ]}
                 />
-                <select>
-                  <option value="text">Действия</option>
-                </select>
                 <div className={style.box}>
-                  <input type="checkbox" className={style.lastCheckBox} />
+                  {/* <input type="checkbox" className={style.lastCheckBox} /> */}
                   <span>Номер счета</span>
                   <span>Время и дата</span>
                   <span>Торговая точка / Оперция</span>
@@ -86,7 +84,7 @@ export const Origin = (props) => {
                 </div>
               </div>
               {checks?.map((item, index) => (
-                <CheckComponent key={`${item} ${index}`} item={item}/>
+                <CheckComponent key={`${item} ${index}`} item={item} />
               ))}
             </div>
           </div>
