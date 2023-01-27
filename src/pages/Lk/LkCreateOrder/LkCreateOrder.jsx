@@ -161,8 +161,8 @@ export const LkCreateOrder = (props) => {
         }
         setAlert('Заказ успешно отправлен!');
         setTimeout(() => {
-          window.location.reload();
-        }, 4000)
+          window.location.pathname = '/Orders';
+        }, 2500)
       })
       .catch((err) => console.log("Error: " + err));
   };

@@ -71,6 +71,7 @@ function App() {
                 setProductTitle={setProductTitle}
                 setProductIcon={setProductIcon}
                 setOrder={setOrder}
+                setShowAuth={setShowAuth}
               />
             }
           />

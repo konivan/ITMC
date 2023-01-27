@@ -14,6 +14,7 @@ export const Services = (props) => {
                 <p>IT</p>
                 <p>Мы предоставляем самые качественные IT услуги на рынке</p>
                 <ButtonPink
+                  setShowAuth={props.setShowAuth}
                   setShowOrders={props.setShowOrders}
                   setOrderType={props.setOrderType}
                   orderType={'IT'}
@@ -29,6 +30,7 @@ export const Services = (props) => {
                 <p>Marketing</p>
                 <p>Наши специалисты, готовы привлечь заказы или аудиторию в вашу компанию</p>
                 <ButtonPink
+                  setShowAuth={props.setShowAuth}
                   setShowOrders={props.setShowOrders}
                   setOrderType={props.setOrderType}
                   orderType={'M'}
@@ -44,6 +46,7 @@ export const Services = (props) => {
                 <p>Crypto</p>
                 <p>Мы поддерживаем Web 3.0, и верим, что web 3.0 будущее</p>
                 <ButtonPink
+                  setShowAuth={props.setShowAuth}
                   setShowOrders={props.setShowOrders}
                   setOrderType={props.setOrderType}
                   orderType={'C'}

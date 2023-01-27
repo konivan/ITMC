@@ -25,7 +25,7 @@ export const Footer = (props) => {
                   <span>Закажите у нас проект</span>
                   <span>уже сегодня!</span>
                 </div>
-                <Button setShowAuthOrders={props.setShowAuthOrders}>
+                <Button setShowAuth={props.setShowAuth} setShowAuthOrders={props.setShowAuthOrders}>
                   Заказать
                 </Button>
               </div>
@@ -80,7 +80,7 @@ export const Footer = (props) => {
                 <span>Закажите у нас проект</span>
                 <span>уже сегодня!</span>
               </div>
-              <Button setShowAuthOrders={props.setShowAuthOrders}>
+              <Button setShowAuth={props.setShowAuth} setShowAuthOrders={props.setShowAuthOrders}>
                 Заказать
               </Button>
             </div>
