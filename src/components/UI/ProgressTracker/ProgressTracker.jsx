@@ -4,8 +4,8 @@ import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
-const ProgressTracker = ({ contractStatus }) => {
-  let progress = contractStatus === undefined ? 0 : contractStatus;
+const ProgressTracker = ({ orderStatus }) => {
+  let progress = orderStatus === undefined ? 0 : orderStatus;
 
   let color = progress > 80 ? "#5BC044" : progress > 20 ? "#EAC600" : "red";
 
@@ -28,7 +28,7 @@ const ProgressTracker = ({ contractStatus }) => {
             position: "absolute",
           }}
           variant="determinate"
-          value={progress}
+          value={progress > 99 ? 100 : Number(progress)}
         />
         <Box
           sx={{
@@ -43,7 +43,7 @@ const ProgressTracker = ({ contractStatus }) => {
           }}
         >
           <Typography variant="caption" component="div" color="text.secondary">
-            {progress === 100 ? (
+            {progress > 99 ? (
               <img src="img/Lk/succes.svg" alt="succes" />
             ) : (
               `${progress}%`

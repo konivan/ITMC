@@ -5,9 +5,9 @@ import ProgressTracker from "../../../../components/UI/ProgressTracker/ProgressT
 import style from "./OrderList.module.scss";
 
 const Order = ({ order, URL, globalToken }) => {
-  const [contract, setContract] = useState("");
+  const [orderStatus, setOrderStatus] = useState("");
 
-  const url = `${URL}/contracts/${order.id}/condition/`;
+  const url = `${URL}orders/order/${order.id}/condition/`;
   const reqOptions = {
     method: "GET",
     headers: {
@@ -16,18 +16,18 @@ const Order = ({ order, URL, globalToken }) => {
     },
   };
 
-  const fetchContracts = async () => {
+  const fetchOrderStatus = async () => {
     try {
       const res = await fetch(url, reqOptions);
       const data = await res.json();
-      setContract(data);
+      setOrderStatus(data?.results[0]?.status);
     } catch (err) {
       console.log("Error: " + err);
     }
   };
 
   useEffect(() => {
-    fetchContracts();
+    fetchOrderStatus();
   }, []);
 
   return (
@@ -37,12 +37,11 @@ const Order = ({ order, URL, globalToken }) => {
       </div>
       <div className={style.orderText}>
         <div className={style.orderTitle}>
-          <h1 style={{color: '#2F3A4A'}}>{order.name}</h1>
+          <h1 style={{ color: "#2F3A4A" }}>{order.name}</h1>
         </div>
-        <p>{order.description}</p>
       </div>
       <div className={style.progressTracker}>
-        <ProgressTracker contractStatus={contract.status} />
+        <ProgressTracker orderStatus={orderStatus} />
       </div>
     </div>
   );
