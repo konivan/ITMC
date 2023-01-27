@@ -1,8 +1,6 @@
 export const getSchedule = (currentOrder) => {
   const schedule = {};
 
-  console.log(schedule);
-
   for (const key in currentOrder.conference) {
     if (key.includes("_start") || key.includes("_end")) {
       schedule[key] = currentOrder.conference[key]?.substring(0, 5);
@@ -28,11 +26,10 @@ export const getSchedule = (currentOrder) => {
       let day = weekdaysEng[i];
       let end = days[day + "_end"];
       let start = days[day + "_start"];
-      console.log(days[day]);
-      if(days[day]) {
+
+      if (days[day]) {
         result += weekdays[i] + " круглосуточно; ";
-      }
-      else if (!end || !start) {
+      } else if (!end || !start) {
         result += weekdays[i] + " выходной; ";
       } else {
         result += weekdays[i] + " " + start + "-" + end + "; ";

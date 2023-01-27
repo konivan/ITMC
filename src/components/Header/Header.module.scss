@@ -171,11 +171,13 @@
           }
           div:nth-of-type(1):hover {
             .dropdown {
-              display: block;
+              max-height: 300px;
             }
           }
           .dropdown {
-            display: none;
+            transition: 0.7s;
+            max-height: 0;
+            overflow: hidden;
             position: absolute;
             background-color: rgb(46, 0, 78);
             min-width: 80px;
