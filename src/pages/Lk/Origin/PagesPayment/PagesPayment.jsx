@@ -3,6 +3,7 @@ import CheckComponent from "../CheckComponent/CheckComponent";
 import style from "./PagesPayment.module.scss";
 import { Bar } from "../../Bar/Bar";
 import { NavLink } from "react-router-dom";
+import Page404 from "../../../Page404/Page404";
 
 export const PagesPayment = (props) => {
   const [checks, setChecks] = useState();
@@ -29,6 +30,10 @@ export const PagesPayment = (props) => {
     fetchChecks();
   }, []);
 
+  if (localStorage.getItem('globalToken') === undefined) {
+    return <Page404/>;
+  }
+
   return (
     <section className={style.main}>
       <div className={style.wrapper}>
@@ -47,7 +52,7 @@ export const PagesPayment = (props) => {
               </div>
               <div className={style.item}>
                 <div className={style.box}>
-                  {/* <input type="checkbox" className={style.lastCheckBox} /> */}
+                  <input type="checkbox" className={style.lastCheckBox} style={{visibility: 'hidden'}}/>
                   <span>Номер счета</span>
                   <span>Время и дата</span>
                   <span>Торговая точка / Оперция</span>

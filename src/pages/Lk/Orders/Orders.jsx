@@ -4,6 +4,7 @@ import { Bar } from "../Bar/Bar";
 import { NavLink } from "react-router-dom";
 import OrderList from "./OrderList/OrderList";
 import OrderInfo from "./OrderInfo/OrderInfo";
+import Page404 from "../../Page404/Page404";
 
 export const Orders = (props) => {
   const [orderData, setOrderData] = useState([]);
@@ -40,6 +41,10 @@ export const Orders = (props) => {
       orders.name.toLocaleLowerCase().includes(inputValue.toLocaleLowerCase())
     );
   }, [inputValue, orderData]);
+
+  if (localStorage.getItem('globalToken') === null) {
+    return <Page404/>;
+  }
 
   return (
     <section className={style.main} id="Orders">

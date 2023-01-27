@@ -4,7 +4,7 @@ import style from "./CheckComponent.module.scss";
 const CheckComponent = ({item}) => {
   return (
     <div className={style.box}>
-      <input type="checkbox" className={style.lastCheckBox} />
+      <input style={{visibility: 'hidden'}} type="checkbox" className={style.lastCheckBox} />
       <span>№32467</span>
       <span>{item.created.slice(0, 10)}</span>
       <span>itmc</span>

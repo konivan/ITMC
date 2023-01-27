@@ -4,6 +4,7 @@ import style from "./Origin.module.scss";
 import { Bar } from "../Bar/Bar";
 import { MySelect } from "../../../components/UI/Select/MySelect";
 import { NavLink } from "react-router-dom";
+import Page404 from "../../Page404/Page404";
 
 export const Origin = (props) => {
   const [selectedSort, setSelectedSort] = useState("");
@@ -32,6 +33,11 @@ export const Origin = (props) => {
     };
     fetchChecks();
   }, []);
+
+  if (localStorage.getItem('globalToken') === null) {
+    return <Page404/>;
+  }
+
   console.log(checks);
   return (
     <section className={style.main}>

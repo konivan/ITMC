@@ -2,8 +2,14 @@ import React from "react";
 import style from "./Dogovor.module.scss";
 import { Bar } from "../Bar/Bar";
 import { NavLink } from "react-router-dom";
+import Page404 from "../../Page404/Page404";
 
 export const Dogovor = (props) => {
+
+  if (localStorage.getItem('globalToken') === null) {
+    return <Page404/>;
+  }
+
   return (
     <section className={style.main}>
       <div className={style.wrapper}>
