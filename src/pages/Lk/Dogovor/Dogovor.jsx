@@ -6,9 +6,9 @@ import Page404 from "../../Page404/Page404";
 
 export const Dogovor = (props) => {
 
-  if (localStorage.getItem('globalToken') === null) {
-    return <Page404/>;
-  }
+  // if (localStorage.getItem('globalToken') === null) {
+  //   return <Page404/>;
+  // }
 
   return (
     <section className={style.main}>
