@@ -7,6 +7,7 @@ import Contacts from "./Contacts";
 import { SwitchComponent } from "./SwitchComponent";
 
 import style from "./LkCreateOrder.module.scss";
+import Page404 from "../../Page404/Page404";
 
 export const LkCreateOrder = (props) => {
   const [globalToken, setGlobalToken] = useState(null);
@@ -95,7 +96,7 @@ export const LkCreateOrder = (props) => {
   }, []);
 
   if (localStorage.getItem('globalToken') === null) {
-    return null;
+    return <Page404/>;
   }
 
   const sendOrder = () => {
