@@ -7,7 +7,6 @@ import { getSchedule } from "../../../../utils/schedule";
 import style from "./OrderInfo.module.scss";
 
 const OrderInfo = ({ currentOrder, URL, globalToken }) => {
-  console.log(globalToken);
   const userName = localStorage.getItem("name");
   const [schedule, setSchedule] = useState([]);
 
