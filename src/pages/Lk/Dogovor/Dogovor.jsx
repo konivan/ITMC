@@ -29,7 +29,7 @@ export const Dogovor = (props) => {
                   </NavLink>
                 </div>
                 <div className={style.item}>
-                  <button><a href="mailto:charomlimb@itmc.space">Оставить жалобу</a></button>
+                  <button><a href="support@itmc.space">Оставить жалобу</a></button>
                 </div>
               </div>
               <div className={style.column}>
@@ -43,7 +43,7 @@ export const Dogovor = (props) => {
                   </NavLink>
                 </div>
                 <div className={style.item}>
-                  <button><a href="mailto:charomlimb@itmc.space">Оставить жалобу</a></button>
+                  <button><a href="support@itmc.space">Оставить жалобу</a></button>
                 </div>
               </div>
               <div className={style.column}>
@@ -58,7 +58,7 @@ export const Dogovor = (props) => {
                 </div>
                 <div className={style.item}>
                   <button>
-                    <a href="mailto:charomlimb@itmc.space">Оставить жалобу</a>
+                    <a href="support@itmc.space">Оставить жалобу</a>
                   </button>
                 </div>
               </div>
@@ -73,7 +73,7 @@ export const Dogovor = (props) => {
                   </NavLink>
                 </div>
                 <div className={style.item}>
-                  <button><a href="mailto:charomlimb@itmc.space">Оставить жалобу</a></button>
+                  <button><a href="support@itmc.space">Оставить жалобу</a></button>
                 </div>
               </div>
               <div className={style.column}>
@@ -87,7 +87,7 @@ export const Dogovor = (props) => {
                   </NavLink>
                 </div>
                 <div className={style.item}>
-                  <button><a href="mailto:charomlimb@itmc.space">Оставить жалобу</a></button>
+                  <button><a href="support@itmc.space">Оставить жалобу</a></button>
                 </div>
               </div>
               <div className={style.column}>
@@ -101,7 +101,7 @@ export const Dogovor = (props) => {
                   </NavLink>
                 </div>
                 <div className={style.item}>
-                  <button><a href="mailto:charomlimb@itmc.space">Оставить жалобу</a></button>
+                  <button><a href="support@itmc.space">Оставить жалобу</a></button>
                 </div>
               </div>
               <div className={style.column}>
@@ -115,7 +115,7 @@ export const Dogovor = (props) => {
                   </NavLink>
                 </div>
                 <div className={style.item}>
-                  <button><a href="mailto:charomlimb@itmc.space">Оставить жалобу</a></button>
+                  <button><a href="support@itmc.space">Оставить жалобу</a></button>
                 </div>
               </div>
               <div className={style.column}>
@@ -129,7 +129,7 @@ export const Dogovor = (props) => {
                   </NavLink>
                 </div>
                 <div className={style.item}>
-                  <button><a href="mailto:charomlimb@itmc.space">Оставить жалобу</a></button>
+                  <button><a href="support@itmc.space">Оставить жалобу</a></button>
                 </div>
               </div>
             </div>

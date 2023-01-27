@@ -70,7 +70,6 @@ export const Origin = (props) => {
                     { value: "Сначала новые", name: "Сначала новые" },
                     { value: "Отмененные", name: "Отмененные" },
                     { value: "Оплаченные", name: "Оплаченные" },
-                    { value: "Выставленные", name: "Выставленные" },
                   ]}
                 />
                 <div className={style.box}>
