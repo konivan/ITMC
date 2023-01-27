@@ -139,7 +139,7 @@ const Authorization = (props) => {
           </div>
         </section>
         <button onClick={authorization} className={style.enterBtn}>
-          Войти
+        Зарегистрироваться
         </button>
         <section className={style.spanSection}>
           <span className={style.lineSpan}></span>

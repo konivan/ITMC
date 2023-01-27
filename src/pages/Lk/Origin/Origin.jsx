@@ -11,7 +11,7 @@ export const Origin = (props) => {
   const [reserveChecks, setReserveChecks] = useState();
 
   useEffect(() => {
-    const url = `${props.URL}orders/paychecks/`;
+    const url = `${props.URL}orders/paychecks/history_payments/`;
     const reqOptions = {
       method: "GET",
       headers: {
