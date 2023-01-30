@@ -37,7 +37,7 @@ export const Origin = (props) => {
   if (localStorage.getItem('globalToken') === null) {
     return <Page404/>;
   }
-
+  console.log(localStorage.getItem('globalToken'))
   return (
     <section className={style.main}>
       <div className={style.wrapper}>
