@@ -6,6 +6,7 @@ import Page404 from "../../Page404/Page404";
 
 export const Dogovor = (props) => {
   const [managers, setManagers] = useState([]);
+  const [sideBarOpen, setSideBarOpen] = useState(true);
 
   let globalToken = localStorage.getItem("globalToken");
 
@@ -42,7 +43,18 @@ export const Dogovor = (props) => {
     <section className={style.main}>
       <div className={style.wrapper}>
         <div className={style.container}>
-          <Bar name={props.name} />
+          <div
+            className={
+              !sideBarOpen ? `${style.sideBarOpened}` : `${style.sideBarClosed}`
+            }
+          >
+            <Bar name={props.name} />
+            <img
+              onClick={() => setSideBarOpen(!sideBarOpen)}
+              src="img/Lk/sideBarIcon.svg"
+              alt="sideBarIcon"
+            />
+          </div>
           <div className={style.row}>
             <h2>Ваши договоры</h2>
             <div className={style.cards}>
@@ -53,7 +65,7 @@ export const Dogovor = (props) => {
                     <h4>
                       {manager.first_name} {manager.last_name}
                     </h4>
-                    <a href="tel:+7 925 540 3956">{manager.phone}</a>
+                    <a href="tel:+7 925 540 3956">{manager?.phone}</a>
                     <span>Менеджер вашего проекта</span>
                     <div className={style.item}>
                       <NavLink to="/Orders">
