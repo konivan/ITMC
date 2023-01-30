@@ -95,9 +95,9 @@ export const LkCreateOrder = (props) => {
     fetchData();
   }, []);
 
-  // if (localStorage.getItem('globalToken') === null) {
-  //   return <Page404/>;
-  // }
+  if (localStorage.getItem('globalToken') === null) {
+    return <Page404/>;
+  }
 
   const sendOrder = () => {
     const formData = new FormData();

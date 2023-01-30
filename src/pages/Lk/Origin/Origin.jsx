@@ -34,9 +34,9 @@ export const Origin = (props) => {
     fetchChecks();
   }, []);
 
-  // if (localStorage.getItem('globalToken') === null) {
-  //   return <Page404/>;
-  // }
+  if (localStorage.getItem('globalToken') === null) {
+    return <Page404/>;
+  }
 
   console.log(checks);
   return (

@@ -34,9 +34,9 @@ export const Dogovor = (props) => {
 
   console.log(managers);
 
-  // if (globalToken === null) {
-  //   return <Page404 />;
-  // }
+  if (globalToken === null) {
+    return <Page404 />;
+  }
 
   return (
     <section className={style.main}>
