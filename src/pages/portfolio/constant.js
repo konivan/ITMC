@@ -44,21 +44,11 @@ export const PORTFOLIO = [
         titles: 'Quiz app',
         icons: ['./img/work/IT.svg', './img/work/M.svg'],
     },
-    // {
-    //     img: 'img/portfolio/blinki.jpg',
-    //     titles: 'Blinki',
-    //     icons: ['./img/work/IT.svg'],
-    // },
     {
         img: 'img/portfolio/dropbox.webp',
         titles: 'DropBox',
         icons: ['./img/work/IT.svg'],
     },
-    // {
-    //     img: 'img/portfolio/libOffline.webp',
-    //     titles: 'LibOffline',
-    //     icons: ['./img/work/IT.svg'],
-    // },
     {
         img: 'img/portfolio/MTS.png',
         titles: 'MTS',
@@ -69,24 +59,4 @@ export const PORTFOLIO = [
         titles: 'Rdt',
         icons: ['./img/work/IT.svg'],
     },
-    // {
-    //     img: 'img/portfolio/sheksna.png',
-    //     titles: 'Sheksna',
-    //     icons: ['./img/work/IT.svg', './img/work/C.svg'],
-    // },
-    // {
-    //     img: 'img/portfolio/simOnline.jpg',
-    //     titles: 'Sim online',
-    //     icons: ['./img/work/IT.svg', './img/work/M.svg'],
-    // },
-    // {
-    //     img: 'img/portfolio/travelApp.webp',
-    //     titles: 'Travel app',
-    //     icons: ['./img/work/IT.svg'],
-    // },
-    // {
-    //     img: 'img/portfolio/webTester.png',
-    //     titles: 'Web tester',
-    //     icons: ['./img/work/IT.svg'],
-    // },
 ]

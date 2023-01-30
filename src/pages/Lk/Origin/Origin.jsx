@@ -38,7 +38,6 @@ export const Origin = (props) => {
     return <Page404/>;
   }
 
-  console.log(checks);
   return (
     <section className={style.main}>
       <div className={style.wrapper}>
@@ -73,7 +72,6 @@ export const Origin = (props) => {
                   ]}
                 />
                 <div className={style.box}>
-                  {/* <input type="checkbox" className={style.lastCheckBox} /> */}
                   <span>Номер счета</span>
                   <span>Время и дата</span>
                   <span>Торговая точка / Оперция</span>
