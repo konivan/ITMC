@@ -12,7 +12,7 @@ export const Bar = (props) => {
       <div className={style.column}>
         <div className={style.item}>
           <span>ЗАКАЗЫ</span>
-          <img src="img/lk/siteBar.svg" alt="siteBar" />
+          {/* <img src="img/lk/siteBar.svg" alt="siteBar" /> */}
         </div>
       </div>
       <div className={style.column}>
@@ -42,7 +42,7 @@ export const Bar = (props) => {
       <div className={style.column}>
         <div className={style.item}>
           <span>Поддержка</span>
-          <img src="img/lk/siteBar.svg" alt="siteBar" />
+          {/* <img src="img/lk/siteBar.svg" alt="siteBar" /> */}
         </div>
         <ul>
           <li>

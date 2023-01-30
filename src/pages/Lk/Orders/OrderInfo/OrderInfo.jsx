@@ -6,13 +6,16 @@ import { getSchedule } from "../../../../utils/schedule";
 
 import style from "./OrderInfo.module.scss";
 
-const OrderInfo = ({ currentOrder, URL, globalToken }) => {
+const OrderInfo = ({
+  orderData,
+  setOrderData,
+  currentOrder,
+  setCurrentOrder,
+  URL,
+  globalToken,
+}) => {
   const userName = localStorage.getItem("name");
   const [schedule, setSchedule] = useState([]);
-
-  useEffect(() => {
-    setSchedule(getSchedule(currentOrder));
-  }, [currentOrder]);
 
   const url = `${URL}orders/order/${currentOrder.id}/`;
   const reqOptions = {
@@ -26,13 +29,16 @@ const OrderInfo = ({ currentOrder, URL, globalToken }) => {
   const removeOrder = async () => {
     try {
       const res = await fetch(url, reqOptions);
-      const data = await res.json();
-       console.log(data);
+      setOrderData(orderData.filter((el) => el.id !== currentOrder.id));
+      setCurrentOrder(null);
     } catch (err) {
       console.log("Error: " + err);
     }
   };
- 
+
+  useEffect(() => {
+    setSchedule(getSchedule(currentOrder));
+  }, [currentOrder]);
 
   return (
     <div className={style.wrapper}>
@@ -41,11 +47,11 @@ const OrderInfo = ({ currentOrder, URL, globalToken }) => {
         <div className={style.text}>
           <p>{currentOrder?.category}</p>
         </div>
-        {/* <div className={style.buttons}>
+        <div className={style.buttons}>
           <button onClick={() => removeOrder()}>Отменить проект</button>
           <img src="img/Lk/edit.svg" alt="editIcon" />
           <button>Редактировать</button>
-        </div> */}
+        </div>
       </div>
 
       <Carousel gallery={currentOrder.gallery} />
@@ -59,7 +65,7 @@ const OrderInfo = ({ currentOrder, URL, globalToken }) => {
           <div className={style.userInfo}>
             <img src="img/Lk/phone.svg" alt="phoneLogo" />
 
-            <p>{currentOrder?.contact.phone}</p>
+            <p>{currentOrder?.contact?.phone}</p>
           </div>
           <div className={style.userInfo}>
             <img src="img/Lk/email.svg" alt="emailLogo" />
