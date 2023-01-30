@@ -2,6 +2,21 @@
   .container {
     display: flex;
 
+    .sideBarOpened {
+      background: #ffffff;
+      display: flex;
+      align-items: flex-start;
+      transition: margin 0.5s;
+      margin-left: -32vh;
+    }
+    .sideBarClosed {
+      background: #ffffff;
+      display: flex;
+      align-items: flex-start;
+      transition: margin 0.5s;
+      margin-left: 0;
+    }
+
     .row {
       width: 100%;
       border: 0.0625em solid #e8e8e8;
