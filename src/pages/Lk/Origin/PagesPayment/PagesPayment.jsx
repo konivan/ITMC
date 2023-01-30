@@ -30,9 +30,9 @@ export const PagesPayment = (props) => {
     fetchChecks();
   }, []);
 
-  if (localStorage.getItem('globalToken') === undefined) {
-    return <Page404/>;
-  }
+  // if (localStorage.getItem('globalToken') === undefined) {
+  //   return <Page404/>;
+  // }
 
   return (
     <section className={style.main}>

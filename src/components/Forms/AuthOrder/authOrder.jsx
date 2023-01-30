@@ -4,7 +4,7 @@ import style from "./authOrder.module.scss";
 import { Icon } from "@iconify/react";
 
 const AuthOrder = (props) => {
-  const [description, setDescription] = useState('');
+  const [description, setDescription] = useState("");
 
   // const orderData = {
   //   orders: {
@@ -55,22 +55,45 @@ const AuthOrder = (props) => {
           <h2 className={style.modalTitle}>Заказать услугу</h2>
         </header>
         <section className={style.orderLogoWrapper}>
-          <div onClick={() => {
-              props.setOrderType('IT')
-            }} className={props.orderType === 'IT' ? style.active : null}>
-            <h2 style={{display: props.orderType === 'IT' ? 'contents' : 'none'}}>IT разработка</h2>
+          <div
+            onClick={() => {
+              props.setOrderType("IT");
+            }}
+            className={props.orderType === "IT" ? style.active : null}
+          >
+            <h2
+              style={{
+                display: props.orderType === "IT" ? "contents" : "none",
+              }}
+            >
+              IT разработка
+            </h2>
             <img alt="IT logo" src="img/forms/IT.svg" />
           </div>
-          <div onClick={() => {
-              props.setOrderType('M')
-            }} className={props.orderType === 'M' ? style.active : null}>
-            <h2 style={{display: props.orderType === 'M' ? 'contents' : 'none'}}>Маркетинг</h2>
+          <div
+            onClick={() => {
+              props.setOrderType("M");
+            }}
+            className={props.orderType === "M" ? style.active : null}
+          >
+            <h2
+              style={{ display: props.orderType === "M" ? "contents" : "none" }}
+            >
+              Маркетинг
+            </h2>
             <img alt="M logo" src="img/forms/M.svg" />
           </div>
-          <div onClick={() => {
-              props.setOrderType('C')
-            }} className={props.orderType === 'C' ? style.active : null}>
-            <h2 style={{display: props.orderType === 'C' ? 'contents' : 'none'}}>Крипто</h2>
+          <div
+            onClick={() => {
+              props.setOrderType("C");
+            }}
+            className={props.orderType === "C" ? style.active : null}
+          >
+            <h2
+              style={{ display: props.orderType === "C" ? "contents" : "none" }}
+            >
+              Крипто
+            </h2>
             <img alt="C logo" src="img/forms/C.svg" />
           </div>
         </section>
@@ -98,9 +121,7 @@ const AuthOrder = (props) => {
             </div>
           </section>
         </section>
-        <button className={style.enterBtn}>
-          Оставить заявку
-        </button>
+        <button className={style.enterBtn}>Оставить заявку</button>
       </div>
     </main>
   );

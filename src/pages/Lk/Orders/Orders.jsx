@@ -42,9 +42,9 @@ export const Orders = (props) => {
     );
   }, [inputValue, orderData]);
 
-  if (localStorage.getItem('globalToken') === null) {
-    return <Page404/>;
-  }
+  // if (localStorage.getItem('globalToken') === null) {
+  //   return <Page404/>;
+  // }
 
   return (
     <section className={style.main} id="Orders">
