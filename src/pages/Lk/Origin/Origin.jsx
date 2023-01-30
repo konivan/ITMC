@@ -10,6 +10,7 @@ export const Origin = (props) => {
   const [selectedSort, setSelectedSort] = useState("");
   const [checks, setChecks] = useState([]);
   const [reserveChecks, setReserveChecks] = useState();
+  const [sideBarOpen, setSideBarOpen] = useState(true);
 
   useEffect(() => {
     const url = `${props.URL}orders/paychecks/history_payments/`;
@@ -34,8 +35,8 @@ export const Origin = (props) => {
     fetchChecks();
   }, []);
 
-  if (localStorage.getItem('globalToken') === null) {
-    return <Page404/>;
+  if (localStorage.getItem("globalToken") === null) {
+    return <Page404 />;
   }
 
   console.log(checks);
@@ -43,7 +44,18 @@ export const Origin = (props) => {
     <section className={style.main}>
       <div className={style.wrapper}>
         <div className={style.container}>
-          <Bar name={props.name} />
+          <div
+            className={
+              !sideBarOpen ? `${style.sideBarOpened}` : `${style.sideBarClosed}`
+            }
+          >
+            <Bar name={props.name} />
+            <img
+              onClick={() => setSideBarOpen(!sideBarOpen)}
+              src="img/Lk/sideBarIcon.svg"
+              alt="sideBarIcon"
+            />
+          </div>
           <div className={style.row}>
             <h2>Все счета</h2>
             <div className={style.itemContainer}>
