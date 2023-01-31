@@ -30,7 +30,7 @@ export const Dogovor = (props) => {
       }
     };
     fetchManagers();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (globalToken === null) {
     return <Page404 />;
