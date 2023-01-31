@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { attendance, days } from "./constants";
 import { NavLink } from "react-router-dom";
 import { Alert } from "../../../components/UI/Alert/Alert";
@@ -10,7 +10,6 @@ import style from "./LkCreateOrder.module.scss";
 import Page404 from "../../Page404/Page404";
 
 export const LkCreateOrder = (props) => {
-  const [globalToken, setGlobalToken] = useState(null);
   const [budgetValue, setBudgetValue] = useState(0);
   const [service, setServiceValue] = useState("");
   const [file, setFile] = useState();
@@ -19,8 +18,8 @@ export const LkCreateOrder = (props) => {
   const [description, setDescription] = useState("");
   const [allTime, setAllTime] = useState(false);
   const [alert, setAlert] = useState("");
-  const [gallery, setGallery] = useState([]);
-  let   [categoryId, setCategoryId] = useState(1);
+  const [gallery] = useState([]);
+  let   [categoryId] = useState(1);
 
   const [phone, setPhone] = useState();
   const [email, setEmail] = useState();
@@ -28,7 +27,7 @@ export const LkCreateOrder = (props) => {
   const [telegram, setTelegram] = useState();
   const [logoImg, setLogoImg] = useState();
   let services = [];
-  const [tagsId, setTagsId] = useState([]);
+  const [tagsId] = useState([]);
 
   const tagRef1 = useRef();
   const tagRef2 = useRef();
@@ -143,7 +142,7 @@ export const LkCreateOrder = (props) => {
 
   return (
     <section className={style.wrapper}>
-      <Alert alert={alert} setAlert={setAlert} style={true} />
+      <Alert alert={alert} setAlert={setAlert} styling={true} />
       <div className={style.container}>
         <div className={style.row}>
           <span className={style.firstSpan}>Создание нового проекта</span>
