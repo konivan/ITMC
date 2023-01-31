@@ -71,7 +71,7 @@ export const Dogovor = (props) => {
                     </div>
                     <div className={style.item}>
                       <button>
-                        <a href={manager?.telegram}>
+                        <a href={manager?.telegram} target="_blank" rel="noopener noreferrer">
                           Изменить заказ
                         </a>
                       </button>

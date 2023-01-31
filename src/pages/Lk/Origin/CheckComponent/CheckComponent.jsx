@@ -21,7 +21,7 @@ const CheckComponent = ({item}) => {
         {item.status}
       </span>
       <button style={{display: item.status === 'paid' ? 'none' : null}}>
-        <a href={item.pay_url} target="_blank">Оплатить</a>
+        <a href={item.pay_url} target="_blank" rel="noopener noreferrer">Оплатить</a>
       </button>
     </div>
   );

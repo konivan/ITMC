@@ -16,7 +16,7 @@ import { Origin } from "./pages/Lk/Origin/Origin";
 import { Orders } from "./pages/Lk/Orders/Orders";
 import { Dogovor } from "./pages/Lk/Dogovor/Dogovor";
 import { Accounts } from "./pages/Lk/Accounts/Accounts";
-import  {PagesPayment} from "./pages/Lk/Origin/PagesPayment/PagesPayment"
+import  { PagesPayment } from "./pages/Lk/Origin/PagesPayment/PagesPayment"
 import Page404 from "./pages/Page404/Page404";
 
 function App() {

@@ -28,7 +28,7 @@ export const PagesPayment = (props) => {
       }
     };
     fetchChecks();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (localStorage.getItem('globalToken') === undefined) {
     return <Page404/>;
