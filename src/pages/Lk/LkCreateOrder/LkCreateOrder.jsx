@@ -69,32 +69,6 @@ export const LkCreateOrder = (props) => {
   };
   changeHandler();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const userData = {
-        username: localStorage.getItem("name"),
-        password: localStorage.getItem("password"),
-      };
-
-      const url1 = `${props.URL}api/token/`;
-      const reqOptions1 = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
-      };
-      try {
-        const res = await fetch(url1, reqOptions1, userData);
-        const token = await res.json();
-        setGlobalToken(token);
-      } catch (err) {
-        console.log("Error: " + err);
-      }
-    };
-    fetchData();
-  }, []);
-
   if (localStorage.getItem('globalToken') === null) {
     return <Page404/>;
   }
@@ -135,7 +109,7 @@ export const LkCreateOrder = (props) => {
     const reqOptions = {
       method: "POST",
       headers: {
-        authorization: `Bearer ${globalToken?.access}`,
+        authorization: `Bearer ${localStorage.getItem("globalToken")}`,
       },
       body: formData,
     };

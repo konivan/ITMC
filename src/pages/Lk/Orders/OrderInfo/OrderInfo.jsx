@@ -49,8 +49,8 @@ const OrderInfo = ({
         </div>
         <div className={style.buttons}>
           <button onClick={() => removeOrder()}>Отменить проект</button>
-          <img src="img/Lk/edit.svg" alt="editIcon" />
-          <button>Редактировать</button>
+          {/* <img src="img/Lk/edit.svg" alt="editIcon" />
+          <button>Редактировать</button> */}
         </div>
       </div>
 

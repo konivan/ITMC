@@ -10,30 +10,27 @@ export const Dogovor = (props) => {
 
   let globalToken = localStorage.getItem("globalToken");
 
-  const url = `${props.URL}managers/`;
-  const reqOptions = {
-    method: "GET",
-    headers: {
-      authorization: `Bearer ${globalToken}`,
-      Accept: "application/json",
-    },
-  };
-
-  const fetchManagers = async () => {
-    try {
-      const res = await fetch(url, reqOptions);
-      const data = await res.json();
-      setManagers(data);
-    } catch (err) {
-      console.log("Error: " + err);
-    }
-  };
-
   useEffect(() => {
+    const fetchManagers = async () => {
+      const url = `${props.URL}managers/`;
+      const reqOptions = {
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${globalToken}`,
+          Accept: "application/json",
+        },
+      };
+
+      try {
+        const res = await fetch(url, reqOptions);
+        const data = await res.json();
+        setManagers(data);
+      } catch (err) {
+        console.log("Error: " + err);
+      }
+    };
     fetchManagers();
   }, []);
-
-  console.log(managers);
 
   if (globalToken === null) {
     return <Page404 />;
@@ -71,6 +68,13 @@ export const Dogovor = (props) => {
                       <NavLink to="/Orders">
                         <button>Проверить готовность</button>
                       </NavLink>
+                    </div>
+                    <div className={style.item}>
+                      <button>
+                        <a href={manager?.telegram}>
+                          Изменить заказ
+                        </a>
+                      </button>
                     </div>
                     <div className={style.item}>
                       <button>
