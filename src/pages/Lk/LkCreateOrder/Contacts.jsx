@@ -4,10 +4,10 @@ import style from "./LkCreateOrder.module.scss";
 
 const Contacts = ({
   setAlert,
-  phone,
-  email,
-  domain,
-  telegram,
+  phone = "",
+  email = "",
+  domain = "",
+  telegram = "",
   setPhone,
   setEmail,
   setDomain,
@@ -37,7 +37,7 @@ const Contacts = ({
     }
   };
 
-  
+
   return (
     <div className={style.row}>
       <span>Контакты</span>

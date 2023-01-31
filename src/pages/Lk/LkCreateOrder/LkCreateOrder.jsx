@@ -15,12 +15,12 @@ export const LkCreateOrder = (props) => {
   const [service, setServiceValue] = useState("");
   const [file, setFile] = useState();
   const [planFiles, setPlanFiles] = useState(0);
-  const [productName, setProductName] = useState();
-  const [description, setDescription] = useState();
+  const [productName, setProductName] = useState("");
+  const [description, setDescription] = useState("");
   const [allTime, setAllTime] = useState(false);
   const [alert, setAlert] = useState("");
   const [gallery, setGallery] = useState([]);
-  let [categoryId, setCategoryId] = useState(1);
+  let   [categoryId, setCategoryId] = useState(1);
 
   const [phone, setPhone] = useState();
   const [email, setEmail] = useState();
