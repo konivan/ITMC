@@ -132,10 +132,14 @@ export const LkCreateOrder = (props) => {
         } else if (res.status === 500) {
           return setAlert("Ошибка на сервере!");
         }
+      })
+      .then(() => {
         setAlert('Заказ успешно отправлен!');
+      })
+      .then(() => {
         setTimeout(() => {
           window.location.pathname = '/Orders';
-        }, 2500)
+        }, 1000)
       })
       .catch((err) => console.log("Error: " + err));
   };
