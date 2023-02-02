@@ -5,6 +5,7 @@ import ProgressTracker from "../../../../components/UI/ProgressTracker/ProgressT
 import style from "./OrderList.module.scss";
 
 const Order = ({ order }) => {
+  console.log(order);
   return (
     <div className={style.orderWrapper}>
       <div className={style.progressTracker}>
@@ -12,8 +13,13 @@ const Order = ({ order }) => {
       </div>
       <div className={style.orderText}>
         <div className={style.orderTitle}>
-          <h4 style={{ color: "##FFFFFF", fontSize: "30px", width: "154px" }}>{order.name}</h4>
+          <h4 style={{ color: "##FFFFFF", fontSize: "30px", width: "154px" }}>
+            {order.name}
+          </h4>
         </div>
+
+        <p className={style.orderCategory}>{order.category}</p>
+        <p className={style.orderDescription}>{order.description}</p>
       </div>
       <div className={style.orderImg}>
         <img src={order.image} alt="orderLogo" />
