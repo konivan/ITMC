@@ -8,7 +8,7 @@ export const Dogovor = (props) => {
   const [managers, setManagers] = useState([]);
   const [sideBarOpen, setSideBarOpen] = useState(true);
 
-  let globalToken = localStorage.getItem("globalToken");
+  const globalToken = localStorage.getItem("globalToken");
 
   useEffect(() => {
     const fetchManagers = async () => {
@@ -62,7 +62,7 @@ export const Dogovor = (props) => {
                     <h4>
                       {manager.first_name} {manager.last_name}
                     </h4>
-                    <a href="tel:+7 925 540 3956">{manager?.phone}</a>
+                    <a href="tel:+7 925 540 3956">{manager.phone}</a>
                     <span>Менеджер вашего проекта</span>
                     <div className={style.item}>
                       <NavLink to="/Orders">
