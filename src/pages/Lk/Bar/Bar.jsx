@@ -48,7 +48,7 @@ export const Bar = (props) => {
           <li>
             <img className={style.one} src="img/lk/vector.svg" alt="vector" />
             <span>
-              <a href="https://t.me/Proodduct_manager7">Связь с менеджером</a>
+              <a href="https://t.me/Proodduct_manager7" target="_blank" rel="noopener noreferrer">Связь с менеджером</a>
             </span>
           </li>
           <li>

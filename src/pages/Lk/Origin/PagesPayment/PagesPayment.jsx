@@ -7,6 +7,7 @@ import Page404 from "../../../Page404/Page404";
 
 export const PagesPayment = (props) => {
   const [checks, setChecks] = useState();
+  const [payChecks, setPayChecks] = useState();
 
   useEffect(() => {
     const url = `${props.URL}orders/paychecks/for_payment/`;
@@ -27,8 +28,28 @@ export const PagesPayment = (props) => {
         console.log("Error: " + err);
       }
     };
+
+    const payAllChecks = async () => {
+      const url = `${props.URL}orders/paychecks/transition_to_payment/`;
+      const reqOptions = {
+        method: "POST",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem('globalToken')}`,
+          Accept: "application/json",
+        },
+      };
+      try {
+        const res = await fetch(url, reqOptions);
+        const data = await res.json();
+        setPayChecks(data);
+      } catch (err) {
+        console.log("Error: " + err);
+      }
+    };
+
     fetchChecks();
-  }, []);
+    payAllChecks();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (localStorage.getItem('globalToken') === undefined) {
     return <Page404/>;
@@ -64,6 +85,7 @@ export const PagesPayment = (props) => {
                 <CheckComponent key={`${item} ${index}`} item={item} />
               ))}
             </div>
+              <a className={style.paymentButton} href={payChecks} target="_blank" rel="noopener noreferrer">Оплатить все счета</a>
           </div>
         </div>
       </div>

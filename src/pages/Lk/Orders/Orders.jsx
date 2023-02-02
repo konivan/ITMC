@@ -37,7 +37,7 @@ export const Orders = (props) => {
 
   useEffect(() => {
     fetchOrders();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const searchedOrders = useMemo(() => {
     return orderData?.filter((orders) =>

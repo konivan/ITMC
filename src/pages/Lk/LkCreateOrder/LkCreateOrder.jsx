@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { attendance, days } from "./constants";
 import { NavLink } from "react-router-dom";
 import { Alert } from "../../../components/UI/Alert/Alert";
@@ -10,17 +10,16 @@ import style from "./LkCreateOrder.module.scss";
 import Page404 from "../../Page404/Page404";
 
 export const LkCreateOrder = (props) => {
-  const [globalToken, setGlobalToken] = useState(null);
   const [budgetValue, setBudgetValue] = useState(0);
   const [service, setServiceValue] = useState("");
   const [file, setFile] = useState();
   const [planFiles, setPlanFiles] = useState(0);
-  const [productName, setProductName] = useState();
-  const [description, setDescription] = useState();
+  const [productName, setProductName] = useState("");
+  const [description, setDescription] = useState("");
   const [allTime, setAllTime] = useState(false);
   const [alert, setAlert] = useState("");
-  const [gallery, setGallery] = useState([]);
-  let [categoryId, setCategoryId] = useState(1);
+  const [gallery] = useState([]);
+  let   [categoryId] = useState(1);
 
   const [phone, setPhone] = useState();
   const [email, setEmail] = useState();
@@ -28,7 +27,7 @@ export const LkCreateOrder = (props) => {
   const [telegram, setTelegram] = useState();
   const [logoImg, setLogoImg] = useState();
   let services = [];
-  const [tagsId, setTagsId] = useState([]);
+  const [tagsId] = useState([]);
 
   const tagRef1 = useRef();
   const tagRef2 = useRef();
@@ -68,32 +67,6 @@ export const LkCreateOrder = (props) => {
     } else return (services = attendance[0]);
   };
   changeHandler();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const userData = {
-        username: localStorage.getItem("name"),
-        password: localStorage.getItem("password"),
-      };
-
-      const url1 = `${props.URL}api/token/`;
-      const reqOptions1 = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
-      };
-      try {
-        const res = await fetch(url1, reqOptions1, userData);
-        const token = await res.json();
-        setGlobalToken(token);
-      } catch (err) {
-        console.log("Error: " + err);
-      }
-    };
-    fetchData();
-  }, []);
 
   if (localStorage.getItem('globalToken') === null) {
     return <Page404/>;
@@ -135,7 +108,7 @@ export const LkCreateOrder = (props) => {
     const reqOptions = {
       method: "POST",
       headers: {
-        authorization: `Bearer ${globalToken?.access}`,
+        authorization: `Bearer ${localStorage.getItem("globalToken")}`,
       },
       body: formData,
     };
@@ -159,17 +132,21 @@ export const LkCreateOrder = (props) => {
         } else if (res.status === 500) {
           return setAlert("Ошибка на сервере!");
         }
+      })
+      .then(() => {
         setAlert('Заказ успешно отправлен!');
+      })
+      .then(() => {
         setTimeout(() => {
           window.location.pathname = '/Orders';
-        }, 2500)
+        }, 1000)
       })
       .catch((err) => console.log("Error: " + err));
   };
 
   return (
     <section className={style.wrapper}>
-      <Alert alert={alert} setAlert={setAlert} style={true} />
+      <Alert alert={alert} setAlert={setAlert} styling={true} />
       <div className={style.container}>
         <div className={style.row}>
           <span className={style.firstSpan}>Создание нового проекта</span>
