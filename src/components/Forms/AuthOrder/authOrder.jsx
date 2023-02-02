@@ -6,38 +6,9 @@ import { Icon } from "@iconify/react";
 const AuthOrder = (props) => {
   const [description, setDescription] = useState("");
 
-  // const orderData = {
-  //   orders: {
-  //     name_created: "Nikita",
-  //     telephone_number: "+79999999999",
-  //     telegram: "example_telegram_name",
-  //     description: description,
-  //   },
-  // };
-
   if (!props.showAuthOrders) {
     return null;
   }
-
-  // const url = `${props.URL}api/orders/`;
-  // const reqOptions = {
-  //   method: "POST",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  //     body: JSON.stringify(orderData)
-  // };
-
-  // const sendOrder = () => {
-  //   if (description !== '') {
-  //     fetch(url, reqOptions, orderData)
-  //     .then(() => {
-  //       setDescription('')
-  //       props.setShowAuthOrders(false)
-  //     })
-  //     .catch((err) => console.log("Error: " + err));
-  //   }
-  // };
 
   return (
     <main className={style.modal} onClick={props.onClose}>

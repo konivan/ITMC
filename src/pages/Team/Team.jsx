@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./Team.module.scss";
 import { PERSON } from "./constant";
+
 export const Team = () => {
   return (
     <section className={style.team} id="header">

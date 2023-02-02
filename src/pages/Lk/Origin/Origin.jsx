@@ -33,7 +33,7 @@ export const Origin = (props) => {
       }
     };
     fetchChecks();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (localStorage.getItem("globalToken") === null) {
     return <Page404 />;

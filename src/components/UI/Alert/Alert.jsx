@@ -11,7 +11,7 @@ export const Alert = (props) => {
       <div
         className={style.container}
         style={{ display: props.alert !== "" ? "flex" : "none",
-        position: props.style === true ? 'fixed' : 'static',
+        position: props.styling === true ? 'fixed' : 'static',
         background: successAlert === true ? '#84D65A' : null}}
         onClick={(e) => e.stopPropagation()}
       >

@@ -8,6 +8,16 @@
       border-radius: 0.25em;
       background: #ffffff;
       padding: 1em 1em 26.5em 0em;
+      .paymentButton {
+        border-radius: 0.3em;
+        margin: 10px 0px 0px 15px;
+        display: flex;
+        align-items: center;
+        padding: 7px 16px;
+        background: #7840b0;
+        border: none;
+        max-width: 180px;
+      }
       button {
         display: flex;
         align-items: center;

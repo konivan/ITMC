@@ -10,30 +10,27 @@ export const Dogovor = (props) => {
 
   let globalToken = localStorage.getItem("globalToken");
 
-  const url = `${props.URL}managers/`;
-  const reqOptions = {
-    method: "GET",
-    headers: {
-      authorization: `Bearer ${globalToken}`,
-      Accept: "application/json",
-    },
-  };
-
-  const fetchManagers = async () => {
-    try {
-      const res = await fetch(url, reqOptions);
-      const data = await res.json();
-      setManagers(data);
-    } catch (err) {
-      console.log("Error: " + err);
-    }
-  };
-
   useEffect(() => {
-    fetchManagers();
-  }, []);
+    const fetchManagers = async () => {
+      const url = `${props.URL}managers/`;
+      const reqOptions = {
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${globalToken}`,
+          Accept: "application/json",
+        },
+      };
 
-  console.log(managers);
+      try {
+        const res = await fetch(url, reqOptions);
+        const data = await res.json();
+        setManagers(data);
+      } catch (err) {
+        console.log("Error: " + err);
+      }
+    };
+    fetchManagers();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (globalToken === null) {
     return <Page404 />;
@@ -71,6 +68,13 @@ export const Dogovor = (props) => {
                       <NavLink to="/Orders">
                         <button>Проверить готовность</button>
                       </NavLink>
+                    </div>
+                    <div className={style.item}>
+                      <button>
+                        <a href={manager?.telegram} target="_blank" rel="noopener noreferrer">
+                          Изменить заказ
+                        </a>
+                      </button>
                     </div>
                     <div className={style.item}>
                       <button>
