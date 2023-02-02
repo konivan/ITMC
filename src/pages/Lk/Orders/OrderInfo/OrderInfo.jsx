@@ -38,7 +38,7 @@ const OrderInfo = ({
       } else {
         throw new Error();
       }
-      
+
     } catch (err) {
       setAlert("Ошибка при выполнении запроса");
       console.log("Error: " + err);
@@ -110,7 +110,6 @@ const OrderInfo = ({
               return <p key={el}>{el};</p>;
             })}
           </div> */}
-      </div>
 
       {/* <div className={style.description}>
         <p>{currentOrder.description}</p>
