@@ -6,10 +6,9 @@ import Page404 from "../../Page404/Page404";
 
 export const Origin = (props) => {
   const [checks, setChecks] = useState([]);
-  const [sideBarOpen, setSideBarOpen] = useState(true);
 
   useEffect(() => {
-    const url = `${props.URL}orders/paychecks/history_payments/`;
+    const url = `${props.URL}orders/paycheck/`;
     const reqOptions = {
       method: "GET",
       headers: {
@@ -22,7 +21,7 @@ export const Origin = (props) => {
       try {
         const res = await fetch(url, reqOptions);
         const data = await res.json();
-        setChecks(data);
+        setChecks(data?.results);
       } catch (err) {
         console.log("Error: " + err);
       }
@@ -39,6 +38,7 @@ export const Origin = (props) => {
       <div className={style.wrapper}>
         <div className={style.container}>
             <Bar name={props.name} />
+            <h2>Счета на оплату</h2>
             <div className={style.row}>
               {checks?.map((item, index) => (
                 <CheckComponent key={`${item} ${index}`} item={item} />

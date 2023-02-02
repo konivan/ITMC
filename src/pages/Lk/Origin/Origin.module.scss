@@ -2,23 +2,23 @@
   background: #141627;
   .container {
     display: flex;
+    h2 {
+      font-weight: 700;
+      font-size: 32px;
+      color: #e8e8e8;
+      position: absolute;
+      left: 273px;
+      top: 130px;
+    }
     .row {
       width: 100%;
       border-radius: 0.25em;
       padding: 1em 1em 26.5em 0em;
       margin-left: 63px;
-      margin-top: 224px;
+      margin-top: 200px;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
       gap: 29px;
-      h2 {
-        font-style: normal;
-        font-weight: 700;
-        font-size: 28px;
-        color: #e8e8e8;
-        margin-left: 16px;
-      }
       .itemContainer {
         border: 0.0625em solid #e8e8e8;
         border-radius: 0.25em;

@@ -6,20 +6,12 @@ const CheckComponent = ({item}) => {
   return (
     <div className={style.box}>
       <div className={style.column}>
-        <h2>Счет на оплату</h2>
+        <span>Счет на оплату</span>
         <span>{item.price} руб</span>
-        <span>itmc</span>
-        <p>Description</p>
-        <span
-          className={
-            item.status === "paid"
-              ? style.paid
-              : item.status === "processing"
-              ? style.processing
-              : style.rejected
-          }
-        >
-          {item.status}
+        <span>{item.order.name}</span>
+        <p>{item.order.description}</p>
+        <span style={{background: item.status === "paid" ? '#35A669' : null}}>
+          {item.status === "paid" ? "Оплачено" : "Ожидает оплаты"}
         </span>
         {item.status !== "paid" ? (
           <button>
@@ -28,13 +20,13 @@ const CheckComponent = ({item}) => {
             </a>
           </button>
         ) : (
-          <button>
+          <button style={{background: '#755CDD'}}>
             <NavLink to="/Orders">Перейти в заказ</NavLink>
           </button>
         )}
       </div>
       <div className={style.column}>
-        <img src="img/Lk/sideBarIcon.svg" alt="sideBarIcon" />
+        <img src={item.order.image} alt="sideBarIcon" height='100' width="100"/>
       </div>
     </div>
   );

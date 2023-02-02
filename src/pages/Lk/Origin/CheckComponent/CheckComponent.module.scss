@@ -1,13 +1,68 @@
 .box {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background: #1C1F37;
+  display: flex;
+  justify-content: space-between;
+  background-image: url(../../../../../public/img/newLk/checksCard.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
   border-radius: 15px;
-  padding: 17px 29px 18px 37px;
+  padding: 17px 29px 18px 35px;
   width: 482px;
   height: 230px;
   .column:nth-of-type(1) {
     display: flex;
     flex-direction: column;
+    width: 202px;
+    span:nth-of-type(1) {
+      font-size: 24px;
+      font-weight: 700;
+    }
+    span:nth-of-type(2) {
+      margin-top: 5px;
+      font-size: 24px;
+      font-weight: 700;
+    }
+    span:nth-of-type(3) {
+      margin-top: 5px;
+      color: #969696;
+      font-weight: 700;
+    }
+    .paid {
+      background: #35A669;
+    }
+    p {
+      margin-top: 5px;
+      font-weight: 700;
+      font-size: 10px;
+      line-height: 12px;
+    }
+    span:nth-of-type(4) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 9px;
+      margin-bottom: 8px;
+      width: 136px;
+      font-weight: 700;
+      font-size: 12px;
+      height: 21px;
+      background: rgba(244, 205, 0, 0.35);
+      border-radius: 16px;
+    }
+    button {
+      background: #35A669;
+      border-radius: 16px;
+      border: none;
+      width: 192px;
+      height: 36px;
+      font-weight: 700;
+      font-size: 16px;
+    }
+  }
+  .column:nth-of-type(2) {
+    width: 223px;
+    display: flex;
+    img {
+      margin: 55px 29px 64px 92px;
+    }
   }
 }
