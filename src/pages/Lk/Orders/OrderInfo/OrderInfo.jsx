@@ -97,7 +97,7 @@ const OrderInfo = ({
         </div>
         <div className={style.userInfo}>
           <img src="img/newLk/sms.svg" alt="emailLogo" />
-          <p>{currentOrder?.contact.email}</p>
+          <p>{currentOrder?.contact?.email}</p>
         </div>
 
         {/* <div className={style.userInfo}>
@@ -110,7 +110,7 @@ const OrderInfo = ({
               return <p key={el}>{el};</p>;
             })}
           </div> */}
-      </div>
+      {/* </div> */}
 
       {/* <div className={style.description}>
         <p>{currentOrder.description}</p>
