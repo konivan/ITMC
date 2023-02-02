@@ -18,6 +18,7 @@ import { Dogovor } from "./pages/Lk/Dogovor/Dogovor";
 import { Accounts } from "./pages/Lk/Accounts/Accounts";
 import  { PagesPayment } from "./pages/Lk/Origin/PagesPayment/PagesPayment"
 import Page404 from "./pages/Page404/Page404";
+import ProfileSettings from "./pages/Lk/ProfileSettings/ProfileSettings";
 
 function App() {
   let window = document.getElementById("html-1");
@@ -78,6 +79,7 @@ function App() {
           <Route path="/portfolio" element={<Portfolio URL={URL} />} />
           <Route path="/team" element={<Team />} />
           <Route path="/LkCreateOrder" element={<LkCreateOrder URL={URL} />} />
+          <Route path="/ProfileSettings" element={<ProfileSettings name={name} URL={URL} />} />
           <Route path="/Origin" element={<Origin name={name} URL={URL} />} />
           <Route path="/Orders" element={<Orders name={name} URL={URL} />} />
           <Route path="/Dogovor" element={<Dogovor name={name} URL={URL} />} />
