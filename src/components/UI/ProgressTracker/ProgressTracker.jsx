@@ -10,7 +10,7 @@ const ProgressTracker = ({ orderStatus }) => {
   let color = progress > 80 ? "#5BC044" : progress > 20 ? "#EAC600" : "red";
 
   return (
-    <div style={{ marginLeft: 140 }}>
+    <div style={{ }}>
       <Box sx={{ position: "relative", display: "inline-flex" }}>
         <CircularProgress
           variant="determinate"
@@ -42,7 +42,7 @@ const ProgressTracker = ({ orderStatus }) => {
             justifyContent: "center",
           }}
         >
-          <Typography variant="caption" component="div" color="text.secondary">
+          <Typography variant="caption" component="div" color="white">
             {progress > 99 ? (
               <img src="img/Lk/succes.svg" alt="succes" />
             ) : (

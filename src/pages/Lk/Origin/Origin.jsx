@@ -54,6 +54,7 @@ export const Origin = (props) => {
               src="img/Lk/sideBarIcon.svg"
               alt="sideBarIcon"
             />
+            <span></span>
           </div>
           <div className={style.row}>
             <h2>Все счета</h2>

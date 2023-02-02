@@ -53,28 +53,41 @@ const OrderInfo = ({
     <div className={style.wrapper}>
       <Alert alert={alert} setAlert={setAlert} style={true} />
       <div className={style.title}>
-        <h1>{currentOrder?.name}</h1>
-        <div className={style.text}>
-          <p>{currentOrder?.category}</p>
+        <div className={style.column}>
+          <h2>{currentOrder?.name}</h2>
+          <div className={style.text}>
+            <p>{currentOrder?.category}</p>
+          </div>
+          <div className={style.item}>
+            <p>{currentOrder.description}</p>
+          </div>
         </div>
         <div className={style.buttons}>
-          <button onClick={() => removeOrder()}>Отменить проект</button>
-          {/* <img src="img/Lk/edit.svg" alt="editIcon" />
-          <button>Редактировать</button> */}
+          <div className={style.item}>
+            <button onClick={() => removeOrder()}>
+              <img src="img/newLk/noteremove.svg" alt="noteremove" />
+              <span> Отменить заказ</span>
+            </button>
+            <button>
+              <img src="img/newLk/edit.svg" alt="editIcon" />
+              <span>Редактировать</span>
+            </button>
+          </div>
+          <div className={style.item}>
+            <img src="img/newLk/fire.svg" alt="fire" />
+            <span>В процессе разработки</span>
+          </div>
         </div>
       </div>
-
       <Carousel gallery={currentOrder.gallery} />
-
       <div className={style.info}>
-        <div>
-          <div className={style.userInfo}>
-            <img src="img/Lk/user.svg" alt="userLogo" />
-            <p>{userName}</p>
-          </div>
-          <div className={style.userInfo}>
-            <img src="img/Lk/phone.svg" alt="phoneLogo" />
-
+        <h4>Контактные данные</h4>
+        <div className={style.userInfo}>
+          <img src="img/newLk/profile.svg" alt="userLogo" />
+          <p>{userName}</p>
+        </div>
+        <div className={style.userInfo}>
+          <img src="img/newLk/callcalling.svg" alt="phoneLogo" />
             <p>{currentOrder?.contact?.phone}</p>
           </div>
           <div className={style.userInfo}>
@@ -82,8 +95,12 @@ const OrderInfo = ({
             <p>{currentOrder?.contact?.email}</p>
           </div>
         </div>
-        <div>
-          <div className={style.userInfo}>
+        <div className={style.userInfo}>
+          <img src="img/newLk/sms.svg" alt="emailLogo" />
+          <p>{currentOrder?.contact.email}</p>
+        </div>
+
+        {/* <div className={style.userInfo}>
             <img src="img/Lk/web.svg" alt="webLogo" />
             <p>{currentOrder?.contact?.domain}</p>
           </div>
@@ -92,12 +109,14 @@ const OrderInfo = ({
             {schedule.map((el) => {
               return <p key={el}>{el};</p>;
             })}
-          </div>
-        </div>
+          </div> */}
       </div>
 
-      <div className={style.description}>
+      {/* <div className={style.description}>
         <p>{currentOrder.description}</p>
+      </div> */}
+      <div className={style.managers}>
+        <h4>Менеджеры проекта</h4>
       </div>
     </div>
   );

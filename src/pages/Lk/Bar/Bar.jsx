@@ -5,73 +5,57 @@ import { NavLink } from "react-router-dom";
 export const Bar = (props) => {
   return (
     <div className={style.row}>
-      <div className={style.column}>
-        <img src="img/lk/icon.svg" alt="icon" />
-        <span>{localStorage.getItem("name")}</span>
-      </div>
-      <div className={style.column}>
-        <div className={style.item}>
-          <span>ЗАКАЗЫ</span>
-          {/* <img src="img/lk/siteBar.svg" alt="siteBar" /> */}
+      <div className={style.container}>
+        <div className={style.column}>
+          <img src="img/header/logoITMC.svg" alt="iclogoITMCon" />
         </div>
-      </div>
-      <div className={style.column}>
-        <ul>
-          <li>
-            <img
-              className={style.one}
-              src="img/lk/UnionOne.svg"
-              alt="UnionOne"
-            />
-            <NavLink to="/Orders">
-              <span>Ваши заказы</span>
-            </NavLink>
-          </li>
-          <li>
-            <img
-              className={style.three}
-              src="img/lk/UnionTwo.svg"
-              alt="UnionOne"
-            />
-            <NavLink to="/Origin">
-              <span>Счета</span>
-            </NavLink>
-          </li>
-        </ul>
-      </div>
-      <div className={style.column}>
-        <div className={style.item}>
-          <span>Поддержка</span>
-          {/* <img src="img/lk/siteBar.svg" alt="siteBar" /> */}
+        <div className={style.column}>
+          <ul>
+            <li>
+              <div>
+                <img src="img/newLk/shoppingcart.svg" alt="shoppingcart" />
+                <NavLink to="/Orders">
+                  <span>Заказы</span>
+                </NavLink>
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="img/newLk/shoppingcart.svg" alt="shoppingcart" />
+                <NavLink to="/Origin">
+                  <span>Счета</span>
+                </NavLink>
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="img/newLk/shoppingcart.svg" alt="shoppingcart" />
+                <a href="https://t.me/Proodduct_manager7">Менеджеры</a>
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="img/newLk/shoppingcart.svg" alt="shoppingcart" />
+                <NavLink to="/Dogovor">
+                  <span>Договора</span>
+                </NavLink>
+              </div>
+            </li>
+          </ul>
         </div>
-        <ul>
-          <li>
-            <img className={style.one} src="img/lk/vector.svg" alt="vector" />
-            <span>
-              <a href="https://t.me/Proodduct_manager7" target="_blank" rel="noopener noreferrer">Связь с менеджером</a>
+        <div className={style.exit}>
+          <NavLink to="/">
+            <span
+              onClick={() => {
+                setTimeout(() => {
+                  window.location.reload();
+                }, 0);
+              }}
+            >
+              Вернуться назад
             </span>
-          </li>
-          <li>
-            <img className={style.two} src="img/lk/trusted.svg" alt="trusted" />
-            <NavLink to="/Dogovor">
-              <span>Ваши договоры</span>
-            </NavLink>
-          </li>
-        </ul>
-      </div>
-      <div className={style.column}>
-        <img src="img/lk/exit.svg" alt="exit" />
-        <NavLink to="/">
-          <span
-            onClick={() => {
-              setTimeout(() => {
-                window.location.reload();
-              }, 0);
-            }}
-          >
-            Вернуться назад
-          </span>
-        </NavLink>
+          </NavLink>
+        </div>
       </div>
     </div>
   );

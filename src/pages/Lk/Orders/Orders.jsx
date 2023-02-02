@@ -13,6 +13,7 @@ export const Orders = (props) => {
   const [currentOrder, setCurrentOrder] = useState(null);
   const [inputValue, setInputValue] = useState("");
   const [sideBarOpen, setSideBarOpen] = useState(true);
+  const [show, setShow] = useState(false);
 
   const globalToken = localStorage.getItem("globalToken");
 
@@ -66,15 +67,38 @@ export const Orders = (props) => {
             />
           </div>
           <div className={style.row}>
-            <div className={style.column}>
-              <h2>Ваши заказы</h2>
-              <NavLink to="/LkCreateOrder">
-                <button>
-                  <img src="img/Lk/UnionX.svg" alt="UnionX" />
-                  <span>Заказать</span>
-                </button>
-              </NavLink>
+            <div className={style.columnRow}>
+              <div className={style.column}>
+                <NavLink to="/LkCreateOrder">
+                  <button>
+                    <img src="img/newLk/add.svg" alt="add" />
+                    <span>Сделать заказ</span>
+                  </button>
+                </NavLink>
+              </div>
+              <div className={style.userName}>
+                <img
+                  onClick={() => setShow(!show)}
+                  src="img/newLk/arrowdown.svg"
+                  alt="arrowdown"
+                />
+                <span>{localStorage.getItem("name")}</span>
+                <img src="img/lk/icon.svg" alt="icon" />
+                {show && (
+                  <div className={style.item}>
+                    <div className={style.box}>
+                      <img src="img/newLk/setting.svg" alt="setting" />
+                      <span>Настройки</span>
+                    </div>
+                    <div className={style.box}>
+                      <img src="img/newLk/logoutcurve.svg" alt="logoutcurve" />
+                      <span>Выход</span>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
+
             <div className={style.orders}>
               <div className={style.searchInput}>
                 <input
