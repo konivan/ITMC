@@ -62,7 +62,10 @@ export const Header = (props) => {
           <List />
           <div className={style.column}>
             <div className={style.item}>
-              <Button setShowAuthOrders={props.setShowAuthOrders} setShowAuth={props.setShowAuth}>
+              <Button
+                setShowAuthOrders={props.setShowAuthOrders}
+                setShowAuth={props.setShowAuth}
+              >
                 Заказать
               </Button>
             </div>
@@ -71,11 +74,19 @@ export const Header = (props) => {
                 <MyButton setShowAuth={props.setShowAuth}>Войти</MyButton>
               ) : (
                 <div>
-                  <img
-                    className={style.userIcon}
-                    src="img/lk/icon.svg"
-                    alt="user-icon"
-                  />
+                  <div className={style.profileBlock}>
+                    <div>
+                      <img
+                        className={style.userIcon}
+                        src="img/lk/icon.svg"
+                        alt="user-icon"
+                      />
+                    </div>
+                    <p>{localStorage.getItem("name")}</p>
+                    <div className={style.burgerIcon}>
+                      <img src="img/lk/burger.png" alt="user-icon" />
+                    </div>
+                  </div>
                   <div className={style.dropdown}>
                     <NavLink
                       to="/Origin"
@@ -85,20 +96,34 @@ export const Header = (props) => {
                         }, 1);
                       }}
                     >
-                      <span>Личный кабинет</span>
+                      <div className={style.dropdownButtons}>
+                        <div>
+                          <img
+                            src="img/lk/administrator_icon.png"
+                            alt="profileImg"
+                          />
+                        </div>
+                        <span>Личный кабинет</span>
+                      </div>
                     </NavLink>
-                    <span
-                      onClick={() => {
-                        localStorage.setItem("auth", "false");
-                        props.setIsAuth(false);
-                        localStorage.removeItem("name");
-                        localStorage.removeItem("password");
-                        localStorage.removeItem("globalToken");
-                        window.location.reload();
-                      }}
-                    >
-                      Выйти
-                    </span>
+                    <div className={style.dropdownButtons}>
+                      <div>
+                        <img src="img/lk/logout.svg" alt="logoutImg" />
+                      </div>
+
+                      <span
+                        onClick={() => {
+                          localStorage.setItem("auth", "false");
+                          props.setIsAuth(false);
+                          localStorage.removeItem("name");
+                          localStorage.removeItem("password");
+                          localStorage.removeItem("globalToken");
+                          window.location.reload();
+                        }}
+                      >
+                        Выйти
+                      </span>
+                    </div>
                   </div>
                 </div>
               )}

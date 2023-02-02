@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Alert } from "../../../../components/UI/Alert/Alert";
 
 import Carousel from "../../../../components/UI/Carousel/Carousel";
 
@@ -16,6 +17,7 @@ const OrderInfo = ({
 }) => {
   const userName = localStorage.getItem("name");
   const [schedule, setSchedule] = useState([]);
+  const [alert, setAlert] = useState("");
 
   const url = `${URL}orders/order/${currentOrder.id}/`;
   const reqOptions = {
@@ -29,9 +31,16 @@ const OrderInfo = ({
   const removeOrder = async () => {
     try {
       const res = await fetch(url, reqOptions);
-      setOrderData(orderData.filter((el) => el.id !== currentOrder.id));
-      setCurrentOrder(null);
+
+      if (res.ok) {
+        setOrderData(orderData.filter((el) => el.id !== currentOrder.id));
+        setCurrentOrder(null);
+      } else {
+        throw new Error();
+      }
+      
     } catch (err) {
+      setAlert("Ошибка при выполнении запроса");
       console.log("Error: " + err);
     }
   };
@@ -42,6 +51,7 @@ const OrderInfo = ({
 
   return (
     <div className={style.wrapper}>
+      <Alert alert={alert} setAlert={setAlert} style={true} />
       <div className={style.title}>
         <h1>{currentOrder?.name}</h1>
         <div className={style.text}>
@@ -69,13 +79,13 @@ const OrderInfo = ({
           </div>
           <div className={style.userInfo}>
             <img src="img/Lk/email.svg" alt="emailLogo" />
-            <p>{currentOrder?.contact.email}</p>
+            <p>{currentOrder?.contact?.email}</p>
           </div>
         </div>
         <div>
           <div className={style.userInfo}>
             <img src="img/Lk/web.svg" alt="webLogo" />
-            <p>{currentOrder?.contact.domain}</p>
+            <p>{currentOrder?.contact?.domain}</p>
           </div>
           <div className={style.userInfo}>
             <img src="img/Lk/time.svg" alt="timeLogo" />
