@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./portfolio.module.scss";
+import style from "./Portfolio.module.scss";
 
 import { Works } from "../../components/Works/Works";
 import { PORTFOLIO } from "./constant";
