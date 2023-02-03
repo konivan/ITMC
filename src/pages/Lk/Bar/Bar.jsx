@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./Bar.module.scss";
 import { NavLink } from "react-router-dom";
 
 export const Bar = (props) => {
+  const [sideBarOpen, setSideBarOpen] = useState(true);
+
   return (
     <div className={style.row}>
       <div className={style.container}>

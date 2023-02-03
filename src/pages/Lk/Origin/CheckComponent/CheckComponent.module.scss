@@ -34,6 +34,10 @@
       font-weight: 700;
       font-size: 10px;
       line-height: 12px;
+      width: 152px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     span:nth-of-type(4) {
       display: flex;

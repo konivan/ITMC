@@ -33,6 +33,7 @@ export const Origin = (props) => {
     return <Page404 />;
   }
 
+
   return (
     <section className={style.main}>
       <div className={style.wrapper}>
@@ -41,7 +42,7 @@ export const Origin = (props) => {
             <h2>Счета на оплату</h2>
             <div className={style.row}>
               {checks?.map((item, index) => (
-                <CheckComponent key={`${item} ${index}`} item={item} />
+                <CheckComponent key={`${item} ${index}`} item={item} urll={props.URL}/>
               ))}
             </div>
           </div>

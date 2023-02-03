@@ -1,9 +1,9 @@
 .row {
   height: 100vh;
-  width: 247px;
+  min-width: 247px;
   background: #141627;
   .container {
-   
+
     background-image: url(../../../../public/img/newLk/FrameBg.svg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -73,7 +73,7 @@
         font-size: 16px;
         color: #ffffff;
       }
-     
+
     }
   }
 }

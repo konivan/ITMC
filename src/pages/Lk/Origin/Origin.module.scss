@@ -1,5 +1,7 @@
 .main {
   background: #141627;
+  height: 100vh;
+  overflow-y: hidden;
   .container {
     display: flex;
     h2 {
@@ -7,10 +9,11 @@
       font-size: 32px;
       color: #e8e8e8;
       position: absolute;
-      left: 273px;
+      left: 310px;
       top: 130px;
     }
     .row {
+      overflow-y: hidden;
       width: 100%;
       border-radius: 0.25em;
       padding: 1em 1em 26.5em 0em;
