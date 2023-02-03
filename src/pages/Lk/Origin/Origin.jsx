@@ -6,7 +6,6 @@ import Page404 from "../../Page404/Page404";
 
 export const Origin = (props) => {
   const [checks, setChecks] = useState([]);
-  const [sideBarOpen, setSideBarOpen] = useState(true);
 
   useEffect(() => {
     const url = `${props.URL}orders/paycheck/`;
@@ -34,20 +33,15 @@ export const Origin = (props) => {
     return <Page404 />;
   }
 
-
   return (
     <section className={style.main}>
       <div className={style.wrapper}>
         <div className={style.container}>
-          <div className={
-              !sideBarOpen ? `${style.sideBarOpened}` : `${style.sideBarClosed}`
-            }>
-            <Bar name={props.name}/>
-            </div>
-            <h2  onClick={() => setSideBarOpen(!sideBarOpen)}>Счета на оплату</h2>
+            <Bar name={props.name} />
+            <h2>Счета на оплату</h2>
             <div className={style.row}>
               {checks?.map((item, index) => (
-                <CheckComponent key={`${item} ${index}`} item={item} urll={props.URL}/>
+                <CheckComponent key={`${item} ${index}`} item={item} />
               ))}
             </div>
           </div>

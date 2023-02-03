@@ -1,77 +1,24 @@
 .main {
   background: #141627;
-  height: 100vh;
-  overflow-y: hidden;
-
   .container {
     display: flex;
-
-    .sideBarOpened {
-      // background: #e5e5e5;
-      display: flex;
-      align-items: flex-start;
-      transition: margin 0.5s;
-      margin-left: -247px;
-    }
-
-    .sideBarClosed {
-      // background: #e5e5e5;
-      display: flex;
-      align-items: flex-start;
-      transition: margin 0.5s;
-      margin-left: 0;
-    }
-
-    .BarSpan {
-      display: block;
-      background: #fafafa;
-      width: 24px;
-      height: 3.38px;
-      margin-bottom: 5.92px;
-      cursor: pointer;
-      transition: all 0.3s ease-in-out;
-    }
-    &::before {
-      content: "";
-      display: block;
-      background: #fafafa;
-      width: 24px;
-      height: 3.38px;
-      margin-bottom: 5.92px;
-      cursor: pointer;
-      transition: all 0.3s ease-in-out;
-    }
-
-    &::after {
-      content: "";
-      display: block;
-      background: #fafafa;
-      width: 24px;
-      height: 3.38px;
-      cursor: pointer;
-      transition: all 0.3s ease-in-out;
-    }
-
     h2 {
       font-weight: 700;
       font-size: 32px;
       color: #e8e8e8;
       position: absolute;
-      left: 310px;
+      left: 300px;
       top: 130px;
     }
-
     .row {
-      overflow-y: hidden;
       width: 100%;
       border-radius: 0.25em;
       padding: 1em 1em 26.5em 0em;
-      margin-left: 300px;
+      margin-left: 63px;
       margin-top: 200px;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 29px;
-
       .itemContainer {
         border: 0.0625em solid #e8e8e8;
         border-radius: 0.25em;
@@ -158,7 +105,6 @@
             align-items: center;
             margin-left: 16px;
             margin-bottom: 12px;
-
             .lastCheckBox {
               appearance: auto;
               margin-left: 20px;
@@ -169,30 +115,24 @@
               width: 1em;
               visibility: hidden;
             }
-
             span {
               font-style: normal;
               font-weight: 500;
               font-size: 0.75em;
               color: #25262d;
             }
-
             span:nth-of-type(1) {
               margin-right: 70px;
             }
-
             span:nth-of-type(2) {
               margin-right: 94px;
             }
-
             span:nth-of-type(3) {
               margin-right: 53px;
             }
-
             span:nth-of-type(4) {
               margin-right: 70px;
             }
-
             span:nth-of-type(5) {
               margin-right: 108px;
             }
