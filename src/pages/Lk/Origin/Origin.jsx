@@ -41,7 +41,7 @@ export const Origin = (props) => {
             <h2>Счета на оплату</h2>
             <div className={style.row}>
               {checks?.map((item, index) => (
-                <CheckComponent key={`${item} ${index}`} item={item} />
+                <CheckComponent key={`${item} ${index}`} item={item} urll={props.URL}/>
               ))}
             </div>
           </div>

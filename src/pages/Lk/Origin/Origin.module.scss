@@ -1,5 +1,7 @@
 .main {
   background: #141627;
+  max-height: 100vh;
+  overflow-y: hidden;
   .container {
     display: flex;
     h2 {
