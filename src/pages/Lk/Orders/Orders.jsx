@@ -88,7 +88,7 @@ export const Orders = (props) => {
                   <div className={style.item}>
                     <div className={style.box}>
                       <img src="img/newLk/setting.svg" alt="setting" />
-                      <span>Настройки</span>
+                      <NavLink to="/ProfileSettings">Настройки</NavLink>
                     </div>
                     <div className={style.box}>
                       <img src="img/newLk/logoutcurve.svg" alt="logoutcurve" />
@@ -101,12 +101,6 @@ export const Orders = (props) => {
 
             <div className={style.orders}>
               <div className={style.searchInput}>
-                <input
-                  value={inputValue}
-                  placeholder="Поиск..."
-                  type="text"
-                  onChange={(e) => setInputValue(e.target.value)}
-                />
                 <OrderList
                   orderData={searchedOrders}
                   URL={props.URL}

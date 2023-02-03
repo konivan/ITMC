@@ -18,6 +18,7 @@ const OrderInfo = ({
   const userName = localStorage.getItem("name");
   const [schedule, setSchedule] = useState([]);
   const [alert, setAlert] = useState("");
+  const [modal, setModal] = useState(false);
 
   const url = `${URL}orders/order/${currentOrder.id}/`;
   const reqOptions = {
@@ -38,7 +39,6 @@ const OrderInfo = ({
       } else {
         throw new Error();
       }
-
     } catch (err) {
       setAlert("Ошибка при выполнении запроса");
       console.log("Error: " + err);
@@ -64,7 +64,7 @@ const OrderInfo = ({
         </div>
         <div className={style.buttons}>
           <div className={style.item}>
-            <button onClick={() => removeOrder()}>
+            <button onClick={() => setModal(!modal)}>
               <img src="img/newLk/noteremove.svg" alt="noteremove" />
               <span> Отменить заказ</span>
             </button>
@@ -72,6 +72,28 @@ const OrderInfo = ({
               <img src="img/newLk/edit.svg" alt="editIcon" />
               <span>Редактировать</span>
             </button>
+            {modal && (
+              <div className={style.modal}>
+                <div className={style.bgModal}>
+                  <h4>Отмена заказа</h4>
+                  <p>
+                    Удаляя заказ вы подтверждаете удаление всех связанных с ним
+                    данных
+                  </p>
+                  <h4>Вы уверены?</h4>
+                  <div className={style.box}>
+                    <button onClick={() => removeOrder()}>
+                      <img src="img/newLk/noteremove.svg" alt="noteremove" />
+                      <span onClick={() => removeOrder()}> Отменить заказ</span>
+                    </button>
+                    <button  onClick={() => setModal(false)}>
+                      <img src="img/newLk/edit.svg" alt="editIcon" />
+                      <span>Вернуться назад</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
           <div className={style.item}>
             <img src="img/newLk/fire.svg" alt="fire" />
@@ -80,27 +102,27 @@ const OrderInfo = ({
         </div>
       </div>
       <Carousel gallery={currentOrder.gallery} />
-      <div className={style.info}>
-        <h4>Контактные данные</h4>
-        <div className={style.userInfo}>
-          <img src="img/newLk/profile.svg" alt="userLogo" />
-          <p>{userName}</p>
-        </div>
-        <div className={style.userInfo}>
-          <img src="img/newLk/callcalling.svg" alt="phoneLogo" />
+      <div className={style.contentContainer}>
+        <div className={style.info}>
+          <h4>Контактные данные</h4>
+          <div className={style.userInfo}>
+            <img src="img/newLk/profile.svg" alt="userLogo" />
+            <p>{userName}</p>
+          </div>
+          <div className={style.userInfo}>
+            <img src="img/newLk/callcalling.svg" alt="phoneLogo" />
             <p>{currentOrder?.contact?.phone}</p>
           </div>
           <div className={style.userInfo}>
-            <img src="img/Lk/email.svg" alt="emailLogo" />
+            <img src="img/newLk/sms.svg" alt="emailLogo" />
             <p>{currentOrder?.contact?.email}</p>
           </div>
         </div>
-        <div className={style.userInfo}>
-          <img src="img/newLk/sms.svg" alt="emailLogo" />
-          <p>{currentOrder?.contact?.email}</p>
+        <div className={style.description}>
+          <p>{currentOrder.description}</p>
         </div>
-
-        {/* <div className={style.userInfo}>
+      </div>
+      {/* <div className={style.userInfo}>
             <img src="img/Lk/web.svg" alt="webLogo" />
             <p>{currentOrder?.contact?.domain}</p>
           </div>
@@ -110,10 +132,6 @@ const OrderInfo = ({
               return <p key={el}>{el};</p>;
             })}
           </div> */}
-
-      {/* <div className={style.description}>
-        <p>{currentOrder.description}</p>
-      </div> */}
       <div className={style.managers}>
         <h4>Менеджеры проекта</h4>
       </div>

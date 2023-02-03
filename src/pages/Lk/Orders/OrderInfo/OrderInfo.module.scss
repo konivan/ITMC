@@ -1,4 +1,5 @@
 .wrapper {
+  position: relative;
   width: 100%;
   background-image: url(../../../../../public/img/newLk/bgOrders.svg);
   background-size: cover;
@@ -10,6 +11,7 @@
   .title {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 36px;
     .column {
       h2 {
         font-style: normal;
@@ -81,6 +83,46 @@
           font-size: 15px;
         }
       }
+      .modal {
+        z-index: 10;
+        position: absolute;
+        left: 125px;
+        top: 140px;
+        .bgModal {
+          position: absolute;
+          background-image: url(../../../../../public/img/newLk/modalBg.svg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          padding: 26px 158px 41px 158px;
+          // width: 710px;
+          h4:nth-of-type(1) {
+            text-align: center;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 24px;
+          }
+          p {
+            text-align: center;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            margin-bottom: 24px;
+            width: 394px;
+          }
+          h4:nth-of-type(2) {
+            text-align: center;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 29px;
+          }
+        }
+        .box {
+          display: flex;
+          align-items: center;
+        }
+      }
     }
     .item:nth-of-type(2) {
       margin-top: 30px;
@@ -99,48 +141,67 @@
       }
     }
   }
+  .contentContainer {
+    display: flex;
+    // align-items:center ;
 
-  .info {
-    h4 {
-      margin-top: 16px;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 16px;
-    }
-
-    .userInfo {
-      max-width: 470px;
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      p {
-        margin-left: 8px;
+    .info {
+      margin-right: 50px;
+      h4 {
+        margin-top: 16px;
         font-style: normal;
         font-weight: 600;
         font-size: 16px;
       }
-      img {
-        width: 24px;
-        height: 24px;
+
+      .userInfo {
+        max-width: 470px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        p {
+          margin-left: 8px;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+        }
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+      .userInfo:nth-of-type(1) {
+        margin: 23px 0px 12px 0px;
+      }
+      .userInfo:nth-of-type(2) {
+        margin-bottom: 12px;
       }
     }
-    .userInfo:nth-of-type(1) {
-      margin: 23px 0px 12px 0px;
+    .description {
+      margin-top: 16px;
+      padding: 10px 20px;
+      border: 1px solid #9939c0;
+      border-radius: 4px;
+      max-height: 150px;
+      width: 730px;
+      overflow: scroll;
+      overflow-x: hidden;
     }
-    .userInfo:nth-of-type(2) {
-      margin-bottom: 12px;
+
+    .description::-webkit-scrollbar {
+      width: 6px;
+    }
+    .description::-webkit-scrollbar-track {
+      background: #141627;
+      border-radius: 8px;
+    }
+    .description::-webkit-scrollbar-thumb {
+      background: #464e89;
+      border-radius: 8px;
+      width: 6px;
     }
   }
 
-  .description {
-    margin-top: 45px;
-    padding: 10px 20px;
-    border: 1px solid #25262d;
-    border-radius: 4px;
-    max-height: 300px;
-    overflow: scroll;
-    overflow-x: hidden;
-  }
   .managers {
     h4 {
       margin-top: 25px;
