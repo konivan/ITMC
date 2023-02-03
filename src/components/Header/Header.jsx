@@ -78,7 +78,7 @@ export const Header = (props) => {
                     <div>
                       <img
                         className={style.userIcon}
-                        src="img/lk/icon.svg"
+                        src=""
                         alt="user-icon"
                       />
                     </div>

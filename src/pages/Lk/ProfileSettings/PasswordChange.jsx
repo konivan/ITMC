@@ -29,9 +29,9 @@ const PasswordChange = (props) => {
       const res = await fetch(url, reqOptions);
       // console.log(res);
 
-      // if(res.ok) {
-      //   localStorage.setItem('name', name)
-      // }
+      if(res.ok) {
+        localStorage.setItem('password', password)
+      }
     } catch (err) {
       console.log("Error: " + err);
     }

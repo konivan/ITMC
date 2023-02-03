@@ -2,7 +2,7 @@
   height: 100vh;
   min-width: 247px;
   background: #141627;
-  transition:  all 0.5s ease;
+  transition: all 0.5s ease;
   .container {
     background-image: url(../../../../public/img/newLk/FrameBg.svg);
     background-size: cover;
@@ -66,14 +66,20 @@
     }
     .exit {
       margin-top: 100px;
-      padding: 0px 0px 16px 35px;
+      margin-left: 11px;
+      padding: 15.5px 22.5px;
       span {
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
         color: #ffffff;
       }
+    }
 
+    .exit:hover {
+      background: #513696;
+      border-radius: 10px;
+      width: 224px;
     }
   }
 }

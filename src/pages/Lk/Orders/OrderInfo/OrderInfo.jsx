@@ -44,7 +44,7 @@ const OrderInfo = ({
       console.log("Error: " + err);
     }
   };
-
+console.log(currentOrder);
   useEffect(() => {
     setSchedule(getSchedule(currentOrder));
   }, [currentOrder]);
