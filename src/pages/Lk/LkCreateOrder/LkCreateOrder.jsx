@@ -185,6 +185,7 @@ export const LkCreateOrder = (props) => {
               <span>Загрузить фото</span>
               <input
                 onChange={(e) => {
+                  console.log(e.target.files[0]);
                   let inputFile = e.target.files[0];
                   setLogoImg(e.target.files[0]);
                   let path = URL.createObjectURL(inputFile);
