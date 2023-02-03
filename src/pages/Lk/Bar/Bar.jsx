@@ -35,12 +35,12 @@ export const Bar = (props) => {
               </div>
             </li>
             <li>
-              <div>
+              {/* <div>
                 <img src="img/newLk/shoppingcart.svg" alt="shoppingcart" />
                 <NavLink to="/Dogovor">
                   <span>Договора</span>
                 </NavLink>
-              </div>
+              </div> */}
             </li>
           </ul>
         </div>

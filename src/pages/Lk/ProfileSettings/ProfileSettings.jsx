@@ -46,7 +46,7 @@ const ProfileSettings = (props) => {
       </div>
       <div className={style.wrapper}>
         <div className={style.container}>
-          <div
+          {/* <div
             className={
               !sideBarOpen ? `${style.sideBarOpened}` : `${style.sideBarClosed}`
             }
@@ -57,8 +57,8 @@ const ProfileSettings = (props) => {
               src="img/Lk/sideBarIcon.svg"
               alt="sideBarIcon"
             />
-          </div>
-
+          </div> */}
+          <Bar name={props.name} />
           <div>
             <div className={style.columnRow}>
               <div className={style.column}>

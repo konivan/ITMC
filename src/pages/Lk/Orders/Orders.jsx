@@ -54,7 +54,7 @@ export const Orders = (props) => {
     <section className={style.main} id="Orders">
       <div className={style.wrapper}>
         <div className={style.container}>
-          <div
+          {/* <div
             className={
               !sideBarOpen ? `${style.sideBarOpened}` : `${style.sideBarClosed}`
             }
@@ -65,7 +65,8 @@ export const Orders = (props) => {
               src="img/Lk/sideBarIcon.svg"
               alt="sideBarIcon"
             />
-          </div>
+          </div> */}
+          <Bar name={props.name} />
           <div className={style.row}>
             <div className={style.columnRow}>
               <div className={style.column}>

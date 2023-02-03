@@ -15,6 +15,7 @@
       align-items: center;
       justify-content: space-between;
       margin-bottom: 120px;
+      margin-left: 20px;
       .column {
         display: flex;
         align-items: center;
@@ -42,12 +43,17 @@
         position: relative;
         display: flex;
         align-items: center;
-
+        margin-top: 20px;
         .profileImage {
-          width: 100px;
+         
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
 
           img {
-            width: 100%;
+            width: 100%!important;
+            height: 100%!important;
+            border-radius: 50%;
           }
         }
 
@@ -94,6 +100,7 @@
       display: flex;
       justify-content: space-between;
       margin-top: 150px;
+      margin-left: 20px;
 
       .personalDataWrapper {
         background-image: url(../../../../public//img/newLk/personal_data.png);
@@ -109,7 +116,7 @@
         .inputWrapper {
           width: 260px;
           height: 222px;
-          background-color: red;
+          background-color: #755cdd;
           border-radius: 50%;
 
           input {
