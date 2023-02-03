@@ -26,11 +26,6 @@
         padding: 16px 16px 0px 0px;
         height: 100vh;
 
-        .searchInput {
-          input {
-            color: black;
-          }
-        }
         .columnRow {
           display: flex;
           align-items: center;
@@ -100,17 +95,6 @@
               }
             }
           }
-        }
-
-        input {
-          border: 0.0625em solid #e8e8e8;
-          border-radius: 0.25em;
-          padding: 12px 277px 12px 30px;
-          font-style: normal;
-          font-weight: 400;
-          font-size: 12px;
-          color: #9ca6b4;
-          margin-left: 16px;
         }
       }
     }

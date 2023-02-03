@@ -101,12 +101,6 @@ export const Orders = (props) => {
 
             <div className={style.orders}>
               <div className={style.searchInput}>
-                <input
-                  value={inputValue}
-                  placeholder="Поиск..."
-                  type="text"
-                  onChange={(e) => setInputValue(e.target.value)}
-                />
                 <OrderList
                   orderData={searchedOrders}
                   URL={props.URL}

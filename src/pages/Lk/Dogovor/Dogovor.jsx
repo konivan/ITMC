@@ -63,7 +63,7 @@ export const Dogovor = (props) => {
                       {manager.first_name} {manager.last_name}
                     </h4>
                     <a href="tel:+7 925 540 3956">{manager.phone}</a>
-                    <span>Менеджер вашего проекта</span>
+                    <span>Менеджер проекта</span>
                     <div className={style.item}>
                       <NavLink to="/Orders">
                         <button>Проверить готовность</button>
