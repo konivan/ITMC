@@ -3,10 +3,9 @@ import style from "./Bar.module.scss";
 import { NavLink } from "react-router-dom";
 
 export const Bar = (props) => {
-  const [sideBarOpen, setSideBarOpen] = useState(true);
 
   return (
-    <div className={style.row}>
+    <div className={style.row} >
       <div className={style.container}>
         <div className={style.column}>
           <img src="img/header/logoITMC.svg" alt="iclogoITMCon" />
