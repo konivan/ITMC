@@ -3,6 +3,7 @@ import CheckComponent from "./CheckComponent/CheckComponent";
 import style from "./Origin.module.scss";
 import { Bar } from "../Bar/Bar";
 import Page404 from "../../Page404/Page404";
+import LkHeader from "../../../components/LkHeader/LkHeader";
 
 export const Origin = (props) => {
   const [checks, setChecks] = useState([]);
@@ -36,16 +37,19 @@ export const Origin = (props) => {
   return (
     <section className={style.main}>
       <div className={style.wrapper}>
+      <LkHeader styling={true}/>
         <div className={style.container}>
             <Bar name={props.name} />
-            <h2>Счета на оплату</h2>
+            <div>
+              <h2>Счета на оплату</h2>
+            </div>
             <div className={style.row}>
               {checks?.map((item, index) => (
                 <CheckComponent key={`${item} ${index}`} item={item} urll={props.URL}/>
               ))}
             </div>
-          </div>
         </div>
+      </div>
     </section>
   );
 };

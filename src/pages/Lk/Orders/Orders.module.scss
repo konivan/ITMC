@@ -24,78 +24,9 @@
       }
       .row {
         padding: 16px 16px 0px 0px;
+        margin-right: 40px;
         height: 100vh;
-
-        .columnRow {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-bottom: 120px;
-          .column {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-left: 10px;
-            button {
-              img {
-                width: 24px;
-                height: 24px;
-              }
-              span {
-                font-style: normal;
-                font-weight: 400;
-                font-size: 15px;
-              }
-              display: flex;
-              align-items: center;
-              padding: 10px 16px;
-              background: #755cdd;
-              border: none;
-              border-radius: 13px;
-            }
-          }
-          .userName {
-            position: relative;
-            display: flex;
-            align-items: center;
-            span {
-              margin-right: 8px;
-              font-style: normal;
-              font-weight: 500;
-              font-size: 16px;
-            }
-            img:nth-of-type(1) {
-              width: 24px;
-              height: 24px;
-              cursor: pointer;
-            }
-            .item {
-              top: 40px;
-              right: 40px;
-              position: absolute;
-              background: #1c1f37;
-              padding: 6px 16px;
-              border-radius: 15px;
-              .box {
-                display: flex;
-                align-items: center;
-                img {
-                  margin-right: 5px;
-                  width: 15px;
-                  height: 15px;
-                }
-                span {
-                  font-style: normal;
-                  font-weight: 400;
-                  font-size: 12px;
-                }
-              }
-              .box:nth-of-type(1) {
-                margin-bottom: 5px;
-              }
-            }
-          }
-        }
+        width: 100%;
       }
     }
   }

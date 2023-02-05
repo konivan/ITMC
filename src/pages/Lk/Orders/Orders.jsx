@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { NavLink } from "react-router-dom";
 
 import { Bar } from "../Bar/Bar";
 import OrderList from "./OrderList/OrderList";
@@ -7,13 +6,13 @@ import OrderInfo from "./OrderInfo/OrderInfo";
 import Page404 from "../../Page404/Page404";
 
 import style from "./Orders.module.scss";
+import LkHeader from "../../../components/LkHeader/LkHeader";
 
 export const Orders = (props) => {
   const [orderData, setOrderData] = useState([]);
   const [currentOrder, setCurrentOrder] = useState(null);
   const [inputValue, setInputValue] = useState("");
   const [sideBarOpen, setSideBarOpen] = useState(true);
-  const [show, setShow] = useState(false);
 
   const globalToken = localStorage.getItem("globalToken");
 
@@ -68,38 +67,7 @@ export const Orders = (props) => {
           </div> */}
           <Bar name={props.name} />
           <div className={style.row}>
-            <div className={style.columnRow}>
-              <div className={style.column}>
-                <NavLink to="/LkCreateOrder">
-                  <button>
-                    <img src="img/newLk/add.svg" alt="add" />
-                    <span>Сделать заказ</span>
-                  </button>
-                </NavLink>
-              </div>
-              <div className={style.userName}>
-                <img
-                  onClick={() => setShow(!show)}
-                  src="img/newLk/arrowdown.svg"
-                  alt="arrowdown"
-                />
-                <span>{localStorage.getItem("name")}</span>
-                <img src="img/lk/icon.svg" alt="icon" />
-                {show && (
-                  <div className={style.item}>
-                    <div className={style.box}>
-                      <img src="img/newLk/setting.svg" alt="setting" />
-                      <NavLink to="/ProfileSettings">Настройки</NavLink>
-                    </div>
-                    <div className={style.box}>
-                      <img src="img/newLk/logoutcurve.svg" alt="logoutcurve" />
-                      <span>Выход</span>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-
+            <LkHeader/>
             <div className={style.orders}>
               <div className={style.searchInput}>
                 <OrderList
