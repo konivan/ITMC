@@ -162,6 +162,7 @@
             width: 45px;
             background: white;
             border-radius: 50%;
+            height: 40px;
             cursor: pointer;
           }
           div:nth-of-type(1):hover {
@@ -177,7 +178,6 @@
             align-items: center;
             background: rgba(11, 14, 17, 0.8);
             backdrop-filter: blur(0.313em);
-            border: 0.0625em solid #f614f9;
             border-radius: 0.5em;
             padding: 5px 10px;
             cursor: pointer;

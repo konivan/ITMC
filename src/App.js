@@ -53,6 +53,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Header
+          URL={URL}
           setShowAuth={setShowAuth}
           setShowAuthorization={setShowAuthorization}
           setShowAuthOrders={setShowAuthOrders}

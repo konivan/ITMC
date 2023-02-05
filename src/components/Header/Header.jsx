@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import style from "./Header.module.scss";
 
@@ -10,6 +10,27 @@ import { NavLink } from "react-router-dom";
 
 export const Header = (props) => {
   const [activeBurger, setActiveBurger] = useState(false);
+  const [userPhoto, setUserPhoto] = useState();
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      const url = `${props.URL}account/users/me/`;
+      const reqOptions = {
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("globalToken")}`,
+        },
+      };
+      try {
+        const res = await fetch(url, reqOptions);
+        const data = await res.json();
+        setUserPhoto(data);
+      } catch (err) {
+        console.log("Error: " + err);
+      }
+    };
+    fetchUserData();
+  }, []);
 
   if (
     window.location.pathname !== "/" &&
@@ -18,6 +39,8 @@ export const Header = (props) => {
   ) {
     return null;
   }
+
+  console.log(userPhoto);
   return (
     <div className={style.header}>
       <div className={style.wrapper}>
@@ -78,7 +101,7 @@ export const Header = (props) => {
                     <div>
                       <img
                         className={style.userIcon}
-                        src=""
+                        src={`${props.URL}${userPhoto?.photo}`}
                         alt="user-icon"
                       />
                     </div>
