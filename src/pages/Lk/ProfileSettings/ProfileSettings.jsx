@@ -87,7 +87,11 @@ const ProfileSettings = (props) => {
                     </div>
                     <div className={style.box}>
                       <img src="img/newLk/logoutcurve.svg" alt="logoutcurve" />
-                      <span>Выход</span>
+                      <NavLink to="/" onClick={() => {
+                setTimeout(() => {
+                  window.location.reload();
+                }, 0);
+              }}><span>Выход</span></NavLink>
                     </div>
                   </div>
                 )}
