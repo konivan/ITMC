@@ -210,5 +210,66 @@
       font-weight: 700;
       font-size: 16px;
     }
+
+    .manager {
+      display: flex;
+      background: #141627;
+      border-radius: 16px;
+      max-width: 266px;
+      margin: 20px auto;
+      align-items: center;
+      padding: 12px 15px 0 20px;
+
+      .managerPhoto {
+        width: 60px;
+        height: 55px;
+        margin-top: -25px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+      }
+
+      .managerInfo {
+        margin-left: 14px;
+
+        p:nth-of-type(2) {
+          color: #848484;
+          font-weight: 400;
+          font-size: 12px;
+          margin-left: 20px;
+          margin-top: 2px;
+        }
+
+        div {
+          margin: 5px 0px 8px 0px;
+          .item {
+            display: flex;
+            align-items: center;
+
+            button {
+              background: #755cdd;
+              border: none;
+              border-radius: 13px;
+              display: flex;
+              align-items: center;
+              padding: 6px 13px;
+              img {
+                width: 14px;
+                height: 14px;
+                margin-right: 3px;
+              }
+              span {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
