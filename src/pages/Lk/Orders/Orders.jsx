@@ -79,7 +79,7 @@ export const Orders = (props) => {
             <span></span>
           </div>
           <div className={style.row}>
-            <LkHeader />
+            <LkHeader URL={props.URL}/>
             <div className={style.orders}>
               <div className={style.searchInput}>
                 <OrderList

@@ -39,7 +39,7 @@ export const Origin = (props) => {
     <section className={style.main}>
       <div className={style.wrapper}>
       <div className={activeBurger === true ? style.burgerActive : style.burger} onClick={() => setActiveBurger(!activeBurger)}><span></span></div>
-        <LkHeader styling={true} />
+        <LkHeader styling={true} URL={props.URL}/>
         <div className={style.container}>
           <Bar activeBurger={activeBurger} setActiveBurger={setActiveBurger} />
           <div>
