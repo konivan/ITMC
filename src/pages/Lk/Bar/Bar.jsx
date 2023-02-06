@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import style from "./Bar.module.scss";
 import { NavLink } from "react-router-dom";
 
-export const Bar = (props) => {
+export const Bar = ({activeBurger, setActiveBurger}) => {
+  if (!activeBurger) {
+    return null;
+  }
 
   return (
     <div className={style.row} >

@@ -1,5 +1,17 @@
+@keyframes anim {
+  0% {
+    left: -500px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+
 .row {
-  min-height: 980px;
+  animation-name: anim;
+  animation-timing-function: ease;
+  animation-duration: 0.8s;
+  position: absolute;
   min-width: 247px;
   background: #141627;
   transition: all 0.5s ease;

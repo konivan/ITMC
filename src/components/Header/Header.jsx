@@ -40,7 +40,6 @@ export const Header = (props) => {
     return null;
   }
 
-  console.log(userPhoto);
   return (
     <div className={style.header}>
       <div className={style.wrapper}>
@@ -69,7 +68,7 @@ export const Header = (props) => {
                   activeBurger === true ? style.burgerActive : style.burger
                 }
                 onClick={() => setActiveBurger(!activeBurger)}
-              >
+                >
                 <span></span>
                 <div onClick={(e) => e.stopPropagation()}>
                   <Menu

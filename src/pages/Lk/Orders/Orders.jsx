@@ -13,7 +13,7 @@ export const Orders = (props) => {
   const [orderData, setOrderData] = useState([]);
   const [currentOrder, setCurrentOrder] = useState(null);
   const [inputValue, setInputValue] = useState("");
-  // const [sideBarOpen, setSideBarOpen] = useState(true);
+  const [activeBurger, setActiveBurger] = useState(true);
 
   const globalToken = localStorage.getItem("globalToken");
 
@@ -66,9 +66,21 @@ export const Orders = (props) => {
               alt="sideBarIcon"
             />
           </div> */}
-          <Bar name={props.name} />
+          <Bar
+            name={props.name}
+            activeBurger={activeBurger}
+            setActiveBurger={setActiveBurger}
+          />
+          <div
+            className={
+              activeBurger === true ? style.burgerActive : style.burger
+            }
+            onClick={() => setActiveBurger(!activeBurger)}
+          >
+            <span></span>
+          </div>
           <div className={style.row}>
-            <LkHeader />
+            <LkHeader URL={props.URL}/>
             <div className={style.orders}>
               <div className={style.searchInput}>
                 <OrderList
