@@ -104,6 +104,7 @@
     width: 223px;
     display: flex;
     img {
+      border-radius: 50%;
       @media (max-width: 490px) {
         width: 80px;
         height: 80px;

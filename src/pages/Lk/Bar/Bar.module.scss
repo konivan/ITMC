@@ -8,6 +8,7 @@
 }
 
 .row {
+  z-index: 10;
   animation-name: anim;
   animation-timing-function: ease;
   animation-duration: 0.8s;

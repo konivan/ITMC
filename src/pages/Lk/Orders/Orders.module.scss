@@ -8,8 +8,8 @@
 
       .burger {
         position: absolute;
-        left: 267px;
-        top: 27px;
+        left: 0px;
+        top: 0px;
         span {
           display: block;
           background: #fafafa;
@@ -42,9 +42,10 @@
       }
 
       .burgerActive {
+        z-index: 20;
         position: absolute;
-        left: 267px;
-        top: 27px;
+        left: 197px;
+        top: 35px;
         span {
           display: block;
           background: #fafafa;
