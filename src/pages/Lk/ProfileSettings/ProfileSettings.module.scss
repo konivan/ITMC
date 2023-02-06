@@ -13,6 +13,11 @@
 
   .container {
     display: flex;
+
+    .header {
+      margin: 16px 0 0 300px;
+    }
+
     .burger {
       position: absolute;
       left: 267px;
@@ -110,14 +115,13 @@
         align-items: center;
         margin-top: 20px;
         .profileImage {
-
           width: 48px;
           height: 48px;
           border-radius: 50%;
 
           img {
-            width: 100%!important;
-            height: 100%!important;
+            width: 100% !important;
+            height: 100% !important;
             border-radius: 50%;
           }
         }

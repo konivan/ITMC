@@ -12,7 +12,6 @@ import style from "./ProfileSettings.module.scss";
 
 const ProfileSettings = (props) => {
   const [activeBurger, setActiveBurger] = useState(true);
-  const [show, setShow] = useState(false);
   const [userData, setUserData] = useState(null);
   const [alert, setAlert] = useState("");
 
@@ -52,24 +51,23 @@ const ProfileSettings = (props) => {
       </div>
       <div className={style.wrapper}>
         <div className={style.container}>
-        <div className={activeBurger === true ? style.burgerActive : style.burger} onClick={() => setActiveBurger(!activeBurger)}><span
-        ></span></div>
-          {/* <div
+          <div
             className={
-              !sideBarOpen ? `${style.sideBarOpened}` : `${style.sideBarClosed}`
+              activeBurger === true ? style.burgerActive : style.burger
             }
+            onClick={() => setActiveBurger(!activeBurger)}
           >
-            <Bar name={props.name} />
-            <img
-              onClick={() => setSideBarOpen(!sideBarOpen)}
-              src="img/Lk/sideBarIcon.svg"
-              alt="sideBarIcon"
-            />
-          </div> */}
-          <Bar name={props.name} activeBurger={activeBurger} setActiveBurger={setActiveBurger}/>
+            <span></span>
+          </div>
+
+          <Bar
+            name={props.name}
+            activeBurger={activeBurger}
+            setActiveBurger={setActiveBurger}
+          />
           <div>
             <div className={style.header}>
-              <LkHeader />
+              <LkHeader URL={props.URL} />
             </div>
             <div className={style.dataWrapper}>
               <PersonalData
