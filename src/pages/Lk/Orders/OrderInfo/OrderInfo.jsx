@@ -44,7 +44,7 @@ const OrderInfo = ({
       console.log("Error: " + err);
     }
   };
-console.log(currentOrder);
+  console.log(currentOrder);
   useEffect(() => {
     setSchedule(getSchedule(currentOrder));
   }, [currentOrder]);
@@ -86,7 +86,7 @@ console.log(currentOrder);
                       <img src="img/newLk/noteremove.svg" alt="noteremove" />
                       <span onClick={() => removeOrder()}> Отменить заказ</span>
                     </button>
-                    <button  onClick={() => setModal(false)}>
+                    <button onClick={() => setModal(false)}>
                       <img src="img/newLk/edit.svg" alt="editIcon" />
                       <span>Вернуться назад</span>
                     </button>
@@ -133,7 +133,37 @@ console.log(currentOrder);
             })}
           </div> */}
       <div className={style.managers}>
-        <h4>Менеджеры проекта</h4>
+        {currentOrder.manager && (
+          <>
+            <h4>Менеджеры проекта</h4>
+
+            <div className={style.manager}>
+              <div className={style.managerPhoto}>
+                <img src={currentOrder.manager.photo} alt="managerPhoto" />
+              </div>
+              <div className={style.managerInfo}>
+                <p>
+                  {currentOrder.manager.first_name}{" "}
+                  {currentOrder.manager.last_name}
+                </p>
+                <p>Менеджер проекта</p>
+                <div>
+                  <a
+                    href="https://t.me/Proodduct_manager7"
+                    target="_blank"
+                    rel="noreferrer"
+                    className={style.item}
+                  >
+                    <button>
+                      <img src="img/newLk/messages2.png" alt="messages" />
+                      <span> Связь с менеджером</span>
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

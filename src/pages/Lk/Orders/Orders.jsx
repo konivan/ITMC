@@ -1,18 +1,19 @@
 import React, { useEffect, useMemo, useState } from "react";
 
-import { Bar } from "../Bar/Bar";
 import OrderList from "./OrderList/OrderList";
 import OrderInfo from "./OrderInfo/OrderInfo";
 import Page404 from "../../Page404/Page404";
 
-import style from "./Orders.module.scss";
+import { Bar } from "../Bar/Bar";
 import LkHeader from "../../../components/LkHeader/LkHeader";
+
+import style from "./Orders.module.scss";
 
 export const Orders = (props) => {
   const [orderData, setOrderData] = useState([]);
   const [currentOrder, setCurrentOrder] = useState(null);
   const [inputValue, setInputValue] = useState("");
-  const [sideBarOpen, setSideBarOpen] = useState(true);
+  // const [sideBarOpen, setSideBarOpen] = useState(true);
 
   const globalToken = localStorage.getItem("globalToken");
 
@@ -37,7 +38,7 @@ export const Orders = (props) => {
 
   useEffect(() => {
     fetchOrders();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
 
   const searchedOrders = useMemo(() => {
     return orderData?.filter((orders) =>
@@ -67,7 +68,7 @@ export const Orders = (props) => {
           </div> */}
           <Bar name={props.name} />
           <div className={style.row}>
-            <LkHeader/>
+            <LkHeader />
             <div className={style.orders}>
               <div className={style.searchInput}>
                 <OrderList
