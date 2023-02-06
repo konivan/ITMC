@@ -270,11 +270,13 @@ export const LkCreateOrder = (props) => {
                     };
                   }}
                 />
-                <img src="img/Lk/photoIcon.svg" alt="Uploadphoto" />
-                <p>
-                  <span>Загрузите фотографии</span>, или просто перетяните их в
-                  это поле
-                </p>
+                <div>
+                  <img src="img/Lk/photoIcon.svg" alt="Uploadphoto" />
+                  <p>
+                    <span>Загрузите фотографии</span>, или просто перетяните их в
+                    это поле
+                  </p>
+                </div>
               </form>
             </div>
             {gallery.length === 0 ? null : (
