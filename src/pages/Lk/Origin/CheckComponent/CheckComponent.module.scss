@@ -1,4 +1,12 @@
 .box {
+  @media (max-width: 490px) {
+    width: 330px;
+    height: 190px;
+  }
+  @media (max-width: 371px) {
+    width: 280px;
+    height: 180px;
+  }
   display: flex;
   justify-content: space-between;
   background-image: url(../../../../../public/img/newLk/checksCard.svg);
@@ -6,30 +14,48 @@
   background-repeat: no-repeat;
   border-radius: 15px;
   padding: 17px 29px 18px 35px;
-  width: 482px;
+  width: 448px;
   height: 230px;
   .column:nth-of-type(1) {
     display: flex;
     flex-direction: column;
     width: 202px;
     span:nth-of-type(1) {
+      @media (max-width: 490px) {
+        font-size: 16px;
+      }
+      @media (max-width: 370px) {
+        font-size: 14px;
+      }
       font-size: 24px;
       font-weight: 700;
     }
     span:nth-of-type(2) {
+      @media (max-width: 490px) {
+        font-size: 16px;
+      }
+      @media (max-width: 370px) {
+        font-size: 14px;
+      }
       margin-top: 5px;
       font-size: 24px;
       font-weight: 700;
     }
     span:nth-of-type(3) {
+      @media (max-width: 370px) {
+        font-size: 14px;
+      }
       margin-top: 5px;
       color: #969696;
       font-weight: 700;
     }
     .paid {
-      background: #35A669;
+      background: #35a669;
     }
     p {
+      @media (max-width: 371px) {
+        width: 120px;
+      }
       margin-top: 5px;
       font-weight: 700;
       font-size: 10px;
@@ -40,6 +66,10 @@
       text-overflow: ellipsis;
     }
     span:nth-of-type(4) {
+      @media (max-width: 371px) {
+        width: 130px;
+        height: 20px;
+      }
       display: flex;
       justify-content: center;
       align-items: center;
@@ -53,7 +83,15 @@
       border-radius: 16px;
     }
     button {
-      background: #35A669;
+      @media (max-width: 490px) {
+        width: 161px;
+        height: 30px;
+      }
+      @media (max-width: 371px) {
+        width: 130px;
+        height: 25px;
+      }
+      background: #35a669;
       border-radius: 16px;
       border: none;
       width: 192px;
@@ -66,7 +104,16 @@
     width: 223px;
     display: flex;
     img {
-      margin: 55px 29px 64px 92px;
+      @media (max-width: 490px) {
+        width: 80px;
+        height: 80px;
+        margin: 35px 0px 0px 20px;
+      }
+      @media (max-width: 371px) {
+        width: 60px;
+        height: 60px;
+      }
+      margin: 35px 0px 0px 50px;
     }
   }
 }

@@ -12,9 +12,12 @@
   animation-timing-function: ease;
   animation-duration: 0.8s;
   position: absolute;
+  top: 0;
+  left: 0;
   min-width: 247px;
   background: #141627;
   transition: all 0.5s ease;
+  height: 100vh;
   .container {
     background-image: url(../../../../public/img/newLk/FrameBg.svg);
     background-size: cover;
