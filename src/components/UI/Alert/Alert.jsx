@@ -3,7 +3,7 @@ import style from './Alert.module.scss'
 
 export const Alert = (props) => {
     let successAlert = false;
-    if (props.alert === 'Заказ успешно отправлен!' || props.alert === 'Пользователь создан!') {
+    if (props.alert === 'Заказ успешно отправлен!' || props.alert === 'Пользователь создан!' || props.alert === 'Данные успешно изменены!') {
       successAlert = true;
     };
 

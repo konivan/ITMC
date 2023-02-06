@@ -1,12 +1,13 @@
 import React, { useEffect, useMemo, useState } from "react";
 
-import { Bar } from "../Bar/Bar";
 import OrderList from "./OrderList/OrderList";
 import OrderInfo from "./OrderInfo/OrderInfo";
 import Page404 from "../../Page404/Page404";
 
-import style from "./Orders.module.scss";
+import { Bar } from "../Bar/Bar";
 import LkHeader from "../../../components/LkHeader/LkHeader";
+
+import style from "./Orders.module.scss";
 
 export const Orders = (props) => {
   const [orderData, setOrderData] = useState([]);
@@ -37,7 +38,7 @@ export const Orders = (props) => {
 
   useEffect(() => {
     fetchOrders();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
 
   const searchedOrders = useMemo(() => {
     return orderData?.filter((orders) =>

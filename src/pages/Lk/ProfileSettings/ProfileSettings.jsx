@@ -2,18 +2,26 @@ import React, { useEffect, useState } from "react";
 
 import PasswordChange from "./PasswordChange";
 import PersonalData from "./PersonalData";
+import AccountActions from "./AccountActions";
+
+import LkHeader from "../../../components/LkHeader/LkHeader";
 import { Bar } from "../Bar/Bar";
+import { Alert } from "../../../components/UI/Alert/Alert";
 
 import style from "./ProfileSettings.module.scss";
-import AccountActions from "./AccountActions";
-import { NavLink } from "react-router-dom";
-import { Alert } from "../../../components/UI/Alert/Alert";
 
 const ProfileSettings = (props) => {
   const [activeBurger, setActiveBurger] = useState(true);
   const [show, setShow] = useState(false);
   const [userData, setUserData] = useState(null);
   const [alert, setAlert] = useState("");
+
+  const [logoImg, setLogoImg] = useState();
+  const [file, setFile] = useState();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [repeatPassword, setRepeatPassword] = useState("");
 
   const url = `${props.URL}account/users/me/`;
   const reqOptions = {
@@ -32,8 +40,6 @@ const ProfileSettings = (props) => {
       console.log("Error: " + err);
     }
   };
-
-  // console.log(userData);
 
   useEffect(() => {
     fetchUserData();
@@ -62,52 +68,44 @@ const ProfileSettings = (props) => {
           </div> */}
           <Bar name={props.name} activeBurger={activeBurger} setActiveBurger={setActiveBurger}/>
           <div>
-            <div className={style.columnRow}>
-              <div className={style.column}>
-                <NavLink to="/LkCreateOrder">
-                  <button>
-                    <img src="img/newLk/add.svg" alt="add" />
-                    <span>Сделать заказ</span>
-                  </button>
-                </NavLink>
-              </div>
-              <div className={style.userName}>
-                <img
-                  onClick={() => setShow(!show)}
-                  src="img/newLk/arrowdown.svg"
-                  alt="arrowdown"
-                />
-                <span>{userData?.username}</span>
-                <div className={style.profileImage}>
-                  <img src={`${props.URL}${userData?.photo}`} alt="icon" />
-                </div>
-                {show && (
-                  <div className={style.item}>
-                    <div className={style.box}>
-                      <img src="img/newLk/setting.svg" alt="setting" />
-                      <span>Настройки</span>
-                    </div>
-                    <div className={style.box}>
-                      <img src="img/newLk/logoutcurve.svg" alt="logoutcurve" />
-                      <NavLink to="/" onClick={() => {
-                setTimeout(() => {
-                  window.location.reload();
-                }, 0);
-              }}><span>Выход</span></NavLink>
-                    </div>
-                  </div>
-                )}
-              </div>
+            <div className={style.header}>
+              <LkHeader />
             </div>
             <div className={style.dataWrapper}>
-              <PersonalData URL={props.URL} />
+              <PersonalData
+                URL={props.URL}
+                logoImg={logoImg}
+                setLogoImg={setLogoImg}
+                file={file}
+                setFile={setFile}
+                name={name}
+                setName={setName}
+                email={email}
+                setEmail={setEmail}
+              />
               <div>
                 <PasswordChange
                   URL={props.URL}
-                  alert={alert}
-                  setAlert={setAlert}
+                  password={password}
+                  setPassword={setPassword}
+                  repeatPassword={repeatPassword}
+                  setRepeatPassword={setRepeatPassword}
                 />
-                <AccountActions />
+                <AccountActions
+                  URL={props.URL}
+                  logoImg={logoImg}
+                  setLogoImg={setLogoImg}
+                  file={file}
+                  setFile={setFile}
+                  name={name}
+                  setName={setName}
+                  email={email}
+                  setEmail={setEmail}
+                  password={password}
+                  setPassword={setPassword}
+                  repeatPassword={repeatPassword}
+                  setRepeatPassword={setRepeatPassword}
+                />
               </div>
             </div>
           </div>
