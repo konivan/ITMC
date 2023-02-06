@@ -4,6 +4,69 @@
     .container {
       display: flex;
 
+      .burger {
+        position: absolute;
+        left: 267px;
+        top: 27px;
+        span {
+          display: block;
+          background: #fafafa;
+          width: 24px;
+          height: 3.38px;
+          margin-bottom: 5.92px;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+        }
+        &::before {
+          content: "";
+          display: block;
+          background: #fafafa;
+          width: 24px;
+          height: 3.38px;
+          margin-bottom: 5.92px;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          background: #fafafa;
+          width: 24px;
+          height: 3.38px;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+
+      .burgerActive {
+        position: absolute;
+        left: 267px;
+        top: 27px;
+        span {
+          display: block;
+          background: #fafafa;
+          width: 24px;
+          height: 3.38px;
+          cursor: pointer;
+          margin-top: -3px;
+          transform: rotate(-45deg);
+          transition: all 0.3s ease-in-out;
+        }
+
+        &::before {
+          content: "";
+          display: block;
+          background: #fafafa;
+          transition: all 0.3s ease-in-out;
+          width: 24px;
+          height: 3.38px;
+          margin-top: 8px;
+          transform: rotate(45deg);
+          cursor: pointer;
+        }
+      }
+
       .sideBarOpened {
         // background: #e5e5e5;
         display: flex;
@@ -25,6 +88,7 @@
       .row {
         padding: 16px 16px 0px 0px;
         margin-right: 40px;
+        margin-left: 300px;
         height: 100vh;
         width: 100%;
       }

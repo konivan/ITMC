@@ -1,6 +1,6 @@
 .main {
   background: #141627;
-
+  height: 100vh;
   .alert {
     position: absolute;
     top: 10px;
@@ -9,13 +9,74 @@
 
   .container {
     display: flex;
+    .burger {
+      position: absolute;
+      left: 267px;
+      top: 27px;
+      span {
+        display: block;
+        background: #fafafa;
+        width: 24px;
+        height: 3.38px;
+        margin-bottom: 5.92px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+      }
+      &::before {
+        content: "";
+        display: block;
+        background: #fafafa;
+        width: 24px;
+        height: 3.38px;
+        margin-bottom: 5.92px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+      }
 
+      &::after {
+        content: "";
+        display: block;
+        background: #fafafa;
+        width: 24px;
+        height: 3.38px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+
+    .burgerActive {
+      position: absolute;
+      left: 267px;
+      top: 27px;
+      span {
+        display: block;
+        background: #fafafa;
+        width: 24px;
+        height: 3.38px;
+        cursor: pointer;
+        margin-top: -3px;
+        transform: rotate(-45deg);
+        transition: all 0.3s ease-in-out;
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        background: #fafafa;
+        transition: all 0.3s ease-in-out;
+        width: 24px;
+        height: 3.38px;
+        margin-top: 8px;
+        transform: rotate(45deg);
+        cursor: pointer;
+      }
+    }
     .columnRow {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-bottom: 120px;
-      margin-left: 20px;
+      margin-left: 310px;
       .column {
         display: flex;
         align-items: center;
@@ -99,8 +160,7 @@
     .dataWrapper {
       display: flex;
       justify-content: space-between;
-      margin-top: 150px;
-      margin-left: 20px;
+      margin-left: 310px;
 
       .personalDataWrapper {
         background-image: url(../../../../public//img/newLk/personal_data.png);

@@ -10,7 +10,7 @@ import { NavLink } from "react-router-dom";
 import { Alert } from "../../../components/UI/Alert/Alert";
 
 const ProfileSettings = (props) => {
-  const [sideBarOpen, setSideBarOpen] = useState(true);
+  const [activeBurger, setActiveBurger] = useState(true);
   const [show, setShow] = useState(false);
   const [userData, setUserData] = useState(null);
   const [alert, setAlert] = useState("");
@@ -46,6 +46,8 @@ const ProfileSettings = (props) => {
       </div>
       <div className={style.wrapper}>
         <div className={style.container}>
+        <div className={activeBurger === true ? style.burgerActive : style.burger} onClick={() => setActiveBurger(!activeBurger)}><span
+        ></span></div>
           {/* <div
             className={
               !sideBarOpen ? `${style.sideBarOpened}` : `${style.sideBarClosed}`
@@ -58,7 +60,7 @@ const ProfileSettings = (props) => {
               alt="sideBarIcon"
             />
           </div> */}
-          <Bar name={props.name} />
+          <Bar name={props.name} activeBurger={activeBurger} setActiveBurger={setActiveBurger}/>
           <div>
             <div className={style.columnRow}>
               <div className={style.column}>
