@@ -47,7 +47,7 @@ export const Bar = ({activeBurger, setActiveBurger}) => {
             </li>
           </ul>
         </div>
-        <div className={style.exit}>
+        {/* <div className={style.exit}>
           <NavLink to="/">
             <span
               onClick={() => {
@@ -59,7 +59,7 @@ export const Bar = ({activeBurger, setActiveBurger}) => {
               Вернуться назад
             </span>
           </NavLink>
-        </div>
+        </div> */}
       </div>
     </div>
   );
