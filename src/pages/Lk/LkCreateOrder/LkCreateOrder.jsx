@@ -191,9 +191,9 @@ export const LkCreateOrder = (props) => {
                     let image = new Image();
                     image.src = path;
                     image.onload = function () {
-                      if (image.width !== 256 || image.height !== 256) {
+                      if (image.width !== 500 || image.height !== 500) {
                         return setAlert(
-                          "Изображение должно быть 256px на 256px"
+                          "Изображение должно быть 500px на 500px"
                         );
                       } else {
                         setFile(path);
@@ -205,7 +205,7 @@ export const LkCreateOrder = (props) => {
                   type="file"
                   name="file"
                 />
-                <p>Размером от 256px на 256px в формате .jpg или .png </p>
+                <p>Размером от 500px на 500px в формате .jpg или .png </p>
                 {file === undefined ? null : (
                   <span style={{ color: "green" }}>Файл загружен</span>
                 )}
@@ -259,9 +259,9 @@ export const LkCreateOrder = (props) => {
                     let image = new Image();
                     image.src = path;
                     image.onload = function () {
-                      if (image.width !== 256 || image.height !== 256) {
+                      if (image.width > 4000 || image.height > 4000) {
                         return setAlert(
-                          "Изображение должно быть 256px на 256px"
+                          "Изображение не должно превышать 4000x4000px"
                         );
                       } else {
                         setPlanFiles(planFiles + 1);

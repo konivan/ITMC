@@ -78,7 +78,7 @@ function App() {
           />
 
           <Route path="/portfolio" element={<Portfolio URL={URL} />} />
-          <Route path="/team" element={<Team />} />
+          <Route path="/team" element={<Team URL={URL}/>} />
           <Route path="/LkCreateOrder" element={<LkCreateOrder URL={URL} />} />
           <Route path="/ProfileSettings" element={<ProfileSettings name={name} URL={URL} />} />
           <Route path="/Origin" element={<Origin name={name} URL={URL} />} />

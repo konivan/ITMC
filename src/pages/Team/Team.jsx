@@ -1,8 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import style from "./Team.module.scss";
 import { PERSON } from "./constant";
 
-export const Team = () => {
+export const Team = (props) => {
+  const [team, setTeam] = useState();
+
+  useEffect(() => {
+    const fetchTeam = async () => {
+      const url = `${props.URL}managers/comands-photo/`;
+      const reqOptions = {
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("globalToken")}`,
+          Accept: "application/json",
+        },
+      };
+      try {
+        const res = await fetch(url, reqOptions);
+        const data = await res.json();
+        setTeam(data?.result);
+      } catch (err) {
+        console.log("Error: " + err);
+      }
+    };
+    fetchTeam();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
   return (
     <section className={style.team} id="header">
       <div className={style.wrapper}>

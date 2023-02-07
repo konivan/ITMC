@@ -31,7 +31,7 @@ export const Bar = ({ activeBurger, setActiveBurger }) => {
             </li>
             <li>
               <div>
-                <img src="img/newLk/shoppingcart.svg" alt="shoppingcart" />
+                <img src="img/newLk/test.svg" alt="shoppingcart" />
                 <NavLink to="/Origin">
                   <span>Счета</span>
                 </NavLink>
@@ -39,7 +39,7 @@ export const Bar = ({ activeBurger, setActiveBurger }) => {
             </li>
             <li>
               <div>
-                <img src="img/newLk/shoppingcart.svg" alt="shoppingcart" />
+                <img src="img/newLk/manager.svg" alt="shoppingcart" />
                 <a href="https://t.me/Proodduct_manager7">Менеджеры</a>
               </div>
             </li>

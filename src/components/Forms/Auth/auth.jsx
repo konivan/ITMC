@@ -51,6 +51,7 @@ const Auth = (props) => {
             setUsername("");
             props.setIsAuth(true);
             props.setShowAuth(false);
+            window.location.reload();
             return alert("Вы вошли");
         };
       } catch (err) {
