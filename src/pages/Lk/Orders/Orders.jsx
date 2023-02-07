@@ -54,18 +54,6 @@ export const Orders = (props) => {
     <section className={style.main} id="Orders">
       <div className={style.wrapper}>
         <div className={style.container}>
-          {/* <div
-            className={
-              !sideBarOpen ? `${style.sideBarOpened}` : `${style.sideBarClosed}`
-            }
-          >
-            <Bar name={props.name} />
-            <img
-              onClick={() => setSideBarOpen(!sideBarOpen)}
-              src="img/Lk/sideBarIcon.svg"
-              alt="sideBarIcon"
-            />
-          </div> */}
           <Bar
             name={props.name}
             activeBurger={activeBurger}

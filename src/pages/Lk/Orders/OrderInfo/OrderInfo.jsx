@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+
 import { Alert } from "../../../../components/UI/Alert/Alert";
-
 import Carousel from "../../../../components/UI/Carousel/Carousel";
-
-import { getSchedule } from "../../../../utils/schedule";
 
 import style from "./OrderInfo.module.scss";
 
@@ -16,7 +14,6 @@ const OrderInfo = ({
   globalToken,
 }) => {
   const userName = localStorage.getItem("name");
-  const [schedule, setSchedule] = useState([]);
   const [alert, setAlert] = useState("");
   const [modal, setModal] = useState(false);
 
@@ -44,10 +41,6 @@ const OrderInfo = ({
       console.log("Error: " + err);
     }
   };
-  console.log(currentOrder);
-  useEffect(() => {
-    setSchedule(getSchedule(currentOrder));
-  }, [currentOrder]);
 
   return (
     <div className={style.wrapper}>

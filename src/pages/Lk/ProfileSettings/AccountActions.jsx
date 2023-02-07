@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+
 import { Alert } from "../../../components/UI/Alert/Alert";
 
 import style from "./ProfileSettings.module.scss";
