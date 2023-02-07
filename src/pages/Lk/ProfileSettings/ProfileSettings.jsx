@@ -11,7 +11,7 @@ import { Alert } from "../../../components/UI/Alert/Alert";
 import style from "./ProfileSettings.module.scss";
 
 const ProfileSettings = (props) => {
-  const [activeBurger, setActiveBurger] = useState(true);
+  const [activeBurger, setActiveBurger] = useState(false);
   const [userData, setUserData] = useState(null);
   const [alert, setAlert] = useState("");
 
@@ -51,15 +51,11 @@ const ProfileSettings = (props) => {
       </div>
       <div className={style.wrapper}>
         <div className={style.container}>
-          <div
-            className={
-              activeBurger === true ? style.burgerActive : style.burger
-            }
-            onClick={() => setActiveBurger(!activeBurger)}
-          >
-            <span></span>
-          </div>
-
+          {!activeBurger && (
+            <div onClick={() => setActiveBurger(true)} className={style.burger}>
+              <span></span>
+            </div>
+          )}
           <Bar
             name={props.name}
             activeBurger={activeBurger}
