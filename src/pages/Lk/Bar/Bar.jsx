@@ -1,17 +1,23 @@
-import React, { useState } from "react";
-import style from "./Bar.module.scss";
+import React from "react";
 import { NavLink } from "react-router-dom";
 
-export const Bar = ({activeBurger, setActiveBurger}) => {
+import style from "./Bar.module.scss";
+
+export const Bar = ({ activeBurger, setActiveBurger }) => {
   if (!activeBurger) {
     return null;
   }
 
   return (
-    <div className={style.row} >
+    <div className={style.row}>
       <div className={style.container}>
         <div className={style.column}>
-          <img src="img/header/logoITMC.svg" alt="iclogoITMCon" />
+          <div>
+            <img src="img/header/logoITMC.svg" alt="iclogoITMCon" />
+          </div>
+          <div onClick={() => setActiveBurger(!activeBurger)}>
+            <img src="img/newlk/close_icon.png" alt="close_icon" />
+          </div>
         </div>
         <div className={style.column}>
           <ul>

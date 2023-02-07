@@ -7,7 +7,7 @@ import LkHeader from "../../../components/LkHeader/LkHeader";
 
 export const Origin = (props) => {
   const [checks, setChecks] = useState([]);
-  const [activeBurger, setActiveBurger] = useState(true);
+  const [activeBurger, setActiveBurger] = useState(false);
 
   useEffect(() => {
     const url = `${props.URL}orders/paycheck/`;
@@ -38,8 +38,12 @@ export const Origin = (props) => {
   return (
     <section className={style.main}>
       <div className={style.wrapper}>
-      <div className={activeBurger === true ? style.burgerActive : style.burger} onClick={() => setActiveBurger(!activeBurger)}><span></span></div>
-        <LkHeader styling={true} URL={props.URL}/>
+        {!activeBurger && (
+          <div onClick={() => setActiveBurger(true)} className={style.burger}>
+            <span></span>
+          </div>
+        )}
+        <LkHeader styling={true} URL={props.URL} />
         <div className={style.container}>
           <Bar activeBurger={activeBurger} setActiveBurger={setActiveBurger} />
           <div>
