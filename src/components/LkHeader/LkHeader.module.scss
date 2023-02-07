@@ -1,8 +1,12 @@
 .columnRow {
+  @media (max-width: 950px) {
+    margin-bottom: 50px;
+  }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 120px;
+  margin-bottom: 50px;
+  padding-top: 18px;
   .column {
     display: flex;
     align-items: center;
@@ -14,10 +18,16 @@
         height: 24px;
       }
       span {
+        @media (max-width: 370px) {
+          font-size: 13px;
+         }
         font-style: normal;
         font-weight: 400;
         font-size: 15px;
       }
+      @media (max-width: 370px) {
+        padding: 8px 10px;
+       }
       display: flex;
       align-items: center;
       padding: 10px 16px;

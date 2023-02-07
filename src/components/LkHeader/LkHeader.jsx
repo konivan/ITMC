@@ -25,9 +25,9 @@ const LkHeader = ({styling, URL}) => {
     };
     fetchUserData();
   }, []);
-  console.log(userData)
+
   return (
-    <div className={style.columnRow} style={styling === true ? {position: 'absolute', left: '300px', width: '1600px', marginTop: '16px'} : null}>
+    <div className={style.columnRow} >
     <div className={style.column}>
       <NavLink to="/LkCreateOrder">
         <button>

@@ -1,6 +1,5 @@
 .main {
   background: #141627;
-  height: 100vh;
   .alert {
     position: absolute;
     top: 10px;
@@ -10,18 +9,19 @@
       margin-top: 0 !important;
     }
   }
-
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
   .container {
     display: flex;
 
     .header {
       margin: 16px 0 0 300px;
     }
-
     .burger {
       position: absolute;
-      left: 267px;
-      top: 27px;
+      left: 0px;
+      top: 0px;
       span {
         display: block;
         background: #fafafa;
@@ -54,9 +54,10 @@
     }
 
     .burgerActive {
+      z-index: 20;
       position: absolute;
-      left: 267px;
-      top: 27px;
+      left: 197px;
+        top: 35px;
       span {
         display: block;
         background: #fafafa;
@@ -168,7 +169,8 @@
     .dataWrapper {
       display: flex;
       justify-content: space-between;
-      margin-left: 310px;
+      margin-top: 120px;
+      padding: 30px 0px;
 
       .personalDataWrapper {
         background-image: url(../../../../public//img/newLk/personal_data.png);
@@ -179,7 +181,6 @@
         padding: 27px 100px 120px;
         text-align: center;
         justify-content: center;
-        margin-right: 110px;
 
         .inputWrapper {
           width: 235px;
@@ -233,7 +234,7 @@
       }
 
       .passwordChangeBox {
-        width: 789px;
+        width: 560px;
         background-image: url(../../../../public//img/newLk/password_change.png);
         background-size: cover;
         background-repeat: no-repeat;
@@ -264,7 +265,7 @@
 
       .accountActions {
         margin-top: 50px;
-        width: 789px;
+        width: 560px;
         height: 300px;
         background-image: url(../../../../public//img/newLk/password_change.png);
         background-size: cover;
@@ -379,4 +380,6 @@
       }
     }
   }
+}
+  
 }

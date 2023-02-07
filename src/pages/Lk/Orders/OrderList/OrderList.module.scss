@@ -2,7 +2,7 @@
   width: 445px;
   margin-left: 16px;
   overflow-y: auto;
-  max-height: 800px;
+  max-height: 600px;
   padding-right: 7px;
 
   .orderWrapper {
@@ -20,6 +20,7 @@
     .orderImg {
       margin-top: 36px;
       img {
+        border-radius: 50%;
         width: 122px;
         height: 112px;
       }
