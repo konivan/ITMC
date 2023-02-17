@@ -1,46 +1,4 @@
-@keyframes anim {
-  0% {
-    background-image: url("../../../public/img/main/BG5.png");
-  }
-  50% {
-    background-image: url("../../../public/img/main/BG.png");
-  }
-  100% {
-    background-image: url("../../../public/img/main/BG5.png");
-  }
-}
-
-@keyframes mobileAnim {
-  0% {
-    background-image: url("../../../public/img/main/bgMobile2.png");
-  }
-  50% {
-    background-image: url("../../../public/img/main/bgMobile.png");
-  }
-  100% {
-    background-image: url("../../../public/img/main/bgMobile2.png");
-  }
-}
-
-.team {
-  @media (max-width: 568px) {
-    background-image: url("../../../public/img/main/bgMobile.png");
-    background-repeat: no-repeat;
-    background-size: 138%;
-    background-position-y: 76px;
-    background-position-x: 65%;
-    animation-name: mobileAnim;
-  }
-  background-image: url("../../../public/img/main/BG.png");
-  background-repeat: no-repeat;
-  background-position-x: 74%;
-  background-position-y: 4.8%;
-  background-color: #0b0e11;
-  animation-name: anim;
-  animation-duration: 6s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  .wrapper {
+ .wrapper {
     @media (max-width: 1440px) {
       padding: 0em 1.25em;
     }
