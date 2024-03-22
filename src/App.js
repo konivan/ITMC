@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./App.scss";
 import { Header } from "./components/Header";
 import { Main } from "./components/Main";
@@ -11,20 +11,12 @@ import AuthOrder from "./components/Forms/AuthOrder/authOrder";
 import Product from "./components/Forms/Product/product";
 import { Team } from "./pages/Team/Team";
 import { Portfolio } from "./pages/portfolio/portfolio";
-import { LkCreateOrder } from "./pages/Lk/LkCreateOrder/LkCreateOrder";
-import { Origin } from "./pages/Lk/Origin/Origin";
-import { Orders } from "./pages/Lk/Orders/Orders";
-import { Dogovor } from "./pages/Lk/Dogovor/Dogovor";
-import { Accounts } from "./pages/Lk/Accounts/Accounts";
-import  { PagesPayment } from "./pages/Lk/Origin/PagesPayment/PagesPayment"
 import Page404 from "./pages/Page404/Page404";
-import ProfileSettings from "./pages/Lk/ProfileSettings/ProfileSettings";
 
 function App() {
   let window = document.getElementById("html-1");
   const URL = `${process.env.REACT_APP_URL}`;
   const [isAuth, setIsAuth] = useState(true);
-  const [name, setName] = useState("");
 
   const [showAuth, setShowAuth] = useState(false);
   const [showAuthorization, setShowAuthorization] = useState(false);
@@ -76,19 +68,8 @@ function App() {
               />
             }
           />
-
           <Route path="/portfolio" element={<Portfolio URL={URL} />} />
           <Route path="/team" element={<Team URL={URL}/>} />
-          <Route path="/LkCreateOrder" element={<LkCreateOrder URL={URL} />} />
-          <Route path="/ProfileSettings" element={<ProfileSettings name={name} URL={URL} />} />
-          <Route path="/Origin" element={<Origin name={name} URL={URL} />} />
-          <Route path="/Orders" element={<Orders name={name} URL={URL} />} />
-          <Route path="/Dogovor" element={<Dogovor name={name} URL={URL} />} />
-          <Route path="/PagesPayment" element={<PagesPayment name={name} URL={URL} />} />
-          <Route
-            path="/Accounts"
-            element={<Accounts name={name} URL={URL} />}
-          />
           <Route path="/*" element={<Page404 />}/>
         </Routes>
         <Product
@@ -105,7 +86,6 @@ function App() {
           setShowAuthorization={setShowAuthorization}
           showAuth={showAuth}
           setIsAuth={setIsAuth}
-          setName={setName}
         />
         <Authorization
           onClose={() => setShowAuthorization(false)}

@@ -1,4 +1,3 @@
-import { React } from "react";
 import style from "./auth.module.scss";
 import { Alert } from "../../UI/Alert/Alert";
 
@@ -11,10 +10,6 @@ const Auth = (props) => {
   const [password, setPassword] = useState("");
   const [alert, setAlert] = useState("");
 
-  const authData = {
-    password: password,
-    username: username,
-  };
 
   if (!props.showAuth) {
     return null;
@@ -27,37 +22,7 @@ const Auth = (props) => {
   }
 
   const auth = async () => {
-    const url = `${props.URL}api/token/`;
-    const reqOptions = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(authData),
-    };
-
-    if (password !== "" && username !== "") {
-      try {
-        const res = await fetch(url, reqOptions, authData);
-        if (res.status !== 200) {
-          setAlert("Неправильное имя пользователя или пароль!");
-        } else {
-            const token = await res.json();
-            localStorage.setItem('globalToken', token?.access);
-            localStorage.setItem('name', username);
-            localStorage.setItem('password', password);
-            localStorage.setItem('auth', true);
-            setPassword("");
-            setUsername("");
-            props.setIsAuth(true);
-            props.setShowAuth(false);
-            window.location.reload();
-            return alert("Вы вошли");
-        };
-      } catch (err) {
-        console.log("Error: " + err);
-      }
-    } else return setAlert("Заполните все поля!");
+    console.log('connect')
   }
 
   const openAuthorization = () => {

@@ -61,7 +61,7 @@ export const Menu = (props) => {
                   }}>Выйти</NavLink>
         </li>
       </ul>
-      <Button setShowAuthOrders={props.setShowAuthOrders}>Заказать</Button>
+      <Button onClick={props.connectWallet} setShowAuthOrders={props.setShowAuthOrders}>Connect wallet</Button>
     </div>
   );
 };

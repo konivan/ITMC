@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-
+import { useState } from "react";
+import { WalletSDK } from "@roninnetwork/wallet-sdk";
 import style from "./Header.module.scss";
 
 import { Button } from "../UI/Button/Button";
@@ -10,35 +10,37 @@ import { NavLink } from "react-router-dom";
 
 export const Header = (props) => {
   const [activeBurger, setActiveBurger] = useState(false);
-  const [userPhoto, setUserPhoto] = useState();
+  const [userAddress, setUserAddress] = useState(
+    localStorage.getItem("adress")
+  );
 
-  useEffect(() => {
-    const fetchUserData = async () => {
-      const url = `${props.URL}account/users/me/`;
-      const reqOptions = {
-        method: "GET",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("globalToken")}`,
-        },
-      };
-      try {
-        const res = await fetch(url, reqOptions);
-        const data = await res.json();
-        setUserPhoto(data);
-      } catch (err) {
-        console.log("Error: " + err);
+  const connectWallet = async () => {
+    function checkRoninInstalled() {
+      if ("ronin" in window) {
+        return true;
       }
-    };
-    fetchUserData();
-  }, []);
+      window.open("https://wallet.roninchain.com", "_blank");
+      return false;
+    }
+    const sdk = new WalletSDK();
+    await sdk.connectInjected();
 
-  if (
-    window.location.pathname !== "/" &&
-    window.location.pathname !== "/portfolio" &&
-    window.location.pathname !== "/team"
-  ) {
-    return null;
-  }
+    const isInstalled = checkRoninInstalled();
+    if (isInstalled === false) {
+      return;
+    }
+
+    const accounts = await sdk.requestAccounts();
+    if (accounts) {
+      localStorage.setItem("adress", accounts[0]);
+      setUserAddress(accounts[0]);
+    }
+  };
+
+  const disconnectWallet = () => {
+    localStorage.removeItem("addres");
+    setUserAddress();
+  };
 
   return (
     <div className={style.header}>
@@ -57,8 +59,7 @@ export const Header = (props) => {
             </NavLink>
             <div className={style.item}>
               <img
-                onClick={() => props.setShowAuth(true)}
-                style={{ display: props.isAuth ? "none" : null }}
+                onClick={connectWallet}
                 className={style.lk}
                 src="img/header/lk.svg"
                 alt="lk"
@@ -68,7 +69,7 @@ export const Header = (props) => {
                   activeBurger === true ? style.burgerActive : style.burger
                 }
                 onClick={() => setActiveBurger(!activeBurger)}
-                >
+              >
                 <span></span>
                 <div onClick={(e) => e.stopPropagation()}>
                   <Menu
@@ -76,6 +77,7 @@ export const Header = (props) => {
                     setIsAuth={props.setIsAuth}
                     isAuth={props.isAuth}
                     activeBurger={activeBurger}
+                    connectWallet={connectWallet}
                   />
                 </div>
               </div>
@@ -92,63 +94,23 @@ export const Header = (props) => {
               </Button>
             </div>
             <div className={style.item}>
-              {localStorage.getItem("auth") !== "true" ? (
-                <MyButton setShowAuth={props.setShowAuth}>Войти</MyButton>
+              {userAddress ? (
+                <span>
+                  {userAddress.substring(0, 6) + "..." + userAddress.slice(-4)}
+                </span>
               ) : (
-                <div>
-                  <div className={style.profileBlock}>
-                    <div>
-                      <img
-                        className={style.userIcon}
-                        src={`${props.URL}${userPhoto?.photo}`}
-                        alt="user-icon"
-                      />
-                    </div>
-                    <p>{localStorage.getItem("name")}</p>
-                    <div className={style.burgerIcon}>
-                      <img src="img/lk/burger.png" alt="user-icon" />
-                    </div>
-                  </div>
-                  <div className={style.dropdown}>
-                    <NavLink
-                      to="/Origin"
-                      onClick={() => {
-                        setTimeout(() => {
-                          window.location.reload();
-                        }, 1);
-                      }}
-                    >
-                      <div className={style.dropdownButtons}>
-                        <div>
-                          <img
-                            src="img/lk/administrator_icon.png"
-                            alt="profileImg"
-                          />
-                        </div>
-                        <span>Личный кабинет</span>
-                      </div>
-                    </NavLink>
-                    <div className={style.dropdownButtons}>
-                      <div>
-                        <img src="img/lk/logout.svg" alt="logoutImg" />
-                      </div>
-
-                      <span
-                        onClick={() => {
-                          localStorage.setItem("auth", "false");
-                          props.setIsAuth(false);
-                          localStorage.removeItem("name");
-                          localStorage.removeItem("password");
-                          localStorage.removeItem("globalToken");
-                          window.location.reload();
-                        }}
-                      >
-                        Выйти
-                      </span>
-                    </div>
-                  </div>
-                </div>
+                <MyButton
+                  onClick={connectWallet}
+                  setShowAuth={props.setShowAuth}
+                >
+                  Connect wallet
+                </MyButton>
               )}
+              {userAddress ? (
+                <div className={style.dropdown} onClick={disconnectWallet}>
+                  Disonnect wallet
+                </div>
+              ) : null}
             </div>
           </div>
         </div>

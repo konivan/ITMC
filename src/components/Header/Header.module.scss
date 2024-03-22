@@ -157,18 +157,26 @@
         .item:nth-of-type(1) {
           margin-right: 1.313em;
         }
+  
+        .item:nth-of-type(2):hover {
+          .dropdown {
+            max-height: 300px;
+            border: 0.0625em solid #f614f9;
+            padding: 10px 10px;
+            font-weight: 500;
+            margin-right: 20px;
+          }
+        }
+
         .item:nth-of-type(2) {
+          margin-left: 20px;
+          position: relative;
           .userIcon {
             width: 45px;
             background: white;
             border-radius: 50%;
             height: 40px;
             cursor: pointer;
-          }
-          div:nth-of-type(1):hover {
-            .dropdown {
-              max-height: 300px;
-            }
           }
 
           .profileBlock {
@@ -181,7 +189,6 @@
             border-radius: 0.5em;
             padding: 5px 10px;
             cursor: pointer;
-
             .burgerIcon {
               width: 40px;
 
@@ -192,39 +199,18 @@
           }
 
           .dropdown {
-            margin-top: 18px;
+            margin-top: 10px;
             transition: 0.2s;
             max-height: 0;
+            width: 150px;
             overflow: hidden;
             position: absolute;
-            background-color: rgb(46, 0, 78);
+            left: -25px;
             min-width: 80px;
             z-index: 1;
+            cursor: pointer;
             border-radius: 25px;
-            top: 70px;
             text-align: center;
-            span {
-              color: rgb(255, 255, 255);
-              padding: 12px 16px;
-              text-decoration: none;
-              display: block;
-            }
-            span:hover {
-              text-decoration: underline;
-              cursor: pointer;
-            }
-
-            .dropdownButtons {
-              display: flex;
-              align-items: center;
-              padding-left: 15px;
-              div {
-                width: 20px;
-                img {
-                  width: 100%;
-                }
-              }
-            }
           }
         }
       }
