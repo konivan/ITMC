@@ -6,7 +6,7 @@ export const Partnery = () => {
   return (
     <section className={style.partnery}>
       <div className={style.container}>
-        <h2>Наши партнеры</h2>
+        <h2>Our partners</h2>
         <div className={style.column}>
           <a
             target="_blank"

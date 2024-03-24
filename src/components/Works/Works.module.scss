@@ -22,7 +22,12 @@
       }
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1.25em;
+      gap: 2.75em;
+      .btnContainer {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+      }
       .column:nth-of-type(1) {
         img:nth-of-type(1) {
           @media (max-width: 1240px) {
@@ -46,14 +51,12 @@
           margin-bottom: 1.25em;
           cursor: pointer;
         }
-        h4 {
+        h3 {
           @media (max-width: 568px) {
             font-size: 14px;
           }
           font-style: normal;
-          font-weight: 400;
-          font-size: 1em;
-          margin-bottom: 0.5em;
+          margin-bottom: 1em;
         }
         img:nth-of-type(2) {
           @media (max-width: 568px) {
@@ -87,7 +90,7 @@
           margin-bottom: 1.25em;
           cursor: pointer;
         }
-        h4 {
+        h3 {
           @media (max-width: 568px) {
             font-size: 14px;
           }
@@ -96,9 +99,7 @@
             width: 280px;
           }
           font-style: normal;
-          font-weight: 400;
-          font-size: 1em;
-          margin-bottom: 0.5em;
+          margin-bottom: 1em;
         }
         img:nth-of-type(2) {
           @media (max-width: 568px) {
@@ -152,7 +153,7 @@
           margin-bottom: 1.25em;
           cursor: pointer;
         }
-        h4 {
+        h3 {
           @media (max-width: 568px) {
             font-size: 14px;
           }
@@ -161,9 +162,7 @@
             width: 280px;
           }
           font-style: normal;
-          font-weight: 400;
-          font-size: 1em;
-          margin-bottom: 0.5em;
+          margin-bottom: 1em;
         }
         img:nth-of-type(2) {
           @media (max-width: 568px) {
@@ -197,14 +196,12 @@
           margin-bottom: 1.25em;
           cursor: pointer;
         }
-        h4 {
+        h3 {
           @media (max-width: 568px) {
             font-size: 14px;
           }
           font-style: normal;
-          font-weight: 400;
-          font-size: 1em;
-          margin-bottom: 0.5em;
+          margin-bottom: 1em;
         }
         img:nth-of-type(2) {
           @media (max-width: 568px) {

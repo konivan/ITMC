@@ -1,19 +1,10 @@
-import React from "react";
-
 import style from "./Footer.module.scss";
-
 import { IMG } from "./constant";
-
 import { Button } from "../UI/Button/Button";
+import { MyButton } from "../UI/MyButton/MyButton";
+import { connectWallet } from "../../utils/connectWallet";
 
 export const Footer = (props) => {
-  if (
-    window.location.pathname !== "/" &&
-    window.location.pathname !== "/portfolio" &&
-    window.location.pathname !== "/team"
-  ) {
-    return null;
-  }
   return (
     <footer className={style.footer}>
       <div className={style.wrapper}>
@@ -25,7 +16,7 @@ export const Footer = (props) => {
                   <span>Закажите у нас проект</span>
                   <span>уже сегодня!</span>
                 </div>
-                <Button setShowAuth={props.setShowAuth} setShowAuthOrders={props.setShowAuthOrders}>
+                <Button>
                   Заказать
                 </Button>
               </div>
@@ -42,18 +33,19 @@ export const Footer = (props) => {
             </div>
             <div className={style.column}>
               <div className={style.item}>
-                <img
-                  style={{ cursor: "pointer" }}
-                  src="img/footer/lk.svg"
-                  alt="lk"
-                  onClick={() => props.setShowAuth(true)}
-                />
-                <span
-                  onClick={() => props.setShowAuth(true)}
-                  style={{ cursor: "pointer" }}
-                >
-                  Личный кабинет
-                </span>
+                {props.userAddress ? (
+                  <span>
+                    {props.userAddress.substring(0, 6) +
+                      "..." +
+                      props.userAddress.slice(-4)}
+                  </span>
+                ) : (
+                  <MyButton
+                    onClick={() => connectWallet(props.setUserAddress)}
+                  >
+                    Connect wallet
+                  </MyButton>
+                )}
               </div>
               <div className={style.item}>
                 {IMG.map((item, index) => (
@@ -69,7 +61,7 @@ export const Footer = (props) => {
               </div>
             </div>
             <div className={style.column}>
-              <h4>Контакты</h4>
+              <h4>Contacts</h4>
               <div className={style.item}>
                 <a href="tel:+7 925 104 5382">+7 925 104 5382</a>
                 <a href="tel:+7 925 540 3956">+7 925 540 3956</a>
@@ -80,7 +72,7 @@ export const Footer = (props) => {
                 <span>Закажите у нас проект</span>
                 <span>уже сегодня!</span>
               </div>
-              <Button setShowAuth={props.setShowAuth} setShowAuthOrders={props.setShowAuthOrders}>
+              <Button>
                 Заказать
               </Button>
             </div>

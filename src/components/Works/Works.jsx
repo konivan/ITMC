@@ -1,26 +1,20 @@
-import React from "react";
-import { MyButton } from "../UI/MyButton/MyButton";
-import { NavLink } from "react-router-dom";
-
-import WorkComponent from "./WorkComponent";
-
+import { ButtonPink } from "../UI/ButtonPink/ButtonPink";
 import style from "./Works.module.scss";
 
 export const Works = (props) => {
   const openProduct = (img, title, icon) => {
-    if (!props.data) {
-      props.setProductImg(img);
-      props.setProductTitle(title);
-      props.setProductIcon(icon);
-      props.setShowProduct(true);
-    } else return 0;
+    props.setProductImg(img);
+    props.setProductTitle(title);
+    props.setProductIcon(icon);
+    props.setShowProduct(true);
   };
   return (
     <section className={style.works} id="works">
       <div className={style.container}>
-        <h2>Наши работы</h2>
+        <h2>Pools</h2>
         <div className={style.row}>
           <div className={style.column}>
+            <h3>First axie NFT staking</h3>
             <img
               src="./img/work/Home.png"
               alt="Home"
@@ -30,10 +24,13 @@ export const Works = (props) => {
                 ])
               }
             />
-            <h4>UI Design</h4>
-            <img src="./img/work/IT.svg" alt="IT" />
+            <div className={style.btnContainer}>
+              <ButtonPink>STAKE</ButtonPink>
+              <ButtonPink>UNSTAKE</ButtonPink>
+            </div>
           </div>
           <div className={style.column}>
+            <h3>RON/AXS</h3>
             <img
               src="./img/work/masdGames.png"
               alt="masdGames"
@@ -45,12 +42,13 @@ export const Works = (props) => {
                 )
               }
             />
-            <h4>Создание и продвижение криптопроекта MASD GAMES</h4>
-            <img src="./img/work/IT.svg" alt="IT" />
-            <img src="./img/work/M.svg" alt="M" />
-            <img src="./img/work/C.svg" alt="C" />
+            <div className={style.btnContainer}>
+              <ButtonPink>STAKE</ButtonPink>
+              <ButtonPink>UNSTAKE</ButtonPink>
+            </div>
           </div>
           <div className={style.column}>
+            <h3>RON/WETH</h3>
             <img
               src="./img/work/solana.png"
               alt="solana"
@@ -62,10 +60,13 @@ export const Works = (props) => {
                 )
               }
             />
-            <h4>Создание криптовалюты на основе SOLANA</h4>
-            <img src="./img/work/C.svg" alt="C" />
+            <div className={style.btnContainer}>
+              <ButtonPink>STAKE</ButtonPink>
+              <ButtonPink>UNSTAKE</ButtonPink>
+            </div>
           </div>
           <div className={style.column}>
+            <h3>RON/SLP</h3>
             <img
               src="./img/work/thrOne.png"
               alt="thrOne"
@@ -77,37 +78,11 @@ export const Works = (props) => {
                 )
               }
             />
-            <h4>WEB-разработка проекта: THR ONE</h4>
-            <img src="./img/work/IT.svg" alt="IT" />
-            <img src="./img/work/C.svg" alt="C" />
+            <div className={style.btnContainer}>
+              <ButtonPink>STAKE</ButtonPink>
+              <ButtonPink>UNSTAKE</ButtonPink>
+            </div>
           </div>
-          <div
-            className={style.column}
-            style={{ display: props.setShowProduct ? null : "none" }}
-          >
-            <NavLink
-              onClick={() => {
-                setTimeout(() => {
-                  window.scroll(0, 0);
-                }, 0);
-              }}
-              to="portfolio"
-            >
-              <MyButton works={"works"}>
-                <span>Показать еще</span>
-              </MyButton>
-            </NavLink>
-          </div>
-          {props.data
-            ? props.data.map((item, index) => (
-                <WorkComponent
-                  image={item.img}
-                  title={item.titles}
-                  icons={item.icons}
-                  key={`${item} ${index}`}
-                />
-              ))
-            : null}
         </div>
       </div>
     </section>

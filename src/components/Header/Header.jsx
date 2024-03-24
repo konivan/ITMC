@@ -1,45 +1,18 @@
 import { useState } from "react";
-import { WalletSDK } from "@roninnetwork/wallet-sdk";
 import style from "./Header.module.scss";
-
 import { Button } from "../UI/Button/Button";
 import { MyButton } from "../UI/MyButton/MyButton";
 import { List } from "./List";
 import { Menu } from "./Menu/Menu";
 import { NavLink } from "react-router-dom";
+import { connectWallet } from "../../utils/connectWallet";
 
 export const Header = (props) => {
   const [activeBurger, setActiveBurger] = useState(false);
-  const [userAddress, setUserAddress] = useState(
-    localStorage.getItem("adress")
-  );
-
-  const connectWallet = async () => {
-    function checkRoninInstalled() {
-      if ("ronin" in window) {
-        return true;
-      }
-      window.open("https://wallet.roninchain.com", "_blank");
-      return false;
-    }
-    const sdk = new WalletSDK();
-    await sdk.connectInjected();
-
-    const isInstalled = checkRoninInstalled();
-    if (isInstalled === false) {
-      return;
-    }
-
-    const accounts = await sdk.requestAccounts();
-    if (accounts) {
-      localStorage.setItem("adress", accounts[0]);
-      setUserAddress(accounts[0]);
-    }
-  };
 
   const disconnectWallet = () => {
     localStorage.removeItem("addres");
-    setUserAddress();
+    props.setUserAddress();
   };
 
   return (
@@ -73,11 +46,8 @@ export const Header = (props) => {
                 <span></span>
                 <div onClick={(e) => e.stopPropagation()}>
                   <Menu
-                    setShowAuthOrders={props.setShowAuthOrders}
-                    setIsAuth={props.setIsAuth}
-                    isAuth={props.isAuth}
                     activeBurger={activeBurger}
-                    connectWallet={connectWallet}
+                    connectWallet={() => connectWallet(props.setUserAddress)}
                   />
                 </div>
               </div>
@@ -86,31 +56,27 @@ export const Header = (props) => {
           <List />
           <div className={style.column}>
             <div className={style.item}>
-              <Button
-                setShowAuthOrders={props.setShowAuthOrders}
-                setShowAuth={props.setShowAuth}
-              >
+              <Button>
                 Заказать
               </Button>
             </div>
             <div className={style.item}>
-              {userAddress ? (
+              {props.userAddress ? (
+                <>
                 <span>
-                  {userAddress.substring(0, 6) + "..." + userAddress.slice(-4)}
+                  {props.userAddress.substring(0, 6) + "..." + props.userAddress.slice(-4)}
                 </span>
+                <img className={style.lk}
+                onClick={disconnectWallet}
+                src="img/header/lk.svg"
+                alt="lk"/>
+                </>
               ) : (
                 <MyButton
-                  onClick={connectWallet}
-                  setShowAuth={props.setShowAuth}
-                >
+                  onClick={() => connectWallet(props.setUserAddress)}>
                   Connect wallet
                 </MyButton>
               )}
-              {userAddress ? (
-                <div className={style.dropdown} onClick={disconnectWallet}>
-                  Disonnect wallet
-                </div>
-              ) : null}
             </div>
           </div>
         </div>

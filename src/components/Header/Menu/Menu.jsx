@@ -1,9 +1,5 @@
-import React from "react";
-
 import style from "./Menu.module.scss";
-
 import { Button } from "../../UI/Button";
-
 import { NavLink } from "react-router-dom";
 
 export const Menu = (props) => {
@@ -21,7 +17,7 @@ export const Menu = (props) => {
             }, 0);
           }}
         >
-          <NavLink to="/#services">Услуги</NavLink>
+          <NavLink to="/#services">Services</NavLink>
         </li>
         <li
           onClick={() => {
@@ -30,7 +26,7 @@ export const Menu = (props) => {
             }, 0);
           }}
         >
-          <NavLink to="/">Портфолио</NavLink>
+          <NavLink to="/">Pools</NavLink>
         </li>
         <li
           onClick={() => {
@@ -39,7 +35,7 @@ export const Menu = (props) => {
             }, 0);
           }}
         >
-          <NavLink to="/team">Команда</NavLink>
+          <NavLink to="/team">Team</NavLink>
         </li>
         <li
           onClick={() => {
@@ -48,17 +44,10 @@ export const Menu = (props) => {
             }, 0);
           }}
         >
-          <NavLink to="/team">О нас</NavLink>
+          <NavLink to="/team">About us</NavLink>
         </li>
-        <li style={{display: !props.isAuth ? 'none' : null}}>
-          <NavLink onClick={() => {
-                    localStorage.setItem('auth', 'false');
-                    props.setIsAuth(false);
-                    localStorage.removeItem('name');
-                    localStorage.removeItem('password');
-                    localStorage.removeItem("globalToken");
-                    window.location.reload();
-                  }}>Выйти</NavLink>
+        <li>
+          <NavLink>Выйти</NavLink>
         </li>
       </ul>
       <Button onClick={props.connectWallet} setShowAuthOrders={props.setShowAuthOrders}>Connect wallet</Button>

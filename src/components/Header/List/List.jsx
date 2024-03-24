@@ -1,6 +1,4 @@
-import React from "react";
 import style from "./List.module.scss";
-
 import { NavLink } from "react-router-dom";
 
 export const List = () => {
@@ -14,7 +12,7 @@ export const List = () => {
             }, 0);
           }}
         >
-          <NavLink to="/#services">Услуги</NavLink>
+          <NavLink to="/#services">Services</NavLink>
         </li>
         <li
           onClick={() => {
@@ -23,7 +21,7 @@ export const List = () => {
             }, 0);
           }}
         >
-          <NavLink to="/">Портфолио</NavLink>
+          <NavLink to="/">Pools</NavLink>
         </li>
         <li
           onClick={() => {
@@ -32,7 +30,7 @@ export const List = () => {
             }, 0);
           }}
         >
-          <NavLink to="/team">Команда</NavLink>
+          <NavLink to="/team">Team</NavLink>
         </li>
         <li
           onClick={() => {
@@ -41,7 +39,7 @@ export const List = () => {
             }, 0);
           }}
         >
-          <NavLink to="/team">О нас</NavLink>
+          <NavLink to="/team">About us</NavLink>
         </li>
       </ul>
     </nav>

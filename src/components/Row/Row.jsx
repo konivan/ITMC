@@ -13,10 +13,10 @@ export const Row = () => {
               <span>Marketing</span>
               <span>Crypto</span>
             </div>
-            <p>Студия независимых разработчиков</p>
+            <p>First NFT axie staking</p>
           </div>
         </div>
-        <p className={style.text}>Студия независимых разработчиков</p>
+        <p className={style.text}>First NFT axie staking</p>
       </div>
     </section>
   );

@@ -157,20 +157,18 @@
         .item:nth-of-type(1) {
           margin-right: 1.313em;
         }
-  
-        .item:nth-of-type(2):hover {
-          .dropdown {
-            max-height: 300px;
-            border: 0.0625em solid #f614f9;
-            padding: 10px 10px;
-            font-weight: 500;
-            margin-right: 20px;
-          }
-        }
 
         .item:nth-of-type(2) {
           margin-left: 20px;
-          position: relative;
+          display: flex;
+          align-items: center;
+          font-weight: 500;
+
+          .lk {
+            margin-left: 15px;
+            cursor: pointer;
+          }
+
           .userIcon {
             width: 45px;
             background: white;

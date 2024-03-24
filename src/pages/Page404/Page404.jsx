@@ -1,4 +1,3 @@
-import React from 'react';
 import style from "./Page404.module.scss";
 
 const Page404 = () => {
